@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="mobile/styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
+    <link href="mobile/styles/app.css" rel="stylesheet" />
+    <link href="mobile/styles/gdd.mobile.min.css" rel="stylesheet" />
+    <link href="mobile/styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />
+    <!--    <script src="../scripts/libraries/jquery-1.9.1.js"></script>
+    <script src="scripts/jquery.mobile-1.3.0.min.js"></script>
+    <script src="../scripts/libraries/jquery.validate.min.js"></script>-->
+    <!--<script src="phonegap.js"></script>-->
+    <script data-main="mobile/scripts/app/appstart.min.js" src="scripts/libraries/require.js"></script>
+
+
+     <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+        // Wait for Cordova to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // Cordova is ready
+        //
+        function onDeviceReady() {
+            alert("devide ready event has fired")
+            navigator.splashscreen.hide();
+        }
+
+    </script>
+
+    <style>
+        #loader_body {
+            /*position: absolute;
+            width: 100%;
+            background: #382e38;
+            top: 0px;
+            bottom: 0px;
+            color: #FFFFFF;*/
+           
+
+            height:100%;
+            width: 100%;
+           
+             margin-top: 100px;
+            bottom: 0px;
+            color: #FFFFFF;
+        }
+
+        #loader_container {
+            /*position: absolute;
+            top: 20%;
+            margin-top: -100px; 
+            left: 0;
+            width: 100%;*/
+
+             /*position: absolute;
+            top: 20%;
+            margin-top: -100px; 
+            left: 0;
+            width: 100%;*/
+        }
+
+        #loader_panel {
+            /*width: 15px;
+            height: 200px;
+            margin-left: auto;
+            margin-right: auto;*/
+            
+             width: 250px;
+            height: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        #loadingProgressG {
+            width: 256px;
+            height: 20px;
+            overflow: hidden;
+            background-color: #6994C9;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        .loadingProgressG {
+            background-color: #3281B5;
+            margin-top: 0;
+            margin-left: -256px;
+            -moz-animation-name: bounce_loadingProgressG;
+            -moz-animation-duration: 2.8s;
+            -moz-animation-iteration-count: infinite;
+            -moz-animation-timing-function: linear;
+            -webkit-animation-name: bounce_loadingProgressG;
+            -webkit-animation-duration: 2.8s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            -ms-animation-name: bounce_loadingProgressG;
+            -ms-animation-duration: 2.8s;
+            -ms-animation-iteration-count: infinite;
+            -ms-animation-timing-function: linear;
+            -o-animation-name: bounce_loadingProgressG;
+            -o-animation-duration: 2.8s;
+            -o-animation-iteration-count: infinite;
+            -o-animation-timing-function: linear;
+            animation-name: bounce_loadingProgressG;
+            animation-duration: 2.8s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            width: 256px;
+            height: 20px;
+        }
+
+        @-moz-keyframes bounce_loadingProgressG {
+            0% {
+                margin-left: -256px;
+            }
+
+            100% {
+                margin-left: 256px;
+            }
+        }
+
+        @-webkit-keyframes bounce_loadingProgressG {
+            0% {
+                margin-left: -256px;
+            }
+
+            100% {
+                margin-left: 256px;
+            }
+        }
+
+        @-ms-keyframes bounce_loadingProgressG {
+            0% {
+                margin-left: -256px;
+            }
+
+            100% {
+                margin-left: 256px;
+            }
+        }
+
+        @-o-keyframes bounce_loadingProgressG {
+            0%;
+
+        {
+            margin-left: -256px;
+        }
+
+        100% {
+            margin-left: 256px;
+        }
+
+        }
+
+        @keyframes bounce_loadingProgressG {
+            0% {
+                margin-left: -256px;
+            }
+
+            100% {
+                margin-left: 256px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+     
+    </script>
+    <div data-role="page" data-theme="g" id="pg_index"  >
+
+
+
+        <div data-role="content"  style="height:100%">
+            <div>
+                <div>
+                    <div id="loader_body">
+                        <!-- <img src="mobile/img/gdd.png" style="width: 100%; height: auto" />-->
+
+                        <div id="loader_container">
+
+                            <div id="loader_panel">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <img src="mobile/img/gdd.png" style="width: 100%; height: auto" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="loadingProgressG">
+                                                <div id="loadingProgressG_1" class="loadingProgressG">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div style="text-align:center">initializing....</div>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--<a data-role="button" href="mobile/pages/signin.html">Sign In</a>-->
+
+
+        </div>
+        <!-- /content -->
+
+
+    </div>
+    <!-- /page -->
+</body>
+</html>
