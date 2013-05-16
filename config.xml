@@ -6,10 +6,10 @@
         id        = "gododata.mobile.app"
         version   = "1.0.0">
 
-  <name>Gdd Test App using config.xml</name>
+  <name>Godochurch</name>
 
   <description>
-    Hello World sample application that responds to the deviceready event.
+    Godochurch helps you focus on ministry while we help with your admin.
   </description>
 
   <author href="http://phonegap.com" email="support@gododata.com">
@@ -28,7 +28,8 @@
         permission on your app, which PhoneGap requires.
     -->
   <preference name="permissions"                value="none"/>
-  <preference name="splash-screen-duration" value="15000" />
+  <preference name="auto-hide-splash-screen" value="false" />
+  <!--<preference name="splash-screen-duration" value="15000" />-->
   <!-- Customize your app and platform with the preference element. -->
   <preference name="phonegap-version"           value="2.5.0" />
   <!-- all: current version of PhoneGap -->

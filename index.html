@@ -24,8 +24,12 @@
         // Cordova is ready
         //
         function onDeviceReady() {
-            alert("devide ready event has fired")
-            navigator.splashscreen.hide();
+            window.godo_deviceready = true;
+            if (window.godo_navpage) {
+                navigator.splashscreen.hide();
+                $.mobile.changePage(window.godo_navpage)
+            }
+            
         }
 
     </script>
