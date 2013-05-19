@@ -39,14 +39,18 @@
             <!-- /grid-a -->
 
 
-            <ul data-role="listview" data-split-icon="check" data-split-theme="c" data-inset="true" data-theme="a" id="searchPortals" data-bind="template: { name: 'portallist-template', foreach: portalSearchResults}"></ul>
+            <ul data-role="listview" data-split-icon="check" data-split-theme="c" data-inset="true" data-theme="a" id="searchPortals" data-bind="template: { name: 'addportal-template', foreach: portalSearchResults}"></ul>
 
         </div>
 
         <div data-role="header">
             <a href="#" data-icon="back" data-rel="back" data-role="button" data-iconpos="notext">New Portal</a>
             <h1 class="pageHeader" id="pg_authportallist_header">portal list</h1>
-            <a href="#" id="pg_authportals_header_search" data-icon="search" data-role="button" data-iconpos="notext" data-transition="slideup"></a>
+            <a href="#pg_authportals_main_help" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-iconpos="notext" data-transition="slideup"></a>
+
+
+
+            <!--<a href="#"  data-role="button"  class="ui-icon-alt" data-inline="true" data-theme="h" data-transition="slideup" data-icon="info" data-iconpos="notext"></a>-->
 
         </div>
 
@@ -55,6 +59,17 @@
                 <div id="errpopmessage"></div>
             </div>
 
+            <script id="addportal-template" type="text/html">
+                <li data-bind="attr: {id: portalId}">
+                    <a data-bind="attr: {href: '#'}" class="addportal" data-transition="slide">
+                        <p data-bind="text: portalName"></p>
+
+                    </a>
+
+                    <a data-role="button" href="#" class="addportal" data-position-to="window"></a>
+                </li>
+            </script>
+
             <script id="portallist-template" type="text/html">
                 <li data-bind="attr: {id: portalId}">
                     <a data-bind="attr: {href: '#'}" class="loadsession addportal" data-transition="slide">
@@ -62,16 +77,45 @@
 
                     </a>
 
-                    <a data-role="button" href="#" class="removeportal addportal" data-position-to="window"></a>
+                    <a data-role="button" href="#" class="removeportal" data-position-to="window"></a>
                 </li>
             </script>
 
             <div id="pg_authportals_exists">
-                <a data-role="button" href="#panelAddNewPortal" data-inline="true" data-theme="b" class="ui-btn-right">Add Database</a>
-                <div class="ui-body-h" style="padding: 2px; margin-top:5px">
-                    From this list of active databases, tap the one you want to sign into. Tap the                   
-                    <span data-inline="true" data-theme="d" data-role="button" data-icon="delete" data-iconpos="notext"></span> icon to de-activate this database from your profile.
+                <a data-role="button" href="#panelAddNewPortal" data-inline="false" data-theme="c" class="ui-btn-right">Connect to New Database
+                </a>
+
+
+
+
+
+
+                <div data-role="popup" id="pg_authportals_main_help" data-overlay-theme="h" style="max-width: 450px;"
+                    class="ui-corner-all">
+                    <div data-role="header" class="ui-corner-top">
+                        <h1>Choose Church</h1>
+                    </div>
+                    <div data-role="content" class="ui-corner-bottom ui-content">
+                        <p>From this list of active databases, tap the one you want to sign into.</p>
+                        <p>To find a church not listed here click "Connect to New Database"</p>
+                        <p>
+                            Tap the                   
+                    <span data-inline="true" data-theme="d" data-role="button" data-icon="delete" data-iconpos="notext"></span>icon to de-activate this database from your profile.
+                        </p>
+
+
+                        <a href="#" data-role="button" data-theme="h" data-rel="back">Okay!</a>
+
+                    </div>
                 </div>
+
+
+
+
+
+
+
+
 
                 <div id="divAuthPortals">
                     <ul data-role="listview" data-split-icon="delete" data-split-theme="d" data-inset="true" data-theme="b" id="portalList" data-bind="template: { name: 'portallist-template', foreach: authorizedPortals}"></ul>
@@ -89,7 +133,7 @@
 
 
 
-          
+
 
             <div data-role="popup" id="pg_authportals_activate_help" data-overlay-theme="h" style="max-width: 450px;"
                 class="ui-corner-all">
@@ -98,7 +142,7 @@
                 </div>
                 <div data-role="content" class="ui-corner-bottom ui-content">
                     <p>Enter the name of the database you want to activate and click search</p>
-                    <p>From the result, click the database you want to activate</p>
+                    <p>From the result, click the  <span data-inline="true" data-theme="c" data-role="button" data-icon="check" data-iconpos="notext"></span>icon to activate that database</p>
                     <p>The databae will now appear in your active list</p>
 
 

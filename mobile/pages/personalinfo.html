@@ -13,6 +13,18 @@
 
     <div data-role="page" id="pg_pinfo" data-theme="a">
         <div data-role="panel" id="pg_pinfo_menuPanel" data-display="push" data-theme="g">
+            <ul data-role="listview"  data-theme="a" data-inset="true" id="' + panelId + '_menu_lv" data-divider-theme="b">
+                <li data-role="list-divider">Menu</li>
+                <li><a href="#" class="menu_home">Home</a></li>
+                <li><a href="#" class="menu_groups">Groups</a></li>       
+                 <li><a href="#" class="menu_churchlife">Church Life</a></li>
+                 <li><a href="#" class="menu_eventProfiles">Events</a></li>
+                 <li data-role="list-divider">Settings</li>
+                 <li><a href="#" class="menu_signout">Sign Out</a></li>
+                 <li><a href="#" class="menu_switchdb">Switch Database</a></li>
+                 <li><a href="#"  class="menu_sessionInfo">Session Info</a></li>
+                <li> <a href="#"  class="menu_closeMenu" >Close Menu</a></li>
+                </ul>
         </div>
         <div data-role="header">
             <a href="#" id="pg_pinfo_showMenu" data-icon="bars" data-role="button" data-iconpos="notext"></a>
@@ -27,6 +39,9 @@
 
             <div data-role="popup" class="ui-content" id="errpopup" data-theme="e">
                 <div id="errpopmessage"></div>
+            </div>
+            <div data-role="popup" class="ui-content" id="msgpopup" data-theme="b">
+                <div id="msgpopupcontent"></div>
             </div>
             <form id="pg_pinfo_form">
                 <div data-role="fieldcontain">
@@ -106,13 +121,13 @@
                         <legend>Date of Birth:</legend>
 
                         <label for="ddlPInfoBdayMonth">Month</label>
-                        <select id="ddlPInfoBdayMonth" data-inline="true" name="months" data-bind="value: birthMonth()" >
+                        <select id="ddlPInfoBdayMonth" data-mini="true" data-inline="true" name="months" data-bind="value: birthMonth()" >
                             <option value="-1">Month</option>
                             
                         </select>
 
                         <label for="ddlPInfoBdayDay">Day</label>
-                        <select id="ddlPInfoBdayDay" data-inline="true" name="days" data-bind="value: birthDay()" >
+                        <select id="ddlPInfoBdayDay" data-mini="true" data-inline="true" name="days" data-bind="value: birthDay()" >
                             <option value="-1">Day</option>
                            
 
@@ -120,7 +135,7 @@
                         </select>
 
                         <label for="ddlPInfoBdayYear">Year</label>
-                        <select id="ddlPInfoBdayYear" data-inline="true" name="years" data-bind="value: birthYear()" >
+                        <select id="ddlPInfoBdayYear" data-mini="true" data-inline="true" name="years" data-bind="value: birthYear()" >
                             <option value="-1">Year</option>
 
                            
@@ -133,13 +148,13 @@
                         <legend>Anniversary:</legend>
 
                         <label for="ddlPInfoAnnMonth">Month</label>
-                        <select id="ddlPInfoAnnMonth" data-inline="true" name="months" data-bind="value: anniversaryMonth()" >
+                        <select id="ddlPInfoAnnMonth" data-mini="true" data-inline="true" name="months" data-bind="value: anniversaryMonth()" >
                             <option value="-1">Month</option>
 
                         </select>
 
                         <label for="ddlPInfoAnnDay">Day</label>
-                        <select id="ddlPInfoAnnDay" data-inline="true" name="days" data-bind="value: anniversaryDay()" >
+                        <select id="ddlPInfoAnnDay" data-mini="true" data-inline="true" name="days" data-bind="value: anniversaryDay()" >
                             <option value="-1">Day</option>
 
 
@@ -147,7 +162,7 @@
                         </select>
 
                         <label for="ddlPInfoAnnYear">Year</label>
-                        <select id="ddlPInfoAnnYear" data-inline="true" name="years" data-bind="value: anniversaryYear()" >
+                        <select id="ddlPInfoAnnYear" data-mini="true" data-inline="true" name="years" data-bind="value: anniversaryYear()" >
                             <option value="-1">Year</option>
 
 

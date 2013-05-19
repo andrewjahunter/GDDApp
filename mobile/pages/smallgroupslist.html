@@ -9,8 +9,23 @@
     <script data-main="../scripts/app/appstart.js" src="../../scripts/libraries/require.js"></script>
 </head>
 <body>
-    <div data-role="page" id="pg_smallgroupslist" data-theme="a">
+    <div data-role="page" id="pg_smallgroupslist" data-theme="a" data-dom-cache="true">
         <div data-role="panel" id="pg_smallgroupslist_menuPanel" data-display="push" data-theme="g">
+
+             <ul data-role="listview"  data-theme="a" data-inset="true" data-divider-theme="b">
+                <li data-role="list-divider">Menu</li>
+                 <li><a href="#" class="menu_home">Home</a></li>
+                <li><a href="#" class="menu_pinfo">Personal Info</a></li>
+                       
+                 <li><a href="#" class="menu_churchlife">Church Life</a></li>
+                 <li><a href="#" class="menu_eventProfiles">Events</a></li>
+                 <li data-role="list-divider">Settings</li>
+                 <li><a href="#" class="menu_signout">Sign Out</a></li>
+                 <li><a href="#" class="menu_switchdb">Switch Database</a></li>
+                 <li><a href="#"  class="menu_sessionInfo">Session Info</a></li>
+                <li> <a href="#"  class="menu_closeMenu" >Close Menu</a></li>
+                </ul>
+
         </div>
 
         <div data-role="panel" id="panelSmallGroupsSearch" data-position="right" data-display="push" data-theme="g">
@@ -135,7 +150,7 @@
                 </li>
             </script>
 
-            <a href="#sg_list_actionmenu" data-rel="popup" data-role="button" data-inline="true" data-transition="slidedown" data-icon="gear" data-theme="b">Actions...</a>
+            <a href="#sg_list_actionmenu" data-rel="popup" data-role="button" data-inline="true" data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
             <div data-role="popup" id="sg_list_actionmenu" data-theme="b">
                 <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="b">
                     <li data-role="divider" data-theme="a">Choose an action</li>
