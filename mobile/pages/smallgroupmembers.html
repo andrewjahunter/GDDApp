@@ -16,10 +16,22 @@
             <div data-theme="g" style="padding: 2px">
                 Search Person<a href="#addNewMemberPopupHelp" data-rel="popup" data-role="button" data-position-to="window" class="ui-icon-alt" data-inline="true" data-theme="h" data-transition="slideup" data-icon="info" data-iconpos="notext">Learn more</a>
             </div>
-            <div data-role="popup" id="addNewMemberPopupHelp" class="ui-content" data-theme="h" style="max-width: 400px;">
-                <p>Type the persons name and click search. From that list click the "tick" icon to add them to the group</p>
+            <div data-role="popup" id="addNewMemberPopupHelp" data-overlay-theme="h" style="max-width: 450px;"
+                    class="ui-corner-all">
+
+                <div data-role="header" class="ui-corner-top">
+                    <h1>Add Member</h1>
+                </div>
+                 <div data-role="content" class="ui-corner-bottom ui-content">
+                     <p>Type the persons name or part thereof and click search.</p>
+                     <p>From that list click the <span data-inline="true" data-theme="c" data-role="button" data-icon="check" data-iconpos="notext"></span> icon to add them to the group</p>
+                 </div>
+                
             </div>
-            <input id="txtNewMemberSearchString" placeholder="enter text" value="" type="text" />
+
+
+
+            <input id="txtNewMemberSearchString" placeholder="name..." value="" type="text" />
 
 
 
@@ -44,6 +56,7 @@
 
 
         <div data-role="header">
+                        <a href="#" id="pg_sgmembers_header_cancel"  data-icon="delete" data-role="button" data-iconpos="notext"></a>
 
             <h1 class="pageHeader" id="pg_smallgroupmembers_header">groups members</h1>
         </div>
@@ -56,7 +69,7 @@
             <script id="addnewmembers-template" type="text/html">
                 <li data-bind="attr: {id: personId}">
                     <a data-bind="attr: {href: '#'}" data-transition="slide">
-                        <h3 data-bind='text: firstName + " " + lastName'></h3>
+                        <h5 data-bind='text: firstName + " " + lastName'></h5>
                         <div data-bind="html: email" style="font-size: x-small"></div>
                         <div data-bind="html: mobileNumber" style="font-size: x-small"></div>
                     </a>
@@ -74,9 +87,9 @@
                 </li>
             </script>
 
-            <a data-role="button" href="#panelAddNewMember" data-inline="true" data-theme="d" class="ui-btn-right">Add Member</a>
-                <div data-role="button" id="btnSmallGroupMembersOk" data-inline="true" data-theme="a" class="ui-btn-right">Ok</div>
-            <div class="ui-body-h" style="padding: 2px ; margin-top:5px">
+            <a data-role="button" href="#panelAddNewMember" data-inline="false" data-theme="c" class="ui-btn-right">add member</a>
+                
+            <div class="ui-body-h ui-corner-all" style="padding: 2px ; margin-top:5px">
                 <div id="smallgroupmembers_title">Below are the members of the current group</div>
                 
             </div>

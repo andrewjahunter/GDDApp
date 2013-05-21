@@ -13,6 +13,19 @@
 
     <div data-role="page" id="pg_eventsprofiles" data-theme="a" >
         <div data-role="panel" id="pg_eventsprofile_menuPanel" data-display="push" data-theme="g">
+             <ul data-role="listview"  data-theme="a" data-inset="true" id="' + panelId + '_menu_lv" data-divider-theme="b">
+                <li data-role="list-divider">Menu</li>
+                 <li><a href="#" class="menu_home">Home</a></li>
+                <li><a href="#" class="menu_pinfo">Personal Info</a></li>
+                <li><a href="#" class="menu_groups">Groups</a></li>       
+                 <li><a href="#" class="menu_churchlife">Church Life</a></li>
+                
+                 <li data-role="list-divider">Settings</li>
+                 <li><a href="#" class="menu_signout">Sign Out</a></li>
+                 <li><a href="#" class="menu_switchdb">Switch Database</a></li>
+                 <li><a href="#"  class="menu_sessionInfo">Session Info</a></li>
+                <li> <a href="#"  class="menu_closeMenu" >Close Menu</a></li>
+                </ul>
         </div>
         <div data-role="header">
             <a href="#" id="pg_eventsprofile_showMenu" data-icon="bars" data-role="button" data-iconpos="notext"></a>
@@ -23,15 +36,24 @@
             <div data-role="popup" class="ui-content" id="pg_eventsprofile_errpopup" data-theme="e">
                 <div id="pg_eventsprofile_errpopmessage"></div>
             </div>
+            <div data-role="popup" class="ui-content" id="msgpopup" data-theme="b">
+                <div id="msgpopupcontent"></div>
+            </div>
+
+            <div class="ui-body-e ui-corner-all" id="pg_eventsprofile_noeventsmsg"  style="padding: 2px; display: none">
+                    There are no events available in this database at this time. Please contact your church or ministry
+                office for further information.
+
+                </div>
 
             <script id="eventsprofile-template" type="text/html">
                 <div data-role="collapsible" data-bind="attr:{id:eventId()}" class="eventProfileCollapsible" data-collapsed="true" data-theme="b" data-content-theme="d">
                     <h4 data-bind="text: eventName"></h4>
 
 
-                    <div class="ui-body-c" data-bind="text: eventDescription" style="padding: 2px; margin-bottom: 10px">
+                    <div class="ui-body-c ui-corner-all" data-bind="text: eventDescription" style="padding: 2px; margin-bottom: 10px">
                     </div>
-                    <div class="ui-body-b">
+                    <div class="ui-body-b ui-corner-all">
                         <table>
                             <tr>
                                 <td>Starts: </td>

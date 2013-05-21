@@ -42,7 +42,7 @@
                         <label for="txtSmallGroupName">
                             Group Name
                         </label>
-                        <input id="txtSmallGroupName" data-bind="value: selectedGroup.groupName" name="groupname" placeholder="" type="text" />
+                        <input id="txtSmallGroupName" data-clear-btn="true" data-bind="value: selectedGroup.groupName" name="groupname" placeholder="" type="text" />
                     </div>
                    
                     <div data-role="fieldcontain">
@@ -85,7 +85,7 @@
                         <label for="txtMeetingTime">
                             Time
                         </label>
-                        <input id="txtMeetingTime" data-bind="value: selectedGroup.meetingTime()"  placeholder="meeting time" type="text" />
+                        <input id="txtMeetingTime" data-clear-btn="true" data-bind="value: selectedGroup.meetingTime()"  placeholder="meeting time" type="text" />
                     </div>
 
                     <div data-role="fieldcontain">
@@ -94,7 +94,14 @@
                                 <option value="false">No</option>
                                 <option value="true">Yes</option>
                             </select>
+                        <a href="#pg_sgedit_makeprivate_help" data-inline="true" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-iconpos="notext" data-theme="b" data-transition="slideup"></a>
+                                    
+
                         </div>
+
+
+
+
 
                      <div data-role="fieldcontain">
                             <label for="optOpenGroupMembership">Open membership</label>
@@ -102,6 +109,8 @@
                                 <option value="false">No</option>
                                 <option value="true" >Yes</option>
                             </select>
+                                                 <a href="#pg_sgedit_openmembership_help" data-inline="true" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-iconpos="notext" data-theme="b" data-transition="slideup"></a>
+
                         </div>
 
                     
@@ -138,22 +147,40 @@
 
              </form>
 
-           
 
 
 
-
-        
-            <div data-role="button" data-theme="b" id="btnGroupLocation" data-inline="true">Step 2</div>
-                        <button data-role="button" data-theme="a" id="btnCancelGroupEdit" class="group_edit_cancel" data-inline="true">Cancel</button>
+            <div data-role="button" data-theme="b" id="btnGroupLocation" data-inline="true">next</div>
+                        <button data-role="button" data-theme="a" id="btnCancelGroupEdit" class="group_edit_cancel" data-inline="true">cancel</button>
                                   
 
+             <div data-role="popup" id="pg_sgedit_makeprivate_help" data-overlay-theme="h" style="max-width: 450px;"
+                    class="ui-corner-all">
+                   
+                    <div data-role="content" class="ui-corner-bottom ui-content">
+                        <p>A group that is set to private will not be exposed to small group search results. Make a group private
+                            if do not wish people to be able to search for it.
+                        </p>
+                        
 
+                        <a href="#" data-role="button" data-theme="h" data-rel="back">Okay!</a>
 
+                    </div>
+                </div>
 
+            <div data-role="popup" id="pg_sgedit_openmembership_help" data-overlay-theme="h" style="max-width: 450px;"
+                    class="ui-corner-all">
+                   
+                    <div data-role="content" class="ui-corner-bottom ui-content">
+                        <p>Open a groups membership to allow other people to join themselves to this group. If you do not open the membership
+                            then only the group leader can edit the membership of the group.
+                        </p>
+                        
 
+                        <a href="#" data-role="button" data-theme="h" data-rel="back">Okay!</a>
 
-
+                    </div>
+                </div>
         </div>
 
     </div>

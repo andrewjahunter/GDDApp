@@ -13,6 +13,18 @@
 
     <div data-role="page" id="pg_churchlife" data-theme="a" data-dom-cache="true">
         <div data-role="panel" id="pg_churchlife_menuPanel" data-display="push" data-theme="g">
+             <ul data-role="listview"  data-theme="a" data-inset="true" id="' + panelId + '_menu_lv" data-divider-theme="b">
+                <li data-role="list-divider">Menu</li>
+                 <li><a href="#" class="menu_home">Home</a></li>
+                <li><a href="#" class="menu_pinfo">Personal Info</a></li>
+                <li><a href="#" class="menu_groups">Groups</a></li>       
+                 <li><a href="#" class="menu_eventProfiles">Events</a></li>
+                 <li data-role="list-divider">Settings</li>
+                 <li><a href="#" class="menu_signout">Sign Out</a></li>
+                 <li><a href="#" class="menu_switchdb">Switch Database</a></li>
+                 <li><a href="#"  class="menu_sessionInfo">Session Info</a></li>
+                <li> <a href="#"  class="menu_closeMenu" >Close Menu</a></li>
+                </ul>
         </div>
         <div data-role="header">
             <a href="#" id="pg_churchlife_showMenu" data-icon="bars" data-role="button" data-iconpos="notext"></a>
@@ -22,6 +34,9 @@
         <div data-role="content" style="padding: 15px">
             <div data-role="popup" class="ui-content" id="pg_churchlife_errpopup" data-theme="e">
                 <div id="pg_churchlife_errpopmessage"></div>
+            </div>
+            <div data-role="popup" class="ui-content" id="msgpopup" data-theme="b">
+                <div id="msgpopupcontent"></div>
             </div>
 
             <div data-role="popup" class="ui-content" id="pg_churchlife_msgpopup" data-theme="c">

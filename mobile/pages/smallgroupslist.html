@@ -29,43 +29,37 @@
         </div>
 
         <div data-role="panel" id="panelSmallGroupsSearch" data-position="right" data-display="push" data-theme="g">
-            <div class="ui-body-h" style="padding: 5px">
+            <div class="ui-body-h ui-corner-all" style="padding: 5px">
                 Groups Search Filters
             </div>
 
-            <!--            <div data-role="fieldcontain">-->
+           
             <label for="ddlSGCatSearch">
                 Category                       
             </label>
             <select id="ddlSGCatSearch" name="groupcat" data-bind="optionsCaption: ' '">
             </select>
-            <!--            </div>-->
-            <!-- <div data-role="fieldcontain">-->
+         
             <label for="ddlSGTypeSearch">
                 Type                       
             </label>
             <select id="ddlSGTypeSearch" name="grouptype" data-bind="optionsCaption: ' '">
             </select>
-            <!--</div>-->
-            <!--            <div data-role="fieldcontain">-->
+         
             <label for="ddlAgeProfileSearch">
                 Age Profile                       
             </label>
             <select id="ddlAgeProfileSearch" name="" data-bind="options: ageProfiles(), optionsText:'name', optionsValue:'id',optionsCaption: ' '">
             </select>
 
-            <!--            </div>-->
-
-            <!--            <div data-role="fieldcontain">-->
+          
             <label for="ddlSGSuburbSearch">
                 Suburb                       
             </label>
             <select id="ddlSGSuburbSearch" name="" data-bind="options: groupSuburbs(),optionsCaption: ' '">
             </select>
 
-            <!--            </div>-->
-
-            <!--            <div data-role="fieldcontain">-->
+           
             <label for="ddlSGDaySearch">
                 Meeting Day                       
             </label>
@@ -81,9 +75,7 @@
                 <option value="Unknown">Unknown</option>
             </select>
 
-            <!--            </div>-->
-
-            <!--            <div data-role="fieldcontain">-->
+           
             <label for="ddlSGGenderSearch">
                 Gender                      
             </label>
@@ -94,9 +86,7 @@
                 <option value="F">Female</option>
             </select>
 
-            <!--            </div>-->
-
-            <!--            <div data-role="fieldcontain">-->
+         
             <label for="optPortalScope">Restrict to local</label>
             <select name="slider-flip-m" id="optPortalScope" data-role="slider" data-mini="true">
                 <option value="false">No</option>
@@ -104,7 +94,7 @@
             </select>
 
 
-            <!--            </div>-->
+           
 
             <div data-role="button" data-theme="b" id="btnSearchSmallGroups">search</div>
             <div data-role="button" data-theme="c"  id="btnMyGroups">my groups</div>
@@ -152,7 +142,7 @@
 
             <a href="#sg_list_actionmenu" data-rel="popup" data-role="button" data-inline="true" data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
             <div data-role="popup" id="sg_list_actionmenu" data-theme="b">
-                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="b">
+                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
                     <li data-role="divider" data-theme="a">Choose an action</li>
                     <li><a href="#" id="btnAddNewGroup">Add New Group</a></li>
                     <li><a href="#" id="btnOpenSearchPopup">Search For Group</a></li>
@@ -170,20 +160,20 @@
             
 
             <div id="divSmallGroupsList">
-                <div class="ui-body-h groupSearchResultsMsg" id="pg_sg_mygroups_noresults" style="padding: 2px; display: none">
-                    You have no groups on record. Click the "new" button to add a group  
+                <div class="ui-body-h groupSearchResultsMsg ui-corner-all" id="pg_sg_mygroups_noresults" style="padding: 2px; display: none">
+                    You have no groups on record. Under "Actions" choose "Add New Group". 
 
                 </div>
 
-                <div class="ui-body-h groupSearchResultsMsg" id="pg_sg_mygroups_withresults" style="padding: 2px; display: none">
+                <div class="ui-body-h groupSearchResultsMsg ui-corner-all" id="pg_sg_mygroups_withresults" style="padding: 2px; display: none">
                     These are the groups you currently lead. Click on the group name to see the list of actions you can perform on this group
                 </div>
 
-                <div class="ui-body-h groupSearchResultsMsg" id="pg_sg_groups_withresults" style="padding: 2px; display: none">
+                <div class="ui-body-h groupSearchResultsMsg ui-corner-all" id="pg_sg_groups_withresults" style="padding: 2px; display: none">
                     These are the groups that match your search criteria. Click on the <span data-inline="true" data-theme="c" data-role="button" data-icon="check" data-iconpos="notext"></span>to add yourself as a member.
                 </div>
 
-                <div class="ui-body-h groupSearchResultsMsg" id="pg_sg_groups_noresults" style="padding: 2px; display: none">
+                <div class="ui-body-h groupSearchResultsMsg ui-corner-all" id="pg_sg_groups_noresults" style="padding: 2px; display: none">
                     There are no groups matching your search criteria
                 </div>
 
@@ -191,10 +181,10 @@
             </div>
 
             <div id="divGroupMembershipResults">
-                <div class="ui-body-h" id="pg_sg_mygroupmembership_withresults" style="padding: 2px; display: none">
+                <div class="ui-body-h ui-corner-all" id="pg_sg_mygroupmembership_withresults" style="padding: 2px; display: none">
                     These are the groups you are a member of. Click the <span data-inline="true" data-theme="e" data-role="button" data-icon="delete" data-iconpos="notext"></span>icon to remove yourself from the group.
                 </div>
-                <div class="ui-body-h" id="pg_sg_mygroupmembership_noresults" style="padding: 2px; display: none">
+                <div class="ui-body-h ui-corner-all" id="pg_sg_mygroupmembership_noresults" style="padding: 2px; display: none">
                     You are not a member of any groups. To join a group use the search tool provided to find the group and click the Join button.
                 </div>
                 <ul data-role="listview" data-split-icon="delete" data-split-theme="e" data-inset="true" data-theme="b" id="smallGroupMembership" data-bind="template: { name: 'smallgrouplist-template', foreach: membershipResults}"></ul>
