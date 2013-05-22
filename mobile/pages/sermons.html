@@ -39,21 +39,23 @@
                 <div id="msgpopupcontent"></div>
             </div>
 
+            <div data-role="popup" class="ui-content" id="pg_sermons_msgpopup" data-theme="c">
+                <div id="pg_sermons_msgpopmessage"></div>
+            </div>
+
 
 
             <script id="sermonfeeds-template" type="text/html">
-                 <li data-role="list-divider"><h5 data-bind="text: title"></h5> <span class="ui-li-count" data-bind="text: items.length"></span></li>
+                 <li data-role="list-divider" data-bind="attr: {id: id}" class="viewfeeditems"><h5 data-bind="text: title"></h5><div style="font-size:x-small; font-style:italic" data-bind="html: 'last update: ' + lastUpdatedTime"></div> <span class="ui-li-count" data-bind="text: items.length"></span></li>
                   <li data-bind="attr: {id: id}" class="viewfeeditems">
                     <a data-bind="attr: {href: '#'}"  data-transition="slide">
                          <img data-bind="attr: {src: imageUrl}"/>
-                        <strong><p data-bind="html: description"></p></strong>
-                        <hr />
-                        <div >To subscribe this channel click the "Star" on the right </div>
-                        <p class="ui-li-aside" data-bind="html: 'last update: ' + lastUpdatedTime"></p>
+                        <p style="white-space:normal; font-size:small" data-bind="html: description"></p>
+                        
                         
                         
                     </a>
-                    <a data-role="button" data-bind="attr: {href: links[0].url}" target="_blank"  ></a>
+                   
 
                 </li>
 
@@ -64,17 +66,8 @@
          
                  <li data-bind="attr: {id: id}">
                     <a href="#" class="viewitem" data-transition="slide">
-                        <h3 data-bind="text: title"></h3>
-                       <!-- <table>
-                            <tr>
-                                <td>Summary:</td>
-                                <td><div data-bind="html: summary"></div></td>
-                            </tr>
-                            <tr>
-                                <td>Published:</td>
-                                <td><div data-bind="html: publishDate"></div></td>
-                            </tr>
-                        </table>-->
+                        <p data-bind="text: title" style="white-space:normal; font-size:medium"></p>
+                       
                         
                     </a>
                 
@@ -84,7 +77,8 @@
 
             <div id="pg_sermons_feeds" style="display:none">
                 <div data-role="button" id="btnRefreshSermonFeeds">refresh feeds</div>
-                <ul data-role="listview" data-split-icon="star" data-split-theme="d" data-inset="true" data-theme="a" id="sermons_feeds" data-divider-theme="b" data-bind="template: { name: 'sermonfeeds-template', foreach: feeds}"></ul>
+                <div data-role="button" id="btnSyncAllFeeds">sync all feeds (BETA)</div>
+                <ul data-role="listview"   data-inset="true" data-theme="a" id="sermons_feeds" data-divider-theme="b" data-bind="template: { name: 'sermonfeeds-template', foreach: feeds}"></ul>
             </div>
 
              <div id="pg_sermon_feeditems" style="display:none">
@@ -96,20 +90,55 @@
             <div id="pg_sermon_feeditem" style="display:none">
                 <div data-role="button" id="btnGoBackToSermons">back</div>
                
-                <div class="ui-body-b  ui-corner-all" id="pg_sermons_item_title"  style="padding: 2px; margin-bottom:5px">
-                    Content Title 
-                </div>
-                <div class="ui-body-c  ui-corner-all" id="pg_sermons_item_summary"  style="padding: 2px; margin-bottom:5px">
-                    Content Summary
+                <div class="ui-body-b  ui-corner-all"  style="padding: 2px; margin-bottom:5px">
+                    <table>
+                        <tr>
+                            <th>
+                                Title
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div  id="pg_sermons_item_title"></div>
+                            </td>
+                        </tr>
+                    </table>
                    
                 </div>
-                <div class="ui-body-c  ui-corner-all" id="pg_sermons_item_publishdate"  style="padding: 2px; margin-bottom:5px">
+                <div class="ui-body-c  ui-corner-all"  style="padding: 2px; margin-bottom:5px">
+                   <table>
+                        <tr>
+                            <th>
+                                Summary
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div   id="pg_sermons_item_summary"></div>
+                            </td>
+                        </tr>
+                    </table>
                    
-                    Publish Date
+                </div>
+                <div class="ui-body-d  ui-corner-all"   style="padding: 2px; margin-bottom:5px">
+                   
+                    <table>
+                        <tr>
+                            <th>
+                                Publish Date
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div   id="pg_sermons_item_publishdate"></div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <a href="#" data-role="button" id="btnDownloadSermon" data-theme="c" target="_blank">download</a>
                 <div data-role="button" id="btnListenToSermon" data-theme="b">listen</div>
                  <div data-role="button" id="btnEmailMeThisFeeItem" data-theme="d">email me this sermon</div>
+                 <div data-role="button" id="btnIHaveReadThisFeedItem" data-theme="e">finished</div>
             </div>
 
 
