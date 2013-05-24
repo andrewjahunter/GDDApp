@@ -27,24 +27,35 @@
         function onDeviceReady() {
             window.gdd = window.gdd || {};
             window.gdd.deviceIsReady = true;
-            alert("Device ready has fired: value of gdd.views.utils: " + gdd.views.utils + " value of  window.gdd.requireJsLoaded: " + window.gdd.requireJsLoaded")
+
+            try {
+
+                alert("Device ready has fired:")
+                alert("Device ready has fired: value of gdd.views.utils: " + gdd.views.utils + " value of  window.gdd.requireJsLoaded: " + window.gdd.requireJsLoaded)
 
             document.addEventListener("resume", onAppResume, false);
 
-            document.addEventListener("menubutton", onMenuKeyDown, false);
+                document.addEventListener("menubutton", onMenuKeyDown, false);
 
-            document.addEventListener("offline", onOffline, false);
+                document.addEventListener("offline", onOffline, false);
 
-            document.addEventListener("online", onLine, false);
+                document.addEventListener("online", onLine, false);
 
 
-            if (window.gdd.navPage) {
-                alert("in the onDeviceReady routine the navPage is set to: " + window.gdd.navPage)
-                navigator.splashscreen.hide();
-                $.mobile.changePage(window.gdd.navPage)
-            } else {
-                alert("No navPage found in the index html onDeviceReady routine")
+                if (window.gdd.navPage) {
+                    alert("in the onDeviceReady routine the navPage is set to: " + window.gdd.navPage)
+                    navigator.splashscreen.hide();
+                    $.mobile.changePage(window.gdd.navPage)
+                } else {
+                    alert("No navPage found in the index html onDeviceReady routine")
+                }
+
             }
+            catch(err){
+                alert("Err: onDeviceReady: " + err)
+            }
+
+            
 
         }
 
