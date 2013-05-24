@@ -14,18 +14,21 @@
     <script data-main="mobile/scripts/app/appstart.min.js" src="scripts/libraries/require.js"></script>
 
 
-    <script type="text/javascript"  src="cordova.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
         // Wait for Cordova to load
         function onLoad() {
+            alert("onLoad is called")
             document.addEventListener("deviceready", onDeviceReady, false);
         }
 
         // Cordova is ready
         function onDeviceReady() {
+            window.gdd = window.gdd || {};
+            window.gdd.deviceIsReady = true;
+            alert("Device ready has fired")
 
-            alert("Device ready")
             document.addEventListener("resume", onAppResume, false);
 
             document.addEventListener("menubutton", onMenuKeyDown, false);
@@ -34,10 +37,13 @@
 
             document.addEventListener("online", onLine, false);
 
-            window.godo_deviceready = true;
-            if (window.godo_navpage) {
+
+            if (window.gdd.navPage) {
+                alert("in the onDeviceReady routine the navPage is set to: " + window.gdd.navPage)
                 navigator.splashscreen.hide();
-                $.mobile.changePage(window.godo_navpage)
+                $.mobile.changePage(window.gdd.navPage)
+            } else {
+                alert("No navPage found in the index html onDeviceReady routine")
             }
 
         }
@@ -46,44 +52,55 @@
             try {
                 alert("App Resume event fired")
                 gdd.views.utils.showLoader("waking up...")
-                gdd.controllers.security.processAppStart(
-                    function () {
-                        gdd.views.utils.hideLoader()
-                    },
-                    function () {
-                        $.mobile.changePage(gdd.views.pageinfo.authportallist.path)
-                        gdd.views.utils.hideLoader()
-                    },
-                    function () {
-                        gdd.controllers.security.signOut();
-                        $.mobile.changePage(gdd.views.pageinfo.signin.path)
-                        gdd.views.utils.hideLoader()
-                    });
+
+                gdd.views.utils.processAppStart();
+                gdd.views.utils.hideLoader()
             }
             catch (err) {
-                gdd.controllers.security.signOut();
-                $.mobile.changePage(gdd.views.pageinfo.signin.path)
+                alert("Err: onAppResume: " + err)
             }
+           
+
+                  
         }
 
         function onLine() {
-            alert("Online fired")
-            if (gdd.appWentOffline) {
-                $.mobile.changePage(gdd.views.pageinfo.home.path)
-                gdd.appWentOffline = false;
+            try {
+                alert("Online fired")
+                if (window.gdd.appWentOffline) {
+                    $.mobile.changePage(gdd.views.pageinfo.home.path)
+                    window.gdd.appWentOffline = false;
+                }
             }
+            catch (err) {
+                alert("Err: OnLine: " + err)
+            }
+           
         }
 
         function onOffline() {
-            alert("offline fired")
-            gdd.appWentOffline = true;
-            $.mobile.changePage(gdd.views.pageinfo.offline.path, { "transition": "slide" })
+            try {
+
+                alert("offline fired")
+                window.gdd.appWentOffline = true;
+                $.mobile.changePage(gdd.views.pageinfo.offline.path, { "transition": "slide" })
+            }
+            catch (err) {
+                alert("Err: onOffline: " + err)
+            }
+           
         }
 
 
         function onMenuKeyDown() {
-            alert("Go Home")
-            $.mobile.changePage(gdd.views.pageinfo.home.path)
+            try {
+                alert("Go Home")
+                $.mobile.changePage(gdd.views.pageinfo.home.path)
+            }
+            catch (err) {
+                alert("Err: onMenuKeyDown: " + err)
+            }
+           
         };
 
 
