@@ -25,15 +25,13 @@
 
         // Cordova is ready
         function onDeviceReady() {
+            alert("Device ready has fired:")
             window.gdd = window.gdd || {};
             window.gdd.deviceIsReady = true;
 
             try {
 
-                alert("Device ready has fired:")
-                alert("Device ready has fired: value of gdd.views.utils: " + gdd.views.utils + " value of  window.gdd.requireJsLoaded: " + window.gdd.requireJsLoaded)
-
-            document.addEventListener("resume", onAppResume, false);
+                document.addEventListener("resume", onAppResume, false);
 
                 document.addEventListener("menubutton", onMenuKeyDown, false);
 
@@ -41,14 +39,22 @@
 
                 document.addEventListener("online", onLine, false);
 
+                if (gdd.requireJsLoaded) {
+                    alert("devceReady and requireJS is loaded")
 
-                if (window.gdd.navPage) {
-                    alert("in the onDeviceReady routine the navPage is set to: " + window.gdd.navPage)
-                    navigator.splashscreen.hide();
-                    $.mobile.changePage(window.gdd.navPage)
+                    if (window.gdd.navPage) {
+                        alert("in the onDeviceReady routine the navPage is set to: " + window.gdd.navPage)
+                        navigator.splashscreen.hide();
+                        $.mobile.changePage(window.gdd.navPage)
+                    } else {
+                        alert("No navPage found in the index html onDeviceReady routine")
+                    }
+
                 } else {
-                    alert("No navPage found in the index html onDeviceReady routine")
+
+                    alert("devceReady and requireJS is NOT loaded")
                 }
+    
 
             }
             catch(err){
@@ -252,7 +258,7 @@
         }
     </style>
 </head>
-<body onload="onLoad()" >
+<body onload="onLoad()">
 
     <div data-role="page" data-theme="g" id="pg_index">
 
