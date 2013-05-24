@@ -27,7 +27,7 @@
         function onDeviceReady() {
             window.gdd = window.gdd || {};
             window.gdd.deviceIsReady = true;
-            alert("Device ready has fired")
+            alert("Device ready has fired: value of gdd.views.utils: " + gdd.views.utils + " value of  window.gdd.requireJsLoaded: " + window.gdd.requireJsLoaded")
 
             document.addEventListener("resume", onAppResume, false);
 
@@ -52,7 +52,7 @@
             try {
                 alert("App Resume event fired")
                 gdd.views.utils.showLoader("waking up...")
-
+                alert("value of gdd.views.utils: " + gdd.views.utils + " value of  window.gdd.requireJsLoaded: " + window.gdd.requireJsLoaded)
                 gdd.views.utils.processAppStart();
                 gdd.views.utils.hideLoader()
             }
