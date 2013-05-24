@@ -15,18 +15,18 @@
 
 
     <script type="text/javascript" src="cordova.js"></script>
-    <script src="scripts/libraries/gddcordova.js"></script>
+    <!--<script src="scripts/libraries/gddcordova.js"></script>-->
     <script type="text/javascript" charset="utf-8">
 
         // Wait for Cordova to load
         function onLoad() {
-            alert("onLoad is called")
+            //alert("onLoad is called")
             document.addEventListener("deviceready", onDeviceReady, false);
         }
 
         // Cordova is ready
         function onDeviceReady() {
-            alert("Device ready has fired:")
+            //alert("Device ready has fired:")
             window.gdd = window.gdd || {};
             window.gdd.deviceIsReady = true;
 
@@ -41,19 +41,19 @@
                 document.addEventListener("online", onLine, false);
 
                 if (gdd.requireJsLoaded) {
-                    alert("devceReady and requireJS is loaded")
+                   // alert("devceReady and requireJS is loaded")
 
                     if (window.gdd.navPage) {
-                        alert("in the onDeviceReady routine the navPage is set to: " + window.gdd.navPage)
+                      //  alert("in the onDeviceReady routine the navPage is set to: " + window.gdd.navPage)
                         navigator.splashscreen.hide();
                         $.mobile.changePage(window.gdd.navPage)
                     } else {
-                        alert("No navPage found in the index html onDeviceReady routine")
+                       // alert("No navPage found in the index html onDeviceReady routine")
                     }
 
                 } else {
 
-                    alert("devceReady and requireJS is NOT loaded")
+                    //alert("devceReady and requireJS is NOT loaded")
                 }
     
 
@@ -68,9 +68,9 @@
 
         function onAppResume() {
             try {
-                alert("App Resume event fired")
+                //alert("App Resume event fired")
                 gdd.views.utils.showLoader("waking up...")
-                alert("value of gdd.views.utils: " + gdd.views.utils + " value of  window.gdd.requireJsLoaded: " + window.gdd.requireJsLoaded)
+               // alert("value of gdd.views.utils: " + gdd.views.utils + " value of  window.gdd.requireJsLoaded: " + window.gdd.requireJsLoaded)
                 gdd.views.utils.processAppStart();
                 gdd.views.utils.hideLoader()
             }
@@ -84,7 +84,7 @@
 
         function onLine() {
             try {
-                alert("Online fired")
+               // alert("Online fired")
                 if (window.gdd.appWentOffline) {
                     $.mobile.changePage(gdd.views.pageinfo.home.path)
                     window.gdd.appWentOffline = false;
@@ -99,7 +99,7 @@
         function onOffline() {
             try {
 
-                alert("offline fired")
+                //alert("offline fired")
                 window.gdd.appWentOffline = true;
                 $.mobile.changePage(gdd.views.pageinfo.offline.path, { "transition": "slide" })
             }
@@ -112,7 +112,7 @@
 
         function onMenuKeyDown() {
             try {
-                alert("Go Home")
+               // alert("Go Home")
                 $.mobile.changePage(gdd.views.pageinfo.home.path)
             }
             catch (err) {
