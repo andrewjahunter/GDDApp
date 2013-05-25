@@ -93,7 +93,7 @@
 
             <div id="pg_sermon_feeditem" style="display: none">
 
-                <a href="#sermons_feeditem_actionmenu" data-rel="popup" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
+                <a href="#" data-rel="popup" id="btnOpenFeedItemAction" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
                 <div data-role="popup" id="sermons_feeditem_actionmenu" data-theme="b">
                     <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
                         <li data-role="divider" data-theme="a">Choose an action</li>
@@ -114,30 +114,19 @@
                         <h1>Audio Player</h1>
                     </div>
                     <div data-role="content" class="ui-corner-bottom ui-content">
-                         <audio controls="controls">
+                        <p id="sermons_audio_title"></p>
+                        <audio id="sermon_audio_player" controls="controls" src="#">
+                            Your browser does not support the audio element, please use a later version.
+                        </audio>
 
-                                <source id="Source1" src="http://www.mediafire.com/?nxhzj3t35ladwx8" type="audio/mpeg" />
-                                Your browser does not support the audio element.
-                            </audio>
-                        <div id="audiPlrForNativeApp">
-                            <div data-role="button" data-theme="c" id="btnSFAudioPlayerPLay">play</div>
-                            <div data-role="button" data-theme="a" id="btnSFAudioPlayerPause">pause</div>
-                            <div data-role="button" data-theme="b" id="btnSFAudioPlayerStop">end</div>
-                            <div class="ui-body-b" style="padding: 2px" id="feedItemAdioPlayerMsg">
-                            </div>
-                            <div class="ui-body-e" style="padding: 2px" id="feedItemAdioPlayerErr">
-                            </div>
-
+                        <div class="ui-body-b" style="padding: 2px" id="feedItemAdioPlayerMsg">
                         </div>
-                        <div id="audiPlrForBrowser">
-
-                            <audio controls="controls">
-
-                                <source id="browserAudioSource" src="http://www.mediafire.com/?nxhzj3t35ladwx8" type="audio/mpeg" />
-                                Your browser does not support the audio element.
-                            </audio>
-
+                        <div class="ui-body-e" style="padding: 2px" id="feedItemAdioPlayerErr">
                         </div>
+
+                        <a href="#" data-rel="back" data-role="button" data-theme="b">close</a>
+
+
 
                     </div>
                 </div>
