@@ -40,8 +40,52 @@
                 <div id="msgpopupcontent"></div>
             </div>
 
-            <div data-role="popup" class="ui-content" id="pg_sermons_msgpopup" data-theme="c">
-                <div id="pg_sermons_msgpopmessage"></div>
+            
+              <div data-role="popup" id="pg_sermon_download_confirm" data-overlay-theme="d" style="max-width: 400px;"
+                class="ui-corner-all">
+                <div data-role="header" data-theme="c" class="ui-corner-top">
+                    <h1>No WiFi</h1>
+                </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+                    <p>Your device is not connected over a WiFi network. Downloading a file could incur high data charges on your monthly account.
+                        These charges are charged by your mobile service provider. 
+                        
+                    </p>
+                    <p >
+                      Do you want to continue wth this download?
+                    </p>
+                  
+                                        <a href="btnSermonsDownloadConfirm" data-role="button" data-inline="true"  data-theme="d"  >download</a>
+
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a"  >cancel</a>
+                    
+                 
+                </div>
+            </div>
+
+
+
+
+
+
+              <div data-role="popup" id="pg_sermons_downloadsuccess_popup" data-overlay-theme="b" style="max-width: 400px;"
+                class="ui-corner-all">
+                <div data-role="header" data-theme="c" class="ui-corner-top">
+                    <h1>Download Success</h1>
+                </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+                    <p>The file you requested has been downloaded successfully to your device. Below you will find the location where
+                        the file has been saved. Using your "Files" app you can navigate to the file and and open it from there.
+                    </p>
+                    <p id="pg_sermon_downloadfilepath">
+                      
+                    </p>
+                  
+
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="b"  >Okay!</a>
+                    
+                 
+                </div>
             </div>
 
 
