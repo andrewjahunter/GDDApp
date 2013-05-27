@@ -39,6 +39,17 @@
 
 
         </div>
+        <script>
+            $('#pg_intro6').on('swiperight', function () {
+                $.mobile.changePage("intro5.html", { "transition": "flow", "reverse": true });
+
+            });
+
+            $('#pg_intro6').on('swipeleft', function () {
+                $.mobile.changePage("introfinal.html", { "transition": "flow" });
+
+            });
+        </script>
     </div>
 </body>
 </html>
