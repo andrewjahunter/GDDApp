@@ -43,7 +43,7 @@
             
               <div data-role="popup" id="pg_sermon_download_confirm" data-overlay-theme="d" style="max-width: 400px;"
                 class="ui-corner-all">
-                <div data-role="header" data-theme="c" class="ui-corner-top">
+                <div data-role="header" data-theme="d" class="ui-corner-top">
                     <h1>No WiFi</h1>
                 </div>
                 <div data-role="content" class="ui-corner-bottom ui-content">
@@ -77,6 +77,7 @@
                     <p>The file you requested has been downloaded successfully to your device. Below you will find the location where
                         the file has been saved. Using your "Files" app you can navigate to the file and and open it from there.
                     </p>
+                    <p>Please note we were not able to detect the file type of this file. You may need to alter the file extension in order to play it or download the file by visiting the web application at www.godochurch.com</p>
                     <p id="pg_sermon_downloadfilepath">
                       
                     </p>
@@ -124,14 +125,67 @@
             </script>
 
             <div id="pg_sermons_feeds" style="display: none">
-                <div data-role="button" id="btnRefreshSermonFeeds">refresh feeds</div>
-                <div data-role="button" id="btnSyncAllFeeds">sync all feeds (BETA)</div>
+                
+                
+
+                 <a href="#" data-rel="popup" id="btnOpenFeedsActionMenu" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
+                <div data-role="popup" id="sermons_feeds_actionmenu" data-theme="b">
+                    <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
+                        <li data-role="divider" data-theme="a">Choose an action</li>
+                        <li><a href="#" id="btnRefreshSermonFeeds">Refresh Feeds</a></li>
+                        <li><a href="#" id="btnSyncAllFeeds">Sync Feeds (BETA)</a></li>
+                        <li><a href="#" data-rel="back">Cancel</a></li>
+
+
+                    </ul>
+                </div>
+
+
+
                 <ul data-role="listview" data-inset="true" data-theme="a" id="sermons_feeds" data-divider-theme="b" data-bind="template: { name: 'sermonfeeds-template', foreach: feeds}"></ul>
             </div>
 
             <div id="pg_sermon_feeditems" style="display: none">
-                <div data-role="button" id="btnGoBackToFeeds">back</div>
-                <div data-role="button" id="btnSubscribeToFeed" data-theme="c">subscribe to this channel</div>
+               
+
+                
+                 <a href="#" data-rel="popup" id="btnOpenFeedItemsActionMenu" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
+                <div data-role="popup" id="sermons_feeditems_actionmenu" data-theme="b">
+                    <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
+                        <li data-role="divider" data-theme="a">Choose an action</li>
+                        <li><a href="#" id="btnSubscribeToFeed">Subscribe to Channel</a></li>
+                        <li><a href="#" id="btnViewFeedRssUrl">View RSS</a></li>
+                        <li><a href="#" id="btnGoBackToFeeds">Feed List</a></li>
+                        <li><a href="#" data-rel="back">Cancel</a></li>
+
+
+                    </ul>
+                </div>
+
+
+                  <div data-role="popup" id="pg_sermons_feedRssPopup" data-overlay-theme="b" style="max-width: 400px;"
+                class="ui-corner-all">
+                <div data-role="header" data-theme="c" class="ui-corner-top">
+                    <h1>RSS Feed</h1>
+                </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+
+                    <p>
+                        Below you will find the raw RSS feed to this channel. You can copy this link to your clipboard for your own use"
+                    </p>
+                    <textarea style="height: 100px; width: 100%" id="txtFeedRssUrl"></textarea>
+                   
+                    
+
+                  
+                    <a href="#" data-role="button" data-rel="back" data-theme="b">thanks!</a>
+                  
+                </div>
+            </div>
+
+
+
+
                 <ul data-role="listview" data-inset="true" data-theme="b" id="sermon_feeditems" data-bind="template: { name: 'sermonfeeditems-template', foreach: items}"></ul>
             </div>
 
