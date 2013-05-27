@@ -34,10 +34,29 @@
              
                 <button type="button" id="btnSignIn" data-theme="b" >
                     sign in</button>
-                <a  id="btnSignInRegister" class="registerbutton" data-theme="a" data-role="button"  href="#" data-transition="slide" data-inline="true">
-                    register</a>
-                <a  id="btnForgotInfo"  data-theme="a" data-role="button"  href="#" data-transition="slide" data-inline="true">
-                    forgot info</a>
+
+                 <a href="#pg_signin_actionmenu" data-rel="popup" data-role="button"  data-transition="slidedown" data-icon="gear" data-theme="c">other actions...</a>
+            <div data-role="popup" id="pg_signin_actionmenu" data-theme="b">
+                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
+                    <li data-role="divider" data-theme="a">Choose an action</li>
+                    <li><a  id="btnSignInRegister" class="registerbutton"    href="#" data-transition="slide" >
+                    Register</a></li>
+                    <li> <a  id="btnForgotInfo"   href="#" data-transition="slide" >
+                    Forgot Info</a></li>
+                    <li><a href="intro1.html"  >Quick Tour</a></li>
+                    
+                    <li><a href="#" data-rel="back">Cancel</a></li>
+                    
+                     
+                </ul>
+            </div>
+
+
+
+
+
+                
+               
 
                 <div data-role="popup" id="signInPopupFail"   style="max-width: 450px;"
                     class="ui-corner-all">
