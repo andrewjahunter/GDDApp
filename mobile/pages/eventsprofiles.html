@@ -101,9 +101,35 @@
 
 
             <div id="eventProfilesContainer">
+                                                 <a href="#pg_churchlife_whatisthis" data-role="button" data-rel="popup" data-theme="c" data-transition="slideup">what is this?</a>
+
                 <div data-role="collapsible-set" id="profileContainerCollapse" data-bind="template: { name: 'eventsprofile-template', foreach: eventProfiles}">
                 </div>
 
+            </div>
+
+
+             <div data-role="popup" id="pg_churchlife_whatisthis"  data-overlay-theme="b" style="max-width: 400px;"
+                class="ui-corner-all">
+                <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <h1>Events</h1>
+                </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+
+                    <p>
+                       Your church can <strong>publish any number of events</strong> that are happening in the life of the ministry. From a simply leaders metting to a full blown annual conference.
+
+                    </p>
+                    <p>Below are listed the events that are <strong>currently published</strong> by your church/ministry. Click on the event to expand the information. 
+                    </p>
+                    <p>
+                       By clicking the relevant button you can <strong>indicate whether or not you will be at the event</strong> or not
+                    </p>
+                   
+  
+                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                  
+                </div>
             </div>
 
 

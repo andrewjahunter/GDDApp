@@ -32,6 +32,7 @@
         <div data-role="panel" id="panelSmallGroupsSearch" data-position="right" data-display="push" data-theme="g">
             <div class="ui-body-h ui-corner-all" style="padding: 5px">
                 Groups Search Filters
+                <a href="#pg_sg_search_whatisthis" data-inline="true" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-iconpos="notext" data-theme="b" data-transition="slideup"></a>
             </div>
 
            
@@ -150,6 +151,7 @@
                     <li><a href="#" id="btnActionGetMyGroups" >My Groups</a></li>
                      <li><a href="#" id="btnActionGetMyGroupMembership">My Group Membership</a></li>
                     <li><a href="#" id="btnSmallGroupListMapView">Google Maps</a></li>
+                     <li><a href="#pg_sg_list_whatisthis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
                     <li><a href="#" id="btnSmallGroupsCancel">Cancel</a></li>
                     
                      
@@ -165,6 +167,7 @@
                     <li><a href="#" id="btnToggleGroupActiveStatus">Activate</a></li>
                     <li><a href="#" id="btnDeleteSmalGroup">Delete</a></li>
                     <li><a href="#" id="btnSGListSMSMembers">SMS Members</a></li>
+                     <li><a href="#pg_sg_item_whatisthis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
                     <li><a href="#" id="btnSGListMenuCancel">Cancel</a></li>
                     
                      
@@ -206,6 +209,96 @@
                 <ul data-role="listview" data-split-icon="delete" data-split-theme="e" data-inset="true" data-theme="b" id="smallGroupMembership" data-bind="template: { name: 'smallgrouplist-template', foreach: membershipResults}"></ul>
             </div>
 
+
+             <div data-role="popup" id="pg_sg_item_whatisthis"  data-overlay-theme="b" style="max-width: 400px;"
+                class="ui-corner-all">
+                <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <h1>What Is This?</h1>
+                </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+
+                    <p>
+                      From this menu you can perform a number of actions on the group you have selected.
+                    </p>
+                    <p>
+                        <strong>Edit</strong> allows you to edit the basic information about the group you lead
+                    </p>
+                    <p>
+                        <strong>View Members</strong> allows you to add/remove members from the group you lead
+                    </p>
+                    <p>
+                        <strong>Activate/De-Activate</strong> simply shows/hides the groups you lead from various search engines and reports
+                    </p>
+                     <p>
+                        <strong>Delete</strong> removes all data about this group from the church database
+                    </p>
+                     <p>
+                        <strong>Send SMS</strong> allows you to SMS the group members, if you have the right permissions
+                    </p>
+                    
+   
+                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                  
+                </div>
+            </div>
+
+
+
+            <div data-role="popup" id="pg_sg_search_whatisthis"  data-overlay-theme="b" style="max-width: 400px;"
+                class="ui-corner-all">
+                <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <h1>What Is This?</h1>
+                </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+
+                    <p>
+                      Using this tool, you can search for a group matching any of the provided search criteria. You could for 
+                        example search for all groups that meet in a given suburb on a particular day.
+                    </p>
+                    <p>
+                        <strong>General Filters</strong> these are self explanitory fiters. Simply select the filter you want the search to apply.
+                    </p>
+                    <p>
+                        <strong>Restrict to Local.</strong> If set to 'yes' then only groups from this church will be searched. If set to 'no' then the search will be expanded to include all
+                        churches connected to the same organization/ministry. e.g His People Baxter vs His People Cape Town
+                    </p>
+                    <p>
+                        <strong>Search</strong> executes the search once you have set all your search criterai
+                    </p>
+                     
+                    
+   
+                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                  
+                </div>
+            </div>
+
+
+            <div data-role="popup" id="pg_sg_list_whatisthis"  data-overlay-theme="b" style="max-width: 400px;"
+                class="ui-corner-all">
+                <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <h1>What Is This?</h1>
+                </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+
+                    <p>
+                       This page allows you to manage your entire groups profile. Whether you call them small groups, cell groups, discipleship groups or even admin teams essentially 
+                        groups are any form of "gathering" that you would like to manage in your church/ministry
+
+                    </p>
+                    <p>
+                        If you are a leader simply "Add" your groups or click "My Groups" to view existing ones. You can then manage the members of this groups and even communicate 
+                        easily with them
+                    </p>
+                    <p>
+                        If you are a member of a group in your church/ministry simply find the group using the search tools provided. Once you have found your group, click the "check" icon to add yourself as a
+                        member.
+                    </p>
+   
+                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                  
+                </div>
+            </div>
 
 
             <div data-role="popup" id="smallGroupsListSMS" data-overlay-theme="b" style="max-width: 400px;"

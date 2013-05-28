@@ -16,18 +16,42 @@
             <div data-theme="g" style="padding: 2px">
                 Search Person<a href="#addNewMemberPopupHelp" data-rel="popup" data-role="button" data-position-to="window" class="ui-icon-alt" data-inline="true" data-theme="h" data-transition="slideup" data-icon="info" data-iconpos="notext">Learn more</a>
             </div>
-            <div data-role="popup" id="addNewMemberPopupHelp" data-overlay-theme="h" style="max-width: 450px;"
-                    class="ui-corner-all">
+           
 
-                <div data-role="header" class="ui-corner-top">
-                    <h1>Add Member</h1>
+
+
+
+              <div data-role="popup" id="addNewMemberPopupHelp"  data-overlay-theme="b" style="max-width: 400px;"
+                class="ui-corner-all">
+                <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <h1>Add Members</h1>
                 </div>
-                 <div data-role="content" class="ui-corner-bottom ui-content">
-                     <p>Type the persons name or part thereof and click search.</p>
-                     <p>From that list click the <span data-inline="true" data-theme="c" data-role="button" data-icon="check" data-iconpos="notext"></span> icon to add them to the group</p>
-                 </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+
+                    <p>
+                      To look for a person in the database, simply type their name (or part of their name) into the text box provided. e.g. Type Rick Far to find
+                        all people in the database whose first name starts with 'Rick' and whose surname starts with 'Far'. Click Search 
+                    </p>
                 
+                    <p>From that list of results (if found) click the 'check' icon to add them to the group</p>
+                    <p>
+                      If no result is found it is most likely because the person you are looking for has not registered in the database. Please ask them to do so, and then repeat this step.
+                    </p>
+                   
+                     
+                    
+   
+                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                  
+                </div>
             </div>
+
+
+
+
+
+
+
 
 
 
@@ -87,8 +111,41 @@
                 </li>
             </script>
 
-            <a data-role="button" href="#panelAddNewMember" data-inline="false" data-theme="c" class="ui-btn-right">add member</a>
+           
                 
+             <a href="#sg_members_actionmenu" data-rel="popup" data-role="button"  data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
+            <div data-role="popup" id="sg_members_actionmenu" data-theme="b">
+                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
+                    <li data-role="divider" data-theme="a">Choose an action</li>
+                    <li> <a  href="#" id="btnOpenAddGroupMemberPanel"  data-rel="back" >Add Member</a></li>
+                    
+                     <li><a href="#pg_sg_members_whatisthis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
+                    <li><a href="#" id="btnSgMembersBackToGroups"  >Back to Groups</a></li>
+                    <li><a href="#" data-rel="back">Cancel</a></li>
+                    
+                     
+                </ul>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="ui-body-h ui-corner-all" style="padding: 2px ; margin-top:5px">
                 <div id="smallgroupmembers_title">Below are the members of the current group</div>
                 
@@ -99,6 +156,32 @@
 
             </div>
 
+
+              <div data-role="popup" id="pg_sg_members_whatisthis"  data-overlay-theme="b" style="max-width: 400px;"
+                class="ui-corner-all">
+                <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <h1>What Is This?</h1>
+                </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+
+                    <p>
+                      This page shows you all the members of the group you selected. 
+                    </p>
+                    <p>
+                        <strong>To add</strong>  a new member simply choose "Add Member" under the actions menu.
+                    </p>
+                    <p>
+                        <strong>To remove</strong>  a new member simply click the "red cross" next to the mebers name. Not this will onyl remove them from the group
+                        it does not delete them from the database.
+                    </p>
+                   
+                     
+                    
+   
+                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                  
+                </div>
+            </div>
 
         </div>
 

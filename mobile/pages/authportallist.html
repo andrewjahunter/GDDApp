@@ -21,7 +21,7 @@
             <div data-role="popup" id="searchPortalPopup" class="ui-content" data-theme="h" style="max-width: 400px;">
                 <p>Enter the name of the database you are looking for and click "search". Click the database to add it to your account.</p>
             </div>
-            <input id="txtPortalSearchString" placeholder="enter text" value="" type="text" />
+            <input id="txtPortalSearchString" placeholder="church name" value="" type="text" />
 
 
 
@@ -82,32 +82,72 @@
             </script>
 
             <div id="pg_authportals_exists">
-                <a data-role="button" href="#panelAddNewPortal" data-inline="false" data-theme="c" class="ui-btn-right">Connect to New Database
-                </a>
+                
+
+                 <a href="#sg_list_actionmenu" data-rel="popup" data-role="button"  data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
+            <div data-role="popup" id="sg_list_actionmenu" data-theme="b">
+                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
+                    <li data-role="divider" data-theme="a">Choose an action</li>
+                    <li><a  href="#" id="btnAuthPortalOpenSearch" >Connect to New Church</a></li>
+                    
+                     <li><a href="#pg_authportals_main_help" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
+                    <li><a href="#" data-rel="back">Cancel</a></li>
+                    
+                     
+                </ul>
+            </div>
 
 
 
 
 
 
-                <div data-role="popup" id="pg_authportals_main_help" data-overlay-theme="h" style="max-width: 450px;"
+               
+
+                <div data-role="popup" id="pg_authportals_main_help" data-overlay-theme="b" style="max-width: 400px;"
                     class="ui-corner-all">
-                    <div data-role="header" class="ui-corner-top">
+                    <div data-role="header" data-theme="b" class="ui-corner-top">
                         <h1>Choose Church</h1>
                     </div>
                     <div data-role="content" class="ui-corner-bottom ui-content">
-                        <p>From this list of active databases, tap the one you want to sign into.</p>
-                        <p>To find a church not listed here click "Connect to New Database"</p>
                         <p>
-                            Tap the                   
-                    <span data-inline="true" data-theme="d" data-role="button" data-icon="delete" data-iconpos="notext"></span>icon to de-activate this database from your profile.
+                            This app can be signed into <strong>any number of churches/ministries</strong> as you would like
                         </p>
+                        <p>
+                            The list below includes all the churches that you have previously signed into. Simply <strong>click on the church name</strong> to be logged into that
+                            database
+                        </p>
+                        <p>To <strong>remove a church</strong> from your list of active profiles simply click the "X" next to the churches name. Note this will simply remove it from your active profile. You can
+                            add it back at any stage.
+                        </p>
+                        <p>If there are no churches in the list below or if you want to add another church to your acive list, <strong>click "Connect to New Church"</strong> under the actions menu</p>
+                      
+                      
 
 
-                        <a href="#" data-role="button" data-theme="h" data-rel="back">Okay!</a>
+
+                        <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
 
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -122,28 +162,40 @@
                 </div>
             </div>
 
-            <div id="pg_authportals_none" style="display: none">
-                <div class="ui-body-d" style="padding: 2px">
-                    <p>To complete your registration you need to activate the churches/ministries you would like to have access to.</p>
-                    <p>You can activate as many databases in your account as you like. Click the Activate Databases button below.</p>
+            
 
+
+
+
+            <div data-role="popup" id="pg_authportals_activate_help" data-overlay-theme="b" style="max-width: 400px;"
+                    class="ui-corner-all">
+                    <div data-role="header" data-theme="b" class="ui-corner-top">
+                        <h1>Search Church</h1>
+                    </div>
+                    <div data-role="content" class="ui-corner-bottom ui-content">
+                       <p><strong>Enter the name</strong> of the database you are looking for. You can enter part of the name for example "His" to search for all "His People" churches</p>
+                        <p></p>
+                    <p>From the results, <strong>click the "check" icon.</strong> This will add this church to your active profile</p>
+                    <p>The church will now appear in the list of available database to log into. <strong>Simply click on church name to sign in</strong></p>
+
+
+
+                        <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+
+                    </div>
                 </div>
-                <a data-role="button" href="#panelAddNewPortal" data-theme="b">Activate Databases</a>
-            </div>
 
 
 
 
 
-            <div data-role="popup" id="pg_authportals_activate_help" data-overlay-theme="h" style="max-width: 450px;"
+            <div data-role="popup" id="" data-overlay-theme="h" style="max-width: 450px;"
                 class="ui-corner-all">
                 <div data-role="header" class="ui-corner-top">
                     <h1>Activate New Database</h1>
                 </div>
                 <div data-role="content" class="ui-corner-bottom ui-content">
-                    <p>Enter the name of the database you want to activate and click search</p>
-                    <p>From the result, click the  <span data-inline="true" data-theme="c" data-role="button" data-icon="check" data-iconpos="notext"></span>icon to activate that database</p>
-                    <p>The databae will now appear in your active list</p>
+                    
 
 
                     <a href="#" data-role="button" data-theme="h" data-rel="back">Okay!</a>
