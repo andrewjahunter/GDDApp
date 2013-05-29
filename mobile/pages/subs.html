@@ -88,7 +88,19 @@
 
             </script>
 
-            <div id="pg_subs_nosubs" style="display:none">
+           
+
+
+            <div id="subs_container">
+                
+
+                 <a href="#pg_subs_whatisthis" data-role="button" data-rel="popup" data-theme="b" data-transition="slideup">what is this?</a>
+                <div data-bind="template: { name: 'subs-template', foreach: subsList}">
+                </div>
+
+            </div>
+
+             <div id="pg_subs_nosubs" style="display:none">
 
                 <div class="ui-body-b  ui-corner-all" style="padding: 10px">
                     <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
@@ -103,16 +115,6 @@
                     <strong>keep you updated with news</strong> e.g. a Weekly Newsletter. Please contact your church/ministry and encourage them to
                     add this feature to the system.
                     </p>
-                </div>
-
-            </div>
-
-
-            <div id="subs_container">
-                
-
-                 <a href="#pg_subs_whatisthis" data-role="button" data-rel="popup" data-theme="b" data-transition="slideup">what is this?</a>
-                <div data-bind="template: { name: 'subs-template', foreach: subsList}">
                 </div>
 
             </div>
