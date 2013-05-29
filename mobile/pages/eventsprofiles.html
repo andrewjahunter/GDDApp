@@ -11,26 +11,26 @@
 </head>
 <body>
 
-    <div data-role="page" id="pg_eventsprofiles" data-theme="a" >
+    <div data-role="page" id="pg_eventsprofiles" data-theme="a">
         <div data-role="panel" id="pg_eventsprofile_menuPanel" data-display="push" data-theme="g">
-             <ul data-role="listview"  data-theme="a" data-inset="true" id="' + panelId + '_menu_lv" data-divider-theme="b">
+            <ul data-role="listview" data-theme="a" data-inset="true" id="' + panelId + '_menu_lv" data-divider-theme="b">
                 <li data-role="list-divider">Menu</li>
-                 <li><a href="#" class="menu_home">Home</a></li>
+                <li><a href="#" class="menu_home">Home</a></li>
                 <li><a href="#" class="menu_pinfo">Personal Info</a></li>
-                <li><a href="#" class="menu_groups">Groups</a></li>       
-                 <li><a href="#" class="menu_churchlife">Church Life</a></li>
-                  <li><a href="#" class="menu_sermons">Sermons</a></li>
-                
-                 <li data-role="list-divider">Settings</li>
-                 <li><a href="#" class="menu_signout">Sign Out</a></li>
-                 <li><a href="#" class="menu_switchdb">Switch Database</a></li>
-                 <li><a href="#"  class="menu_sessionInfo">Session Info</a></li>
-                <li> <a href="#"  class="menu_closeMenu" >Close Menu</a></li>
-                </ul>
+                <li><a href="#" class="menu_groups">Groups</a></li>
+                <li><a href="#" class="menu_churchlife">Church Life</a></li>
+                <li><a href="#" class="menu_sermons">Sermons</a></li>
+                <li><a href="#" class="menu_subs">Subscriptions</a></li>
+                <li data-role="list-divider">Settings</li>
+                <li><a href="#" class="menu_signout">Sign Out</a></li>
+                <li><a href="#" class="menu_switchdb">Switch Database</a></li>
+                <li><a href="#" class="menu_sessionInfo">Session Info</a></li>
+                <li><a href="#" class="menu_closeMenu">Close Menu</a></li>
+            </ul>
         </div>
         <div data-role="header">
-            <a href="#" id="pg_eventsprofile_showMenu" data-icon="bars" data-role="button" data-iconpos="notext"></a>
-            <h1 class="pageHeader" id="pg_churchlife_header">events</h1>
+            <a href="#" id="pg_eventsprofile_showMenu" data-icon="bars" data-role="button" >menu</a>
+            <h1 class="pageHeader">events</h1>
         </div>
         <!-- /header -->
         <div data-role="content" style="padding: 15px">
@@ -41,11 +41,7 @@
                 <div id="msgpopupcontent"></div>
             </div>
 
-            <div class="ui-body-e ui-corner-all" id="pg_eventsprofile_noeventsmsg"  style="padding: 2px; display: none">
-                    There are no events available in this database at this time. Please contact your church or ministry
-                office for further information.
-
-                </div>
+          
 
             <script id="eventsprofile-template" type="text/html">
                 <div data-role="collapsible" data-bind="attr:{id:eventId()}" class="eventProfileCollapsible" data-collapsed="true" data-theme="b" data-content-theme="d">
@@ -101,7 +97,7 @@
 
 
             <div id="eventProfilesContainer">
-                                                 <a href="#pg_churchlife_whatisthis" data-role="button" data-rel="popup" data-theme="c" data-transition="slideup">what is this?</a>
+                <a href="#pg_churchlife_whatisthis" data-role="button" data-rel="popup" data-theme="c" data-transition="slideup">what is this?</a>
 
                 <div data-role="collapsible-set" id="profileContainerCollapse" data-bind="template: { name: 'eventsprofile-template', foreach: eventProfiles}">
                 </div>
@@ -109,7 +105,33 @@
             </div>
 
 
-             <div data-role="popup" id="pg_churchlife_whatisthis"  data-overlay-theme="b" style="max-width: 400px;"
+
+
+            <div id="pg_eventsprofile_noeventsmsg" style="display:none">
+
+                <div class="ui-body-b  ui-corner-all" style="padding: 10px">
+                    <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
+                        <strong>No Published Events</strong>
+                    </div>
+                   
+                    <p>
+                        Currently this church has not set any church life fields which are visible by your profile.  
+                    </p>
+                    <p>From simply <strong>leaders meetings or department head meetings to complete conferences</strong> your church is able to publish events in the life of the ministry for
+                        you to interact with.
+                    </p>
+                    <p>
+                        Please contact your church or ministry office find out more info and to encourage them to make use of the event tools provided.
+                    </p>
+                 
+
+                </div>
+
+            </div>
+
+
+
+            <div data-role="popup" id="pg_churchlife_whatisthis" data-overlay-theme="b" style="max-width: 400px;"
                 class="ui-corner-all">
                 <div data-role="header" data-theme="b" class="ui-corner-top">
                     <h1>Events</h1>
@@ -117,18 +139,19 @@
                 <div data-role="content" class="ui-corner-bottom ui-content">
 
                     <p>
-                       Your church can <strong>publish any number of events</strong> that are happening in the life of the ministry. From a simply leaders metting to a full blown annual conference.
+                        Your church can <strong>publish any number of events</strong> that are happening in the life of the ministry. From a simply leaders metting to a full blown annual conference.
 
                     </p>
-                    <p>Below are listed the events that are <strong>currently published</strong> by your church/ministry. Click on the event to expand the information. 
+                    <p>
+                        Below are listed the events that are <strong>currently published</strong> by your church/ministry. Click on the event to expand the information. 
                     </p>
                     <p>
-                       By clicking the relevant button you can <strong>indicate whether or not you will be at the event</strong> or not
+                        By clicking the relevant button you can <strong>indicate whether or not you will be at the event</strong> or not
                     </p>
-                   
-  
+
+
                     <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
-                  
+
                 </div>
             </div>
 

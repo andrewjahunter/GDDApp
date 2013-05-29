@@ -16,12 +16,12 @@
             <div data-theme="g" style="padding: 2px">
                 Search Person<a href="#addNewMemberPopupHelp" data-rel="popup" data-role="button" data-position-to="window" class="ui-icon-alt" data-inline="true" data-theme="h" data-transition="slideup" data-icon="info" data-iconpos="notext">Learn more</a>
             </div>
-           
 
 
 
 
-              <div data-role="popup" id="addNewMemberPopupHelp"  data-overlay-theme="b" style="max-width: 400px;"
+
+            <div data-role="popup" id="addNewMemberPopupHelp" data-overlay-theme="b" style="max-width: 400px;"
                 class="ui-corner-all">
                 <div data-role="header" data-theme="b" class="ui-corner-top">
                     <h1>Add Members</h1>
@@ -29,20 +29,21 @@
                 <div data-role="content" class="ui-corner-bottom ui-content">
 
                     <p>
-                      To look for a person in the database, simply type their name (or part of their name) into the text box provided. e.g. Type Rick Far to find
+                        To look for a person in the database, simply <strong>type their name (or part of their name)</strong> into the text box provided. e.g. Type Rick Far to find
                         all people in the database whose first name starts with 'Rick' and whose surname starts with 'Far'. Click Search 
                     </p>
-                
-                    <p>From that list of results (if found) click the 'check' icon to add them to the group</p>
+
+                    <p>From that list of results (if found) <strong>click the 'check' icon</strong> to add them to the group</p>
                     <p>
-                      If no result is found it is most likely because the person you are looking for has not registered in the database. Please ask them to do so, and then repeat this step.
+                        If no result is found it is most likely because the person you are looking for <strong>has not registered</strong> in the database or you
+                        don't have the <strong>right permissions</strong> to view their account info. Please ask them to do so, and then repeat this step.
                     </p>
-                   
-                     
-                    
-   
+
+
+
+
                     <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
-                  
+
                 </div>
             </div>
 
@@ -70,7 +71,7 @@
                     <div data-role="button" data-theme="a" data-rel="close" id="btnCloseSearchNewMember" data-inline="true">close</div>
                 </div>
             </div>
-            <!-- /grid-a -->
+        <a href="#sg_cantfind_members" data-rel="popup" data-transition="slideup" data-position-to="window"  data-role="button" data-theme="d">can't find person?</a>
 
 
             <ul data-role="listview" data-split-icon="check" data-split-theme="c" data-inset="true" data-theme="a" id="addNewMembersList" data-bind="template: { name: 'addnewmembers-template', foreach: newMembersResults}"></ul>
@@ -80,9 +81,11 @@
 
 
         <div data-role="header">
-                        <a href="#" id="pg_sgmembers_header_cancel"  data-icon="delete" data-role="button" data-iconpos="notext"></a>
+            <a href="#" id="pg_sgmembers_header_cancel" data-icon="delete" data-role="button" >cancel</a>
 
-            <h1 class="pageHeader" id="pg_smallgroupmembers_header">groups members</h1>
+            <h1 class="pageHeader">members</h1>
+                        <a href="#panelAddNewMember"   data-icon="plus" data-role="button" >add</a>
+
         </div>
 
         <div data-role="content" style="padding: 15px">
@@ -105,81 +108,115 @@
                 <li data-bind="attr: {id: personId}">
                     <a data-bind="attr: {href: '#'}" data-transition="slide">
                         <h3 data-bind='text: firstName() + " " + lastName()'></h3>
-                            <div data-bind="html: email1() + '    ' + mobileNumber()" style="font-size: x-small"></div>                     
+                        <div data-bind="html: email1() + '    ' + mobileNumber()" style="font-size: x-small"></div>
                     </a>
                     <a data-role="button" href="#" class="showPopup toggleMembership" data-position-to="window"></a>
                 </li>
             </script>
 
-           
-                
-             <a href="#sg_members_actionmenu" data-rel="popup" data-role="button"  data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
+
+
+            <a href="#sg_members_actionmenu" data-rel="popup" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
             <div data-role="popup" id="sg_members_actionmenu" data-theme="b">
                 <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
                     <li data-role="divider" data-theme="a">Choose an action</li>
-                    <li> <a  href="#" id="btnOpenAddGroupMemberPanel"  data-rel="back" >Add Member</a></li>
-                    
-                     <li><a href="#pg_sg_members_whatisthis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
-                    <li><a href="#" id="btnSgMembersBackToGroups"  >Back to Groups</a></li>
+                    <li><a href="#" id="btnOpenAddGroupMemberPanel" data-rel="back">Add Member</a></li>
+
+                    <li><a href="#pg_sg_members_whatisthis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
+                    <li><a href="#" id="btnSgMembersBackToGroups">Back to Groups</a></li>
                     <li><a href="#" data-rel="back">Cancel</a></li>
-                    
-                     
+
+
                 </ul>
             </div>
 
 
+            <div class="ui-body-h ui-corner-all sgMembersInfoMsg" id="sgmembers_title"  style="padding: 2px; margin-top: 5px;display: none">
+                <div id="sgmembers_title_content">Below are the members of the current group</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="ui-body-h ui-corner-all" style="padding: 2px ; margin-top:5px">
-                <div id="smallgroupmembers_title">Below are the members of the current group</div>
-                
             </div>
+
+
+              <div id="pg_sg_nomembers" class="sgMembersInfoMsg" style="display: none">
+
+                    <div class="ui-body-b  ui-corner-all" style="padding: 10px">
+                        <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
+                            <strong>No Members</strong>
+                        </div>
+                        <p>
+                            Currently there are no members of this groups. 
+                        </p>
+                       <p>Members can be added in two ways.
+              
+                       </p>
+                        <ul>
+                            <li><strong>RECOMMENDED METHOD:</strong> Members can log in using this app, find this group and <strong>"Join" themselves</strong> to the group.</li>
+                            <li>Using the <strong>search tool provided</strong> (click "add" on the menu bar) find the person, then click the "check" icon to add them to the group.
+                                NB! You have to have the right permissions for this function to work.
+                            </li>
+                            
+                        </ul>
+                        
+                    </div>
+
+                </div>
+
 
             <div id="divSmallGroupMembers">
- <ul data-role="listview" data-split-icon="delete" data-split-theme="e" data-inset="true" data-theme="b" id="lvSmallGroupMembers" data-bind="template: { name: 'smallgroupmembers-template', foreach: selectedGroup.members()}"></ul>
+                <ul data-role="listview" data-split-icon="delete" data-split-theme="e" data-inset="true" data-theme="b" id="lvSmallGroupMembers" data-bind="template: { name: 'smallgroupmembers-template', foreach: selectedGroup.members()}"></ul>
 
             </div>
 
 
-              <div data-role="popup" id="pg_sg_members_whatisthis"  data-overlay-theme="b" style="max-width: 400px;"
+            <div data-role="popup" id="pg_sg_members_whatisthis" data-overlay-theme="b" style="max-width: 400px;"
                 class="ui-corner-all">
                 <div data-role="header" data-theme="b" class="ui-corner-top">
-                    <h1>What Is This?</h1>
+                    <h1>Group Members</h1>
                 </div>
                 <div data-role="content" class="ui-corner-bottom ui-content">
 
                     <p>
-                      This page shows you all the members of the group you selected. 
+                        This page shows you all the members of the group you selected. 
                     </p>
                     <p>
-                        <strong>To add</strong>  a new member simply choose "Add Member" under the actions menu.
+                        <strong>To add</strong>  a new member simply choose "Add Member" under the actions menu  or "Add" from the menu bar.
                     </p>
                     <p>
-                        <strong>To remove</strong>  a new member simply click the "red cross" next to the mebers name. Not this will onyl remove them from the group
+                        <strong>To remove</strong>  a new member simply click the "red cross" next to the mebers name. Not this will only remove them from the group
                         it does not delete them from the database.
                     </p>
-                   
-                     
-                    
-   
+
+
+
+
                     <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
-                  
+
+                </div>
+            </div>
+
+             <div data-role="popup" id="sg_cantfind_members" data-overlay-theme="b" style="max-width: 400px;"
+                class="ui-corner-all">
+                <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <h1>Cant Find Person</h1>
+                </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+
+                    <p>
+                        There are <strong>two reason</strong> why you may not be able to find the person you are looking for. 
+                    </p>
+                    <ol>
+                        <li>If you do not have the <strong>right permissions</strong> you will not be allowed to view other peoples information. Please ask your church to add you into the right security group if you are a
+                             leader in the church
+
+                        </li>
+                        <li>
+                            The person you are looking <strong>may not be in the database</strong>. Simply ask that person to register with this church. Their info will then be available.
+                        </li>
+                    </ol>
+                    
+
+                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+
                 </div>
             </div>
 

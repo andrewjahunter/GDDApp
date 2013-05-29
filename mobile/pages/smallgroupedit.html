@@ -15,14 +15,15 @@
         <div data-role="header">
 
             <h1 class="pageHeader">edit group</h1>
-            <a href="#" id="pg_smallgroupedit_cancel" class="group_edit_cancel" data-icon="delete" data-role="button" data-iconpos="notext"></a>
+            <a href="#" id="pg_smallgroupedit_cancel" class="group_edit_cancel" data-icon="delete" data-role="button" >cancel</a>
         </div>
 
         <div data-role="content" style="padding: 15px">
             <div data-role="popup" class="ui-content" id="pg_sgedit_errpopup" data-theme="e">
                 <div id="pg_sgedit_errpopmessage"></div>
             </div>
-            <form id="form_smallgroup_1">
+            <form id="form_sg_edit">
+
                 <div id="smallgroup_form_fields">
                     <div data-role="fieldcontain">
                         <label for="ddlSmallGroupCategory">
@@ -122,36 +123,10 @@
 
 
             </form>
-             <form id="form_smallgroup_2">
-
-                  <div data-role="popup" id="pg_smallgroupedit_location" data-overlay-theme="h" 
-                        class="ui-corner-all">
-                        <div data-role="header" class="ui-corner-top">
-                            <h1>Group Location</h1>
-                        </div>
-                        <div data-role="content" class="ui-corner-bottom ui-content">
-                            <input id='txtGroupAddress'
-                                placeholder='start typing your address in here...'
-                                type='text' />
-                            <div id='groupsMap' class="groupsMap" style="width: 100%; height: 250px;"></div>
-                            <input id='txtGroupStreetNumber' placeholder="street number" type='text' data-bind="value: selectedGroup.streetNumber" />
-                            <input id='txtGroupStreetName' placeholder="street name" type='text' data-bind="value: selectedGroup.streetName" />
-                            <input id='txtGroupOtherInfo' placeholder="other info" type='text' data-bind="value: selectedGroup.otherInfo" />
-                             <div  data-role="button" data-inline="true" data-theme="b" id="btnSaveSmallGroup">save</div>
-                            <a href="#" data-role="button" data-inline="true"  data-rel="back">cancel</a>
-                           
-                            <div class="ui-body-e" style="padding: 2px" id="sgEditLocationErrMsg">
-                    </div>
-                        </div>
-                    </div>
-
-             </form>
-
-
-
+             
 
             <div data-role="button" data-theme="b" id="btnGroupLocation" data-inline="true">next</div>
-                        <button data-role="button" data-theme="a" id="btnCancelGroupEdit" class="group_edit_cancel" data-inline="true">cancel</button>
+            <button data-role="button" data-theme="a" id="btnCancelGroupEdit" class="group_edit_cancel" data-inline="true">cancel</button>
                                   
 
              <div data-role="popup" id="pg_sgedit_makeprivate_help" data-overlay-theme="h" style="max-width: 450px;"

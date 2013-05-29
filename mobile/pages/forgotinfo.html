@@ -20,11 +20,11 @@
         
             <div data-role="header">
                 <h1 id="pg_forgotinfo_header" class="pageHeader">recover info</h1>
-                <a href="signin.html" id="pgForgotInfoCancel" data-transition="slide" data-direction="reverse" data-icon="delete" data-role="button" data-iconpos="notext">Cancel</a>
+                <a href="#" data-rel="back"   data-icon="delete" data-role="button" >cancel</a>
             </div>
             <div data-role="content" style="padding: 15px">
-                <div class="ui-body-h" style="padding: 2px">
-                Recover your info by entering EITHER your username OR email address
+                <div class="ui-body-h ui-corner-all" style="padding: 2px">
+                Recover your info by entering EITHER your username OR email address and clicking get info
                 
             </div>
                 <div data-role="fieldcontain">
@@ -44,21 +44,21 @@
                 </div>
                
               
-                <div id="btnForGotInfoGo" data-role="button" data-theme="b" data-inline="true">Get Info</div>
-                <div id="btnForGotInfoSignIn" data-role="button" data-inline="true">Sign In</div>
+                <div id="btnForGotInfoGo" data-role="button" data-theme="b" >get info</div>
+                <div id="btnForGotInfoSignIn" data-role="button" >sign in</div>
                  
                 
             </div>
      
 
         <div data-role="popup" id="pg_forgotinfo_popup" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
-           <div data-role="header" data-theme="e" class="ui-corner-top">
+           <div data-role="header" data-theme="c" class="ui-corner-top">
                 <h1 id="pg_forgotinfo_popup_header">Forgot Info</h1>
             </div>
             <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
               
-                <p id="pg_forgotinfo_popup_content">This action cannot be undone.</p>
-                <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="b">OK</a>
+                <p id="pg_forgotinfo_popup_content"></p>
+                <a href="#" data-role="button"  data-rel="back" data-theme="b">OK</a>
                 
             </div>
         </div>

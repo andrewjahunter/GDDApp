@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <div data-role="page" id="pg_sermons" data-theme="a" >
+    <div data-role="page" id="pg_sermons" data-theme="a">
         <div data-role="panel" id="pg_sermons_menuPanel" data-display="push" data-theme="g">
             <ul data-role="listview" data-theme="a" data-inset="true" data-divider-theme="b">
                 <li data-role="list-divider">Menu</li>
@@ -20,6 +20,7 @@
                 <li><a href="#" class="menu_groups">Groups</a></li>
                 <li><a href="#" class="menu_eventProfiles">Events</a></li>
                 <li><a href="#" class="menu_churchlife">Church Life</a></li>
+                <li><a href="#" class="menu_subs">Subscriptions</a></li>
                 <li data-role="list-divider">Settings</li>
                 <li><a href="#" class="menu_signout">Sign Out</a></li>
                 <li><a href="#" class="menu_switchdb">Switch Database</a></li>
@@ -28,7 +29,7 @@
             </ul>
         </div>
         <div data-role="header">
-            <a href="#" id="pg_sermons_showMenu" data-icon="bars" data-role="button" data-iconpos="notext"></a>
+            <a href="#" id="pg_sermons_showMenu" data-icon="bars" data-role="button">menu</a>
             <h1 class="pageHeader" id="pg_sermons_header">sermons</h1>
         </div>
         <!-- /header -->
@@ -39,57 +40,6 @@
             <div data-role="popup" class="ui-content" id="msgpopup" data-theme="b">
                 <div id="msgpopupcontent"></div>
             </div>
-
-
-            <div data-role="popup" id="pg_sermon_download_confirm" data-overlay-theme="d" style="max-width: 400px;"
-                class="ui-corner-all">
-                <div data-role="header" data-theme="d" class="ui-corner-top">
-                    <h1>No WiFi</h1>
-                </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
-                    <p>
-                        Your device is not connected over a WiFi network. Downloading a file could incur high data charges on your monthly account.
-                        These charges are charged by your mobile service provider. 
-                        
-                    </p>
-                    <p>
-                        Do you want to continue wth this download?
-                    </p>
-
-                    <a href="btnSermonsDownloadConfirm" data-role="button" data-inline="true" data-theme="d">download</a>
-
-                    <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a">cancel</a>
-
-
-                </div>
-            </div>
-
-
-
-
-
-
-            <div data-role="popup" id="pg_sermons_downloadsuccess_popup" data-overlay-theme="b" style="max-width: 400px;"
-                class="ui-corner-all">
-                <div data-role="header" data-theme="c" class="ui-corner-top">
-                    <h1>Download Success</h1>
-                </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
-                    <p>
-                        The file you requested has been downloaded successfully to your device. Below you will find the location where
-                        the file has been saved. Using your "Files" app you can navigate to the file and and open it from there.
-                    </p>
-                    <p>Please note we were not able to detect the file type of this file. You may need to alter the file extension in order to play it or download the file by visiting the web application at www.godochurch.com</p>
-                    <p id="pg_sermon_downloadfilepath">
-                    </p>
-
-
-                    <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="b">Okay!</a>
-
-
-                </div>
-            </div>
-
 
 
             <script id="sermonfeeds-template" type="text/html">
@@ -127,8 +77,6 @@
 
             <div id="pg_sermons_feeds" style="display: none">
 
-
-
                 <a href="#" data-rel="popup" id="btnOpenFeedsActionMenu" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
                 <div data-role="popup" id="sermons_feeds_actionmenu" data-theme="b">
                     <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
@@ -142,8 +90,6 @@
 
                     </ul>
                 </div>
-
-
 
                 <ul data-role="listview" data-inset="true" data-theme="a" id="sermons_feeds" data-divider-theme="b" data-bind="template: { name: 'sermonfeeds-template', foreach: feeds}"></ul>
 
@@ -173,6 +119,32 @@
                     </div>
                 </div>
 
+                   <div id="pg_sermons_nofeed" style="display: none">
+
+                    <div class="ui-body-b  ui-corner-all" style="padding: 10px">
+                        <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
+                            <strong>No Feeds Available</strong>
+                        </div>
+
+                        <p>
+                            Currently there are <strong>no channels published</strong> by this church/ministry.  
+                        </p>
+                        <p>
+                            Using channels and RSS feeds your church can publish and make available any content directly to this device. Whether it be the <strong>latest
+                        Sunday Sermons, messages from your recent conference</strong> or simply some great teachings for you to enjoy. 
+                        </p>
+                        <p>
+                            Godochurch gives your church the ability to bring in these channels from many different locations including <strong>iTunes, MediaFire, Sermon.Net 
+                        and many others</strong>.
+                        </p>
+                        <p><strong>Please contact your church or ministry office</strong> to ask them to make available this content.</p>
+
+
+                    </div>
+
+                </div>
+
+              
 
             </div>
 
@@ -187,7 +159,7 @@
                         <li><a href="#" id="btnSubscribeToFeed">Subscribe to Channel</a></li>
                         <li><a href="#" id="btnViewFeedRssUrl">View RSS</a></li>
                         <li><a href="#" id="btnGoBackToFeeds">Feed List</a></li>
-                                                <li><a href="#pg_sermonfeeditems_whatisthis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
+                        <li><a href="#pg_sermonfeeditems_whatisthis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
 
                         <li><a href="#" data-rel="back">Cancel</a></li>
 
@@ -230,15 +202,15 @@
 
                         </p>
                         <p>
-                           Click <strong>subscribe/un-subscribe</strong> to automatially subscribe/un-subscribe yourself from this channel
+                            Click <strong>subscribe/un-subscribe</strong> to automatially subscribe/un-subscribe yourself from this channel
                         </p>
                         <p>
-                           Click <strong>View RSS</strong> to view the RAW RSS feed which you can use.
+                            Click <strong>View RSS</strong> to view the RAW RSS feed which you can use.
                         </p>
                         <p>
-                           Simply <strong>click</strong> on the sermon/audio you are interested in
+                            Simply <strong>click</strong> on the sermon/audio you are interested in
                         </p>
-                       
+
 
 
 
@@ -247,6 +219,26 @@
                     </div>
                 </div>
 
+                <div id="pg_sermon_nofeeditems" style="display: none">
+
+                    <div class="ui-body-b  ui-corner-all" style="padding: 10px">
+                        <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
+                            <strong>No Items Feed</strong>
+                        </div>
+
+                        <p>
+                            This feed/channel appear to have no content.  
+                        </p>
+                        <p>
+                            You can try to refresh your feeds to see if there is new content available. If that still does not work <strong>please contact your church office</strong>
+                            to have them either remove the feed from their systems or update the RSS url that the feed uses 
+                        </p>
+                   
+
+
+                    </div>
+
+                </div>
 
 
                 <ul data-role="listview" data-inset="true" data-theme="b" id="sermon_feeditems" data-bind="template: { name: 'sermonfeeditems-template', foreach: items}"></ul>
@@ -262,7 +254,7 @@
                         <li><a href="#" id="btnFeedItemListen">Listen</a></li>
                         <li><a href="#" id="btnFeedItemEmail">Email Me</a></li>
                         <li><a href="#" id="btnFeedItemFinished">Mark as Complete</a></li>
-                                                                        <li><a href="#pg_sermonfeeditem_whatisthis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
+                        <li><a href="#pg_sermonfeeditem_whatisthis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
 
                         <li><a href="#" id="btnFeedItemBack">Back to List</a></li>
                         <li><a href="#" id="btnFeedItemCancel">Cancel</a></li>
@@ -306,21 +298,21 @@
 
                         </p>
                         <p>
-                           Click <strong>Listen</strong> to listen to the audio. (APP USERS: We recommend you are connected via wireless for this.)
+                            Click <strong>Listen</strong> to listen to the audio. (APP USERS: We recommend you are connected via wireless for this.)
                         </p>
                         <p>
-                           Click <strong>Download</strong> to download the content. (APP USERS: We recommend you are connected via wireless for this.)
+                            Click <strong>Download</strong> to download the content. (APP USERS: We recommend you are connected via wireless for this.)
                         </p>
 
                         <p>
-                           Click <strong>Email Me</strong> to have the link to the online content emailed to you
+                            Click <strong>Email Me</strong> to have the link to the online content emailed to you
 
                         </p>
                         <p>
-                           Click <strong>Completed</strong> to mark this audio as completed (i.e. you have listened to it). This will update your account and bring in the next audio file.
+                            Click <strong>Completed</strong> to mark this audio as completed (i.e. you have listened to it). This will update your account and bring in the next audio file.
 
                         </p>
-                       
+
 
 
 
@@ -372,10 +364,56 @@
                         </tr>
                     </table>
                 </div>
+
+                <div data-role="popup" id="pg_sermon_download_confirm" data-overlay-theme="d" style="max-width: 400px;"
+                    class="ui-corner-all">
+                    <div data-role="header" data-theme="d" class="ui-corner-top">
+                        <h1>No WiFi</h1>
+                    </div>
+                    <div data-role="content" class="ui-corner-bottom ui-content">
+                        <p>
+                            Your device is not connected over a WiFi network. Downloading a file could incur high data charges on your monthly account.
+                        These charges are charged by your mobile service provider. 
+                        
+                        </p>
+                        <p>
+                            Do you want to continue wth this download?
+                        </p>
+
+                        <a href="btnSermonsDownloadConfirm" data-role="button" data-inline="true" data-theme="d">download</a>
+
+                        <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a">cancel</a>
+
+
+                    </div>
+                </div>
+
+
+
+                <div data-role="popup" id="pg_sermons_downloadsuccess_popup" data-overlay-theme="b" style="max-width: 400px;"
+                    class="ui-corner-all">
+                    <div data-role="header" data-theme="c" class="ui-corner-top">
+                        <h1>Download Success</h1>
+                    </div>
+                    <div data-role="content" class="ui-corner-bottom ui-content">
+                        <p>
+                            The file you requested has been downloaded successfully to your device. Below you will find the location where
+                        the file has been saved. Using your "Files" app you can navigate to the file and and open it from there.
+                        </p>
+                        <p>Please note we were not able to detect the file type of this file. You may need to alter the file extension in order to play it or download the file by visiting the web application at www.godochurch.com</p>
+                        <p id="pg_sermon_downloadfilepath">
+                        </p>
+
+
+                        <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="b">Okay!</a>
+
+
+                    </div>
+                </div>
             </div>
 
 
-
+           
 
 
         </div>

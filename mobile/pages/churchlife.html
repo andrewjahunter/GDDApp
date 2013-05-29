@@ -20,15 +20,16 @@
                 <li><a href="#" class="menu_groups">Groups</a></li>       
                  <li><a href="#" class="menu_eventProfiles">Events</a></li>
                   <li><a href="#" class="menu_sermons">Sermons</a></li>
+                 <li><a href="#" class="menu_subs">Subscriptions</a></li>
                  <li data-role="list-divider">Settings</li>
                  <li><a href="#" class="menu_signout">Sign Out</a></li>
-                 <li><a href="#" class="menu_switchdb">Switch Database</a></li>
+                 <li><a href="#" class="menu_switchdb">Switch Church</a></li>
                  <li><a href="#"  class="menu_sessionInfo">Session Info</a></li>
                 <li> <a href="#"  class="menu_closeMenu" >Close Menu</a></li>
                 </ul>
         </div>
         <div data-role="header">
-            <a href="#" id="pg_churchlife_showMenu" data-icon="bars" data-role="button" data-iconpos="notext"></a>
+            <a href="#" id="pg_churchlife_showMenu" data-icon="bars" data-role="button" >menu</a>
             <h1 class="pageHeader" id="pg_churchlife_header">church life</h1>
         </div>
         <!-- /header -->
@@ -47,24 +48,29 @@
             <script id="customfields-template" type="text/html">
                 <div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="b">
                     <h4 data-bind="text: name"></h4>
-
+                    <div class="ui-body-b  ui-corner-all" style="padding: 10px; text-align: center">
+                            <strong data-bind="text: description()"></strong>
+                        </div>
+                   
                     <div data-role="collapsible-set" data-bind="foreach: fields">
-                        <div data-role="collapsible" data-collapsed="true" data-theme="c" data-content-theme="c">
+                        <div data-role="collapsible" data-collapsed="true" data-theme="d" data-content-theme="d">
                             <h4 data-bind="text: name"></h4>
-
+                            <div class="ui-body-d  ui-corner-all" style="padding: 10px; text-align: center">
+                            <strong data-bind="text: description()"></strong>
+                        </div>
                             <div data-role="collapsible-set" data-bind="foreach: listItems">
                                 <div data-role="collapsible" data-bind="attr:{id:id()}" class="listItemCollapsible" data-collapsed="true" data-theme="e" data-content-theme="e">
                                     <h4 data-bind="text: name"></h4>
 
                                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                                         <legend></legend>
-                                        <input type="radio" data-theme="d" data-bind="attr: {name: id(), id: 'li1' + id()}" value="-1">
+                                        <input type="radio" data-theme="b" data-bind="attr: {name: id(), id: 'li1' + id()}" value="-1">
                                         <label data-bind="attr: {for: 'li1' + id()}, text:$parent.unknownWording()">minus1 1</label>
 
-                                        <input type="radio" data-theme="d" data-bind="attr: {name: id(), id: 'li2' + id()}" value="0">
+                                        <input type="radio" data-theme="b" data-bind="attr: {name: id(), id: 'li2' + id()}" value="0">
                                         <label data-bind="attr: {for: 'li2' + id()}, text:$parent.uncheckedWording()">zero</label>
 
-                                        <input type="radio" data-theme="d" data-bind="attr: {name: id(), id: 'li3' + id()}" value="1">
+                                        <input type="radio" data-theme="b" data-bind="attr: {name: id(), id: 'li3' + id()}" value="1">
                                         <label data-bind="attr: {for: 'li3' + id()}, text:$parent.checkedWording()">one</label>
 
                                     </fieldset>
@@ -75,23 +81,9 @@
 
                         </div>
                     </div>
-                    <!--<ul data-role="listview" data-bind="foreach: fields">
-
-                        <li>
-                            <div data-role="collapsible" data-collapsed="true" data-theme="c" data-content-theme="c">
-                                <h4 data-bind="text: name"></h4>
-                            </div>
-                        </li>
-                    </ul>-->
+                   
                 </div>
-                <!--      <li data-bind="attr: {id: groupId}">
-                    <a data-bind="attr: {href: '#'}" class="groupItem" data-transition="slide">
-                        <h3 data-bind="text: groupName"></h3>
-
-                    </a>
-                    <a data-role="button" href="#" class="toggleMembership" data-position-to="window"></a>
-
-                </li>-->
+               
             </script>
 
             
@@ -130,6 +122,25 @@
                 </div>
             </div>
 
+             <div id="pg_churchlife_none" style="display:none">
+
+                <div class="ui-body-b  ui-corner-all" style="padding: 10px">
+                    <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
+                        <strong>No Church Fields</strong>
+                    </div>
+
+                    <p>
+                        Currently this church has not set any church life fields which are visible by your profile.  
+                    </p>
+                    <p>
+                        Church Life fields provide a church/ministry with endless ways in which to communicate, shepherd and group people
+                        within their congregation. Please contact your church or ministry office to encourage them to activate some of the fields.
+                    </p>
+                 
+
+                </div>
+
+            </div>
 
         </div>
 

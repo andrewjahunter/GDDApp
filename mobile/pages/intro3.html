@@ -40,15 +40,20 @@
 
         </div>
           <script>
-              $('#pg_intro3').on('swiperight', function () {
-                  $.mobile.changePage("intro2.html", { "transition": "flow", "reverse": true });
+            
+                  $('#pg_intro3').on('swiperight', function () {
+                      alert("right")
+                      $.mobile.changePage("intro2.html", { "transition": "flow", "reverse": true });
 
-              });
+                  });
 
-              $('#pg_intro3').on('swipeleft', function () {
-                  $.mobile.changePage("intro4.html", { "transition": "flow" });
+                  $('#pg_intro3').on('swipeleft', function () {
+                      alert("left")
+                      $.mobile.changePage("intro4.html", { "transition": "flow" });
 
-              });
+                  });
+              
+              
         </script>
     </div>
 </body>
