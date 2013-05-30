@@ -15,7 +15,7 @@
         <div data-role="header">
 
             <h1 class="pageHeader">edit group</h1>
-            <a href="#" id="pg_smallgroupedit_cancel" class="group_edit_cancel" data-icon="delete" data-role="button" >cancel</a>
+            <a href="#" id="pg_smallgroupedit_cancel" class="group_edit_cancel" data-icon="delete" data-role="button">cancel</a>
         </div>
 
         <div data-role="content" style="padding: 15px">
@@ -29,14 +29,14 @@
                         <label for="ddlSmallGroupCategory">
                             Category                       
                         </label>
-                        <select id="ddlSmallGroupCategory" name="groupcat"" data-inline="true" data-bind="value:selectedGroup.categoryId()">
+                        <select id="ddlSmallGroupCategory" name="groupcat" data-inline="true" data-bind="value:selectedGroup.categoryId()">
                         </select>
                     </div>
                     <div data-role="fieldcontain">
                         <label for="ddlSmallGroupType">
                             Type                       
                         </label>
-                        <select id="ddlSmallGroupType" name="grouptype" data-inline="true" data-bind="value:selectedGroup.groupTypeId()" >
+                        <select id="ddlSmallGroupType" name="grouptype" data-inline="true" data-bind="value:selectedGroup.groupTypeId()">
                         </select>
                     </div>
                     <div data-role="fieldcontain">
@@ -45,7 +45,7 @@
                         </label>
                         <input id="txtSmallGroupName" data-clear-btn="true" data-bind="value: selectedGroup.groupName" name="groupname" placeholder="" type="text" />
                     </div>
-                   
+
                     <div data-role="fieldcontain">
                         <label for="ddlAgeProfile">
                             Age Profile                       
@@ -54,23 +54,23 @@
                         </select>
 
                     </div>
-                      <div data-role="fieldcontain">
+                    <div data-role="fieldcontain">
                         <label for="ddlMeetingDay">
                             Day                      
                         </label>
                         <select id="ddlMeetingDay" name="" data-inline="true" data-bind="value:selectedGroup.meetingDay()">
-                            <option value="Monday" >Monday</option>
+                            <option value="Monday">Monday</option>
                             <option value="Tuesday">Tuesday</option>
                             <option value="Wednesday">Wednesday</option>
                             <option value="Thursday">Thursday</option>
                             <option value="Friday">Friday</option>
                             <option value="Saturday">Saturday</option>
                             <option value="Sunday">Sunday</option>
-                             <option value="Unknown">Unknown</option>
+                            <option value="Unknown">Unknown</option>
                         </select>
 
                     </div>
-                      <div data-role="fieldcontain">
+                    <div data-role="fieldcontain">
                         <label for="ddlGender">
                             Gender                      
                         </label>
@@ -82,80 +82,122 @@
 
                     </div>
 
-                     <div data-role="fieldcontain">
+                    <div data-role="fieldcontain">
                         <label for="txtMeetingTime">
                             Time
                         </label>
-                        <input id="txtMeetingTime" data-clear-btn="true" data-bind="value: selectedGroup.meetingTime()"  placeholder="meeting time" type="text" />
+                        <input id="txtMeetingTime" data-clear-btn="true" data-bind="value: selectedGroup.meetingTime()" placeholder="meeting time" type="text" />
                     </div>
 
                     <div data-role="fieldcontain">
-                            <label for="optMakeSGPrivate">Make group private</label>
-                            <select  id="optMakeSGPrivate" data-role="slider" class="boolSlider" data-bind="booleanValue: selectedGroup.isPrivate()" data-mini="true">
-                                <option value="false">No</option>
-                                <option value="true">Yes</option>
-                            </select>
+                        <label for="optMakeSGPrivate">Make group private</label>
+                        <select id="optMakeSGPrivate" data-role="slider" class="boolSlider" data-bind="booleanValue: selectedGroup.isPrivate()" data-mini="true">
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
                         <a href="#pg_sgedit_makeprivate_help" data-inline="true" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-iconpos="notext" data-theme="b" data-transition="slideup"></a>
-                                    
-
-                        </div>
 
 
+                    </div>
 
 
 
-                     <div data-role="fieldcontain">
-                            <label for="optOpenGroupMembership">Open membership</label>
-                            <select  id="optOpenGroupMembership" data-role="slider"  class="boolSlider" data-bind="booleanValue: selectedGroup.openMembership()" data-mini="true">
-                                <option value="false">No</option>
-                                <option value="true" >Yes</option>
-                            </select>
-                                                 <a href="#pg_sgedit_openmembership_help" data-inline="true" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-iconpos="notext" data-theme="b" data-transition="slideup"></a>
-
-                        </div>
-
-                    
 
 
-                    
-                    
+                    <div data-role="fieldcontain">
+                        <label for="optOpenGroupMembership">Open membership</label>
+                        <select id="optOpenGroupMembership" data-role="slider" class="boolSlider" data-bind="booleanValue: selectedGroup.openMembership()" data-mini="true">
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+                        <a href="#pg_sgedit_openmembership_help" data-inline="true" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-iconpos="notext" data-theme="b" data-transition="slideup"></a>
+
+                    </div>
+
+
+
+
+
+
                 </div>
 
+                <!-- <div data-role="popup" id="sg_edit_locationinfo_popup" style="width:400px" data-overlay-theme="b"
+                class="ui-corner-all">
+                <div data-role="header" data-theme="c" class="ui-corner-top">
+                    <h1>Maps</h1>
+                </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+
+                    <div id='groupsEditMap' class="groupsMap" style="width: 100%"></div>
+
+
+                    <a href="#" data-role="button" data-theme="b" data-rel="back">ok</a>
+                    <div class="ui-body-e" style="padding: 2px" id="smallGroupsListMapError">
+                    </div>
+
+                </div>
+            </div>-->
 
             </form>
-             
+
 
             <div data-role="button" data-theme="b" id="btnGroupLocation" data-inline="true">next</div>
             <button data-role="button" data-theme="a" id="btnCancelGroupEdit" class="group_edit_cancel" data-inline="true">cancel</button>
-                                  
 
-             <div data-role="popup" id="pg_sgedit_makeprivate_help" data-overlay-theme="h" style="max-width: 450px;"
-                    class="ui-corner-all">
-                   
-                    <div data-role="content" class="ui-corner-bottom ui-content">
-                        <p>A group that is set to private will not be exposed to small group search results. Make a group private
+
+            <div data-role="popup" id="pg_sgedit_makeprivate_help" data-overlay-theme="h" style="max-width: 450px;"
+                class="ui-corner-all">
+
+                <div data-role="content" class="ui-corner-bottom ui-content">
+                    <p>
+                        A group that is set to private will not be exposed to small group search results. Make a group private
                             if do not wish people to be able to search for it.
-                        </p>
-                        
+                    </p>
 
-                        <a href="#" data-role="button" data-theme="h" data-rel="back">Okay!</a>
 
-                    </div>
+                    <a href="#" data-role="button" data-theme="h" data-rel="back">Okay!</a>
+
                 </div>
+            </div>
 
             <div data-role="popup" id="pg_sgedit_openmembership_help" data-overlay-theme="h" style="max-width: 450px;"
-                    class="ui-corner-all">
-                   
-                    <div data-role="content" class="ui-corner-bottom ui-content">
-                        <p>Open a groups membership to allow other people to join themselves to this group. If you do not open the membership
+                class="ui-corner-all">
+
+                <div data-role="content" class="ui-corner-bottom ui-content">
+                    <p>
+                        Open a groups membership to allow other people to join themselves to this group. If you do not open the membership
                             then only the group leader can edit the membership of the group.
-                        </p>
-                        
+                    </p>
 
-                        <a href="#" data-role="button" data-theme="h" data-rel="back">Okay!</a>
 
-                    </div>
+                    <a href="#" data-role="button" data-theme="h" data-rel="back">Okay!</a>
+
                 </div>
+            </div>
+
+           
+
+             <div data-role="popup" id="sg_edit_locationinfo_popup" data-overlay-theme="b"
+                class="ui-corner-all">
+                <div data-role="header" data-theme="c" class="ui-corner-top">
+                    <h1>Maps</h1>
+                </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+
+                     <input id='txtGroupAddress'
+                    placeholder='start typing your address in here...'
+                    type='text' /><a href="#pg_sgeditloc_locationreq"  data-rel="popup" data-position-to="window" data-icon="info" data-role="button"  data-theme="b" data-transition="slideup">what is this?</a>
+                <div id='groupsEditMap' class="groupsMap" style="width: 100%;"></div>
+                <input id='txtGroupStreetNumber' placeholder="street number" type='text' data-bind="value: selectedGroup.streetNumber" />
+                <input id='txtGroupStreetName' placeholder="street name" type='text' data-bind="value: selectedGroup.streetName" />
+                <input id='txtGroupOtherInfo' placeholder="other info" type='text' data-bind="value: selectedGroup.otherInfo" />
+                <div id="sgLocationFormattedAddress"></div>
+                <div data-role="button"  data-theme="b" id="btnSaveSmallGroup">save</div>
+                <a href="#" data-role="button" data-inline="true" data-rel="back">back</a>
+                                <div data-role="button" data-inline="true" class="group_edit_cancel"  >cancel</div>
+
+                </div>
+            </div>
         </div>
 
     </div>
