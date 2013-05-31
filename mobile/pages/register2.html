@@ -29,7 +29,7 @@
                 <div data-role="fieldcontain">
 
                     <div>
-                        <input id="txtReg2UserName" name="username" data-bind="value: userName" placeholder="" type="text" />
+                        <input id="txtReg2UserName" name="username" data-bind="value: userName" placeholder="user name" type="text" />
                     </div>
                     <div id="divReg2UsrNameSts"></div>
 
@@ -46,8 +46,9 @@
 
                     <div>
                         <input id="txtReg2PWDConfirm" name="passwordconfirm" placeholder="retype password"  type="password" />
+                        <span>                    <a href="#pg_reg2_pwdreq" data-inline="true" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-iconpos="notext" data-theme="b" data-transition="slideup"></a>
+</span>
                     </div>
-
                 </div>
             </form>
 
@@ -65,6 +66,20 @@
                     <p id="reg2PopupFailMsg">
                     </p>
                     <a href="#" data-role="button"  data-rel="back" data-theme="e">try again</a>
+
+                </div>
+            </div>
+
+            <div data-role="popup" id="pg_reg2_pwdreq" data-overlay-theme="h" style="max-width: 450px;"
+                class="ui-corner-all">
+
+                <div data-role="content" class="ui-corner-bottom ui-content">
+                    <p>
+                        A valid password must be at least 5 characters long with at least one numerical digit and one capital letter.
+                    </p>
+
+
+                    <a href="#" data-role="button" data-theme="h" data-rel="back">Okay!</a>
 
                 </div>
             </div>
