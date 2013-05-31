@@ -11,64 +11,66 @@
 <body>
     <div data-role="page" id="pg_home" data-theme="a">
         <div data-role="panel" id="pg_home_menuPanel" class="menuPanel" data-display="push" data-theme="g">
+            <div style="width: 100%; max-width: 80px; max-height: 80px; margin-left: auto; margin-right: auto">
+                <img border="0" src="" class="menu_fbpic" alt="facebook profile pic" style="width: 100%; height: auto" />
 
-            <ul data-role="listview"  data-theme="a" data-inset="true"  data-divider-theme="b">
+            </div>
+
+            <ul data-role="listview" data-theme="a" data-inset="true" data-divider-theme="b">
                 <li data-role="list-divider">Menu</li>
                 <li><a href="#" class="menu_pinfo">Personal Info</a></li>
-                <li><a href="#" class="menu_groups">Groups</a></li>       
-                 <li><a href="#" class="menu_churchlife">Church Life</a></li>
-                 <li><a href="#" class="menu_eventProfiles">Events</a></li>
+                <li><a href="#" class="menu_groups">Groups</a></li>
+                <li><a href="#" class="menu_churchlife">Church Life</a></li>
+                <li><a href="#" class="menu_eventProfiles">Events</a></li>
                 <li><a href="#" class="menu_sermons">Sermons</a></li>
                 <li><a href="#" class="menu_subs">Subscriptions</a></li>
-                 <li data-role="list-divider">Settings</li>
-                 <li><a href="#" class="menu_signout">Sign Out</a></li>
-                 <li><a href="#" class="menu_switchdb">Switch Database</a></li>
-                 <li><a href="#"  class="menu_sessionInfo">Session Info</a></li>
-                <li> <a href="#"  class="menu_closeMenu" >Close Menu</a></li>
-                 <li> <a href="#"  class="menu_clearCache" >Clear Cache</a></li>
-                </ul>
+                <li data-role="list-divider">Settings</li>
+                <li><a href="#" class="menu_signout">Sign Out</a></li>
+                <li><a href="#" class="menu_switchdb">Switch Database</a></li>
+                <li><a href="#" class="menu_sessionInfo">Session Info</a></li>
+                <li><a href="#" class="menu_closeMenu">Close Menu</a></li>
+                <li><a href="#" class="menu_clearCache">Clear Cache</a></li>
+            </ul>
 
 
         </div>
         <div data-role="header">
-            <a href="#" id="pg_home_showMenu" data-icon="bars" data-role="button" >menu</a>
+            <a href="#" id="pg_home_showMenu" data-icon="bars" data-role="button">menu</a>
 
             <h1 class="pageHeader" id="pg_home_header">home</h1>
+
+
         </div>
         <div data-role="content" style="padding: 15px">
-            <div style="width:100%; max-width:300px; min-height:80px; margin-left:auto; margin-right:auto">
+            <!--<img border="0" src="" alt="facebook profile pic" id="pg_home_fb_picurl" style="float: right; display: inline" />-->
+
+            <div style="width: 100%; max-width: 300px; min-height: 80px; margin-left: auto; margin-right: auto">
                 <img src="../img/gdd.png" style="width: 100%; height: auto" />
             </div>
+
+
             <div data-role="popup" class="ui-content" id="msgpopup" data-theme="b">
                 <div id="msgpopupcontent"></div>
             </div>
-          
-    
-                <ul  data-role="listview" data-theme="b" data-inset="true">
-                    <li><a href="#" id="btnHomePinfo" >
-                        Personal Info
+
+
+            <ul data-role="listview" data-theme="b" data-inset="true">
+                <li><a href="#" id="btnHomePinfo">Personal Info
                        
-                        </a></li>
-                     <li><a href="#" id="btnHomeFeeds">
-                         Latest Sermons</a></li>
-                    <li><a href="#" id="btnHomeSmallGroups" >
-                        Small Groups
+                </a></li>
+                <li><a href="#" id="btnHomeFeeds">Latest Sermons</a></li>
+                <li><a href="#" id="btnHomeSmallGroups">Small Groups
                        
-                        </a></li>
-                    <li><a href="#" id="btnHomeChurchLife" >
-                        Church Life</a></li>
-                    <li><a href="#" id="btnHomeEvents">
-                       Upcoming Events</a></li>
-                    
-                    <li><a href="#" id="btnHomeSubs">
-                        Subscriptions</a></li>
-                    <li><a href="#"  id="pg_home_signout">
-                        Sign Out</a></li>
-                    <li><a href="intro1.html"  id="btnHomeViewIntro" data-transition="flow">
-                        View Intro</a></li>
-                   
-                </ul>
-           
+                </a></li>
+                <li><a href="#" id="btnHomeChurchLife">Church Life</a></li>
+                <li><a href="#" id="btnHomeEvents">Upcoming Events</a></li>
+
+                <li><a href="#" id="btnHomeSubs">Subscriptions</a></li>
+                <li><a href="#" id="pg_home_signout">Sign Out</a></li>
+                <li><a href="intro1.html" id="btnHomeViewIntro" data-transition="flow">View Intro</a></li>
+
+            </ul>
+
             <!-- /navbar -->
 
         </div>
