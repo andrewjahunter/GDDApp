@@ -88,7 +88,7 @@
                         <li data-role="divider" data-theme="a">Choose an action</li>
                         <li><a href="#" id="btnAuthPortalOpenSearch">Connect to New Church</a></li>
 
-                        <li><a href="#pg_authportals_main_help" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
+                        <li><a href="#" data-rel="popup" id="pg_authportal_help" data-transition="slideup" data-position-to="window">What is this?</a></li>
                         <li><a href="#" data-rel="back">Cancel</a></li>
 
 
@@ -119,11 +119,11 @@
                     </div>
 
                     <p>
-                        There are currently no active churches registered in your profile. This is most likely because you have
-                        just signed in for the first time. 
+                        There are currently <strong>no active churches</strong> registered in your profile. This is most likely because you have
+                        <strong>just signed in</strong> for the first time. 
                     </p>
                     <p>
-                       To start you need to simply activate at least one church in your profile. To find the church you are looking for click the button below. 
+                       <strong>TO START: </strong> you need to activate at least one church in your profile. To find the church you are looking for click the button below. 
                     </p>
                                 <a href="#pg_authportal_addnewportal"  data-role="button" data-theme="b" >Connect New Church</a>
 
@@ -135,12 +135,12 @@
             <div data-role="popup" id="pg_authportals_activate_help" data-overlay-theme="b" style="max-width: 400px;"
                 class="ui-corner-all">
                 <div data-role="header" data-theme="b" class="ui-corner-top">
-                    <h1>Search Church</h1>
+                    <h1>Search...</h1>
                 </div>
                 <div data-role="content" class="ui-corner-bottom ui-content">
-                    <p><strong>Enter the name</strong> of the database you are looking for. You can enter part of the name for example "His" to search for all "His People" churches</p>
-                    <p></p>
-                    <p>From the results, <strong>click the "check" icon.</strong> This will add this church to your active profile</p>
+                    <p><strong>Enter the name</strong> of the church you are looking for. You can enter part of the name for example "His" to search for all "His People" churches</p>
+                    
+                    <p>From the results, <strong>click the "check" icon.</strong> This will activate the church in your profile</p>
                     <p>The church will now appear in the list of available database to log into. <strong>Simply click on church name to sign in</strong></p>
 
 
@@ -153,21 +153,21 @@
             <div data-role="popup" id="pg_authportals_main_help" data-overlay-theme="b" style="max-width: 400px;"
                     class="ui-corner-all">
                     <div data-role="header" data-theme="b" class="ui-corner-top">
-                        <h1>Choose Church</h1>
+                        <h1>Find Church</h1>
                     </div>
                     <div data-role="content" class="ui-corner-bottom ui-content">
                         <p>
                             This app can be signed into <strong>any number of churches/ministries</strong> as you would like
                         </p>
                         <p>
-                            The list below includes all the churches that you have previously signed into. Simply <strong>click on the church name</strong> to be logged into that
+                            The list below includes all the churches that are active in your profile. Simply <strong>click on the church name</strong> to be logged into that
                             database
                         </p>
                         <p>
                             To <strong>remove a church</strong> from your list of active profiles simply click the "X" next to the churches name. Note this will simply remove it from your active profile. You can
                             add it back at any stage.
                         </p>
-                        <p>If there are no churches in the list below or if you want to add another church to your acive list, <strong>click "Connect to New Church"</strong> under the actions menu</p>
+                        <p><strong>If there are no churches</strong> in the list below or if you want to add another church to your acive list, <strong>click "Connect to New Church"</strong> under the actions menu</p>
 
                         <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
 
@@ -177,16 +177,16 @@
             <div data-role="popup" id="pg_authportal_cantfindchurch" data-overlay-theme="b" style="max-width: 400px;"
                     class="ui-corner-all">
                     <div data-role="header" data-theme="b" class="ui-corner-top">
-                        <h1>Church Missing?</h1>
+                        <h1>Missing?</h1>
                     </div>
                     <div data-role="content" class="ui-corner-bottom ui-content">
-                        <p>If you are not able to find the church you are looking for, its most likely becase they are not registered as a church
+                        <p>If you are <strong>not able to find the church</strong> you are looking for, its most likely becase they are <strong>not registered</strong> as a church
                             on the godochurch online systems. If this is the case please choose from the following options:
                             
                             
                         </p>
                         <ol>
-                            <li>Please ask your church to <strong>consider registering with us</strong>. Send them to our website at www.gododata.com</li>
+                            <li>Please ask your church to <strong>consider registering with us</strong>. Send them to our website at <a href="http://www.gododata.com" target="_blank"><strong>www.gododata.com</strong></a></li>
                             <li>Send us an email at <strong>support@gododata.com</strong>, and we will contact them for you.</li>
                             </ol>
                         <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
