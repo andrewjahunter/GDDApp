@@ -14,9 +14,24 @@
     <script data-main="mobile/scripts/app/appstart.min.js" src="scripts/libraries/require.js"></script>
 
 
-    <script type="text/javascript" src="cordova.js"></script>
+   <script type="text/javascript" src="cordova.js"></script>
     <!--<script src="scripts/libraries/gddcordova.js"></script>-->
     <script type="text/javascript" charset="utf-8">
+
+        requirejs.onError = function (err) {
+            showLoadError()
+            alert("requirejs error of type:" + err.requireType)
+
+        }
+
+        function showLoadError() {
+            var e = document.getElementById("offlineErrorLoadingIndex");
+            e.style.display = 'block'
+
+            var z = document.getElementById("loader_body");
+            z.style.display = 'none'
+
+        }
 
         // Wait for Cordova to load
         function onLoad() {
@@ -107,9 +122,7 @@
             }
             catch (err) {
 
-                var e = document.getElementById("offlineErrorLoadingIndex");
-                e.style.display = 'block'
-              
+                showLoadError()
 
                 alert("Err: onOffline: " + err)
             }
@@ -270,55 +283,53 @@
 
     <div data-role="page" data-theme="g" id="pg_index">
 
-        <div id="offlineErrorLoadingIndex" class="ui-body-e  ui-corner-all" style="padding: 2px; display:none; margin-left:10px;margin-top:10px;margin-right:10px">
-                   <p>Your device is not connected to the Internet. Please ensure you are connected and then restart the app.</p> 
 
-              <a data-role="button" href="#" onclick="window.location.reload()">Try Again</a>
-
-            
-                </div>
 
 
         <div data-role="content" style="height: 100%">
-            
 
-            <div>
-                <div>
-                    <div id="loader_body">
-                        <!-- <img src="mobile/img/gdd.png" style="width: 100%; height: auto" />-->
+            <div id="offlineErrorLoadingIndex" class="ui-body-e  ui-corner-all" style="padding: 2px; display: none; margin-left: 10px; margin-top: 10px; margin-right: 10px">
+                <p>Your device is not connected to the Internet. Please ensure you are connected and then try again.</p>
 
-                        <div id="loader_container">
+                <a data-role="button" href="#" onclick="window.location.reload()">Try Again</a>
 
-                            <div id="loader_panel">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <img src="mobile/img/gdd.png" style="width: 100%; height: auto" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div id="loadingProgressG">
-                                                <div id="loadingProgressG_1" class="loadingProgressG">
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div style="text-align: center">initializing....</div>
-                                        </td>
-                                    </tr>
-                                </table>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
 
             </div>
 
-          
+
+            <div id="loader_body">
+                <!-- <img src="mobile/img/gdd.png" style="width: 100%; height: auto" />-->
+
+                <div id="loader_container">
+
+                    <div id="loader_panel">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="mobile/img/gdclogo.png" /></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div id="loadingProgressG">
+                                        <div id="loadingProgressG_1" class="loadingProgressG">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align: center">initializing....</div>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
 
 
         </div>
