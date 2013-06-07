@@ -17,12 +17,18 @@
 
     
         alert("index script is loading")
+
+       
        
 
         // Wait for Cordova to load
         function onLoad() {
-           alert("onLoad is called")
             document.addEventListener("deviceready", onDeviceReady, false);
+           
+
+            runTestState();
+         
+                     
         }
 
         // Cordova is ready
@@ -40,33 +46,10 @@
                 document.addEventListener("offline", wentOffline, false);
 
                 document.addEventListener("online", wentOnline, false);
-
-                if (gdd.isReady) {
-                    alert("gdd.isReady does exists in onDeviceReady")
-                    if (gdd.isReady()) {
-                         alert("gdd is ready in onDeviceReady")
-
-                        if (window.gdd.navPage) {
-                            //  alert("in the onDeviceReady routine the navPage is set to: " + window.gdd.navPage)
-                            navigator.splashscreen.hide();
-                            $.mobile.changePage(window.gdd.navPage)
-                        } else {
-                            showPageIndexError("There was an error in trying to load the application. Please check you are connected to the internet and try again.")
-                            // alert("No navPage found in the index html onDeviceReady routine")
-                        }
-
-                    }
-                } else {
-                    alert("gdd.isReady does not exist in onDeviceReady")
-                    showPageIndexError("There was an error in trying to load the application. Please check you are connected to the internet and try again.")
-                }
-                
-
-
+                          
             }
             catch (err) {
-                showPageIndexError("The following error occured: " + err + ". Please check you are connected to the Internet and try again.")
-                //alert("Err: onDeviceReady: " + err)
+                alert("The following error occured during the onDeviceReady event: " + err + ". Please check you are connected to the Internet and try again.")              
             }
 
         }
@@ -82,7 +65,7 @@
                 } else {
                     alert("Not Ready or Not Online from onAppResume")
                     if (gdd.indexPageIsActive()) {
-                        showPageIndexError("Please check you are connected to the internet. Once you are reconnected please click try again")
+                        runTestState()
                     } else {
                         window.location.href = gdd.indexPagePath();
                     }                
@@ -106,7 +89,7 @@
 
                 } else {
                     if (gdd.indexPageIsActive()) {
-                        showPageIndexError("Please check you are connected to the internet. Once you are reconnected please click try again")
+                        runTestState()
                     } else {
                         window.location.href = gdd.indexPagePath();
                     }
@@ -295,6 +278,40 @@
 
         <script type="text/javascript">
 
+            function runTestState() {
+                var attemptCount = 0
+                document.getElementById("progressState").innerHTML = "Attempt number " + attemptCount
+                window.clearInterval(gdd.testStateInterval);
+                var testState = function () {
+
+                    if ((gdd.onLine()) && (gdd.isReady())) {
+                        window.clearInterval(gdd.testStateInterval);
+                        gdd.views.utils.processAppStart();
+
+                        if (gdd.isPhonegap()) {
+                            navigator.splashscreen.hide();
+                        }
+                    } else {
+                        attemptCount += 1;
+                        if (attemptCount === 10) {
+                            window.clearInterval(gdd.testStateInterval);
+
+                            showPageIndexError("oopssss i daisy")
+                        } else {
+                            document.getElementById("progressState").innerHTML = "Attempt number " + attemptCount
+
+                        }
+                    }
+
+                }
+
+                gdd.testStateInterval = self.setInterval(function () {
+
+                    testState()
+
+                }, 500);
+            }
+
             function showPageIndexError(err) {
 
                 document.getElementById("indexErrMsg").innerHTML = err
@@ -342,7 +359,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <div style="text-align: center">initializing....</div>
+                                    <div id="progressState" style="text-align: center">initializing....</div>
                                 </td>
                             </tr>
                         </table>
