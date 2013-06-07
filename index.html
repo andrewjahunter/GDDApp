@@ -23,6 +23,7 @@
 
         // Wait for Cordova to load
         function onLoad() {
+            alert("index onload called")
             document.addEventListener("deviceready", onDeviceReady, false);
            
 
@@ -78,7 +79,7 @@
 
         function wentOnline() {
             try {
-                // alert("Online fired")
+                 alert("Online fired")
 
                 if ((gdd.isReady()) && (gdd.onLine())) {
 
@@ -88,6 +89,7 @@
                     }
 
                 } else {
+                    alert("Online fired not ready not online")
                     if (gdd.indexPageIsActive()) {
                         runTestState()
                     } else {
@@ -103,12 +105,14 @@
 
         function wentOffline() {
             try {
-                //alert("offline fired")
+                alert("offline fired")
                 window.gdd.appWentOffline = true;
 
                 if (gdd.indexPageIsActive()) {
+                    alert("offline fires we are on index page")
                     showPageIndexError("Please check you are connected to the internet. Once you are reconnected please click try again")
                 } else {
+                    alert("offline go to index page")
                     window.location.href = gdd.indexPagePath();
                 }
                                        
@@ -279,6 +283,7 @@
         <script type="text/javascript">
 
             function runTestState() {
+                alert("runnin runTestState")
                 var attemptCount = 0
                 document.getElementById("progressState").innerHTML = "Attempt number " + attemptCount
                 window.clearInterval(gdd.testStateInterval);
