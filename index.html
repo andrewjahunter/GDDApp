@@ -7,10 +7,7 @@
     <link href="mobile/styles/app.css" rel="stylesheet" />
     <link href="mobile/styles/gdd.mobile.min.css" rel="stylesheet" />
     <link href="mobile/styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />
-    <!--    <script src="../scripts/libraries/jquery-1.9.1.js"></script>
-    <script src="scripts/jquery.mobile-1.3.0.min.js"></script>
-    <script src="../scripts/libraries/jquery.validate.min.js"></script>-->
-    <!--<script src="phonegap.js"></script>-->
+
     <script data-main="mobile/scripts/app/appstart.min.js" src="scripts/libraries/require.js"></script>
 
 
@@ -18,20 +15,9 @@
     <!--<script src="scripts/libraries/gddcordova.js"></script>-->
     <script type="text/javascript" charset="utf-8">
 
-        requirejs.onError = function (err) {
-            showLoadError()
-            alert("requirejs error of type:" + err.requireType)
+    
 
-        }
-
-        function showLoadError() {
-            var e = document.getElementById("offlineErrorLoadingIndex");
-            e.style.display = 'block'
-
-            var z = document.getElementById("loader_body");
-            z.style.display = 'none'
-
-        }
+       
 
         // Wait for Cordova to load
         function onLoad() {
@@ -44,18 +30,18 @@
             alert("Device ready has fired:")
             window.gdd = window.gdd || {};
             window.gdd.deviceIsReady = true;
-
+           
             try {
 
                 document.addEventListener("resume", onAppResume, false);
 
                 document.addEventListener("menubutton", onMenuKeyDown, false);
 
-                document.addEventListener("offline", onOffline, false);
+                document.addEventListener("offline", wentOffline, false);
 
-                document.addEventListener("online", onLine, false);
+                document.addEventListener("online", wentOnline, false);
 
-                if (gdd.requireJsLoaded) {
+                if (gdd.isReady()) {
                     // alert("devceReady and requireJS is loaded")
 
                     if (window.gdd.navPage) {
@@ -63,68 +49,81 @@
                         navigator.splashscreen.hide();
                         $.mobile.changePage(window.gdd.navPage)
                     } else {
+                        showPageIndexError("There was an error in trying to load the application. Please check you are connected to the internet and try again.")
                         // alert("No navPage found in the index html onDeviceReady routine")
                     }
 
-                } else {
-
-                    //alert("devceReady and requireJS is NOT loaded")
-                }
+                } 
 
 
             }
             catch (err) {
-                alert("Err: onDeviceReady: " + err)
+                showPageIndexError("The following error occured: " + err + ". Please check you are connected to the Internet and try again.")
+                //alert("Err: onDeviceReady: " + err)
             }
-
-
 
         }
 
         function onAppResume() {
             try {
                 //alert("App Resume event fired")
-                gdd.views.utils.showLoader("waking up...")
+                //gdd.views.utils.showLoader("waking up...")
                 // alert("value of gdd.views.utils: " + gdd.views.utils + " value of  window.gdd.requireJsLoaded: " + window.gdd.requireJsLoaded)
-                gdd.views.utils.processAppStart();
-                gdd.views.utils.hideLoader()
+                if ((gdd.isReady()) && (gdd.onLine())) {
+                    gdd.views.utils.processAppStart();                
+                } else {
+                    if (gdd.indexPageIsActive()) {
+                        showPageIndexError("Please check you are connected to the internet. Once you are reconnected please click try again")
+                    } else {
+                        window.location.href = gdd.indexPagePath();
+                    }                
+                }                
             }
             catch (err) {
-                alert("Err: onAppResume: " + err)
+                alert("Error onAppResume: " + err)
             }
-
-
-
         }
 
-        function onLine() {
+        function wentOnline() {
             try {
                 // alert("Online fired")
-                if (window.gdd.appWentOffline) {
-                    $.mobile.changePage(gdd.views.pageinfo.home.path)
-                    window.gdd.appWentOffline = false;
-                }
+
+                if ((gdd.isReady()) && (gdd.onLine())) {
+
+                    if (window.gdd.appWentOffline) {
+                        $.mobile.changePage(gdd.views.pageinfo.home.path)
+                        window.gdd.appWentOffline = false;
+                    }
+
+                } else {
+                    if (gdd.indexPageIsActive()) {
+                        showPageIndexError("Please check you are connected to the internet. Once you are reconnected please click try again")
+                    } else {
+                        window.location.href = gdd.indexPagePath();
+                    }
+                }            
             }
             catch (err) {
-
-
-                alert("Err: OnLine: " + err)
+                alert("Error occured when app came online: " + err)
             }
 
         }
 
-        function onOffline() {
+        function wentOffline() {
             try {
-
                 //alert("offline fired")
                 window.gdd.appWentOffline = true;
-                $.mobile.changePage(gdd.views.pageinfo.offline.path, { "transition": "slide" })
+
+                if (gdd.indexPageIsActive()) {
+                    showPageIndexError("Please check you are connected to the internet. Once you are reconnected please click try again")
+                } else {
+                    window.location.href = gdd.indexPagePath();
+                }
+                                       
             }
             catch (err) {
 
-                showLoadError()
-
-                alert("Err: onOffline: " + err)
+                alert("The following occurred when app went offline: " + err)
             }
 
         }
@@ -136,7 +135,7 @@
                 $.mobile.changePage(gdd.views.pageinfo.home.path)
             }
             catch (err) {
-                alert("Err: onMenuKeyDown: " + err)
+             
             }
 
         };
@@ -145,7 +144,13 @@
 
     </script>
 
-    <style>
+    
+</head>
+<body onload="onLoad()" style="background-color: #343030">
+
+    <div data-role="page" data-theme="g" id="pg_index">
+
+        <style>
         #loader_body {
             /*position: absolute;
             width: 100%;
@@ -178,7 +183,7 @@
             height: 200px;
             margin-left: auto;
             margin-right: auto;*/
-            width: 250px;
+            width: 200px;
             height: 200px;
             margin-left: auto;
             margin-right: auto;
@@ -278,36 +283,46 @@
             }
         }
     </style>
-</head>
-<body onload="onLoad()">
 
-    <div data-role="page" data-theme="g" id="pg_index">
+        <script type="text/javascript">
+
+            function showPageIndexError(err) {
+
+                document.getElementById("indexErrMsg").innerHTML = err
+
+                var e = document.getElementById("indexErrDiv");
+                e.style.display = 'block'
+
+                var z = document.getElementById("progressDiv");
+                z.style.display = 'none'
+
+            }
+
+        </script>
+        
 
 
 
 
-        <div data-role="content" style="height: 100%">
-
-            <div id="offlineErrorLoadingIndex" class="ui-body-e  ui-corner-all" style="padding: 2px; display: none; margin-left: 10px; margin-top: 10px; margin-right: 10px">
-                <p>Your device is not connected to the Internet. Please ensure you are connected and then try again.</p>
-
-                <a data-role="button" href="#" onclick="window.location.reload()">Try Again</a>
 
 
-            </div>
 
 
-            <div id="loader_body">
-                <!-- <img src="mobile/img/gdd.png" style="width: 100%; height: auto" />-->
 
-                <div id="loader_container">
 
-                    <div id="loader_panel">
+
+        <div id="loader_body">
+
+
+            <div id="loader_container">
+
+                <div id="loader_panel">
+
+                    <img src="mobile/img/gdc200.png" style="width: 200px; height: auto" />
+
+                    <div id="progressDiv">
+
                         <table>
-                            <tr>
-                                <td>
-                                    <img src="mobile/img/gdclogo.png" /></td>
-                            </tr>
                             <tr>
                                 <td>
                                     <div id="loadingProgressG">
@@ -324,15 +339,29 @@
                         </table>
 
                     </div>
+
+
+
+
+
                 </div>
             </div>
+        </div>
 
+        <div id="indexErrDiv" class="ui-body-e  ui-corner-all" style="padding: 2px; display: none; margin-left: 10px; margin-top: 10px; margin-right: 10px">
+            <p id="indexErrMsg">Your device is not connected to the Internet. Please ensure you are connected and then try again.</p>
 
-
-
+            <a data-role="button" href="#" onclick="window.location.reload()">Try Again</a>
 
 
         </div>
+
+
+
+
+
+
+
         <!-- /content -->
 
 
