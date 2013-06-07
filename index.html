@@ -11,7 +11,7 @@
     <script data-main="mobile/scripts/app/appstart.min.js" src="scripts/libraries/require.js"></script>
 
 
-   <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
     <!--<script src="scripts/libraries/gddcordova.js"></script>-->
     <script type="text/javascript" charset="utf-8">
 
@@ -41,19 +41,24 @@
 
                 document.addEventListener("online", wentOnline, false);
 
-                if (gdd.isReady()) {
-                    // alert("devceReady and requireJS is loaded")
+                if (gdd.isReady) {
+                    if (gdd.isReady()) {
+                        // alert("devceReady and requireJS is loaded")
 
-                    if (window.gdd.navPage) {
-                        //  alert("in the onDeviceReady routine the navPage is set to: " + window.gdd.navPage)
-                        navigator.splashscreen.hide();
-                        $.mobile.changePage(window.gdd.navPage)
-                    } else {
-                        showPageIndexError("There was an error in trying to load the application. Please check you are connected to the internet and try again.")
-                        // alert("No navPage found in the index html onDeviceReady routine")
+                        if (window.gdd.navPage) {
+                            //  alert("in the onDeviceReady routine the navPage is set to: " + window.gdd.navPage)
+                            navigator.splashscreen.hide();
+                            $.mobile.changePage(window.gdd.navPage)
+                        } else {
+                            showPageIndexError("There was an error in trying to load the application. Please check you are connected to the internet and try again.")
+                            // alert("No navPage found in the index html onDeviceReady routine")
+                        }
+
                     }
-
-                } 
+                } else {
+                    showPageIndexError("There was an error in trying to load the application. Please check you are connected to the internet and try again.")
+                }
+                
 
 
             }
