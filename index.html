@@ -16,12 +16,12 @@
     <script type="text/javascript" charset="utf-8">
 
     
-
+        alert("index script is loading")
        
 
         // Wait for Cordova to load
         function onLoad() {
-            //alert("onLoad is called")
+           /alert("onLoad is called")
             document.addEventListener("deviceready", onDeviceReady, false);
         }
 
@@ -42,8 +42,9 @@
                 document.addEventListener("online", wentOnline, false);
 
                 if (gdd.isReady) {
+                    alert("gdd.isReady does exists in onDeviceReady")
                     if (gdd.isReady()) {
-                        // alert("devceReady and requireJS is loaded")
+                         alert("gdd is ready in onDeviceReady")
 
                         if (window.gdd.navPage) {
                             //  alert("in the onDeviceReady routine the navPage is set to: " + window.gdd.navPage)
@@ -56,6 +57,7 @@
 
                     }
                 } else {
+                    alert("gdd.isReady does not exist in onDeviceReady")
                     showPageIndexError("There was an error in trying to load the application. Please check you are connected to the internet and try again.")
                 }
                 
@@ -71,12 +73,14 @@
 
         function onAppResume() {
             try {
-                //alert("App Resume event fired")
+                alert("App Resume event fired")
                 //gdd.views.utils.showLoader("waking up...")
                 // alert("value of gdd.views.utils: " + gdd.views.utils + " value of  window.gdd.requireJsLoaded: " + window.gdd.requireJsLoaded)
                 if ((gdd.isReady()) && (gdd.onLine())) {
+                    alert("App Start from onAppResume")
                     gdd.views.utils.processAppStart();                
                 } else {
+                    alert("Not Ready or Not Online from onAppResume")
                     if (gdd.indexPageIsActive()) {
                         showPageIndexError("Please check you are connected to the internet. Once you are reconnected please click try again")
                     } else {
