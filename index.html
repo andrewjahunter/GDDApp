@@ -14,7 +14,8 @@
 
     
         alert("index script is loading")
- navigator.splashscreen.hide();
+       
+
        
        
 
@@ -31,7 +32,8 @@
 
         // Cordova is ready
         function onDeviceReady() {
-            alert("Device ready has fired:")
+            alert("Device ready has fired yesww:")
+            navigator.splashscreen.hide();
             window.gdd = window.gdd || {};
             window.gdd.deviceIsReady = true;
            
@@ -139,7 +141,7 @@
 
     
 </head>
-<body  >
+<body onload="indexPageLoaded();" >
 
     <div data-role="page" style="background-color: #343030" data-theme="g" id="pg_index">
 
