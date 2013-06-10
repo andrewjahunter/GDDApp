@@ -71,7 +71,7 @@
   <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
   <plugin name="File" value="org.apache.cordova.FileUtils" />
   <plugin name="FileTransfer" value="org.apache.cordova.FileTransfer" />
-
+  <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
   <!--
         <gap:plugin name="Example" />
         A list of available plugins are available at https://build.phonegap.com/docs/plugins

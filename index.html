@@ -279,6 +279,10 @@
 
         <script type="text/javascript">
 
+            function showsplash() {
+                navigator.splashscreen.show();
+            }
+
             function runTestState() {
                 alert("runnin runTestState")
                 var attemptCount = 0
@@ -362,6 +366,7 @@
                             <tr>
                                 <td>
                                     <div id="progressState" style="text-align: center">initializing....</div>
+                                    <a href="#" data-role="button" id="btnShowSplash" onclick="showsplash()">Show Splash</a>
                                 </td>
                             </tr>
                         </table>
