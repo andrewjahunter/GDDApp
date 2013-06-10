@@ -11,15 +11,15 @@
    
     <!--<script src="scripts/libraries/gddcordova.js"></script>-->
     <script type="text/javascript" charset="utf-8">
- window.gdd = window.gdd || {};
+        window.gdd = window.gdd || {};
     
-        alert("index script is loading")
+       // alert("index script is loading")
        
 
       
         // Wait for Cordova to load
         function indexPageLoaded() {
-            alert("index onload called")
+           // alert("index onload called")
             window.gdd.deviceIsReady = false;
             document.addEventListener("deviceready", onDeviceReady, false);
            
@@ -29,7 +29,7 @@
 
         // Cordova is ready
         function onDeviceReady() {
-            alert("Device ready has fired yesww:")
+          //  alert("Device ready has fired yesww:")
             navigator.splashscreen.hide();
             window.gdd = window.gdd || {};
             window.gdd.deviceIsReady = true;
@@ -53,14 +53,14 @@
 
         function onAppResume() {
             try {
-                alert("App Resume event fired")
+               // alert("App Resume event fired")
                 //gdd.views.utils.showLoader("waking up...")
                 // alert("value of gdd.views.utils: " + gdd.views.utils + " value of  window.gdd.requireJsLoaded: " + window.gdd.requireJsLoaded)
                 if ((gdd.isReady()) && (gdd.onLine())) {
-                    alert("App Start from onAppResume")
+                   // alert("App Start from onAppResume")
                     gdd.views.utils.processAppStart();                
                 } else {
-                    alert("Not Ready or Not Online from onAppResume")
+                   // alert("Not Ready or Not Online from onAppResume")
                     if (gdd.indexPageIsActive()) {
                         runProgressState()
                     } else {
@@ -75,7 +75,7 @@
 
         function wentOnline() {
             try {
-                 alert("Online fired")
+                // alert("Online fired")
 
                 if ((gdd.isReady()) && (gdd.onLine())) {
 
@@ -85,7 +85,7 @@
                     }
 
                 } else {
-                    alert("Online fired not ready not online")
+                   // alert("Online fired not ready not online")
                     if (gdd.indexPageIsActive()) {
                         runProgressState()
                     } else {
@@ -101,14 +101,14 @@
 
         function wentOffline() {
             try {
-                alert("offline fired")
+               // alert("offline fired")
                 window.gdd.appWentOffline = true;
 
                 if (gdd.indexPageIsActive()) {
-                    alert("offline fires we are on index page")
+                    //alert("offline fires we are on index page")
                     showPageIndexError("Please check you are connected to the internet. Once you are reconnected please click try again")
                 } else {
-                    alert("offline go to index page")
+                   // alert("offline go to index page")
                     window.location.href = gdd.indexPagePath();
                 }
                                        
@@ -175,7 +175,7 @@
             height: 200px;
             margin-left: auto;
             margin-right: auto;*/
-            width: 200px;
+            width: 150px;
             height: 200px;
             margin-left: auto;
             margin-right: auto;
@@ -183,7 +183,7 @@
 
 
         #loadingProgressG {
-            width: 256px;
+            width: 150px;
             height: 20px;
             overflow: hidden;
             background-color: #6994C9;
@@ -294,7 +294,7 @@
 
         
             function runProgressState() {
-                alert("running progress state")
+               // alert("running progress state")
 
                 var e = document.getElementById("indexErrDiv");
                 e.style.display = 'none'
@@ -308,11 +308,7 @@
 
                 var progressState = function () {
 
-                    if (gdd.isReady()) {
-                        alert("isready is true")
-                    } else {
-                        alert("eish isready is false")
-                    }
+                  
 
                     if ((gdd.onLine()) && (gdd.isReady())) {
                         window.clearInterval(gdd.progressStateInterval);
@@ -345,7 +341,7 @@
 
                         progressState()
 
-                    }, 1000);
+                    }, 500);
                 } else {
                     showPageIndexError("Your device is not connected to the internet, please establish a connection and try again.")
                 }
@@ -369,16 +365,6 @@
         </script>
         
 
-
-
-
-
-
-
-
-
-
-
         <div id="loader_body">
 
 
@@ -386,7 +372,7 @@
 
                 <div id="loader_panel">
 
-                    <img src="mobile/img/gdc200.png" style="width: 200px; height: auto" />
+                    <img src="mobile/img/gdc200.png" style="width: 150px; height: 150px" />
 
                     <div id="progressDiv">
 
@@ -417,7 +403,7 @@
             </div>
         </div>
 
-        <div id="indexErrDiv" class="ui-body-e  ui-corner-all" style="padding: 2px; display: none; margin-left: 10px; margin-top: 10px; margin-right: 10px">
+        <div id="indexErrDiv" class="ui-body-d  ui-corner-all" style="padding: 2px; display: none; margin-left: 10px; margin-top: 10px; margin-right: 10px">
             <p id="indexErrMsg">Your device is not connected to the Internet. Please ensure you are connected and then try again.</p>
 
             <a data-role="button" href="#" onclick="window.location.reload()">Try Again</a>
@@ -441,6 +427,6 @@
      <script data-main="mobile/scripts/app/appstart.min.js" src="scripts/libraries/require.js"></script>
 
 
-   <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
 
 </html>
