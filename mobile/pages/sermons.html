@@ -373,10 +373,11 @@
                 <div data-role="popup" id="pg_sermon_download_confirm" data-overlay-theme="d" style="max-width: 400px;"
                     class="ui-corner-all">
                     <div data-role="header" data-theme="d" class="ui-corner-top">
-                        <h1>No WiFi</h1>
+                        <h1>Download?</h1>
                     </div>
                     <div data-role="content" class="ui-corner-bottom ui-content">
-                        <p>
+                        <div id="downloadSermonNotWifi">
+                             <p>
                             Your device is not connected over a WiFi network. Downloading a file could incur high data charges on your monthly account.
                         These charges are charged by your mobile service provider. 
                         
@@ -384,16 +385,31 @@
                         <p>
                             Do you want to continue wth this download?
                         </p>
+                        </div>
+
+                        <div id="downloadSermonWithWifi">
+                             <p>
+                            You have requested to download the selected item. You are connected over Wifi. 
+                        
+                        </p>
+                        <p>
+                            Do you want to continue wth this download?
+                        </p>
+                        </div>
+                       
 
                         <a href="btnSermonsDownloadConfirm" data-role="button" data-inline="true" data-theme="d">download</a>
 
                         <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a">cancel</a>
 
+                        <div class="ui-body-d  ui-corner-all" style="padding: 2px; margin-bottom: 5px" id="pg_sermons_download_sts">
+                            Download Status: Not Started
+                        </div>
 
                     </div>
                 </div>
 
-
+                
 
                 <div data-role="popup" id="pg_sermons_downloadsuccess_popup" data-overlay-theme="b" style="max-width: 400px;"
                     class="ui-corner-all">
