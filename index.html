@@ -307,6 +307,12 @@
 
                 var progressState = function () {
 
+    if (gdd.isReady()) {
+                        alert("isready is true")
+                    } else {
+                        alert("eish isready is false")
+                    }
+
                     if ((gdd.onLine()) && (gdd.isReady())) {
                         window.clearInterval(gdd.progressStateInterval);
 
