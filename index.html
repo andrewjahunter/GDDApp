@@ -294,6 +294,15 @@
         
             function runProgressState() {
                 alert("running progress state")
+
+  var e = document.getElementById("indexErrDiv");
+                e.style.display = 'none'
+
+                var z = document.getElementById("progressDiv");
+                z.style.display = 'block'
+
+
+
                 var attemptCount = 0
                 document.getElementById("progressState").innerHTML = "launching..."
                 window.clearInterval(gdd.progressStateInterval);
