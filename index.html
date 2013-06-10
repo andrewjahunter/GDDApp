@@ -142,9 +142,9 @@
 
     
 </head>
-<body onload="onLoad()" style="background-color: #343030">
+<body onload="onLoad()" >
 
-    <div data-role="page" data-theme="g" id="pg_index">
+    <div data-role="page" style="background-color: #343030" data-theme="g" id="pg_index">
 
         <style>
         #loader_body {
@@ -294,7 +294,7 @@
                         gdd.views.utils.processAppStart();
 
                         if (gdd.isPhonegap()) {
-                            navigator.splashscreen.hide();
+                            //navigator.splashscreen.hide();
                         }
                     } else {
                         attemptCount += 1;
