@@ -295,13 +295,11 @@
             function runProgressState() {
                 alert("running progress state")
 
-  var e = document.getElementById("indexErrDiv");
+                var e = document.getElementById("indexErrDiv");
                 e.style.display = 'none'
 
                 var z = document.getElementById("progressDiv");
                 z.style.display = 'block'
-
-
 
                 var attemptCount = 0
                 document.getElementById("progressState").innerHTML = "launching..."
@@ -397,7 +395,7 @@
                             <tr>
                                 <td>
                                     <div id="progressState" style="text-align: center">initializing....</div>
-                                    <a href="#" data-role="button" id="btnShowSplash" onclick="showsplash()">Show Splash</a>
+                                   
                                 </td>
                             </tr>
                         </table>
@@ -436,6 +434,6 @@
      <script data-main="mobile/scripts/app/appstart.min.js" src="scripts/libraries/require.js"></script>
 
 
-    <script type="text/javascript" src="cordova.js"></script>
+   <script type="text/javascript" src="cordova.js"></script>
 
 </html>
