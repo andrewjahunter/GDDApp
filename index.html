@@ -20,6 +20,7 @@
         // Wait for Cordova to load
         function indexPageLoaded() {
             alert("index onload called")
+            window.gdd.deviceIsReady = false;
             document.addEventListener("deviceready", onDeviceReady, false);
            
             //runTestState();
@@ -307,7 +308,7 @@
 
                 var progressState = function () {
 
-    if (gdd.isReady()) {
+                    if (gdd.isReady()) {
                         alert("isready is true")
                     } else {
                         alert("eish isready is false")
@@ -437,7 +438,7 @@
     <!-- /page -->
 </body>
 
-     <script data-main="mobile/scripts/app/appstart.min.js" src="scripts/libraries/require.js"></script>
+     <script data-main="mobile/scripts/app/appstart.js" src="scripts/libraries/require.js"></script>
 
 
    <script type="text/javascript" src="cordova.js"></script>
