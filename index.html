@@ -19,7 +19,7 @@
        
 
         // Wait for Cordova to load
-        function onLoad() {
+        function indexPageLoaded() {
             alert("index onload called")
             document.addEventListener("deviceready", onDeviceReady, false);
            
@@ -400,6 +400,6 @@
      <script data-main="mobile/scripts/app/appstart.min.js" src="scripts/libraries/require.js"></script>
 
 
-   <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
 
 </html>
