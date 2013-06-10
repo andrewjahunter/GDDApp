@@ -16,24 +16,20 @@
         alert("index script is loading")
        
 
-       
-       
-
+      
         // Wait for Cordova to load
         function indexPageLoaded() {
             alert("index onload called")
             document.addEventListener("deviceready", onDeviceReady, false);
            
-
-            runTestState();
-         
-                     
+            //runTestState();
+                           
         }
 
         // Cordova is ready
         function onDeviceReady() {
             alert("Device ready has fired yesww:")
-           
+            navigator.splashscreen.hide();
             window.gdd = window.gdd || {};
             window.gdd.deviceIsReady = true;
            
@@ -49,7 +45,7 @@
                           
             }
             catch (err) {
-                alert("The following error occured during the onDeviceReady event: " + err + ". Please check you are connected to the Internet and try again.")              
+                showPageIndexError("The following error occured during the onDeviceReady event: " + err + ". Please check you are connected to the Internet and try again.")
             }
 
         }
@@ -65,14 +61,14 @@
                 } else {
                     alert("Not Ready or Not Online from onAppResume")
                     if (gdd.indexPageIsActive()) {
-                        runTestState()
+                        runProgressState()
                     } else {
                         window.location.href = gdd.indexPagePath();
                     }                
                 }                
             }
             catch (err) {
-                alert("Error onAppResume: " + err)
+                showPageIndexError("Error onAppResume: " + err)
             }
         }
 
@@ -90,14 +86,14 @@
                 } else {
                     alert("Online fired not ready not online")
                     if (gdd.indexPageIsActive()) {
-                        runTestState()
+                        runProgressState()
                     } else {
                         window.location.href = gdd.indexPagePath();
                     }
                 }            
             }
             catch (err) {
-                alert("Error occured when app came online: " + err)
+                showPageIndexError("Error occured when app came online: " + err)
             }
 
         }
@@ -118,7 +114,7 @@
             }
             catch (err) {
 
-                alert("The following occurred when app went offline: " + err)
+                showPageIndexError("The following occurred when app went offline: " + err)
             }
 
         }
@@ -143,7 +139,7 @@
 </head>
 <body onload="indexPageLoaded();" >
 
-    <div data-role="page" style="background-color: #343030" data-theme="g" id="pg_index">
+    <div data-role="page"  data-theme="g" id="pg_index">
 
         <style>
         #loader_body {
@@ -281,46 +277,70 @@
 
         <script type="text/javascript">
 
-            function showsplash() {
-                navigator.splashscreen.show();
-            }
+            var stateArr = new Array()
+            stateArr[0] = "initializing..."
+            stateArr[1] = "loading native api..."
+            stateArr[2] = "checking connection..."
+            stateArr[3] = "checking connection..."
+            stateArr[4] = "loading js modules..."
+            stateArr[5] = "loading js modules..."
+            stateArr[6] = "loading google maps..."
+            stateArr[7] = "loading google maps..."
+            stateArr[8] = "securing..."
+            stateArr[9] = "finalizing..."
+            stateArr[10] = "finalizing..."
+          
 
-            function runTestState() {
-                alert("runnin runTestState")
+        
+            function runProgressState() {
+                alert("running progress state")
                 var attemptCount = 0
-                document.getElementById("progressState").innerHTML = "Attempt number " + attemptCount
-                window.clearInterval(gdd.testStateInterval);
-                var testState = function () {
+                document.getElementById("progressState").innerHTML = "launching..."
+                window.clearInterval(gdd.progressStateInterval);
+
+                var progressState = function () {
 
                     if ((gdd.onLine()) && (gdd.isReady())) {
-                        window.clearInterval(gdd.testStateInterval);
+                        window.clearInterval(gdd.progressStateInterval);
+
                         gdd.views.utils.processAppStart();
 
-                        if (gdd.isPhonegap()) {
-                            //navigator.splashscreen.hide();
-                        }
+                      
                     } else {
                         attemptCount += 1;
                         if (attemptCount === 10) {
-                            window.clearInterval(gdd.testStateInterval);
+                            window.clearInterval(gdd.progressStateInterval);
 
-                            showPageIndexError("oopssss i daisy")
+                            showPageIndexError("Your device is either not connected to the internet of the connection is very slow. Please connect to the internet and try again.")
                         } else {
-                            document.getElementById("progressState").innerHTML = "Attempt number " + attemptCount
+                            try {
+                                document.getElementById("progressState").innerHTML = stateArr[attemptCount]
+                            }
+                            catch (err) {
+                                document.getElementById("progressState").innerHTML = "loading..."
+                            }
+                           
 
                         }
                     }
 
                 }
 
-                gdd.testStateInterval = self.setInterval(function () {
+                if (gdd.onLine()) {
+                    gdd.progressStateInterval = self.setInterval(function () {
 
-                    testState()
+                        progressState()
 
-                }, 500);
+                    }, 500);
+                } else {
+                    showPageIndexError("Your device is not connected to the internet, please establish a connection and try again.")
+                }
+
+                
             }
 
             function showPageIndexError(err) {
+                window.clearInterval(gdd.progressStateInterval);
 
                 document.getElementById("indexErrMsg").innerHTML = err
 
