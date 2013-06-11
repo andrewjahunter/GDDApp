@@ -18,6 +18,9 @@
             </div>
             <!-- /header -->
             <div data-role="content" style="padding: 15px">
+                 <div style="width: 72px; margin-left: auto; margin-right: auto">
+                <img src="../img/gdc72.png" style="width: 100%; height: auto" />
+            </div>
                 <div data-role="fieldcontain">                 
                         <label for="txtSignInUserName">
                            user name
@@ -29,7 +32,7 @@
                         <label for="txtSignInPassword">
                             password
                         </label>
-                        <input id="txtSignInPassword"  data-clear-btn="true" placeholder=""  value="" type="password" />                  
+                        <input id="txtSignInPassword"  data-clear-btn="true"  placeholder=""  value="" type="password" />                  
                 </div>
              
                 <button type="button" id="btnSignIn" data-theme="b" >
@@ -58,7 +61,7 @@
                 
                
 
-                <div data-role="popup" id="signInPopupFail"   style="max-width: 450px;"
+                <div data-role="popup" id="signInPopupFail" data-transition="slideup"   style="max-width: 450px;"
                     class="ui-corner-all">
                     <div data-role="header"  data-theme="e" class="ui-corner-top">
                         <h1 id="signInPopupFailHeader">Failed?</h1>
@@ -68,7 +71,7 @@
                         <p id="signInPopupFailMsg">
                         </p>
                         <a href="#"  data-role="button" data-theme="e" data-inline="true" data-rel="back" >Try Again</a>
-                        <a href="#" data-role="button" class="registerbutton" data-theme="e" data-inline="true" id="btnRegFailSignIn" data-transition="flow" >Register</a>
+                        <a href="#" data-role="button"  data-theme="c" data-inline="true" id="btnRegFailSignIn" data-transition="flow" >Register</a>
                     </div>
                 </div>
 
@@ -76,7 +79,7 @@
                 <div data-role="popup" id="signInPopupVerificationRequired" data-overlay-theme="b"  style="max-width: 450px;"
                     class="ui-corner-all">
                     <div data-role="header" data-theme="d" class="ui-corner-top">
-                        <h1 id="emailVerificationHeader">Verification Pending</h1>
+                        <h1 id="emailVerificationHeader">Verification</h1>
                     </div>
                     <div data-role="content" class="ui-corner-bottom ui-content">
                         <h3 id="emailVerificationTitle" class="ui-title">Your account has not been verified</h3>
