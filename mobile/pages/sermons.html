@@ -123,7 +123,7 @@
                     </div>
                 </div>
 
-                   <div id="pg_sermons_nofeed" style="display: none">
+                <div id="pg_sermons_nofeed" style="display: none">
 
                     <div class="ui-body-b  ui-corner-all" style="padding: 10px">
                         <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
@@ -148,7 +148,7 @@
 
                 </div>
 
-              
+
 
             </div>
 
@@ -237,7 +237,7 @@
                             You can try to refresh your feeds to see if there is new content available. If that still does not work <strong>please contact your church office</strong>
                             to have them either remove the feed from their systems or update the RSS url that the feed uses 
                         </p>
-                   
+
 
 
                     </div>
@@ -267,7 +267,7 @@
                     </ul>
                 </div>
 
-                <div data-role="popup" id="sermons_feeditem_audioplayer" data-overlay-theme="b" style="max-width: 400px; min-width: 300px"
+                <!--  <div data-role="popup" id="sermons_feeditem_audioplayer" data-overlay-theme="b" style="max-width: 400px; min-width: 300px"
                     class="ui-corner-all">
                     <div data-role="header" data-theme="c" class="ui-corner-top">
                         <h1>Audio Player</h1>
@@ -288,7 +288,7 @@
 
 
                     </div>
-                </div>
+                </div>-->
 
                 <div data-role="popup" id="pg_sermonfeeditem_whatisthis" data-overlay-theme="b" style="max-width: 400px;"
                     class="ui-corner-all">
@@ -325,91 +325,95 @@
                     </div>
                 </div>
 
-                                <div class="ui-body-b  ui-corner-all" style="padding: 2px; margin-bottom: 5px">
-
                 <div class="ui-body-b  ui-corner-all" style="padding: 2px; margin-bottom: 5px">
-                    <table>
-                        <tr>
-                            <th>Title
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="pg_sermons_item_title"></div>
-                            </td>
-                        </tr>
-                    </table>
 
-                </div>
-                <div class="ui-body-c  ui-corner-all" style="padding: 2px; margin-bottom: 5px">
-                    <table>
-                        <tr>
-                            <th>Summary
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="pg_sermons_item_summary"></div>
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="ui-body-b  ui-corner-all" id="pg_sermon_download_confirm" style="padding: 2px; margin-bottom: 5px; display: none">
+                        <div data-role="header" data-theme="b" class="ui-corner-top">
+                            <h4>Download</h4>
+                        </div>
 
-                </div>
-                <div class="ui-body-d  ui-corner-all" style="padding: 2px; margin-bottom: 5px">
-
-                    <table>
-                        <tr>
-                            <th>Publish Date
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="pg_sermons_item_publishdate"></div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                </div>
-                <div data-role="popup" id="pg_sermon_download_confirm" data-overlay-theme="d" style="max-width: 400px;"
-                    class="ui-corner-all">
-                    <div data-role="header" data-theme="d" class="ui-corner-top">
-                        <h1>Download?</h1>
-                    </div>
-                    <div data-role="content" class="ui-corner-bottom ui-content">
-                        <div id="downloadSermonNotWifi">
-                             <p>
-                            Your device is not connected over a WiFi network. Downloading a file could incur high data charges on your monthly account.
+                        <div id="downloadSermonNotWifi" class="ui-body-b ui-content  ui-corner-all">
+                            <div>
+                                Your device is not connected over a WiFi network. Downloading a file could incur high data charges on your monthly account.
                         These charges are charged by your mobile service provider. 
                         
-                        </p>
-                        <p>
-                            Do you want to continue wth this download?
-                        </p>
+                            </div>
+                            <p>
+                                Do you want to continue with this download?
+                            </p>
                         </div>
 
-                        <div id="downloadSermonWithWifi">
-                             <p>
-                            You have requested to download the selected item. You are connected over Wifi. 
+                        <div id="downloadSermonWithWifi" class="ui-body-b ui-content  ui-corner-all">
+                            <div>
+                                You have requested to download the selected item. You are connected over Wifi. 
                         
-                        </p>
-                        <p>
-                            Do you want to continue wth this download?
-                        </p>
+                            </div>
+                            <p>
+                                Do you want to continue wth this download?
+                            </p>
                         </div>
-                       
 
-                        <a id="btnSermonsDownloadConfirm" href="#" data-role="button" data-inline="true" data-theme="d">download</a>
+                        <div id="downloadOverWeb" class="ui-body-b ui-content  ui-corner-all">
+                            <div>
+                                Click "download" to begin downloading the file through your browser. 
+                        
+                            </div>
 
-                        <a href="#" data-role="button" data-inline="true" id="btn_pgsermons_abortdownload" data-theme="a">cancel</a>
-
-                        <div class="ui-body-d  ui-corner-all" style="padding: 2px; margin-bottom: 5px" id="pg_sermons_download_sts">
-                            Download Status: Not Started
                         </div>
+
+                      
+
+
+                            <a id="btnSermonsDownloadConfirm" href="#" data-role="button" data-inline="true" data-theme="b">download</a>
+
+                            <a href="#" data-role="button" data-inline="true" id="btn_pgsermons_abortdownload" data-theme="a">cancel</a>
+
+                            <div class="ui-body-d ui-content  ui-corner-all" style="padding: 2px; margin-bottom: 5px" id="pg_sermons_download_sts">
+                                Download Status: Not Started
+                            </div>
+
+                        
 
                     </div>
+
+                    <div class="ui-body-b  ui-corner-all" style="padding: 2px; margin-bottom: 5px">
+                        <div data-role="header" data-theme="b" class="ui-corner-top">
+                            <h4>Title?</h4>
+                        </div>
+                        <div id="pg_sermons_item_title" class="ui-corner-all ui-content"></div>
+                    </div>
+
+                    <div class="ui-body-b  ui-corner-all" style="padding: 2px; margin-bottom: 5px">
+                        <div data-role="header" data-theme="b" class="ui-corner-top">
+                            <h4>Summary</h4>
+                        </div>
+                        <div id="pg_sermons_item_summary" class="ui-corner-all ui-content"></div>
+                    </div>
+
+
+                    <div class="ui-body-b  ui-corner-all" style="padding: 2px; margin-bottom: 5px">
+                        <div data-role="header" data-theme="b" class="ui-corner-top">
+                            <h4>Publish Date</h4>
+                        </div>
+                        <div id="pg_sermons_item_publishdate" class="ui-corner-all ui-content"></div>
+                    </div>
+
+
+                    
+
+
                 </div>
 
-                
+
+
+
+
+
+
+
+               
+
+
 
                 <div data-role="popup" id="pg_sermons_downloadsuccess_popup" data-overlay-theme="b" style="max-width: 400px;"
                     class="ui-corner-all">
@@ -434,7 +438,7 @@
             </div>
 
 
-           
+
 
 
         </div>
