@@ -99,10 +99,11 @@
   <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />-->
 
   <!-- Define app splash screen for each platform. -->
-  <gap:splash src="mobile/img/android/splash-ldpi.png"  gap:platform="android" gap:density="ldpi" />
-  <gap:splash src="mobile/img/android/splash-mdpi.png"  gap:platform="android" gap:density="mdpi" />
-  <gap:splash src="mobile/img/android/splash-hdpi.png"  gap:platform="android" gap:density="hdpi" />
-  <gap:splash src="mobile/img/android/splash-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+  <gap:splash src="mobile/img/splash.png" />
+  <gap:splash src="mobile/img/android/splash-all.png"  gap:platform="android" gap:density="ldpi" />
+  <gap:splash src="mobile/img/android/splash-all.png"  gap:platform="android" gap:density="mdpi" />
+  <gap:splash src="mobile/img/android/splash-all.png"  gap:platform="android" gap:density="hdpi" />
+  <gap:splash src="mobile/img/android/splash-all.png" gap:platform="android" gap:density="xhdpi" />
   <!--<gap:splash src="mobile/img/android/gdcsplash.png"  gap:platform="android" gap:density="ldpi" />
   <gap:splash src="mobile/img/android/gdcsplash.png"  gap:platform="android" gap:density="mdpi" />
   <gap:splash src="mobile/img/android/gdcsplash.png"  gap:platform="android" gap:density="hdpi" />
