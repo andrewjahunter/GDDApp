@@ -41,6 +41,21 @@
 
 
         </div>
+
+         <script>
+             $("#pg_intro4").on('swipeleft', function () {
+                 $.mobile.changePage("intro5.html", { "transition": "flow" })
+
+             });
+
+             $("#pg_intro4").on('swiperight', function () {
+                 $.mobile.changePage("intro3.html", { "transition": "flow", "reverse": "true" })
+
+             });
+
+
+
+        </script>
          
     </div>
 </body>

@@ -55,7 +55,12 @@
                 <li data-bind="attr: {id: id()}" class="viewfeeditems">
                     <a data-bind="attr: {href: '#'}" data-transition="slide">
                         <img data-bind="attr: {src: imageUrl()}" />
-                        <p style="white-space: normal; font-size: small" data-bind="html: description()"></p>
+                        <div>
+                            <p style="white-space: normal; font-size: small" data-bind="html: description()"></p>
+                                                    <div data-bind="if: isGlobalDefault()" style="font-size: x-small; font-style:italic" class="ui-content ui-body-b ui-corner-all">This is a default feed that was preloaded for this church.</div>
+
+                        </div>
+                        
 
 
 
