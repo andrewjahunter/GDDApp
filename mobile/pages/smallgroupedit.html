@@ -15,14 +15,13 @@
         <div data-role="header">
 
             <h1 class="pageHeader">edit group</h1>
-            <a href="#" id="pg_smallgroupedit_cancel" class="group_edit_cancel" data-icon="delete" data-role="button">cancel</a>
+            <a href="#" id="pg_smallgroupedit_cancel" class="group_edit_cancel" data-theme="b" data-icon="delete" data-role="button">cancel</a>
         </div>
 
         <div data-role="content" style="padding: 15px">
             <div data-role="popup" class="ui-content" id="pg_sgedit_errpopup" data-theme="e">
                 <div id="pg_sgedit_errpopmessage"></div>
             </div>
-            <a href="#pg_sgeditloc_locationreq" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-theme="b" data-transition="slideup">why location info?</a>
             <form id="form_sg_edit">
 
                 <div id="smallgroup_form_fields">
@@ -178,66 +177,9 @@
 
 
 
-            <div data-role="popup" id="sg_edit_locationinfo_popup" data-overlay-theme="b"
-                class="ui-corner-all">
-                <div data-role="header" data-theme="c" class="ui-corner-top">
-                    <h1>Maps</h1>
-                </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
-
-                    <input id='txtGroupAddress'
-                        placeholder='start typing your address in here...'
-                        type='text' />
-                    <div id='groupsEditMap' class="groupsMap" style="width: 100%;"></div>
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a">
-                    <input id='txtGroupStreetNumber' placeholder="street number" type='text' data-bind="value: selectedGroup.streetNumber" />
-                        </div>
-                        <div class="ui-block-b">
-                    <input id='txtGroupStreetName' placeholder="street name" type='text' data-bind="value: selectedGroup.streetName" />
-                        </div>
-                    </div>
-                    <input id='txtGroupOtherInfo' placeholder="other info" type='text' data-bind="value: selectedGroup.otherInfo" />
-                    <!--<div id="sgLocationFormattedAddress"></div>-->
-                    
-                    <div data-role="button" data-theme="b" data-inline="true" data-mini="true" id="btnSaveSmallGroup">save</div>
-                    <a href="#" data-role="button" data-inline="true" data-mini="true" data-rel="back">back</a>
-                    <div data-role="button" data-inline="true" data-mini="true"  id="sg_edit_whylocation">why?</div>
-                    <div class="ui-body-e" style="padding: 2px"  id="sg_editlocation_error">
-                    </div>
-                    
-
-                </div>
-            </div>
 
 
-            <div data-role="popup" id="pg_sgeditloc_locationreq" data-overlay-theme="b" style="max-width: 400px;"
-                class="ui-corner-all">
-                <div data-role="header" data-theme="b" class="ui-corner-top">
-                    <h1>Location Info</h1>
-                </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
-
-                    <p>
-                        A group must have <strong>valid location information</strong>.
-                    </p>
-                    <p>
-                        Valid location information makes it much <strong>easier for people to locate small groups</strong> that meet their needs. It also provides us with useful information
-                        about where people are being <strong>shepherded in their communities.</strong>
-                    </p>
-                    <p>
-                        We need at least a <strong>valid latitiude and longitude</strong> position which you can obtain by either clicking on the
-                        map provided or typing the address into the text box. 
-                    </p>
-                    <p>
-                        You do <strong>not need to provide an exact location</strong>. You can edit/delete the street address and number if you prefer. 
-                    </p>
-
-
-                    <a href="#" data-role="button" data-theme="b" data-rel="back">okay!!</a>
-
-                </div>
-            </div>
+           
 
         </div>
 
