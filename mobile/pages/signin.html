@@ -38,7 +38,7 @@
                 <button type="button" id="btnSignIn" data-theme="b" >
                     sign in</button>
 
-                 <a href="#pg_signin_actionmenu" data-rel="popup" data-role="button"  data-transition="slideup" data-icon="gear" data-theme="a">other actions...</a>
+                 <a href="#pg_signin_actionmenu" data-rel="popup" data-role="button"  data-transition="slideup" data-icon="gear" data-theme="i">other actions...</a>
             <div data-role="popup" id="pg_signin_actionmenu" data-theme="i">
                 <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i" >
                     <!--<li data-role="divider" >Choose an action</li>-->
@@ -66,28 +66,29 @@
                     <div data-role="header"  data-theme="e" class="ui-corner-top">
                         <h1 id="signInPopupFailHeader">Failed?</h1>
                     </div>
-                    <div data-role="content" class="ui-corner-bottom ui-content">
+                    <div data-role="content" data-theme="e" class="ui-corner-bottom ui-content">
                         <h3 class="ui-title" id="signInPopupFailTitle">We are not able to authorize this request</h3>
                         <p id="signInPopupFailMsg">
                         </p>
-                        <a href="#"  data-role="button" data-theme="e" data-inline="true" data-rel="back" >Try Again</a>
-                        <a href="#" data-role="button"  data-theme="c" data-inline="true" id="btnRegFailSignIn" data-transition="flow" >Register</a>
+                        <a href="#"  data-role="button" data-theme="e" data-inline="true" data-rel="back" >try again</a>
+                        <a href="#" data-role="button"  data-theme="a" data-inline="true" id="btnRegFailSignIn" data-transition="flow" >register</a>
                     </div>
                 </div>
 
 
-                <div data-role="popup" id="signInPopupVerificationRequired" data-overlay-theme="b"  style="max-width: 450px;"
+                <div data-role="popup" id="signInPopupVerificationRequired" data-overlay-theme="d"  style="max-width: 450px;"
                     class="ui-corner-all">
                     <div data-role="header" data-theme="d" class="ui-corner-top">
                         <h1 id="emailVerificationHeader">Verification</h1>
                     </div>
-                    <div data-role="content" class="ui-corner-bottom ui-content">
+                    <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
                         <h3 id="emailVerificationTitle" class="ui-title">Your account has not been verified</h3>
                         <p id="emailVerificationMessage">
                             To activate your account we need to know your email is valid. Please click the validate link in the email we sent you.
                         </p>
-                        <a href="#" data-role="button" data-inline="true" data-theme="b" data-rel="back"  id="btnSignInValidateTryAgain">Sign In</a>
-                        <div data-role="button" data-theme="d" data-inline="true" id="btnSignInResendEmail" >Resend Email</div>
+                                                <div data-role="button" data-theme="d" data-inline="true" id="btnSignInResendEmail" >resend email</div>
+
+                        <a href="#" data-role="button" data-inline="true" data-theme="a" data-rel="back"  id="btnSignInValidateTryAgain">sign in</a>
                     </div>
                 </div>
             </div>

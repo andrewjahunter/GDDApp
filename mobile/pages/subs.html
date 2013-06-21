@@ -34,9 +34,9 @@
             </ul>
         </div>
         <div data-role="header">
-            <a href="#" id="pg_subs_showMenu" data-icon="bars" data-role="button" >menu</a>
+            <a href="#" id="pg_subs_showMenu" data-icon="bars" data-theme="b" data-role="button" >menu</a>
             <h1 class="pageHeader">subscriptions</h1>
-                 <a href="home.html" data-icon="home" data-transition="slide" data-direction="reverse"  data-role="button" data-iconpos="notext" >home</a>
+                 <a href="home.html" data-icon="home" data-theme="b" data-transition="slide" data-direction="reverse"  data-role="button" data-iconpos="notext" >home</a>
         </div>
         <!-- /header -->
         <div data-role="content" style="padding: 15px">
@@ -100,20 +100,20 @@
             <div id="subs_container">
                 
 
-                 <a href="#pg_subs_whatisthis" data-role="button" data-rel="popup" data-theme="b" data-transition="slideup">what is this?</a>
+                 <a href="#pg_subs_whatisthis" data-role="button" data-rel="popup" data-theme="h" data-transition="slideup">what is this?</a>
                 <div data-bind="template: { name: 'subs-template', foreach: subsList}">
                 </div>
 
             </div>
 
              <div id="pg_subs_nosubs" style="display:none">
+                 <div data-role="header" data-theme="h" class="ui-corner-top">
+                     <h1>No Subscriptions</h1>
 
-                <div class="ui-body-b  ui-corner-all" style="padding: 10px">
-                    <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
-                        <strong>No Subscriptions</strong>
-                    </div>
+                 </div>
 
-                    <p>
+                 <div data-role="content" data-theme="h" class="ui-corner-bottom">
+                     <p>
                         There are no subscriptions configured in this database. 
                     </p>
                     <p>
@@ -121,16 +121,21 @@
                     <strong>keep you updated with news</strong> e.g. a Weekly Newsletter. Please contact your church/ministry and encourage them to
                     add this feature to the system.
                     </p>
-                </div>
+
+                 </div>
+
+
+
+               
 
             </div>
 
             <div data-role="popup" id="pg_subs_whatisthis"  data-overlay-theme="b" style="max-width: 400px;"
                 class="ui-corner-all">
-                <div data-role="header" data-theme="b" class="ui-corner-top">
+                <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>What Is This?</h1>
                 </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
 
                     <p>
                        Subscriptions are a simple way for your church/ministry to be able to <strong>communicate with you</strong>. Below are listed all the the available
@@ -143,7 +148,7 @@
                    
 
                 
-                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                    <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
                   
                 </div>
             </div>

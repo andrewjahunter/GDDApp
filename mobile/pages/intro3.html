@@ -13,7 +13,7 @@
     <div data-role="page" id="pg_intro3" data-theme="a">
 
         <div data-role="header">
-
+             <a href="#" data-theme="b" class="exitIntro"   data-icon="delete" data-role="button" >exit</a>
             <h1 class="pageHeader" >maps</h1>
         </div>
         <div data-role="content" style="padding: 15px">
@@ -28,7 +28,11 @@
                  
                 <p>We have integrated Google Maps into many aspects of the Godochurch infrastructure. You can use the mapping tools
                     to provide locations for small groups, your home and work addresses. You can also use the mapping tools
-                    to <strong>search for groups</strong> in your surrounding suburbs, pretty awesome! 
+                    to <strong>search for groups</strong> in your surrounding suburbs. Pretty awesome! 
+
+
+
+                    
                 </p>
                 </div>
 
@@ -50,6 +54,10 @@
                $("#pg_intro3").on('swiperight', function () {
                    $.mobile.changePage("intro2.html", { "transition": "flow", "reverse": "true" })
 
+               });
+
+               $(".exitIntro").on(gdd.userTap, function () {
+                   gdd.views.utils.processAppStart();
                });
 
 

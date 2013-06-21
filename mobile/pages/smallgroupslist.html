@@ -19,12 +19,13 @@
             <ul data-role="listview" data-theme="a" data-inset="true" data-divider-theme="b">
                 <li data-role="list-divider">Menu</li>
                 <li><a href="#" class="menu_home">Home</a></li>
+                <li><a href="#" class="menu_sermons">Sermons</a></li>
+                <li><a href="#" class="menu_subs">Newsletters</a></li>
                 <li><a href="#" class="menu_pinfo">Personal Info</a></li>
 
                 <li><a href="#" class="menu_churchlife">Church Life</a></li>
                 <li><a href="#" class="menu_eventProfiles">Events</a></li>
-                <li><a href="#" class="menu_sermons">Sermons</a></li>
-                <li><a href="#" class="menu_subs">Subscriptions</a></li>
+                
                 <li data-role="list-divider">Settings</li>
                 <li><a href="#" class="menu_signout">Sign Out</a></li>
                 <li><a href="#" class="menu_switchdb">Switch Database</a></li>
@@ -37,7 +38,7 @@
         <div data-role="panel" id="panelSmallGroupsSearch" data-position="right" data-display="push" data-theme="g">
             <div class="ui-body-h ui-corner-all" style="padding: 5px">
                 Groups Search Filters
-                <a href="#pg_sg_search_whatisthis" data-inline="true" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-iconpos="notext" data-theme="b" data-transition="slideup"></a>
+                <a href="#pg_sg_search_whatisthis" data-inline="true" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-iconpos="notext" data-theme="h" data-transition="slideup"></a>
             </div>
 
 
@@ -104,8 +105,8 @@
 
 
             <div data-role="button" data-theme="b" id="btnSearchSmallGroups">search</div>
-            <div data-role="button" data-theme="c" id="btnMyGroups">my groups</div>
-            <div data-role="button" data-theme="c" id="btnMyGroupMembership">my membership</div>
+            <div data-role="button" data-theme="c" id="btnMyGroups">manage groups</div>
+            <div data-role="button" data-theme="c" id="btnMyGroupMembership">my groups</div>
 
             <div data-role="button" data-theme="a" id="btnClearSmallGroupsSearch">clear</div>
 
@@ -120,10 +121,10 @@
 
 
         <div data-role="header">
-            <a href="#" id="pg_smallgroupslist_showMenu" data-icon="bars" data-role="button">menu</a>
+            <a href="#" id="pg_smallgroupslist_showMenu" data-icon="bars" data-theme="b" data-role="button">menu</a>
 
             <h1 class="pageHeader">groups</h1>
-            <a href="#" id="pg_smallgroupslist_search" data-icon="search" data-role="button">search</a>
+            <a href="#" id="pg_smallgroupslist_search" data-icon="search" data-theme="b" data-role="button">search</a>
 
         </div>
 
@@ -131,7 +132,7 @@
             <div data-role="popup" class="ui-content" id="pg_smallgroupslist_errpopup" data-theme="e">
                 <div id="pg_smallgroupslist_errpopmessage"></div>
             </div>
-            <div data-role="popup" class="ui-content" id="msgpopup" data-theme="b">
+            <div data-role="popup" class="ui-content" id="msgpopup" data-theme="h">
                 <div id="msgpopupcontent"></div>
             </div>
 
@@ -147,14 +148,14 @@
                 </li>
             </script>
 
-            <a href="#sg_list_actionmenu" data-rel="popup" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
-            <div data-role="popup" id="sg_list_actionmenu" data-theme="b">
-                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
-                    <li data-role="divider" data-theme="a">Choose an action</li>
+            <a href="#sg_list_actionmenu" data-rel="popup" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="i">Actions...</a>
+            <div data-role="popup" id="sg_list_actionmenu" data-theme="i">
+                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
+                   
                     <li><a href="#" id="sgAddNewGroupAction" >Add New Group</a></li>
                     <li><a href="#" id="btnOpenSearchPopup">Search For Group</a></li>
-                    <li><a href="#" id="btnActionGetMyGroups">My Groups</a></li>
-                    <li><a href="#" id="btnActionGetMyGroupMembership">My Group Membership</a></li>
+                    <li><a href="#" id="btnActionGetMyGroups">Manage My Groups</a></li>
+                    <li><a href="#" id="btnActionGetMyGroupMembership">My Group</a></li>
                     <li><a href="#" id="btnSmallGroupListMapView">Google Maps</a></li>
                     <li><a href="#" id="btnGroupsActionWhatIsThis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
                     <li><a href="#" id="btnSmallGroupsCancel">Cancel</a></li>
@@ -164,9 +165,9 @@
             </div>
 
 
-            <div data-role="popup" id="sg_list_groupactions" data-theme="b">
-                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
-                    <li data-role="divider" data-theme="a">Choose an action</li>
+            <div data-role="popup" id="sg_list_groupactions" data-theme="i">
+                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
+                   
                     <li><a href="#" id="btnEditSmallGroup">Edit Group</a></li>
                     <li><a href="#" id="btnViewGroupMembers">View Members</a></li>
                     <li><a href="#" id="btnToggleGroupActiveStatus">Activate</a></li>
@@ -187,11 +188,12 @@
 
                 <div id="pg_sg_mygroups_noresults" class="groupSearchResultsMsg" style="display: none">
 
-                    <div class="ui-body-b  ui-corner-all" style="padding: 10px">
-                        <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
-                            <strong>No Groups On Record</strong>
-                        </div>
-                        <p>
+                    <div data-role="header" data-theme="h" class="ui-corner-top">
+                         <h1>No Groups</h1>
+                    </div>
+
+                    <div data-role="content" data-theme="h" class="ui-corner-bottom">
+                          <p>
                             You do not have any groups set up in this church/ministry. 
                         </p>
                        <p>Whether it is a small group, cell group, leadership group, department heads or even an admin team, the groups tool enables
@@ -199,26 +201,34 @@
               
                        </p>
                         <p>To add a group simply click "Add New Group" below or from the Actions menu above</p>
-                        <a href="#"  id="btnSgAddNewGroupNone" data-role="button"  data-theme="b">Add New Group</a>
+                        <a href="#"  id="btnSgAddNewGroupNone" data-role="button"  data-theme="h">Add New Group</a>
                     </div>
+
+
+
+                   
 
                 </div>
 
                  <div id="pg_sg_groups_noresults" class="groupSearchResultsMsg" style="display: none">
 
-                    <div class="ui-body-b  ui-corner-all" style="padding: 10px">
-                        <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
-                            <strong>No Matching Groups</strong>
-                        </div>
-                        <p>
+                      <div data-role="header" data-theme="h" class="ui-corner-top">
+                         <h1>No Matching Groups</h1>
+                    </div>
+
+
+                      <div data-role="content" data-theme="h" class="ui-corner-bottom">
+                          <p>
                             There are no groups matching the search criteria you requested. 
                         </p>
                        <p>Please change the criteria you require and seach again. <strong>Remember if a group has been marked as private it will not show up
                            in a search</strong>.
               
                        </p>
-                     
                     </div>
+
+
+                    
 
                 </div>
 
@@ -257,19 +267,23 @@
 
                   <div id="pg_sg_mygroupmembership_noresults" class="sg_mymembership_infomsg"  style="display: none">
 
-                    <div class="ui-body-b  ui-corner-all" style="padding: 10px">
-                        <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
-                            <strong>No Membership Info</strong>
-                        </div>
-                        <p>
+                        <div data-role="header" data-theme="h" class="ui-corner-top">
+                         <h1>No Membership Info</h1>
+                    </div>
+
+
+                         <div data-role="content" data-theme="h" class="ui-corner-bottom">
+                         <p>
                             You are not a member of any groups. 
                         </p>
                        <p>To join a group simply use the <strong>search tool provided</strong> (click "search" on the menu bar). Once you have found the group, click the 
                            "check" icon next to the group and you wll be added as a group member
               
                        </p>
-                       
                     </div>
+
+
+                   
 
                 </div>
 
@@ -283,12 +297,12 @@
             </div>
 
 
-            <div data-role="popup" id="pg_sg_item_whatisthis" data-overlay-theme="b" style="max-width: 400px;"
+            <div data-role="popup" id="pg_sg_item_whatisthis" data-overlay-theme="h" style="max-width: 400px;"
                 class="ui-corner-all">
-                <div data-role="header" data-theme="b" class="ui-corner-top">
+                <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Group Actions</h1>
                 </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
 
                     <p>
                         From this menu you can perform a number of actions on the group you have selected.
@@ -310,7 +324,7 @@
                     </p>
 
 
-                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                    <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
 
                 </div>
             </div>
@@ -319,10 +333,10 @@
 
             <div data-role="popup" id="pg_sg_search_whatisthis" data-overlay-theme="b" style="max-width: 400px;"
                 class="ui-corner-all">
-                <div data-role="header" data-theme="b" class="ui-corner-top">
+                <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Group Search</h1>
                 </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
 
                     <p>
                         Using this tool, you can <strong>search for a group matching any of the provided search criteria</strong>. You could for 
@@ -341,18 +355,18 @@
 
 
 
-                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                    <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
 
                 </div>
             </div>
 
 
-            <div data-role="popup" id="pg_sg_list_whatisthis" data-overlay-theme="b" style="max-width: 400px;"
+            <div data-role="popup" id="pg_sg_list_whatisthis" data-overlay-theme="h" style="max-width: 400px;"
                 class="ui-corner-all">
-                <div data-role="header" data-theme="b" class="ui-corner-top">
+                <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Groups</h1>
                 </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
 
                     <p>
                         This page allows you to <strong>manage your entire groups profile</strong>. Whether you call them small groups, cell groups, discipleship groups or even admin teams essentially 
@@ -368,18 +382,18 @@
                         member.
                     </p>
 
-                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                    <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
 
                 </div>
             </div>
 
 
-            <div data-role="popup" id="smallGroupsListSMS" data-overlay-theme="b" style="max-width: 400px;"
+            <div data-role="popup" id="smallGroupsListSMS" data-overlay-theme="c" style="max-width: 400px;"
                 class="ui-corner-all">
                 <div data-role="header" data-theme="c" class="ui-corner-top">
                     <h1>SMS Members</h1>
                 </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="c"  class="ui-corner-bottom ui-content">
 
                     <p>
                         Type your message into the textbox provided. Merge the first name of the person using the merge tag "[name]".
@@ -395,12 +409,12 @@
             </div>
 
 
-            <div data-role="popup" id="smallGroupDeletePopup" data-overlay-theme="b" style="max-width: 400px;"
+            <div data-role="popup" id="smallGroupDeletePopup" data-overlay-theme="e" style="max-width: 400px;"
                 class="ui-corner-all">
                 <div data-role="header" data-theme="e" class="ui-corner-top">
                     <h1>Delete?</h1>
                 </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="e"  class="ui-corner-bottom ui-content">
                     <div id="smallGroupDeleteTitle" class="ui-title" style="text-align: center; font-size: larger"></div>
                     <p>
                         Are you sure you want to delete this group? All data relating to it will be lost?
@@ -414,10 +428,10 @@
 
             <div data-role="popup" id="smallGroupsListMapView" data-overlay-theme="b"
                 class="ui-corner-all">
-                <div data-role="header" data-theme="c" class="ui-corner-top">
+                <div data-role="header" data-theme="b" class="ui-corner-top">
                     <h1>Maps</h1>
                 </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="b" class="ui-corner-bottom ui-content">
 
                     <div id='groupsListMap' class="groupsMap" style="width: 100%"></div>
 

@@ -24,10 +24,10 @@
 
             <div data-role="popup" id="addNewMemberPopupHelp" data-overlay-theme="b" style="max-width: 400px;"
                 class="ui-corner-all">
-                <div data-role="header" data-theme="b" class="ui-corner-top">
+                <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Add Members</h1>
                 </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
 
                     <p>
                         To look for a person in the database, simply <strong>type their name (or part of their name)</strong> into the text box provided. e.g. Type Rick Far to find
@@ -44,7 +44,7 @@
 
 
 
-                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                    <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
 
                 </div>
             </div>
@@ -83,10 +83,10 @@
 
 
         <div data-role="header">
-            <a href="#" id="pg_sgmembers_header_cancel" data-icon="delete" data-role="button" >cancel</a>
+            <a href="#" id="pg_sgmembers_header_cancel" data-icon="delete" data-role="button" data-theme="b" >cancel</a>
 
             <h1 class="pageHeader">members</h1>
-                        <a href="#panelAddNewMember"   data-icon="plus" data-role="button" >add</a>
+                        <a href="#panelAddNewMember"   data-icon="plus" data-role="button" data-theme="b" >add</a>
 
         </div>
 
@@ -118,10 +118,10 @@
 
 
 
-            <a href="#sg_members_actionmenu" data-rel="popup" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
-            <div data-role="popup" id="sg_members_actionmenu" data-theme="b">
-                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
-                    <li data-role="divider" data-theme="a">Choose an action</li>
+            <a href="#sg_members_actionmenu" data-rel="popup" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="i">actions...</a>
+            <div data-role="popup" id="sg_members_actionmenu" data-theme="i">
+                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
+                   
                     <li><a href="#" id="btnOpenAddGroupMemberPanel" data-rel="back">Add Member</a></li>
 
                     <li><a href="#pg_sg_members_whatisthis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
@@ -141,11 +141,12 @@
 
               <div id="pg_sg_nomembers" class="sgMembersInfoMsg" style="display: none">
 
-                    <div class="ui-body-b  ui-corner-all" style="padding: 10px">
-                        <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
-                            <strong>No Members</strong>
-                        </div>
-                        <p>
+                  <div data-role="header" data-theme="h" class="ui-corner-top">
+                        <h1>No Members</h1>
+                  </div>
+
+                  <div data-role="content" data-theme="h" class="ui-corner-top">
+                          <p>
                             Currently there are no members of this group. 
                         </p>
                        <p>Members can be added in two ways.
@@ -158,8 +159,11 @@
                             </li>
                             
                         </ul>
-                        
-                    </div>
+                  </div>
+
+
+
+                    
 
                 </div>
 
@@ -170,12 +174,12 @@
             </div>
 
 
-            <div data-role="popup" id="pg_sg_members_whatisthis" data-overlay-theme="b" style="max-width: 400px;"
+            <div data-role="popup" id="pg_sg_members_whatisthis" data-overlay-theme="h" style="max-width: 400px;"
                 class="ui-corner-all">
-                <div data-role="header" data-theme="b" class="ui-corner-top">
+                <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Group Members</h1>
                 </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="h" class="ui-corner-bottom">
 
                     <p>
                         This page shows you all the members of the group you selected. 
@@ -191,17 +195,17 @@
 
 
 
-                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                    <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
 
                 </div>
             </div>
 
-             <div data-role="popup" id="sg_cantfind_members" data-overlay-theme="b" style="max-width: 400px;"
+             <div data-role="popup" id="sg_cantfind_members" data-overlay-theme="h" style="max-width: 400px;"
                 class="ui-corner-all">
-                <div data-role="header" data-theme="b" class="ui-corner-top">
+                <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Cant Find?</h1>
                 </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
 
                     <p>
                         There are <strong>two reason</strong> why you may not be able to find the person you are looking for. 
@@ -217,7 +221,7 @@
                     </ol>
                     
 
-                    <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                    <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
 
                 </div>
             </div>

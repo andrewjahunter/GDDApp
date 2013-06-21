@@ -7,7 +7,7 @@
     <link href="../styles/app.css" rel="stylesheet" />
     <link href="../styles/gdd.mobile.min.css" rel="stylesheet" />
     <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />  
-    <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
+    <script data-main="../scripts/app/appstart.js" src="../../scripts/libraries/require.js"></script>
 </head>
 <body>
 
@@ -21,10 +21,11 @@
                 <li data-role="list-divider">Menu</li>
                 <li><a href="#" class="menu_home">Home</a></li>
                 <li><a href="#" class="menu_pinfo">Personal Info</a></li>
+                <li><a href="#" class="menu_subs">Newsletters</a></li>
                 <li><a href="#" class="menu_groups">Groups</a></li>
                 <li><a href="#" class="menu_eventProfiles">Events</a></li>
                 <li><a href="#" class="menu_churchlife">Church Life</a></li>
-                <li><a href="#" class="menu_subs">Subscriptions</a></li>
+                
                 <li data-role="list-divider">Settings</li>
                 <li><a href="#" class="menu_signout">Sign Out</a></li>
                 <li><a href="#" class="menu_switchdb">Switch Database</a></li>
@@ -33,9 +34,9 @@
             </ul>
         </div>
         <div data-role="header">
-            <a href="#" id="pg_sermons_showMenu" data-icon="bars" data-role="button">menu</a>
+            <a href="#" id="pg_sermons_showMenu" data-icon="bars" data-theme="b" data-role="button">menu</a>
             <h1 class="pageHeader" id="pg_sermons_header">sermons</h1>
-                 <a href="home.html" data-icon="home" data-transition="slide" data-direction="reverse"  data-role="button" data-iconpos="notext" >home</a>
+                 <a href="home.html" data-icon="home" data-theme="b" data-transition="slide" data-direction="reverse"  data-role="button" data-iconpos="notext" >home</a>
         </div>
         <!-- /header -->
         <div data-role="content" style="padding: 15px">
@@ -87,10 +88,10 @@
 
             <div id="pg_sermons_feeds" style="display: none">
 
-                <a href="#" data-rel="popup" id="btnOpenFeedsActionMenu" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
-                <div data-role="popup" id="sermons_feeds_actionmenu" data-theme="b">
-                    <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
-                        <li data-role="divider" data-theme="a">Choose an action</li>
+                <a href="#" data-rel="popup" id="btnOpenFeedsActionMenu" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="i">Actions...</a>
+                <div data-role="popup" id="sermons_feeds_actionmenu" data-theme="i">
+                    <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
+                       
                         <li><a href="#" id="btnRefreshSermonFeeds">Refresh Feeds</a></li>
                         <li><a href="#" id="btnSyncAllFeeds">Sync Feeds (BETA)</a></li>
                         <li><a href="#pg_sermonfeeds_whatisthis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
@@ -103,12 +104,12 @@
 
                 <ul data-role="listview" data-inset="true" data-theme="a" id="sermons_feeds" data-divider-theme="b" data-bind="template: { name: 'sermonfeeds-template', foreach: feeds}"></ul>
 
-                <div data-role="popup" id="pg_sermonfeeds_whatisthis" data-overlay-theme="b" style="max-width: 400px;"
+                <div data-role="popup" id="pg_sermonfeeds_whatisthis" data-overlay-theme="h" style="max-width: 400px;"
                     class="ui-corner-all">
-                    <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <div data-role="header" data-theme="h" class="ui-corner-top">
                         <h1>Feeds</h1>
                     </div>
-                    <div data-role="content" class="ui-corner-bottom ui-content">
+                    <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
 
                         <p>
                             Your church can <strong>publish any number of audio channels</strong> (feeds) allowing you to have access to the content. 
@@ -124,19 +125,18 @@
 
 
 
-                        <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                        <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
 
                     </div>
                 </div>
 
                 <div id="pg_sermons_nofeed" style="display: none">
 
-                    <div class="ui-body-b  ui-corner-all" style="padding: 10px">
-                        <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
-                            <strong>No Feeds Available</strong>
-                        </div>
-
-                        <p>
+                    <div data-role="header" data-theme="h" class="ui-corner-top">
+                        <h1>No Feeds Available</h1>
+                    </div>
+                    <div data-role="content" data-theme="h" class="ui-corner-bottom">
+                          <p>
                             Currently there are <strong>no channels published</strong> by this church/ministry.  
                         </p>
                         <p>
@@ -148,9 +148,8 @@
                         and many others</strong>.
                         </p>
                         <p><strong>Please contact your church or ministry office</strong> to ask them to make available this content.</p>
-
-
                     </div>
+                    
 
                 </div>
 
@@ -162,10 +161,10 @@
 
 
 
-                <a href="#" data-rel="popup" id="btnOpenFeedItemsActionMenu" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
-                <div data-role="popup" id="sermons_feeditems_actionmenu" data-theme="b">
-                    <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
-                        <li data-role="divider" data-theme="a">Choose an action</li>
+                <a href="#" data-rel="popup" id="btnOpenFeedItemsActionMenu" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="i">actions...</a>
+                <div data-role="popup" id="sermons_feeditems_actionmenu" data-theme="i">
+                    <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
+                       
                         <li><a href="#" id="btnSubscribeToFeed">Subscribe to Channel</a></li>
                         <li><a href="#" id="btnViewFeedRssUrl">View RSS</a></li>
                         <li><a href="#" id="btnGoBackToFeeds">Feed List</a></li>
@@ -178,12 +177,12 @@
                 </div>
 
 
-                <div data-role="popup" id="pg_sermons_feedRssPopup" data-overlay-theme="b" style="max-width: 400px;"
+                <div data-role="popup" id="pg_sermons_feedRssPopup" data-overlay-theme="c" style="max-width: 400px;"
                     class="ui-corner-all">
                     <div data-role="header" data-theme="c" class="ui-corner-top">
                         <h1>RSS Feed</h1>
                     </div>
-                    <div data-role="content" class="ui-corner-bottom ui-content">
+                    <div data-role="content" data-theme="c" class="ui-corner-bottom ui-content">
 
                         <p>
                             Below you will find the raw RSS feed to this channel. You can copy this link to your clipboard for your own use"
@@ -193,19 +192,19 @@
 
 
 
-                        <a href="#" data-role="button" data-rel="back" data-theme="b">thanks!</a>
+                        <a href="#" data-role="button" data-rel="back" data-theme="c">thanks!</a>
 
                     </div>
                 </div>
 
 
 
-                <div data-role="popup" id="pg_sermonfeeditems_whatisthis" data-overlay-theme="b" style="max-width: 400px;"
+                <div data-role="popup" id="pg_sermonfeeditems_whatisthis" data-overlay-theme="h" style="max-width: 400px;"
                     class="ui-corner-all">
-                    <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <div data-role="header" data-theme="h" class="ui-corner-top">
                         <h1>Feed Items</h1>
                     </div>
-                    <div data-role="content" class="ui-corner-bottom ui-content">
+                    <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
 
                         <p>
                             This page shows you the <strong>content of the channel (feed)</strong> you have selected. 
@@ -224,17 +223,18 @@
 
 
 
-                        <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                        <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
 
                     </div>
                 </div>
 
-                <div id="pg_sermon_nofeeditems" style="display: none">
+                <div id="pg_sermon_nofeeditems" class="ui-corner-all" style="display: none">
+                    <div data-role="header" data-theme="h" class="ui-corner-top">
 
-                    <div class="ui-body-b  ui-corner-all" style="padding: 10px">
-                        <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
-                            <strong>No Items Feed</strong>
-                        </div>
+                        <h1>No Items Feed</h1>
+                    </div>
+
+                    <div data-role="content" data-theme="h" class="ui-corner-bottom">
 
                         <p>
                             This feed/channel appear to have no content.  
@@ -243,10 +243,9 @@
                             You can try to refresh your feeds to see if there is new content available. If that still does not work <strong>please contact your church office</strong>
                             to have them either remove the feed from their systems or update the RSS url that the feed uses 
                         </p>
-
-
-
                     </div>
+
+                    
 
                 </div>
 
@@ -256,10 +255,10 @@
 
             <div id="pg_sermon_feeditem" style="display: none">
 
-                <a href="#" data-rel="popup" id="btnOpenFeedItemAction" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="c">Actions...</a>
-                <div data-role="popup" id="sermons_feeditem_actionmenu" data-theme="b">
-                    <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="c">
-                        <li data-role="divider" data-theme="a">Choose an action</li>
+                <a href="#" data-rel="popup" id="btnOpenFeedItemAction" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="i">actions...</a>
+                <div data-role="popup" id="sermons_feeditem_actionmenu" data-theme="i">
+                    <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
+                      
                         <li><a href="#" id="btnFeedItemDownload">Download</a></li>
                         <!--<li><a href="#" id="btnFeedItemListen" >Listen</a></li>-->
                         <li><a href="#" id="btnFeedItemEmail">Email Me</a></li>
@@ -296,12 +295,12 @@
                     </div>
                 </div>-->
 
-                <div data-role="popup" id="pg_sermonfeeditem_whatisthis" data-overlay-theme="b" style="max-width: 400px;"
+                <div data-role="popup" id="pg_sermonfeeditem_whatisthis" data-overlay-theme="h" style="max-width: 400px;"
                     class="ui-corner-all">
-                    <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <div data-role="header" data-theme="h" class="ui-corner-top">
                         <h1>Content</h1>
                     </div>
-                    <div data-role="content" class="ui-corner-bottom ui-content">
+                    <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
 
                         <p>
                             This is the actual content of the item you selected. 
@@ -326,7 +325,7 @@
 
 
 
-                        <a href="#" data-role="button" data-theme="b" data-rel="back">thanks!</a>
+                        <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
 
                     </div>
                 </div>
@@ -421,12 +420,12 @@
 
 
 
-                <div data-role="popup" id="pg_sermons_downloadsuccess_popup" data-overlay-theme="b" style="max-width: 400px;"
+                <div data-role="popup" id="pg_sermons_downloadsuccess_popup" data-overlay-theme="c" style="max-width: 400px;"
                     class="ui-corner-all">
                     <div data-role="header" data-theme="c" class="ui-corner-top">
                         <h1>Download Success</h1>
                     </div>
-                    <div data-role="content" class="ui-corner-bottom ui-content">
+                    <div data-role="content" data-theme="c" class="ui-corner-bottom ui-content">
                         <p>
                             The file you requested has been downloaded successfully to your device. Below you will find the location where
                         the file has been saved. Using your "Files" app you can navigate to the file and and open it from there.
@@ -436,7 +435,7 @@
                         </p>
 
 
-                        <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="b">Okay!</a>
+                        <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">Okay!</a>
 
 
                     </div>

@@ -13,7 +13,7 @@
     <div data-role="page" id="pg_intro2" data-theme="a">
 
         <div data-role="header">
-
+            <a href="#" data-theme="b" class="exitIntro"   data-icon="delete" data-role="button" >exit</a>
             <h1 class="pageHeader" >platforms</h1>
         </div>
         <div data-role="content" style="padding: 15px">
@@ -42,6 +42,7 @@
         </div>
 
           <script>
+             
               $("#pg_intro2").on('swipeleft', function () {
                   $.mobile.changePage("intro3.html", { "transition": "flow" })
 
@@ -50,6 +51,11 @@
               $("#pg_intro2").on('swiperight', function () {
                   $.mobile.changePage("intro1.html", { "transition": "flow","reverse":"true" })
 
+              });
+
+              $(".exitIntro").on(gdd.userTap, function () {
+                 
+                  gdd.views.utils.processAppStart();
               });
 
 
