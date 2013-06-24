@@ -7,10 +7,10 @@
     <link href="../styles/app.css" rel="stylesheet" />
     <link href="../styles/gdd.mobile.min.css" rel="stylesheet" />
     <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />
-    <script data-main="../scripts/app/appstart.js" src="../../scripts/libraries/require.js"></script>
+    <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
 
 </head>
-<body>
+<body  style="background-color:#343131;  color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
 
     <div data-role="page" id="pg_authportallist" data-theme="a" data-dom-cache="false">
 
@@ -82,7 +82,7 @@
             </script>
 
 
-            <a href="#sg_list_actionmenu" data-rel="popup" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="i">Actions...</a>
+            <a href="#sg_list_actionmenu" data-rel="popup" data-position-to="window" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="i">Actions...</a>
             <div data-role="popup" id="sg_list_actionmenu" data-theme="i">
                 <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
 
@@ -114,7 +114,7 @@
             <div id="pg_authportal_noportal" style="display: none">
 
                 <div data-role="header" data-theme="h" class="ui-corner-top">
-                    <h1>No Active Churches</h1>
+                    <h1>Activate</h1>
                 </div>
 
 
@@ -134,12 +134,12 @@
             </div>
 
 
-            <div data-role="popup" id="pg_authportals_activate_help" data-overlay-theme="h" style="max-width: 400px;"
+            <div data-role="popup" id="pg_authportals_activate_help" data-overlay-theme="a" style="max-width: 400px;"
                 class="ui-corner-all">
                 <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Search...</h1>
                 </div>
-                <div data-role="content" data-theme="h"  class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="a"  class="ui-corner-bottom ui-content">
                     <p><strong>Enter the name</strong> of the church you are looking for. You can enter part of the name for example "His" to search for all "His People" churches</p>
 
                     <p>From the results, <strong>click the "check" icon.</strong> This will activate the church in your profile</p>
@@ -152,12 +152,12 @@
                 </div>
             </div>
 
-            <div data-role="popup" id="pg_authportals_main_help" data-overlay-theme="h" style="max-width: 400px;"
+            <div data-role="popup" id="pg_authportals_main_help" data-overlay-theme="a" style="max-width: 400px;"
                 class="ui-corner-all">
                 <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Find Church</h1>
                 </div>
-                <div data-role="content" data-theme="h"  class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="a"  class="ui-corner-bottom ui-content">
                     <p>
                         This app can be signed into <strong>any number of churches/ministries</strong> as you would like
                     </p>
@@ -176,12 +176,12 @@
                 </div>
             </div>
 
-            <div data-role="popup" id="pg_authportal_cantfindchurch" data-overlay-theme="h" style="max-width: 400px;"
+            <div data-role="popup" id="pg_authportal_cantfindchurch" data-overlay-theme="a" style="max-width: 400px;"
                 class="ui-corner-all">
                 <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Missing?</h1>
                 </div>
-                <div data-role="content"  data-theme="h" class="ui-corner-bottom ui-content">
+                <div data-role="content"  data-theme="a" class="ui-corner-bottom ui-content">
                     <p>
                         If you are <strong>not able to find the church</strong> you are looking for, its most likely because they are <strong>not registered</strong> as a church
                             on the godochurch online systems. If this is the case please choose from the following options:

@@ -7,9 +7,9 @@
     <link href="../styles/app.css" rel="stylesheet" />
     <link href="../styles/gdd.mobile.min.css" rel="stylesheet" />
     <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />  
-    <script data-main="../scripts/app/appstart.js" src="../../scripts/libraries/require.js"></script>
+    <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
 </head>
-<body>
+<body  style="background-color:#343131;  color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
 
     <div data-role="page" id="pg_sermons" data-theme="a">
         <div data-role="panel" id="pg_sermons_menuPanel" data-display="push" data-theme="g">
@@ -93,7 +93,7 @@
                     <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
                        
                         <li><a href="#" id="btnRefreshSermonFeeds">Refresh Feeds</a></li>
-                        <li><a href="#" id="btnSyncAllFeeds">Sync Feeds (BETA)</a></li>
+                       <!-- <li><a href="#" id="btnSyncAllFeeds">Sync Feeds (BETA)</a></li>-->
                         <li><a href="#pg_sermonfeeds_whatisthis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
 
                         <li><a href="#" data-rel="back">Cancel</a></li>
@@ -104,12 +104,12 @@
 
                 <ul data-role="listview" data-inset="true" data-theme="a" id="sermons_feeds" data-divider-theme="b" data-bind="template: { name: 'sermonfeeds-template', foreach: feeds}"></ul>
 
-                <div data-role="popup" id="pg_sermonfeeds_whatisthis" data-overlay-theme="h" style="max-width: 400px;"
+                <div data-role="popup" id="pg_sermonfeeds_whatisthis" data-overlay-theme="a" style="max-width: 400px;"
                     class="ui-corner-all">
                     <div data-role="header" data-theme="h" class="ui-corner-top">
                         <h1>Feeds</h1>
                     </div>
-                    <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
+                    <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
 
                         <p>
                             Your church can <strong>publish any number of audio channels</strong> (feeds) allowing you to have access to the content. 
@@ -133,7 +133,7 @@
                 <div id="pg_sermons_nofeed" style="display: none">
 
                     <div data-role="header" data-theme="h" class="ui-corner-top">
-                        <h1>No Feeds Available</h1>
+                        <h1>No Feeds</h1>
                     </div>
                     <div data-role="content" data-theme="h" class="ui-corner-bottom">
                           <p>
@@ -177,12 +177,12 @@
                 </div>
 
 
-                <div data-role="popup" id="pg_sermons_feedRssPopup" data-overlay-theme="c" style="max-width: 400px;"
+                <div data-role="popup" id="pg_sermons_feedRssPopup" data-overlay-theme="a" style="max-width: 400px;"
                     class="ui-corner-all">
                     <div data-role="header" data-theme="c" class="ui-corner-top">
                         <h1>RSS Feed</h1>
                     </div>
-                    <div data-role="content" data-theme="c" class="ui-corner-bottom ui-content">
+                    <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
 
                         <p>
                             Below you will find the raw RSS feed to this channel. You can copy this link to your clipboard for your own use"
@@ -199,12 +199,12 @@
 
 
 
-                <div data-role="popup" id="pg_sermonfeeditems_whatisthis" data-overlay-theme="h" style="max-width: 400px;"
+                <div data-role="popup" id="pg_sermonfeeditems_whatisthis" data-overlay-theme="a" style="max-width: 400px;"
                     class="ui-corner-all">
                     <div data-role="header" data-theme="h" class="ui-corner-top">
                         <h1>Feed Items</h1>
                     </div>
-                    <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
+                    <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
 
                         <p>
                             This page shows you the <strong>content of the channel (feed)</strong> you have selected. 
@@ -295,12 +295,12 @@
                     </div>
                 </div>-->
 
-                <div data-role="popup" id="pg_sermonfeeditem_whatisthis" data-overlay-theme="h" style="max-width: 400px;"
+                <div data-role="popup" id="pg_sermonfeeditem_whatisthis" data-overlay-theme="a" style="max-width: 400px;"
                     class="ui-corner-all">
                     <div data-role="header" data-theme="h" class="ui-corner-top">
                         <h1>Content</h1>
                     </div>
-                    <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
+                    <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
 
                         <p>
                             This is the actual content of the item you selected. 
@@ -420,12 +420,12 @@
 
 
 
-                <div data-role="popup" id="pg_sermons_downloadsuccess_popup" data-overlay-theme="c" style="max-width: 400px;"
+                <div data-role="popup" id="pg_sermons_downloadsuccess_popup" data-overlay-theme="a" style="max-width: 400px;"
                     class="ui-corner-all">
                     <div data-role="header" data-theme="c" class="ui-corner-top">
                         <h1>Download Success</h1>
                     </div>
-                    <div data-role="content" data-theme="c" class="ui-corner-bottom ui-content">
+                    <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
                         <p>
                             The file you requested has been downloaded successfully to your device. Below you will find the location where
                         the file has been saved. Using your "Files" app you can navigate to the file and and open it from there.
