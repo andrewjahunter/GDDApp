@@ -8,17 +8,21 @@
     <link href="../styles/app.css" rel="stylesheet" />
     <link href="../styles/gdd.mobile.min.css" rel="stylesheet" />
     <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />
-      
-   <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
+
+    <script data-main="../scripts/app/appstart.js" src="../../scripts/libraries/require.js"></script>
 </head>
-<body  style="background-color:#343131;  color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
+<body style="background-color: #343131; color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
     <div data-role="page" id="pg_home" data-theme="a">
-       
-        <div data-role="panel" id="pg_home_menuPanel" class="menuPanel" data-display="push" data-theme="g">
+
+        <!--<div data-role="panel" id="pg_home_menuPanel" class="menuPanel" data-display="push" data-theme="g">
             <div style="width: 100%; max-width: 80px; max-height: 80px; margin-left: auto; margin-right: auto">
                 <img border="0" src="" class="menu_fbpic" alt="facebook profile pic" style="width: 100%; height: auto" />
 
             </div>
+
+
+
+
 
             <ul data-role="listview" data-theme="a" data-inset="true" data-divider-theme="b">
                 <li data-role="list-divider">Menu</li>
@@ -28,29 +32,29 @@
                 <li><a href="#" class="menu_pinfo">Personal Info</a></li>
                 <li><a href="#" class="menu_eventProfiles">Upcoming Events</a></li>
                 <li><a href="#" class="menu_churchlife">Church Life</a></li>
-                
-                
-                
+
+
+
                 <li data-role="list-divider">Settings</li>
-                <li><a href="#" class="menu_signout">Sign Out</a></li>
-                <li><a href="#" class="menu_switchdb">Switch Database</a></li>
-                <li><a href="#" class="menu_sessionInfo">Session Info</a></li>
+
+
+
                 <li><a href="#" class="menu_closeMenu">Close Menu</a></li>
-                <li><a href="#" class="menu_clearCache">Clear Cache</a></li>
+
             </ul>
 
 
-        </div>
+        </div>-->
         <div data-role="header">
-            <a href="#" id="pg_home_showMenu" data-theme="b" data-icon="bars" data-role="button">menu</a>
+            <!--<a href="#" id="pg_home_showMenu" data-theme="b" data-icon="bars" data-role="button">menu</a>-->
 
             <h1 class="pageHeader" id="pg_home_header">home</h1>
 
 
         </div>
-        
+
         <div data-role="content" style="padding: 15px">
-            
+
             <!--<img border="0" src="" alt="facebook profile pic" id="pg_home_fb_picurl" style="float: right; display: inline" />-->
 
             <div style="width: 72px; margin-left: auto; margin-right: auto">
@@ -63,10 +67,31 @@
             </div>
 
 
+            <div data-role="popup" id="home_settings_menu" data-theme="i">
+                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
+                    <li><a href="#" id="btnHomeViewIntro" data-transition="flow">View Intro</a></li>
+                    <li><a href="#" id="btnHomeSwitchDb">Switch Church</a></li>
+                    <li><a href="#" id="btnHomeSessionInfo">Session Info</a></li>
+                    <li><a href="#" id="pg_home_signout">Sign Out</a></li>
+
+
+                    <li><a href="#" id="btnHomeClearCache">Clear Cache</a></li>
+                    
+                    <li><a href="#" id="btnHomeAbout" data-transition="flip">About</a></li>
+
+                    <li><a href="#" id="btnHomeFeedback" data-transition="flip">Send Feedback</a></li>
+                    <li><a href="#" data-rel="back">Cancel</a></li>
+
+
+                </ul>
+            </div>
+
+
+
             <ul data-role="listview" data-theme="b" data-inset="true" data-divider-theme="a">
-                 <li data-role="list-divider">Profiles</li>
-                 <li><a href="#" id="btnHomeFeeds">Sermons</a></li>
-                 <li><a href="#" id="btnHomeSmallGroups">Groups
+                <li data-role="list-divider">Profiles</li>
+                <li><a href="#" id="btnHomeFeeds">Sermons</a></li>
+                <li><a href="#" id="btnHomeSmallGroups">Groups
                        
                 </a></li>
                 <li><a href="#" id="btnHomeSubs">Newsletters</a></li>
@@ -74,23 +99,24 @@
                        
                 </a></li>
                 <li><a href="#" id="btnHomeEvents">Upcoming Events</a></li>
-               
-               
-                <li><a href="#" id="btnHomeChurchLife">Church Life</a></li>
-                
 
-                
-                 <li data-role="list-divider">Admin</li>
-                <li><a href="intro1.html" id="btnHomeViewIntro" data-transition="flow">View Intro</a></li>
-                <li><a href="#" id="btnHomeFeedback" data-transition="flip">Send Feedback</a></li>
-                <li><a href="#" id="btnHomeAbout" data-transition="flip">About</a></li>
-                <li><a href="#" id="pg_home_signout">Sign Out</a></li>
-                
+
+                <li><a href="#" id="btnHomeChurchLife">Church Life</a></li>
+
+                <li><a href="#home_settings_menu" data-rel="popup" data-position-to="window"  data-transition="slideup"  >Settings</a>
+                </li>
+
+
+
+
+
+
+
             </ul>
 
             <!-- /navbar -->
 
-           
+
 
             <div data-role="popup" id="pg_home_viewintro" data-overlay-theme="a" style="max-width: 400px;"
                 class="ui-corner-all">
@@ -105,9 +131,9 @@
                         View our <strong>quick start tutorial</strong> which will highlight the key features
                         and tools available to you. 
                     </p>
-                   
-                                <a href="#" id="btnHomePopupViewQuickStart"  data-role="button" data-theme="h" >View Quick Start</a>
-                                                    <!--<a href="#" data-rel="back"  data-role="button" data-theme="c" >Watch Later</a>-->
+
+                    <a href="#" id="btnHomePopupViewQuickStart" data-role="button" data-theme="h">View Quick Start</a>
+                    <!--<a href="#" data-rel="back"  data-role="button" data-theme="c" >Watch Later</a>-->
 
                 </div>
             </div>
@@ -118,5 +144,5 @@
 <!--<script src="../../scripts/libraries/jquery-1.9.1.min.js"></script>
 <script src="../scripts/jquery.mobile-1.3.0.min.js"></script>-->
 
-     
+
 </html>

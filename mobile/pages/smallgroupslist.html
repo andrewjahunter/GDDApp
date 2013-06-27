@@ -24,13 +24,13 @@
                 <li><a href="#" class="menu_pinfo">Personal Info</a></li>
 
                 <li><a href="#" class="menu_churchlife">Church Life</a></li>
-                <li><a href="#" class="menu_eventProfiles">Events</a></li>
+                <li><a href="#" class="menu_eventProfiles">Upcoming Events</a></li>
                 
-                <li data-role="list-divider">Settings</li>
+                <!--<li data-role="list-divider">Settings</li>
                 <li><a href="#" class="menu_signout">Sign Out</a></li>
                 <li><a href="#" class="menu_switchdb">Switch Database</a></li>
-                <li><a href="#" class="menu_sessionInfo">Session Info</a></li>
-                <li><a href="#" class="menu_closeMenu">Close Menu</a></li>
+                <li><a href="#" class="menu_sessionInfo">Session Info</a></li>-->
+                <li><a href="#" class="menu_closeMenu" data-theme="d">Close Menu</a></li>
             </ul>
 
         </div>
@@ -140,7 +140,7 @@
                 <li data-bind="attr: {id: groupId}">
                     <a data-bind="attr: {href: '#'}" class="groupItem" data-transition="slide">
                         <h3 data-bind="text: groupName"></h3>
-                        <div data-bind="text: 'Leader: ' + leaderName() + ' id: ' + groupId()" style="font-size: x-small"></div>
+                        <div  data-bind="text: 'Leader: ' + leaderName()" style="font-size: x-small"></div>
 
                     </a>
                     <a data-role="button" href="#" class="toggleMembership" data-position-to="window"></a>
@@ -245,11 +245,11 @@
 
 
 
-                <div class="ui-body-h groupSearchResultsMsg ui-corner-all" id="pg_sg_mygroups_withresults" style="padding: 2px; display: none">
+                <div class="ui-body-h groupSearchResultsMsg ui-corner-all ui-content" id="pg_sg_mygroups_withresults" style="padding: 2px; display: none">
                     These are the groups you currently lead. Click on the group name to see the list of actions you can perform on this group
                 </div>
 
-                <div class="ui-body-h groupSearchResultsMsg ui-corner-all" id="pg_sg_groups_withresults" style="padding: 2px; display: none">
+                <div class="ui-body-h groupSearchResultsMsg ui-corner-all ui-content" id="pg_sg_groups_withresults" style="padding: 2px; display: none">
                     These are the groups that match your search criteria. Click on the <span data-inline="true" data-theme="c" data-role="button" data-icon="check" data-iconpos="notext"></span> to add yourself as a member.
                 </div>
 
@@ -260,7 +260,7 @@
 
             <div id="divGroupMembershipResults">
 
-                <div class="ui-body-h ui-corner-all sg_mymembership_infomsg" id="pg_sg_mygroupmembership_withresults" style="padding: 2px; display: none">
+                <div class="ui-body-h ui-corner-all sg_mymembership_infomsg ui-content" id="pg_sg_mygroupmembership_withresults" style="padding: 2px; display: none">
                     These are the groups you are a member of. Click the <span data-inline="true" data-theme="e" data-role="button" data-icon="delete" data-iconpos="notext"></span>icon to remove yourself from the group.
                 </div>
 
