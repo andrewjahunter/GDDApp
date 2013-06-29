@@ -65,17 +65,18 @@
                     </label>
                     <input id="txtPInfoLastName" data-clear-btn="true" data-bind="value: lastName" name="lastname" placeholder="enter your surname" />
                 </div>
+                 <div data-role="fieldcontain">
+                    <label for="ddlPInfoGender">
+                        Gender                       
+                    </label>
+                    <select id="ddlPInfoGender" data-bind="value: gender()" name="" data-inline="true">
+                        <option value="-1"></option>
+                        <option value="F">Female</option>
+                        <option value="M">Male</option>
 
-                <div data-role="fieldcontain">
-                    <label for="txtPInfoEmail">Email</label>
-                    <input type="email" data-clear-btn="true" data-bind="value: email1" name="email" id="txtPInfoEmail" value="">
+                    </select>
+
                 </div>
-
-                <div data-role="fieldcontain">
-                    <label for="txtPInfoMobileNumber">Mobile</label>
-                    <input type="tel" data-clear-btn="true" data-bind="value: mobileNumber" name="mobilenumber" id="txtPInfoMobileNumber" value="">
-                </div>
-
                 <div data-role="fieldcontain">
                     <label for="ddlPInfoMaritalStatus">
                         Marital Status                       
@@ -89,41 +90,6 @@
                     </select>
 
                 </div>
-
-                <div data-role="fieldcontain">
-                    <label for="ddlPInfoGender">
-                        Gender                       
-                    </label>
-                    <select id="ddlPInfoGender" data-bind="value: gender()" name="" data-inline="true">
-                        <option value="-1"></option>
-                        <option value="F">Female</option>
-                        <option value="M">Male</option>
-
-                    </select>
-
-                </div>
-
-                <div data-role="fieldcontain">
-                    <label for="txtFBId">
-                        FacebookId
-                    </label>
-                    <input id="txtFBId" data-clear-btn="true" data-bind="value: facebookId" placeholder="" />
-                </div>
-
-                <div data-role="fieldcontain">
-                    <label for="txtHomeNumber">Home Number</label>
-                    <input type="tel" data-clear-btn="true" data-bind="value: homeNumber" name="homenumber" id="txtHomeNumber" value="">
-                </div>
-
-                <div data-role="fieldcontain">
-                    <label for="txtWorkNumber">Work Number</label>
-                    <input type="tel" data-clear-btn="true" data-bind="value: workNumber" name="worknumber" id="txtWorkNumber" value="">
-                </div>
-
-
-
-
-
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="horizontal">
                         <legend>Date of Birth:</legend>
@@ -177,6 +143,36 @@
                         </select>
                     </fieldset>
                 </div>
+
+                <div data-role="fieldcontain">
+                    <label for="txtPInfoEmail">Email</label>
+                    <input type="email" data-clear-btn="true" data-bind="value: email1" name="email" id="txtPInfoEmail" value="">
+                </div>
+
+                <div data-role="fieldcontain">
+                    <label for="txtPInfoMobileNumber">Mobile</label>
+                    <input type="tel" data-clear-btn="true" data-bind="value: mobileNumber" name="mobilenumber" id="txtPInfoMobileNumber" value="">
+                </div>
+
+                 <div data-role="fieldcontain">
+                    <label for="txtHomeNumber">Home Number</label>
+                    <input type="tel" data-clear-btn="true" data-bind="value: homeNumber" name="homenumber" id="txtHomeNumber" value="">
+                </div>
+
+                <div data-role="fieldcontain">
+                    <label for="txtWorkNumber">Work Number</label>
+                    <input type="tel" data-clear-btn="true" data-bind="value: workNumber" name="worknumber" id="txtWorkNumber" value="">
+                </div>
+
+               
+
+                <div data-role="fieldcontain">
+                    <label for="txtFBId">
+                        FacebookId
+                    </label>
+                    <input id="txtFBId" data-clear-btn="true" data-bind="value: facebookId" placeholder="" />
+                </div>
+
 
 
             </form>
