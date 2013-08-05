@@ -19,18 +19,14 @@
             </div>
             <ul data-role="listview" data-theme="a" data-inset="true" id="' + panelId + '_menu_lv" data-divider-theme="b">
                 <li data-role="list-divider">Menu</li>
-                <li><a href="#" class="menu_home">Home</a></li>
-                   <li><a href="#" class="menu_sermons">Sermons</a></li>
-                <li><a href="#" class="menu_subs">Newsletters</a></li>
-                <li><a href="#" class="menu_groups">Groups</a></li>
-                <li><a href="#" class="menu_churchlife">Church Life</a></li>
-                <li><a href="#" class="menu_eventProfiles">Upcoming Events</a></li>
-             
-               <!-- <li data-role="list-divider">Settings</li>
-                <li><a href="#" class="menu_signout">Sign Out</a></li>
-                <li><a href="#" class="menu_switchdb">Switch Database</a></li>
-                <li><a href="#" class="menu_sessionInfo">Session Info</a></li>-->
-                <li><a href="#" class="menu_closeMenu" data-theme="d">Close Menu</a></li>
+                 <li><a href="#" class="menu_home">Home</a></li>
+                 <li><a href="#" class="menu_sermons">Sermons</a></li>
+                 <li><a href="#" class="menu_pinfo">Personal Info</a></li>
+                 <li><a href="#" class="menu_subs">Newsletters</a></li>    
+                <li><a href="#" class="menu_groups">Groups</a></li>       
+                 <li><a href="#" class="menu_eventProfiles">Upcoming Events</a></li>
+                   <li><a href="#" class="menu_churchlife">Church Life</a></li>              
+                <li> <a href="#"  class="menu_closeMenu" data-theme="d" >Close Menu</a></li>
             </ul>
         </div>
         <div data-role="header">
@@ -69,7 +65,7 @@
                     <label for="ddlPInfoGender">
                         Gender                       
                     </label>
-                    <select id="ddlPInfoGender" data-bind="value: gender()" name="" data-inline="true">
+                    <select id="ddlPInfoGender" data-bind="value: gender" name="" data-inline="true">
                         <option value="-1"></option>
                         <option value="F">Female</option>
                         <option value="M">Male</option>
@@ -81,7 +77,7 @@
                     <label for="ddlPInfoMaritalStatus">
                         Marital Status                       
                     </label>
-                    <select id="ddlPInfoMaritalStatus" data-bind="value: maritalStatus()" name="" data-inline="true">
+                    <select id="ddlPInfoMaritalStatus" data-bind="value: maritalStatus" name="" data-inline="true">
                         <option value="Single">Single</option>
                         <option value="Married">Married</option>
                         <option value="Divorced">Divorced</option>
@@ -95,13 +91,13 @@
                         <legend>Date of Birth:</legend>
 
                         <label for="ddlPInfoBdayMonth">Month</label>
-                        <select id="ddlPInfoBdayMonth" data-mini="true" data-inline="true" name="months" data-bind="value: birthMonth()">
+                        <select id="ddlPInfoBdayMonth" data-mini="true" data-inline="true" name="months" data-bind="value: birthMonth">
                             <option value="-1">Month</option>
 
                         </select>
 
                         <label for="ddlPInfoBdayDay">Day</label>
-                        <select id="ddlPInfoBdayDay" data-mini="true" data-inline="true" name="days" data-bind="value: birthDay()">
+                        <select id="ddlPInfoBdayDay" data-mini="true" data-inline="true" name="days" data-bind="value: birthDay">
                             <option value="-1">Day</option>
 
 
@@ -109,7 +105,7 @@
                         </select>
 
                         <label for="ddlPInfoBdayYear">Year</label>
-                        <select id="ddlPInfoBdayYear" data-mini="true" data-inline="true" name="years" data-bind="value: birthYear()">
+                        <select id="ddlPInfoBdayYear" data-mini="true" data-inline="true" name="years" data-bind="value: birthYear">
                             <option value="-1">Year</option>
 
 
@@ -122,13 +118,13 @@
                         <legend>Anniversary:</legend>
 
                         <label for="ddlPInfoAnnMonth">Month</label>
-                        <select id="ddlPInfoAnnMonth" data-mini="true" data-inline="true" name="months" data-bind="value: anniversaryMonth()">
+                        <select id="ddlPInfoAnnMonth" data-mini="true" data-inline="true" name="months" data-bind="value: anniversaryMonth">
                             <option value="-1">Month</option>
 
                         </select>
 
                         <label for="ddlPInfoAnnDay">Day</label>
-                        <select id="ddlPInfoAnnDay" data-mini="true" data-inline="true" name="days" data-bind="value: anniversaryDay()">
+                        <select id="ddlPInfoAnnDay" data-mini="true" data-inline="true" name="days" data-bind="value: anniversaryDay">
                             <option value="-1">Day</option>
 
 
@@ -136,7 +132,7 @@
                         </select>
 
                         <label for="ddlPInfoAnnYear">Year</label>
-                        <select id="ddlPInfoAnnYear" data-mini="true" data-inline="true" name="years" data-bind="value: anniversaryYear()">
+                        <select id="ddlPInfoAnnYear" data-mini="true" data-inline="true" name="years" data-bind="value: anniversaryYear">
                             <option value="-1">Year</option>
 
 
@@ -146,22 +142,22 @@
 
                 <div data-role="fieldcontain">
                     <label for="txtPInfoEmail">Email</label>
-                    <input type="email" data-clear-btn="true" data-bind="value: email1" name="email" id="txtPInfoEmail" value="">
+                    <input type="email" data-clear-btn="true" data-bind="value: email1" name="email" id="txtPInfoEmail" value=""/>
                 </div>
 
                 <div data-role="fieldcontain">
                     <label for="txtPInfoMobileNumber">Mobile</label>
-                    <input type="tel" data-clear-btn="true" data-bind="value: mobileNumber" name="mobilenumber" id="txtPInfoMobileNumber" value="">
+                    <input type="tel" data-clear-btn="true" data-bind="value: mobileNumber" name="mobilenumber" id="txtPInfoMobileNumber" value=""/>
                 </div>
 
                  <div data-role="fieldcontain">
                     <label for="txtHomeNumber">Home Number</label>
-                    <input type="tel" data-clear-btn="true" data-bind="value: homeNumber" name="homenumber" id="txtHomeNumber" value="">
+                    <input type="text" data-clear-btn="true" data-bind="value: homeNumber" name="homenumber" id="txtHomeNumber" value=""/>
                 </div>
 
                 <div data-role="fieldcontain">
                     <label for="txtWorkNumber">Work Number</label>
-                    <input type="tel" data-clear-btn="true" data-bind="value: workNumber" name="worknumber" id="txtWorkNumber" value="">
+                    <input type="text" data-clear-btn="true" data-bind="value: workNumber" name="worknumber" id="txtWorkNumber" value=""/>
                 </div>
 
                
@@ -170,7 +166,7 @@
                     <label for="txtFBId">
                         FacebookId
                     </label>
-                    <input id="txtFBId" data-clear-btn="true" data-bind="value: facebookId" placeholder="" />
+                    <input id="txtFBId" type="text" data-clear-btn="true" data-bind="value: facebookId" placeholder="" />
                 </div>
 
 
