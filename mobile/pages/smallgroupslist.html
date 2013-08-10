@@ -20,6 +20,7 @@
                  <li data-role="list-divider">Menu</li>
                  <li><a href="#" class="menu_home">Home</a></li>
                  <li><a href="#" class="menu_sermons">Sermons</a></li>
+                <li><a href="#" class="menu_followup">Follow Up</a></li>
                  <li><a href="#" class="menu_pinfo">Personal Info</a></li>
                  <li><a href="#" class="menu_subs">Newsletters</a></li>    
                 <li><a href="#" class="menu_groups">Groups</a></li>       
@@ -40,34 +41,35 @@
             <label for="ddlSGCatSearch">
                 Category                       
             </label>
-            <select id="ddlSGCatSearch" name="groupcat" data-bind="optionsCaption: ' '">
+            
+            <select id="ddlSGCatSearch" name="groupcat" data-bind="options: refData.groupCategories, value:searchGroupsQry.categoryId, optionsText: 'name', optionsValue: 'id', optionsCaption: 'none selected'">
             </select>
 
             <label for="ddlSGTypeSearch">
                 Type                       
             </label>
-            <select id="ddlSGTypeSearch" name="grouptype" data-bind="optionsCaption: ' '">
+            <select id="ddlSGTypeSearch" name="grouptype" data-bind="value:searchGroupsQry.groupTypeId">
             </select>
 
             <label for="ddlAgeProfileSearch">
                 Age Profile                       
             </label>
-            <select id="ddlAgeProfileSearch" name="" data-bind="options: ageProfiles(), optionsText:'name', optionsValue:'id',optionsCaption: ' '">
+            <select id="ddlAgeProfileSearch" name="" data-bind="options: refData.ageProfiles, value:searchGroupsQry.ageProfileId, optionsText: 'name', optionsValue: 'id', optionsCaption: 'none selected'">
             </select>
 
 
             <label for="ddlSGSuburbSearch">
                 Suburb                       
             </label>
-            <select id="ddlSGSuburbSearch" name="" data-bind="options: groupSuburbs(),optionsCaption: ' '">
+            <select id="ddlSGSuburbSearch" name="" data-bind="options: refData.groupSuburbs, value:searchGroupsQry.suburb, optionsCaption: 'none selected'">
             </select>
 
 
             <label for="ddlSGDaySearch">
                 Meeting Day                       
             </label>
-            <select id="ddlSGDaySearch" name="">
-                <option value=""></option>
+            <select id="ddlSGDaySearch" name="" data-bind="value:searchGroupsQry.meetingDay">
+                <option value="">none selected</option>
                 <option value="Monday">Monday</option>
                 <option value="Tuesday">Tuesday</option>
                 <option value="Wednesday">Wednesday</option>
@@ -82,8 +84,8 @@
             <label for="ddlSGGenderSearch">
                 Gender                      
             </label>
-            <select id="ddlSGGenderSearch" name="">
-                <option value=""></option>
+            <select id="ddlSGGenderSearch" data-bind="value:searchGroupsQry.gender">
+                <option value="">none selected</option>
                 <option value="M/F">Male/Female</option>
                 <option value="M">Male</option>
                 <option value="F">Female</option>
@@ -91,7 +93,7 @@
 
 
             <label for="optPortalScope">Restrict to local</label>
-            <select name="slider-flip-m" id="optPortalScope" data-role="slider" data-mini="true">
+            <select name="slider-flip-m" id="optPortalScope" data-role="slider" data-mini="true" data-bind="value:searchGroupsQry.restrictToPortal">
                 <option value="false">No</option>
                 <option value="true" selected="">Yes</option>
             </select>
@@ -132,13 +134,13 @@
             </div>
 
             <script id="smallgrouplist-template" type="text/html">
-                <li data-bind="attr: {id: groupId}">
-                    <a data-bind="attr: {href: '#'}" class="groupItem" data-transition="slide">
+                <li >
+                    <a data-bind="attr: {'data-id': groupId}" class="groupItem" data-transition="slide">
                         <h3 data-bind="text: groupName"></h3>
                         <div  data-bind="text: 'Leader: ' + leaderName()" style="font-size: x-small"></div>
 
                     </a>
-                    <a data-role="button" href="#" class="toggleMembership" data-position-to="window"></a>
+                    <a data-role="button" data-bind="attr: {'data-id': groupId}" href="#" class="toggleMembership" data-position-to="window"></a>
 
                 </li>
             </script>
@@ -174,9 +176,6 @@
 
                 </ul>
             </div>
-
-
-
 
 
             <div id="divSmallGroupsList">
@@ -228,17 +227,6 @@
                 </div>
 
 
-              
-
-
-
-
-                
-
-
-
-
-
 
                 <div class="ui-body-h groupSearchResultsMsg ui-corner-all ui-content" id="pg_sg_mygroups_withresults" style="padding: 2px; display: none">
                     These are the groups you currently lead. Click on the group name to see the list of actions you can perform on this group
@@ -260,7 +248,7 @@
                 </div>
 
 
-                  <div id="pg_sg_mygroupmembership_noresults" class="sg_mymembership_infomsg"  style="display: none">
+                <div id="pg_sg_mygroupmembership_noresults" class="sg_mymembership_infomsg"  style="display: none">
 
                         <div data-role="header" data-theme="h" class="ui-corner-top">
                          <h1>No Membership Info</h1>
@@ -283,11 +271,6 @@
                 </div>
 
 
-
-
-
-
-                
                 <ul data-role="listview" data-split-icon="delete" data-split-theme="e" data-inset="true" data-theme="b" id="smallGroupMembership" data-bind="template: { name: 'smallgrouplist-template', foreach: membershipResults}"></ul>
             </div>
 

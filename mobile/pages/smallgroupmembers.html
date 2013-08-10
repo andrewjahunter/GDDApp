@@ -86,7 +86,7 @@
             <a href="#" id="pg_sgmembers_header_cancel" data-icon="delete" data-role="button" data-theme="b" >cancel</a>
 
             <h1 class="pageHeader">members</h1>
-                        <a href="#panelAddNewMember"   data-icon="plus" data-role="button" data-theme="b" >add</a>
+                        <a href="#" class="btnOpenAddGroupMemberPanel"   data-icon="plus" data-role="button" data-theme="b" >add</a>
 
         </div>
 
@@ -96,33 +96,33 @@
             </div>
 
             <script id="addnewmembers-template" type="text/html">
-                <li data-bind="attr: {id: personId}">
-                    <a data-bind="attr: {href: '#'}" data-transition="slide">
+                <li >
+                    <a data-bind="attr: {'data-id': personId}" data-transition="slide">
                         <h5 data-bind='text: firstName + " " + lastName'></h5>
                         <div data-bind="html: email" style="font-size: x-small"></div>
                         <div data-bind="html: mobileNumber" style="font-size: x-small"></div>
                     </a>
-                    <a data-role="button" href="#" class="showPopup toggleMembership" data-position-to="window"></a>
+                    <a data-role="button" href="#" data-bind="attr: {'data-id': personId}" class="showPopup toggleMembership" data-position-to="window"></a>
                 </li>
             </script>
 
             <script id="smallgroupmembers-template" type="text/html">
-                <li data-bind="attr: {id: personId}">
-                    <a data-bind="attr: {href: '#'}" data-transition="slide">
+                <li >
+                    <a data-bind="attr: {'data-id': personId}" data-transition="slide">
                         <h3 data-bind='text: firstName() + " " + lastName()'></h3>
                         <div data-bind="html: email1() + '    ' + mobileNumber()" style="font-size: x-small"></div>
                     </a>
-                    <a data-role="button" href="#" class="showPopup toggleMembership" data-position-to="window"></a>
+                    <a data-role="button" data-bind="attr: {'data-id': personId}" href="#" class="showPopup toggleMembership" data-position-to="window"></a>
                 </li>
             </script>
 
 
 
-            <a href="#sg_members_actionmenu" data-rel="popup" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="i">actions...</a>
+            <a href="#sg_members_actionmenu" data-rel="popup" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="i">Actions...</a>
             <div data-role="popup" id="sg_members_actionmenu" data-theme="i">
                 <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
                    
-                    <li><a href="#" id="btnOpenAddGroupMemberPanel" data-rel="back">Add Member</a></li>
+                    <li><a href="#" class="btnOpenAddGroupMemberPanel" data-rel="back">Add Member</a></li>
 
                     <li><a href="#pg_sg_members_whatisthis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
                     <li><a href="#" id="btnSgMembersBackToGroups">Back to Groups</a></li>
