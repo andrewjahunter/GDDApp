@@ -97,22 +97,22 @@
 
             <script id="addnewmembers-template" type="text/html">
                 <li >
-                    <a data-bind="attr: {'data-id': personId}" data-transition="slide">
+                    <a data-bind="attr: {'data-id': id}" data-transition="slide">
                         <h5 data-bind='text: firstName + " " + lastName'></h5>
                         <div data-bind="html: email" style="font-size: x-small"></div>
                         <div data-bind="html: mobileNumber" style="font-size: x-small"></div>
                     </a>
-                    <a data-role="button" href="#" data-bind="attr: {'data-id': personId}" class="showPopup toggleMembership" data-position-to="window"></a>
+                    <a data-role="button" href="#" data-bind="attr: {'data-id': id}" class="showPopup toggleMembership" data-position-to="window"></a>
                 </li>
             </script>
 
             <script id="smallgroupmembers-template" type="text/html">
                 <li >
-                    <a data-bind="attr: {'data-id': personId}" data-transition="slide">
+                    <a data-bind="attr: {'data-id': id}" data-transition="slide">
                         <h3 data-bind='text: firstName() + " " + lastName()'></h3>
                         <div data-bind="html: email1() + '    ' + mobileNumber()" style="font-size: x-small"></div>
                     </a>
-                    <a data-role="button" data-bind="attr: {'data-id': personId}" href="#" class="showPopup toggleMembership" data-position-to="window"></a>
+                    <a data-role="button" data-bind="attr: {'data-id': id}" href="#" class="showPopup toggleMembership" data-position-to="window"></a>
                 </li>
             </script>
 
