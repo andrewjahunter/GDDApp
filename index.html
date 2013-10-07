@@ -31,17 +31,17 @@
 
         // Cordova is ready
         function onDeviceReady() {
-            alert("Device ready has fired yesww:")
+           // alert("Device ready has fired yesww:")
             //gdd.pushNotification = window.plugins.pushNotification;
             //alert("Push Notify in Device Ready: " + gdd.pushNotification)
             navigator.splashscreen.hide();
             window.gdd = window.gdd || {};
             window.gdd.deviceIsReady = true;
 
-            var pushNotification = window.plugins.pushNotification;
-            alert("got ref to push notification")
-            pushNotification.register(successHandler, pushNotifyFail, { "senderID": "385529235062", "ecb": "onNotificationGCM" });
-            alert("push notifiy has registered")
+            //var pushNotification = window.plugins.pushNotification;
+            //alert("got ref to push notification")
+            //pushNotification.register(successHandler, pushNotifyFail, { "senderID": "385529235062", "ecb": "onNotificationGCM" });
+            //alert("push notifiy has registered")
 
             try {
 
@@ -63,43 +63,43 @@
 
 
 
-        function successHandler(result) {
-            alert('Push Notify Callback Success! Result = ' + result)
-        }
+        //function successHandler(result) {
+        //    alert('Push Notify Callback Success! Result = ' + result)
+        //}
 
-        function pushNotifyFail(error) {
-            alert("Push Notify Reg has failed with this error: " + error);
-        }
+        //function pushNotifyFail(error) {
+        //    alert("Push Notify Reg has failed with this error: " + error);
+        //}
 
 
-        function onNotificationGCM(e) {
-            alert("Got a message");
-            alert(JSON.stringify(e));
-            switch (e.event) {
-                case 'registered':
-                    if (e.regid.length > 0) {
-                        //window.GCMRegID = e.regid;
-                        //sendRegIdToDevServer();
-                        //$("#GCMRegID").html(window.GCMRegID);
-                        //console.log("Regid " + e.regid);
-                        alert('registration id = ' + e.regid);
-                    }
-                    break;
+        //function onNotificationGCM(e) {
+        //    alert("Got a message");
+        //    alert(JSON.stringify(e));
+        //    switch (e.event) {
+        //        case 'registered':
+        //            if (e.regid.length > 0) {
+        //                //window.GCMRegID = e.regid;
+        //                //sendRegIdToDevServer();
+        //                //$("#GCMRegID").html(window.GCMRegID);
+        //                //console.log("Regid " + e.regid);
+        //                alert('registration id = ' + e.regid);
+        //            }
+        //            break;
 
-                case 'message':
-                    // this is the actual push notification. its format depends on the data model from the push server
-                    alert('message = ' + e.message + ' msgcnt = ' + e.msgcnt);
-                    break;
+        //        case 'message':
+        //            // this is the actual push notification. its format depends on the data model from the push server
+        //            alert('message = ' + e.message + ' msgcnt = ' + e.msgcnt);
+        //            break;
 
-                case 'error':
-                    alert('GCM error = ' + e.msg);
-                    break;
+        //        case 'error':
+        //            alert('GCM error = ' + e.msg);
+        //            break;
 
-                default:
-                    alert('An unknown GCM event has occurred');
-                    break;
-            }
-        }
+        //        default:
+        //            alert('An unknown GCM event has occurred');
+        //            break;
+        //    }
+        //}
 
 
 
