@@ -17,7 +17,7 @@
                 <img border="0" src="" class="menu_fbpic" alt="facebook profile pic" style="width: 100%; height: auto" />
 
             </div>
-            <ul data-role="listview" data-theme="a" data-inset="true" id="' + panelId + '_menu_lv" data-divider-theme="b">
+            <ul data-role="listview" data-theme="a" class="slideMenuListView" data-inset="true" id="' + panelId + '_menu_lv" data-divider-theme="b">
                 <li data-role="list-divider">Menu</li>
                  <li><a href="#" class="menu_home">Home</a></li>
                  <li><a href="#" class="menu_sermons">Sermons</a></li>
@@ -26,12 +26,13 @@
                  <li><a href="#" class="menu_subs">Newsletters</a></li>    
                 <li><a href="#" class="menu_groups">Groups</a></li>       
                  <li><a href="#" class="menu_eventProfiles">Upcoming Events</a></li>
-                   <li><a href="#" class="menu_churchlife">Church Life</a></li>              
+                   <li><a href="#" class="menu_churchlife">Church Life</a></li>
+                 <li><a href="#" class="menu_messages">Messages</a></li>                 
                 <li> <a href="#"  class="menu_closeMenu" data-theme="d" >Close Menu</a></li>
             </ul>
         </div>
         <div data-role="header">
-            <a href="#" id="pg_eventsprofile_showMenu" data-icon="bars" data-theme="b" data-role="button" >menu</a>
+            <a href="#" id="pg_eventsprofile_showMenu" data-icon="bars" data-theme="b" data-role="button" >menu<span class="slideMenuButtonBubbleSpan"></span></a>
             <h1 class="pageHeader">events</h1>
                  <a href="home.html" data-icon="home" data-theme="b" data-transition="slide" data-direction="reverse"  data-role="button" data-iconpos="notext" >home</a>
         </div>

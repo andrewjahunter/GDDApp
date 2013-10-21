@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Messages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
+    <link href="../styles/app.css" rel="stylesheet" />
+    <link href="../styles/gdd.mobile.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />
+    <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
+</head>
+<body style="background-color: #343131; color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
+
+    <div data-role="page" id="pg_messages" data-theme="a">
+        <div data-role="panel" id="pg_messages_menuPanel" data-display="push" data-theme="g">
+            <div style="width: 100%; max-width: 80px; max-height: 80px; margin-left: auto; margin-right: auto">
+                <img border="0" src="" class="menu_fbpic" alt="facebook profile pic" style="width: 100%; height: auto" />
+
+            </div>
+            <ul data-role="listview" data-theme="a" data-inset="true" data-divider-theme="b">
+                <li data-role="list-divider">Menu</li>
+                <li><a href="#" class="menu_home">Home</a></li>
+                <li><a href="#" class="menu_sermons">Sermons</a></li>
+                <li><a href="#" class="menu_followup">Follow Up</a></li>
+                <li><a href="#" class="menu_pinfo">Personal Info</a></li>
+                <li><a href="#" class="menu_subs">Newsletters</a></li>
+                <li><a href="#" class="menu_groups">Groups</a></li>
+                <li><a href="#" class="menu_eventProfiles">Upcoming Events</a></li>
+                <li><a href="#" class="menu_churchlife">Church Life</a></li>
+                <li><a href="#" class="menu_closeMenu" data-theme="d">Close Menu</a></li>
+            </ul>
+        </div>
+        <div data-role="header">
+            <a href="#" id="pg_messages_showMenu" data-icon="bars" data-theme="b" data-role="button">menu</a>
+            <h1 class="pageHeader" id="pg_messages_header">Messages</h1>
+
+        </div>
+        <!-- /header -->
+        <div data-role="content" style="padding: 15px">
+
+            <style type="text/css">
+                .filter-flipswitch .ui-slider-switch {
+                    width: 300px;
+                }
+
+                /*.ui-slider {
+                     width: 300px;
+                }*/
+            </style>
+
+
+
+
+
+            <div data-role="popup" class="ui-content" id="pg_messages_errpopup" data-theme="e">
+                <div id="pg_messages_errpopmessage"></div>
+            </div>
+            <div data-role="popup" class="ui-content" id="msgpopup" data-theme="b">
+                <div id="msgpopupcontent"></div>
+            </div>
+
+            <script id="messages-template" type="text/html">
+                <li data-role="list-divider" >
+                    <h6 data-bind="html:subject" style="text-align: center"></h6>
+                    
+                </li>
+                <li>
+                    <p class="ui-body-a  ui-corner-all" style="padding: 10px; text-align: center"><span data-bind="html:messageBody"></span></p>
+                   
+                    <p data-bind="html:'Sent By: ' + sentBy + '    Sent From: ' + portalName + '    Viewed On: ' +  viewedOn"></p>
+
+                    <p class="ui-li-aside"><span data-bind="html:dateChanged"></span></p>
+                    <table>
+                        <tr>
+                            <td>
+                                <div data-bind="visible: !viewed">
+                                    <a data-role="button" data-mini="true" data-inline="true" class="btnReadMsg" href="#" data-bind="attr: {'data-id': id}" data-theme="c">Mark as Read</a>
+                                </div>
+
+                                <div data-bind="visible: viewed">
+                                    <a data-role="button" data-mini="true" data-inline="true" class="btnUnReadMsg" href="#" data-bind="attr: {'data-id': id}" data-theme="d">Mark as Un-Read</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div data-bind="visible: urlLinkExists">
+                                    <a data-role="button" data-mini="true" data-inline="true" class="btnExtraInfo" target="_blank" data-bind="attr: { href:urlLink }" data-theme="a">View More Info</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+
+                </li>
+            </script>
+
+            <label for="msgCount">Drag slider to control number of messages to display:</label>
+            <input type="range" name="msgCount" data-theme="b" id="msgCount"  data-highlight="true" min="0" max="25" value="10" />
+
+         
+
+            <div class="filter-flipswitch">
+                <label for="MsgViewed">Choose which messages you would like to view:</label>
+                <select name="MsgViewed" id="MsgViewed" data-role="slider">
+                    <option value="0" selected="selected">Show only Un-Read messages</option>
+                    <option value="-1">Show me ALL my messages</option>
+                </select>
+            </div>
+
+
+
+
+
+            <div id="MsgList">
+                <ul data-role="listview" data-inset="true" data-theme="b" id="myMessages" data-bind="template: { name: 'messages-template', foreach: messages}"></ul>
+            </div>
+
+            <div id="pg_messages_none" style="display: none">
+                <div data-role="header" data-theme="h" class="ui-corner-top">
+                    <h1>No Messages</h1>
+                </div>
+                <div data-role="content" data-theme="h" class="ui-corner-bottom">
+                    <p>
+                        You have no messages
+                    </p>
+                    <p>
+                        This page will show you by default all messages that you have not viewed. To view prioir messages simply flip the "switch-button" to allow all messages to be viewed.
+                    </p>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <!-- /page -->
+
+</body>
+</html>
