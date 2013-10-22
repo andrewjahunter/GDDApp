@@ -39,9 +39,9 @@
         <div data-role="content" style="padding: 15px">
 
             <style type="text/css">
-                .filter-flipswitch .ui-slider-switch {
+                /*.filter-flipswitch .ui-slider-switch {
                     width: 300px;
-                }
+                }*/
 
                 /*.ui-slider {
                      width: 300px;
@@ -59,14 +59,53 @@
                 <div id="msgpopupcontent"></div>
             </div>
 
-            <script id="messages-template" type="text/html">
-                <li data-role="list-divider" >
+            <label for="msgCount"><small>Show this many messages:</small></label>
+            <input type="range" name="msgCount" data-theme="b" id="msgCount" data-highlight="true" min="0" max="25" value="10" />
+
+
+
+            <div class="filter-flipswitch">
+                <label for="MsgViewed"><small>Only show me Un-Ready Messages:</small></label>
+                <select name="MsgViewed" id="MsgViewed" data-role="slider" data-mini="true">
+                    <option value="0" selected="selected">Yes</option>
+                    <option value="-1">No</option>
+                </select>
+            </div>
+
+
+            <div data-bind="foreach: messages">
+                <div class="ui-body-b  ui-corner-all" style="padding: 10px">
+                    <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
+                        <strong data-bind="html:subject"></strong>
+                    </div>
+                    <p data-bind="html:messageBody">
+                    </p>
+
+                    <p><i><small data-bind="html:'Sent By: ' + sentBy + '    Sent From: ' + portalName + '    Viewed On: ' +  viewedOn"></small></i></p>
+                </div>
+                <div data-bind="visible: !viewed">
+                    <a data-role="button" data-mini="true" class="btnReadMsg" href="#" data-bind="attr: {'data-id': id}" data-theme="c">Mark as Read</a>
+                </div>
+
+                <div data-bind="visible: viewed">
+                    <a data-role="button" data-mini="true" class="btnUnReadMsg" href="#" data-bind="attr: {'data-id': id}" data-theme="d">Mark as Un-Read</a>
+                </div>
+                <br />
+            </div>
+
+
+
+            <!--<a href="intro2.html" data-role="button" data-theme="b" data-transition="flow">next</a>-->
+
+
+            <!--<script id="messages-template" type="text/html">
+                <li data-role="list-divider">
                     <h6 data-bind="html:subject" style="text-align: center"></h6>
-                    
+
                 </li>
                 <li>
                     <p class="ui-body-a  ui-corner-all" style="padding: 10px; text-align: center"><span data-bind="html:messageBody"></span></p>
-                   
+
                     <p data-bind="html:'Sent By: ' + sentBy + '    Sent From: ' + portalName + '    Viewed On: ' +  viewedOn"></p>
 
                     <p class="ui-li-aside"><span data-bind="html:dateChanged"></span></p>
@@ -93,28 +132,17 @@
 
 
                 </li>
-            </script>
+            </script>-->
 
-            <label for="msgCount">Drag slider to control number of messages to display:</label>
-            <input type="range" name="msgCount" data-theme="b" id="msgCount"  data-highlight="true" min="0" max="25" value="10" />
-
-         
-
-            <div class="filter-flipswitch">
-                <label for="MsgViewed">Choose which messages you would like to view:</label>
-                <select name="MsgViewed" id="MsgViewed" data-role="slider">
-                    <option value="0" selected="selected">Show only Un-Read messages</option>
-                    <option value="-1">Show me ALL my messages</option>
-                </select>
-            </div>
+            
 
 
 
 
 
-            <div id="MsgList">
+            <!--   <div id="MsgList">
                 <ul data-role="listview" data-inset="true" data-theme="b" id="myMessages" data-bind="template: { name: 'messages-template', foreach: messages}"></ul>
-            </div>
+            </div>-->
 
             <div id="pg_messages_none" style="display: none">
                 <div data-role="header" data-theme="h" class="ui-corner-top">
