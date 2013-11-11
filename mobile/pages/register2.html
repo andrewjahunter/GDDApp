@@ -10,7 +10,7 @@
     <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
 
 </head>
-<body  style="background-color:#343131;  color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
+<body style="background-color: #343131; color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
 
     <div data-role="page" id="pg_register2" data-theme="a">
 
@@ -19,6 +19,7 @@
             <h1 class="pageHeader" id="pg_register2_header">registration</h1>
             <a href="signin.html" data-icon="delete" data-theme="b" data-role="button">cancel</a>
         </div>
+
         <div data-role="content" style="padding: 15px">
             <div style="width: 72px; margin-left: auto; margin-right: auto">
                 <img src="../img/gdc72.png" style="width: 100%; height: auto" />
@@ -28,29 +29,33 @@
             </div>
             <form id="pg_register2_form">
                 <div data-role="fieldcontain">
+                    <label for="txtReg2UserName">
+                        User Name
+                    </label>
 
-                    <div>
-                        <input id="txtReg2UserName" name="username" data-bind="value: userName" placeholder="user name" type="text" />
-                    </div>
-                    <div id="divReg2UsrNameSts"></div>
-
-                </div>
-                <div data-role="fieldcontain">
-
-
-                    <div>
-                        <input id="txtReg2PWD" name="password" data-bind="value: password" placeholder="password" type="password" />
-                    </div>
+                    <input id="txtReg2UserName" name="username" data-bind="value: userName" placeholder="user name" type="text" />
 
                 </div>
                 <div data-role="fieldcontain">
 
-                    <div>
+                    <label for="txtReg2PWD">
+                        Password
+                    </label>
+                    <input id="txtReg2PWD" name="password" data-bind="value: password" placeholder="password" type="password" />
+
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="txtReg2PWDConfirm">
+                        Confirm Password
+                    </label>
+                   
                         <input id="txtReg2PWDConfirm" name="passwordconfirm" placeholder="retype password" type="password" />
-                        <span><a href="#pg_reg2_pwdinvalid" data-inline="true" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-iconpos="notext" data-theme="b" data-transition="slideup"></a>
-                        </span>
-                    </div>
+                        
+                    
                 </div>
+
+                <a href="#pg_reg2_pwdinvalid"  data-rel="popup" data-position-to="window"   data-transition="slideup">View Password Requirements</a>
+                      
             </form>
 
 
@@ -62,7 +67,7 @@
                 <div data-role="header" data-theme="e" class="ui-corner-top">
                     <h1>Failed?</h1>
                 </div>
-                <div data-role="content" data-theme="a"  class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
                     <h3 class="ui-title">We are not able to register you at this time</h3>
                     <p id="reg2PopupFailMsg">
                     </p>
@@ -71,7 +76,7 @@
                 </div>
             </div>
 
-            
+
 
             <div data-role="popup" id="reg2PopupSuccess" data-overlay-theme="a" style="max-width: 450px;"
                 class="ui-corner-all">
@@ -94,7 +99,7 @@
                 <div data-role="header" data-theme="d" class="ui-corner-top">
                     <h1>Taken!</h1>
                 </div>
-                <div data-role="content" data-theme="a"  class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
                     <h3 class="ui-title">This username has already been taken!</h3>
                     <p>
                         If you have ever registered with any of the churches on either gododata or gododchurch you can simply use those
@@ -107,26 +112,38 @@
                 </div>
             </div>
 
-             <div data-role="popup" id="pg_reg2_pwdinvalid" data-overlay-theme="a" data-theme="d" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
-                <div data-role="header" data-theme="d" class="ui-corner-top">
+            <div data-role="popup" id="pg_reg2_pwdinvalid" data-overlay-theme="a" data-theme="h" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="h"  class="ui-corner-top">
                     <h1>Password!</h1>
                 </div>
-                <div data-role="content" data-theme="a"  class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="h"  class="ui-corner-bottom ui-content">
                     <h3 class="ui-title">Password Requirements!</h3>
                     <div>
                         A password must be at least 5 characters long and:
                         <ul>
-                           <li>contain at least 1 number (0-9)</li>
+                            <li>contain at least 1 number (0-9)</li>
                             <li>contain at least 1 lower case letter (a-z)</li>
                             <li>and contain at least 1 upper case letter (A-Z)</li>
                         </ul>
 
-                     
+
 
                     </div>
-                    
-                    <a href="#" data-role="button" data-rel="back" data-theme="d">ok</a>
-                   
+
+                    <a href="#" data-role="button" data-rel="back" data-theme="h">ok</a>
+
+                </div>
+            </div>
+
+            <div data-role="popup" id="popupReg2MissingData" data-overlay-theme="a" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="e" class="ui-corner-top">
+                    <h1>Missing?</h1>
+                </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+
+                    <p>You are missing some data. All the fields above need to be completed and a valid email address provided</p>
+                    <button id="btnReg2CloseMissingDataMsg" data-role="button" data-theme="e">Ok</button>
+
                 </div>
             </div>
         </div>

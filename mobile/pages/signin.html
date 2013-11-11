@@ -36,27 +36,33 @@
                 </div>
              
                 <button type="button" id="btnSignIn" data-theme="b" >
-                    sign in</button>
+                    Sign In</button>
+                <div>
+                    <a  id="btnSignInRegister"     href="#" data-transition="slide" >
+                    Register a new account</a>
+                </div>
+                <br />
+                <div>
+                    <a  id="btnForgotInfo"   href="#" data-transition="slide" >
+                   Forgot your login information?</a>
+                </div>
 
-                 <a href="#pg_signin_actionmenu" data-rel="popup" data-role="button" data-position-to="window"  data-transition="slidedown" data-icon="gear" data-theme="i">other actions...</a>
-            <div data-role="popup" id="pg_signin_actionmenu" data-theme="i">
-                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i" >
-                    <!--<li data-role="divider" >Choose an action</li>-->
-                    <li><a  id="btnSignInRegister"     href="#" data-transition="slide" >
-                    Register</a></li>
-                    <li> <a  id="btnForgotInfo"   href="#" data-transition="slide" >
-                    Forgot Info</a></li>
-                    <li><a href="#" id="btnSignInViewIntro"  >Quick Tour</a></li>
-                    
-                    <li><a href="#" data-rel="back">Cancel</a></li>
-                    
-                     
-                </ul>
+                 
+         
+
+
+
+                 <div data-role="popup" id="popupSignInMissingData" data-overlay-theme="a" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
+            <div data-role="header" data-theme="e" class="ui-corner-top">
+                <h1>Missing?</h1>
             </div>
+            <div data-role="content" class="ui-corner-bottom ui-content">
 
+                <p>You are missing some data. Please enter your username and password</p>
+                <button id="btnSignInCloseMissingDataMsg" data-role="button" data-theme="e">Ok</button>
 
-
-
+            </div>
+        </div>
 
                 
                

@@ -6,42 +6,24 @@
     <link href="mobile/styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
     <link href="mobile/styles/app.css" rel="stylesheet" />
     <link href="mobile/styles/gdd.mobile.min.css" rel="stylesheet" />
-    <link href="mobile/styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />
+    <link href="mobile/styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />  
+   
+     <script data-main="mobile/scripts/app/appstart.min.js" src="scripts/libraries/require.js"></script>
 
-    <script data-main="mobile/scripts/app/appstart.min.js" src="scripts/libraries/require.js"></script>
-
-
-    <!--<script src="scripts/libraries/gddcordova.js"></script>-->
     <script type="text/javascript" charset="utf-8">
         window.gdd = window.gdd || {};
-
-        //  alert("index script is loading")
-
-
-
+     
         // Wait for Cordova to load
-        function indexPageLoaded() {
-            // alert("index onload called")
+        function indexPageLoaded() {       
             window.gdd.deviceIsReady = false;
             document.addEventListener("deviceready", onDeviceReady, false);
-
-            //runTestState();
-
         }
 
         // Cordova is ready
-        function onDeviceReady() {
-           // alert("Device ready has fired yesww:")
-            //gdd.pushNotification = window.plugins.pushNotification;
-            //alert("Push Notify in Device Ready: " + gdd.pushNotification)
+        function onDeviceReady() {        
             navigator.splashscreen.hide();
             window.gdd = window.gdd || {};
             window.gdd.deviceIsReady = true;
-
-            //var pushNotification = window.plugins.pushNotification;
-            //alert("got ref to push notification")
-            //pushNotification.register(successHandler, pushNotifyFail, { "senderID": "385529235062", "ecb": "onNotificationGCM" });
-            //alert("push notifiy has registered")
 
             try {
 
@@ -59,50 +41,6 @@
             }
 
         }
-
-
-
-
-        //function successHandler(result) {
-        //    alert('Push Notify Callback Success! Result = ' + result)
-        //}
-
-        //function pushNotifyFail(error) {
-        //    alert("Push Notify Reg has failed with this error: " + error);
-        //}
-
-
-        //function onNotificationGCM(e) {
-        //    alert("Got a message");
-        //    alert(JSON.stringify(e));
-        //    switch (e.event) {
-        //        case 'registered':
-        //            if (e.regid.length > 0) {
-        //                //window.GCMRegID = e.regid;
-        //                //sendRegIdToDevServer();
-        //                //$("#GCMRegID").html(window.GCMRegID);
-        //                //console.log("Regid " + e.regid);
-        //                alert('registration id = ' + e.regid);
-        //            }
-        //            break;
-
-        //        case 'message':
-        //            // this is the actual push notification. its format depends on the data model from the push server
-        //            alert('message = ' + e.message + ' msgcnt = ' + e.msgcnt);
-        //            break;
-
-        //        case 'error':
-        //            alert('GCM error = ' + e.msg);
-        //            break;
-
-        //        default:
-        //            alert('An unknown GCM event has occurred');
-        //            break;
-        //    }
-        //}
-
-
-
 
         function onAppResume() {
             try {
@@ -189,37 +127,34 @@
 
     </script>
 
-
+  
 </head>
-<body style="background-image: url('mobile/img/appbackground_dark.png'); color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif" onload="indexPageLoaded();">
+    <!--background-image:url('mobile/img/appbackground_dark.png')-->
+<body style="background-color:#343131;  color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif" onload="indexPageLoaded();">
 
-    <div data-role="page" data-theme="g" id="pg_index" style="background: transparent">
+    <div data-role="page" data-theme="g" id="pg_index" style="background:transparent">
 
         <style>
-            /*.ui-page {
-    background: transparent;
-}*/
-            /*.ui-content{
-    background: transparent;
-}*/
+
 
             /*#region ERR CONNECTION*/
-            #errConnection {
+             #errConnection {
+                
                 padding: 15px;
-                width: 250px;
-                display: none;
-                margin-top: 20px;
-                margin-left: auto;
-                margin-right: auto;
+                width:250px;
+                display:none;
+                margin-top:20px;
+                margin-left:auto;
+                margin-right:auto;
                 background: #afc6ef;
                 border: 1px solid #000080;
                 border-radius: 10px;
                 -moz-border-radius: 10px;
-                -webkit-border-radius: 10px;
+                -webkit-border-radius: 10px;          
                 text-align: center;
             }
             /*#endregion*/
-
+           
 
             /*#region BUTTON*/
             .actionIndexBtn .defaultIndexBtn {
@@ -400,8 +335,6 @@
 
                 var progressState = function () {
 
-
-
                     if ((gdd.onLine()) && (gdd.isReady())) {
                         window.clearInterval(gdd.progressStateInterval);
 
@@ -421,8 +354,6 @@
                             catch (err) {
                                 document.getElementById("progressState").innerHTML = "loading..."
                             }
-
-
                         }
                     }
 
@@ -456,7 +387,7 @@
 
         </script>
 
-
+       
         <div style="width: 100%; margin-top: 50px">
 
             <div style="font-size: small; font-style: italic; white-space: normal; text-align: center; width: 270px; margin-left: auto; margin-right: auto">
@@ -491,8 +422,8 @@
 
             </div>
 
-            <div id="errConnection">
-                <p id="indexErrMsg">Your device is not connected to the Internet. Please ensure you are connected and then try again.</p>
+            <div id="errConnection" >
+                                <p id="indexErrMsg">Your device is not connected to the Internet. Please ensure you are connected and then try again.</p>
 
                 <div class="actionIndexBtn">
                     <div class="defaultIndexBtn" onclick="window.location.reload()">Try Again</div>
@@ -503,8 +434,9 @@
 
 
     </div>
-    <!-- /page -->
+  
 </body>
+
 
 
 

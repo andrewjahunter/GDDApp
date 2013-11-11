@@ -43,7 +43,7 @@
             <a href="#pg_authportal_cantfindchurch" id="btnMyChurchIsMissing" data-role="button" data-rel="popup" data-transition="slideup" data-position-to="window" data-theme="d">My Church Is Missing?</a>
         </div>
 
-        <div data-role="header">
+        <div data-role="header" >
             <a href="#" data-icon="back" data-rel="back" data-role="button" data-theme="b">back</a>
             <h1 class="pageHeader" id="pg_authportallist_header">active churches</h1>
             <a href="#pg_authportals_main_help" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-theme="b" data-transition="slideup">info</a>
@@ -73,7 +73,7 @@
             <script id="portallist-template" type="text/html">
                 <li data-bind="attr: {id: portalId}">
                     <a data-bind="attr: {href: '#'}" class="loadsession addportal" data-transition="slide">
-                        <h3 data-bind="text: portalName"></h3>
+                        <h5 data-bind="text: portalName"></h5>
                         <div style="font-size:x-small; font-style:italic">(click here to sign in)</div>
                     </a>
 
@@ -105,7 +105,7 @@
 
 
                 <div id="divAuthPortals">
-                    <ul data-role="listview" data-split-icon="delete" data-split-theme="d" data-inset="true" data-theme="b" id="portalList" data-bind="template: { name: 'portallist-template', foreach: authorizedPortals}"></ul>
+                    <ul data-role="listview" data-split-icon="delete" data-split-theme="i" data-inset="true" data-theme="b" id="portalList" data-bind="template: { name: 'portallist-template', foreach: authorizedPortals}"></ul>
                 </div>
             </div>
 

@@ -17,8 +17,8 @@
                 <img border="0" src="" class="menu_fbpic" alt="facebook profile pic" style="width: 100%; height: auto" />
 
             </div>
-            <ul data-role="listview" data-theme="a" data-inset="true" data-divider-theme="b">
-                <li data-role="list-divider">Menu</li>
+            <ul data-role="listview" data-theme="i" data-inset="true" data-divider-theme="g">
+                
                 <li><a href="#" class="menu_home">Home</a></li>
                 <li><a href="#" class="menu_sermons">Sermons</a></li>
                 <li><a href="#" class="menu_followup">Follow Up</a></li>
@@ -60,13 +60,13 @@
             </div>
 
             <label for="msgCount"><small>Show this many messages:</small></label>
-            <input type="range" name="msgCount" data-theme="b" id="msgCount" data-highlight="true" min="0" max="25" value="10" />
+            <input type="range" data-theme="b" name="msgCount" data-theme="b" id="msgCount" data-highlight="true" min="0" max="25" value="10" />
 
 
 
             <div class="filter-flipswitch">
                 <label for="MsgViewed"><small>Only show me Un-Ready Messages:</small></label>
-                <select name="MsgViewed" id="MsgViewed" data-role="slider" data-mini="true">
+                <select name="MsgViewed" id="MsgViewed" data-theme="b" data-role="slider" data-mini="true">
                     <option value="0" selected="selected">Yes</option>
                     <option value="-1">No</option>
                 </select>
@@ -74,7 +74,7 @@
 
 
             <div data-bind="foreach: messages">
-                <div class="ui-body-b  ui-corner-all" style="padding: 10px">
+                <div class="ui-body-d  ui-corner-all" style="padding: 10px">
                     <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
                         <strong data-bind="html:subject"></strong>
                     </div>
