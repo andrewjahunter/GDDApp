@@ -27,9 +27,8 @@
         <div data-role="content" style="padding: 15px">
 
             <!--<img border="0" src="" alt="facebook profile pic" id="pg_home_fb_picurl" style="float: right; display: inline" />-->
-            <div id="appUpdateRecommended" data-role="content" data-theme="d" class="ui-border-all" style="display: none">
-                There is a recommended update waiting for this 
-                application on your app store.
+            <div id="appNoticeMsg" data-role="content" data-theme="d" class="ui-border-all" style="display: none; margin-bottom:10px; text-align:center">
+               
             </div>
             <div style="width: 72px; margin-left: auto; margin-right: auto">
                 <img src="../img/gdc72.png" style="width: 100%; height: auto" />
@@ -67,6 +66,7 @@
                
                 <li><a href="#" id="btnHomeFeeds">Sermons</a></li>
                 <li><a href="#" id="btHomeFollowUp">Follow Up</a></li>
+                      <li><a href="#" id="btnHomeMessages">Messages<span class="ui-li-count ui-btn-up-e ui-btn-corner-all bubbleMessagesCount"></span></a></li>
                 <li><a href="#" id="btnHomePinfo">Personal Info
                        
                 </a></li>
@@ -81,7 +81,7 @@
 
 
                 <li><a href="#" id="btnHomeChurchLife">Church Life</a></li>
-                <li><a href="#" id="btnHomeMessages">Messages<span class="ui-li-count ui-btn-up-e ui-btn-corner-all bubbleMessagesCount"></span></a></li>
+          
                 <li><a href="#home_settings_menu" data-rel="popup" data-position-to="window" data-transition="slideup">Settings</a>
                 </li>
 
@@ -118,24 +118,7 @@
                 </div>
             </div>
 
-            <div data-role="popup" id="appUpdateRequired" data-overlay-theme="a" style="max-width: 400px;"
-                class="ui-corner-all">
-                <div data-role="header" data-theme="e" class="ui-corner-top">
-                    <h1>Required Update</h1>
-                </div>
-                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
-                    <p>
-                        You are running an <strong>old version</strong> of this application. 
-                    </p>
-                    <p>
-                        You need to <strong>update this application</strong> in order to use it successfully. You can find the update on your app store
-                    </p>
-
-
-
-
-                </div>
-            </div>
+           
 
         </div>
     </div>

@@ -18,7 +18,7 @@
 
             </div>
             <ul data-role="listview" data-theme="i" data-inset="true" data-divider-theme="g">
-                
+
                 <li><a href="#" class="menu_home">Home</a></li>
                 <li><a href="#" class="menu_sermons">Sermons</a></li>
                 <li><a href="#" class="menu_followup">Follow Up</a></li>
@@ -60,7 +60,7 @@
             </div>
 
             <label for="msgCount"><small>Show this many messages:</small></label>
-            <input type="range" data-theme="b" name="msgCount" data-theme="b" id="msgCount" data-highlight="true" min="0" max="25" value="10" />
+            <input type="range" data-theme="b" name="msgCount" id="msgCount" data-highlight="true" min="0" max="25" value="10" />
 
 
 
@@ -83,13 +83,17 @@
 
                     <p><i><small data-bind="html:'Sent By: ' + sentBy + '    Sent From: ' + portalName + '    Viewed On: ' +  viewedOn"></small></i></p>
                 </div>
-                <div data-bind="visible: !viewed">
-                    <a data-role="button" data-mini="true" class="btnReadMsg" href="#" data-bind="attr: {'data-id': id}" data-theme="c">Mark as Read</a>
-                </div>
 
-                <div data-bind="visible: viewed">
-                    <a data-role="button" data-mini="true" class="btnUnReadMsg" href="#" data-bind="attr: {'data-id': id}" data-theme="d">Mark as Un-Read</a>
-                </div>
+                <a data-role="button" data-mini="true" data-inline="true" class="btnReadMsg" href="#" data-bind="attr: {'data-id': id}, visible: !viewed" data-theme="c">Mark as Read</a>
+
+                                <a data-role="button" data-mini="true" data-inline="true" class="btnUnReadMsg" href="#" data-bind="attr: {'data-id': id}, visible: viewed " data-theme="d">Mark as Un-Read</a>
+
+
+                <a data-role="button" data-mini="true" data-inline="true" class="btnReplyMsg" href="#" data-bind="attr: {'data-id': id}, visible: replyEnabled" data-theme="b">Reply</a>
+
+
+
+
                 <br />
             </div>
 
@@ -134,7 +138,7 @@
                 </li>
             </script>-->
 
-            
+
 
 
 
@@ -155,6 +159,25 @@
                     <p>
                         This page will show you by default all messages that you have not viewed. To view prioir messages simply flip the "switch-button" to allow all messages to be viewed.
                     </p>
+                </div>
+            </div>
+
+
+
+
+
+            <div data-role="popup" id="popupReplyDialog"  data-theme="b" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <h1>Reply</h1>
+                </div>
+                <div data-role="content" data-theme="b" class="ui-corner-bottom ui-content">
+                     <p id="popupReplyHeader">
+                        Type your repy into the box provided and click send. A push notification will be sent to the person mobile phone.
+                    </p>
+                    <textarea style="height: 100px; width: 100%" id="txtMsgReply"></textarea>
+                    <a href="#" data-role="button" id="btnCancelReply" data-inline="true" data-theme="a">Cancel</a>
+                    <a href="#" data-role="button" id="btnSendReply" data-inline="true" data-transition="flow" data-theme="b">Send</a>
+                    <div id="replyPopupMsg" data-theme="e" data-role="content" style="display:none"></div>
                 </div>
             </div>
 
