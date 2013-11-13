@@ -171,7 +171,7 @@
                     <li><a href="#" id="btnViewGroupMembers">View Members</a></li>
                     <li><a href="#" id="btnToggleGroupActiveStatus">Activate</a></li>
                     <li><a href="#" id="btnDeleteSmalGroup">Delete</a></li>
-                    <li><a href="#" id="btnSGListSMSMembers">SMS Members</a></li>
+                    <li><a href="#" id="btnSGListSMSMembers">Message Members</a></li>
                     <li><a href="#" id="btnGroupActionMenuWhatIsThis" data-rel="popup" data-transition="slideup" data-position-to="window">What is this?</a></li>
                     <li><a href="#" id="btnSGListMenuCancel">Cancel</a></li>
 
@@ -370,19 +370,19 @@
 
             <div data-role="popup" id="smallGroupsListSMS" data-overlay-theme="a" style="max-width: 400px;"
                 class="ui-corner-all">
-                <div data-role="header" data-theme="c" class="ui-corner-top">
-                    <h1>SMS Members</h1>
+                <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <h1>Message Members</h1>
                 </div>
-                <div data-role="content" data-theme="a"  class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="b"  class="ui-corner-bottom ui-content">
 
-                    <p>
-                        Type your message into the textbox provided. Merge the first name of the person using the merge tag "[name]".
+                    <p id="sgMembersMsg">
+                        
                     </p>
                     <textarea style="height: 100px; width: 100%" id="txtSGSmsMsg"></textarea>
 
-                    <a href="#" data-role="button" data-inline="true" data-theme="c" id="btnSGListSendSMS">send</a>
-                    <a href="#" data-role="button" data-theme="a" data-inline="true" id="btnGListSMSCancel">cancel</a>
-                    <a href="#" data-role="button" data-theme="b" data-inline="true" id="btnSGListSendSMSOk">thanks!</a>
+                    <a href="#" data-role="button" data-inline="true" data-theme="b" id="btnSGListSendSMS">Send</a>
+                    <a href="#" data-role="button" data-theme="a" data-inline="true" id="btnGListSMSCancel">Cancel</a>
+                    <a href="#" data-role="button" data-theme="b" data-inline="true" id="btnSGListSendSMSOk">OK!</a>
                     <div class="ui-body-b" style="padding: 2px" id="smsSgResultMsg">
                     </div>
                 </div>
