@@ -5,45 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
     <link href="../styles/app.css" rel="stylesheet" />
-    <link href="../styles/gdd.mobile.min.css" rel="stylesheet" />
+    <link href="../styles/gdc.mobile.min.css" rel="stylesheet" />
     <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />
     <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
 
 </head>
-<body  style="background-color:#343131;  color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
+<body style="background-color: #343131; color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
 
     <div data-role="page" id="pg_authportallist" data-theme="a" data-dom-cache="false">
 
         <div data-role="panel" id="pg_authportal_addnewportal" data-position="right" data-display="push" data-theme="g">
-            <div data-theme="g" style="padding: 2px">
-                Search For Church<a href="#pg_authportals_activate_help" data-rel="popup" data-role="button" data-position-to="window" class="ui-icon-alt" data-inline="true" data-theme="h" data-transition="slideup" data-icon="info" data-iconpos="notext">Learn more</a>
-            </div>
-            <div data-role="popup" id="searchPortalPopup" class="ui-content" data-theme="h" style="max-width: 400px;">
-                <p>Enter the name of the church/ministry you are looking for and click "search". Click the database to add it to your account.</p>
-            </div>
-            <input id="txtPortalSearchString" placeholder="church name" value="" type="text" />
 
-
-
-
-            <!-- /grid-b -->
-
-            <div class="ui-grid-a">
-                <div class="ui-block-a">
-                    <div data-role="button" data-theme="b" id="btnSearchPortals" data-inline="true">search</div>
+            <div id="authPortalSearchForAllDatabases">
+                <div data-theme="g" style="padding: 2px">
+                    Search For Church<a href="#pg_authportals_activate_help" data-rel="popup" data-role="button" data-position-to="window" class="ui-icon-alt" data-inline="true" data-theme="h" data-transition="slideup" data-icon="info" data-iconpos="notext">Learn more</a>
                 </div>
-                <div class="ui-block-b">
-                    <div data-role="button" data-theme="a" data-rel="close" id="btnCloseSearchPortals" data-inline="true">close</div>
+               
+                <div data-role="popup" id="searchPortalPopup" class="ui-content" data-theme="h" style="max-width: 400px;">
+                    <p>Enter the name of the church/ministry you are looking for and click "search". Click the database to add it to your account.</p>
+                </div>
+                <input id="txtPortalSearchString" placeholder="church name" value="" type="text" />
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div data-role="button" data-theme="b" id="btnSearchPortals" data-inline="true">search</div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div data-role="button" data-theme="a" data-rel="close" data-inline="true">close</div>
+                    </div>
                 </div>
             </div>
-            <!-- /grid-a -->
+
+            <div id="authPortalSearchForFilteredDatabases">
+
+                <div data-role="content" data-theme="h" style="text-align:center"><small>Please select the church/ministry you want to add to the list of your active databases</small></div>
+                <div data-role="button" data-theme="b" data-rel="close" >close</div>
+            </div>
+
+
+
+
+
+
+
+
+
 
 
             <ul data-role="listview" data-split-icon="check" data-split-theme="c" data-inset="true" data-theme="a" id="searchPortals" data-bind="template: { name: 'addportal-template', foreach: portalSearchResults}"></ul>
             <a href="#pg_authportal_cantfindchurch" id="btnMyChurchIsMissing" data-role="button" data-rel="popup" data-transition="slideup" data-position-to="window" data-theme="d">My Church Is Missing?</a>
         </div>
 
-        <div data-role="header" >
+        <div data-role="header">
             <a href="#" data-icon="back" data-rel="back" data-role="button" data-theme="b">back</a>
             <h1 class="pageHeader" id="pg_authportallist_header">active churches</h1>
             <a href="#pg_authportals_main_help" data-rel="popup" data-position-to="window" data-icon="info" data-role="button" data-theme="b" data-transition="slideup">info</a>
@@ -74,7 +87,7 @@
                 <li data-bind="attr: {id: portalId}">
                     <a data-bind="attr: {href: '#'}" class="loadsession addportal" data-transition="slide">
                         <h5 data-bind="text: portalName"></h5>
-                        <div style="font-size:x-small; font-style:italic">(click here to sign in)</div>
+                        <div style="font-size: x-small; font-style: italic">(click here to sign in)</div>
                     </a>
 
                     <a data-role="button" href="#" class="removeportal" data-position-to="window"></a>
@@ -98,12 +111,6 @@
 
 
 
-
-
-
-
-
-
                 <div id="divAuthPortals">
                     <ul data-role="listview" data-split-icon="delete" data-split-theme="i" data-inset="true" data-theme="b" id="portalList" data-bind="template: { name: 'portallist-template', foreach: authorizedPortals}"></ul>
                 </div>
@@ -119,7 +126,7 @@
 
 
 
-                <div data-role="content" data-theme="h" class="ui-corner-bottom">
+                <div data-role="content" data-theme="h" class="ui-corner-bottom" >
 
                     <p>
                         There are currently <strong>no active churches</strong> registered in your profile. This is most likely because you have
@@ -128,18 +135,18 @@
                     <p>
                         <strong>TO START: </strong>you need to activate at least one church in your profile. To find the church you are looking for click the button below. 
                     </p>
-                    <a href="#pg_authportal_addnewportal" data-role="button" data-theme="h">Connect New Church</a>
+                    <button id="btnAddFirstPortal" data-role="button" data-theme="h">Connect New Church</button>
                 </div>
 
             </div>
 
 
-            <div data-role="popup" id="pg_authportals_activate_help" data-overlay-theme="a" style="max-width: 400px;"
+            <div data-role="popup" id="pg_authportals_activate_help" data-overlay-theme="a" style="max-width: 400px; "
                 class="ui-corner-all">
                 <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Search...</h1>
                 </div>
-                <div data-role="content" data-theme="a"  class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content" >
                     <p><strong>Enter the name</strong> of the church you are looking for. You can enter part of the name for example "His" to search for all "His People" churches</p>
 
                     <p>From the results, <strong>click the "check" icon.</strong> This will activate the church in your profile</p>
@@ -152,12 +159,12 @@
                 </div>
             </div>
 
-            <div data-role="popup" id="pg_authportals_main_help" data-overlay-theme="a" style="max-width: 400px;"
+            <div data-role="popup" id="pg_authportals_main_help" data-overlay-theme="a" style="max-width: 400px; "
                 class="ui-corner-all">
                 <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Find Church</h1>
                 </div>
-                <div data-role="content" data-theme="a"  class="ui-corner-bottom ui-content">
+                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content" >
                     <p>
                         This app can be signed into <strong>any number of churches/ministries</strong> as you would like
                     </p>
@@ -171,28 +178,41 @@
                     </p>
                     <p><strong>If there are no churches</strong> in the list below or if you want to add another church to your acive list, <strong>click "Connect to New Church"</strong> under the actions menu</p>
 
-                    <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
+                    <a href="#" data-role="button" data-rel="back" data-theme="h" >thanks!</a>
 
                 </div>
             </div>
+                       
 
-            <div data-role="popup" id="pg_authportal_cantfindchurch" data-overlay-theme="a" style="max-width: 400px;"
+            <div data-role="popup" id="pg_authportal_cantfindchurch" data-overlay-theme="a" style="max-width: 400px; "
                 class="ui-corner-all">
                 <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Missing?</h1>
                 </div>
-                <div data-role="content"  data-theme="a" class="ui-corner-bottom ui-content">
-                    <p>
-                        If you are <strong>not able to find the church</strong> you are looking for, its most likely because they are <strong>not registered</strong> as a church
-                            on the godochurch online systems. If this is the case please choose from the following options:
-                            
-                            
-                    </p>
-                    <ol>
-                        <li>Please ask your church to <strong>consider registering with us</strong>. Send them to our website at <a href="http://www.gododata.com" target="_blank"><strong>www.gododata.com</strong></a></li>
-                        <li>Send us an email at <strong>support@gododata.com</strong>, and we will contact them for you.</li>
-                    </ol>
-                    <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
+                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content" >
+                    <div id="cantFindChurchAllDatabases">
+                        <p>
+                            If you are <strong>not able to find the church</strong> you are looking for, its most likely because they are <strong>not registered</strong> as a church
+                            on the godochurch online systems. If this is the case please choose from the following options:                                                     
+                        </p>
+                        <ol>
+                            <li>Please ask your church to <strong>consider registering with us</strong>. Send them to our website at <strong>www.godochurch.com</strong></li>
+                            <li>Send us an email at <strong>support@gododata.com</strong>, and we will contact them for you.</li>
+                        </ol>
+                    </div>
+
+                    <div id="cantFindChurchFilteredDatabase" style="display:none">
+                        <p>
+                            There are two reasons why the church or ministry does not appear in the list provided:                                                     
+                        </p>
+                        <ol>
+                            <li>They may not have an active database.</li>
+                            <li>Their database has not been activated in this application</li>
+                        </ol>
+                        <p>Either way please contact your church/ministry office to have this corrected.</p>
+                    </div>
+
+                    <button  data-role="button" data-theme="h"  id="btnCloseCantFindChurchWindow">OK</button>
 
                 </div>
             </div>
