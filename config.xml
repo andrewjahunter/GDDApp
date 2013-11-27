@@ -87,7 +87,9 @@
   <icon src="mobile/img/ios/icon152x152.png" gap:platform="ios" width="152" height="152" />
   <icon src="mobile/img/ios/icon76x76.png" gap:platform="ios" width="76" height="76" />
   <icon src="mobile/img/ios/icon1024x1024.png" gap:platform="ios" width="1024" height="1024" />
-
+  <icon src="mobile/img/ios/icon57x57.png" gap:platform="ios" width="57" height="57" />
+  <icon src="mobile/img/ios/icon72x72.png" gap:platform="ios" width="72" height="72" />
+  
   <icon src="mobile/img/android/icon-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
   <icon src="mobile/img/android/icon-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
   <icon src="mobile/img/android/icon-hdpi.png"   gap:platform="android"    gap:density="hdpi" />
