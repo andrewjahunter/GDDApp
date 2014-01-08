@@ -23,7 +23,6 @@
         </div>
         <!-- /header -->
         <div data-role="content" style="padding: 15px">
-            <div data-role="content" id="grpSearchErr" class="ui-body-e" style="text-align:center; display:none"></div>
 
 
             <!--<div class="grpSearchSubView grpSearchStep1View" style="display:none">
@@ -129,6 +128,7 @@
 
 
                 <button type="button" data-inline="false" id="btnGrpSearch" data-theme="b">Search</button>
+                            <div data-role="content" id="grpSearchErr" class="ui-body-e" style="text-align:center; display:none"></div>
 
 
 
@@ -143,7 +143,7 @@
                     </li>
 
                     <li>
-                        <a data-bind="attr: {'data-id': id}" class="groupItem" data-transition="slide">
+                        <a data-bind="attr: {'data-id': id}" class="groupSearchItem" data-transition="slide">
 
                             <div data-bind="html: 'Group Category: ' + categoryName" style="font-size: small"></div>
                             <div data-bind="html: 'Category Type: ' + groupType" style="font-size: small"></div>
