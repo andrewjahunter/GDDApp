@@ -20,16 +20,16 @@
             <ul data-role="listview" data-theme="i" class="slideMenuListView" data-inset="true" id="' + panelId + '_menu_lv" data-divider-theme="g">
 
                 <li><a href="#" class="menu_home">Home</a></li>
-                <li><a href="#" class="menu_sermons">Sermons</a></li>
-                <li><a href="#" class="menu_followup">Follow Up</a></li>
-                <li><a href="#" class="menu_messages">Messages</a></li>
-                <li><a href="#" class="menu_pinfo">Personal Info</a></li>
-                <li><a href="#" class="menu_subs">Newsletters</a></li>
-                <li><a href="#" class="menu_groups">Groups</a></li>
-                <li><a href="#" class="menu_eventProfiles">Upcoming Events</a></li>
-                <li><a href="#" class="menu_churchlife">Church Life</a></li>
-                
-                <li><a href="#" class="menu_closeMenu" data-theme="d">Close Menu</a></li>
+                <li><a href="#" class="menu_sermons"><div data-bind="html:labels[1200]"></div></a></li>
+                <li><a href="#" class="menu_followup"><div data-bind="html:labels[1150]"></div></a></li>
+                <li><a href="#" class="menu_messages"><div data-bind="html:labels[1400]"></div></a></li>
+                <li><a href="#" class="menu_pinfo"><div data-bind="html:labels[1000]"></div></a></li>
+                <li><a href="#" class="menu_subs"><div data-bind="html:labels[1300]"></div></a></li>
+                <li><a href="#" class="menu_groups"><div data-bind="html:labels[1100]"></div></a></li>
+                <li><a href="#" class="menu_eventProfiles"><div data-bind="html:labels[1250]"></div></a></li>
+                <li><a href="#" class="menu_churchlife"><div data-bind="html:labels[1350]"></div></a></li>
+
+                <li> <a href="#" class="menu_closeMenu" data-theme="d">Close Menu</a></li>
             </ul>
         </div>
         <div data-role="header">
@@ -42,7 +42,7 @@
 
 
 
-        <div data-role="content" style="padding: 15px">
+        <div data-role="content" data-bind="with:selectedPerson" style="padding: 15px">
 
             <div data-role="popup" class="ui-content" id="errpopup" data-theme="e">
                 <div id="errpopmessage"></div>
@@ -87,15 +87,15 @@
                         <input type="text" data-clear-btn="true" data-bind="value: workNumber" name="worknumber" id="txtWorkNumber" value="" />
                     </div>
 
-                   
+
 
                 </form>
                 <button class="btnPInfoCancel" data-inline="true">Cancel</button>
                 <button id="btnPInfoGoPart2" data-theme="b" data-inline="true">Next</button>
                 <div>
-<a href="#" id="btnPinfoUpdateSecInfo" >change username/password</a>
+                    <a href="#" id="btnPinfoUpdateSecInfo">change username/password</a>
                 </div>
-                  
+
 
             </div>
 
@@ -103,7 +103,7 @@
 
                 <div data-role="fieldcontain">
                     <label for="ddlPInfoGender">
-                        Gender                       
+                        Gender
                     </label>
                     <select id="ddlPInfoGender" data-bind="value: gender" name="" data-inline="true">
                         <option value="-1"></option>
@@ -115,7 +115,7 @@
                 </div>
                 <div data-role="fieldcontain">
                     <label for="ddlPInfoMaritalStatus">
-                        Marital Status                       
+                        Marital Status
                     </label>
                     <select id="ddlPInfoMaritalStatus" data-bind="value: maritalStatus" name="" data-inline="true">
                         <option value="Single">Single</option>
@@ -179,31 +179,32 @@
                         </select>
                     </fieldset>
                 </div>
-                 <div data-role="fieldcontain">
-                        <label for="txtFBId">
-                            FacebookId
-                        </label>
-                        <input id="txtFBId" type="text" data-clear-btn="true" data-bind="value: facebookId" placeholder="" />
-                    </div>
-                <button type="button" id="btnPInfoUpdate"  data-theme="b">
-                Update</button>
-                <button id="btnPInfoBackToPartOne"  data-inline="true">Back</button>
+                <div data-role="fieldcontain">
+                    <label for="txtFBId">
+                        FacebookId
+                    </label>
+                    <input id="txtFBId" type="text" data-clear-btn="true" data-bind="value: facebookId" placeholder="" />
+                </div>
+                <button type="button" id="btnPInfoUpdate" data-theme="b">
+                    Update
+                </button>
+                <button id="btnPInfoBackToPartOne" data-inline="true">Back</button>
                 <button class="btnPInfoCancel" data-inline="true">Cancel</button>
-                
+
             </div>
 
 
-          <div data-role="popup" id="popupPInfoMissingData" data-overlay-theme="a"  data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
-    <div data-role="header" data-theme="e" class="ui-corner-top">
-        <h1>Missing?</h1>
-    </div>
-    <div data-role="content"  class="ui-corner-bottom ui-content">
-        
-        <p>You are missing some data that we really need. Please ensure you provide your firstname and either your email OR both your last name and mobile number.</p>
-        <button id="btnPInfoCloseMissingDataMsg" data-role="button"  data-theme="e">Ok</button>
-       
-    </div>
-</div>
+            <div data-role="popup" id="popupPInfoMissingData" data-overlay-theme="a" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="e" class="ui-corner-top">
+                    <h1>Missing?</h1>
+                </div>
+                <div data-role="content" class="ui-corner-bottom ui-content">
+
+                    <p>You are missing some data that we really need. Please ensure you provide your firstname and either your email OR both your last name and mobile number.</p>
+                    <button id="btnPInfoCloseMissingDataMsg" data-role="button" data-theme="e">Ok</button>
+
+                </div>
+            </div>
 
 
 
@@ -219,9 +220,9 @@
 
 
 
-            
-          
-           
+
+
+
 
         </div>
 

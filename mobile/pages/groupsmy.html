@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
+    <link href="../styles/app.css" rel="stylesheet" />
+    <link href="../styles/gdc.mobile.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />
+    <script data-main="../scripts/app/appstartmin.js" src="../../scripts/libraries/require.js"></script>
+</head>
+<body style="background-color: #343131; color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
+    <div data-role="page" id="pg_groupsmy" data-theme="a">
+
+        <div data-role="header">
+
+            <a href="groupsmenu.html" data-icon="bars" data-transition="slide" data-direction="reverse" data-role="button" data-theme="b" data-iconpos="notext">Groups Menu</a>
+
+            <h1 class="pageHeader">Your Groups</h1>
+            <a href="#" class="btnAddNewGroup" id="mainMenuAddNewGroup" data-icon="plus" data-role="button" data-theme="b">add group</a>
+
+
+        </div>
+        <div data-role="content" style="padding: 15px">
+            <div data-role="popup" class="ui-content" id="pg_groupsmy_errpopup" data-theme="e">
+                <div id="pg_groupsmy_errpopmsg"></div>
+            </div>
+
+
+
+
+            <div id="grpMyList" style="display:none">
+                <script id="mygroupslist-template" type="text/html">
+                    <li data-role="list-divider">
+                        <h5 data-bind="text: groupName"></h5>
+
+                    </li>
+
+                    <li>
+                        <a data-bind="attr: {'data-id': id}" class="groupItem" data-transition="slide">
+
+                            <div data-bind="html: 'Group Category: ' + categoryName" style="font-size: small"></div>
+                            <div data-bind="html: 'Category Type: ' + groupType" style="font-size: small"></div>
+                            <div data-bind="html: 'Meeting Day: ' + meetingDay" style="font-size: small"></div>
+                            <div data-bind="html: 'Gender: ' + gender" style="font-size: small"></div>
+                            <div data-bind="html: 'Open Membership: ' + openMembership" style="font-size: small"></div>
+                            <div data-bind="html: 'Group is private: ' + isPrivate" style="font-size: small"></div>
+                            <!--<div data-bind="html: 'Group is Active: ' + isActive" style="font-size: small"></div>-->
+                            <div data-bind="visible:!isActive">
+                                <div data-bind="html: 'De-Active Reason: ' + stsReason" style="font-size: small"></div>
+                                <div data-bind="html: 'More Info: ' + stsMoreInfo" style="font-size: small"></div>
+                            </div>
+                        </a>
+
+
+                    </li>
+                </script>
+
+                <div data-role="popup" id="grpActions" data-theme="i">
+                    <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
+
+                        <li><a href="#" id="btnEditSmallGroup">Edit Group</a></li>
+                        <li><a href="#" id="btnViewGroupMembers">View Members</a></li>
+                        <li><a href="#" id="btnViewGroupSessions">View Sessions</a></li>
+                        <li><a href="#" id="btnDeleteGroup">Delete Group</a></li>
+                        <li><a href="#" id="btnSwitchActivation">Activation</a></li>
+                        <li><a href="#" id="btnGrpMessage">Send Message</a></li>
+                        <li><a href="#" id="btnGrpActionMenuCancel">Cancel</a></li>
+
+
+                    </ul>
+                </div>
+
+                <div id="myActiveGroups">
+
+                    <div id="activeGroupsListing" >
+                        <div class="ui-bar ui-bar-h">
+                            <div style="text-align:center">Active Groups</div>
+
+                        </div>
+                        <div data-role="content" class="ui-body-h" style="text-align:center; font-size:small">
+                            <div>These are all the active groups you lead in this church. Click on the group to view the actions available.</div>
+                            <a href="#" id="btnViewInActiveGroups">View In-Active Groups</a>
+                        </div>
+
+
+
+                        
+                        
+                        <ul data-role="listview" data-inset="true" class="grpsListView" data-divider-theme="b" data-theme="a" id="myGroupsList" data-bind="template: { name: 'mygroupslist-template', foreach: ko.utils.arrayFilter(loadedGroups(), function(itm){ return itm.isActive==true})}"></ul>
+                    </div>
+
+                    <div id="deActiveGrpReason" style="display:none">
+                        
+                        <div class="ui-bar ui-bar-h">
+                            <div style="text-align:center">De-Activate</div>
+                            <div data-bind="html:'(' + selectedGroup.groupName() + ')'" style="text-align:center"></div>
+                        </div>
+                        <div data-role="content" class="ui-body-h" style="text-align:center; font-size:small">
+                            <div>Help us by giving us a little more information why this group is being de-activated.</div>
+                            
+                        </div>
+
+                        <div data-role="content">
+
+                            <!--<div data-role="content" class="ui-body-h">Please provide a reason why you are de-activating this group</div>-->
+                            <div data-role="fieldcontain">
+                                <label for="ddlGrpDeActiveReason">
+                                    Reason
+                                </label>
+                                <select id="ddlGrpDeActiveReason" data-bind="options: refData.groupsInActiveReasons, optionsText:'reason',optionsValue:'id'"></select>
+                            </div>
+                            <div data-role="fieldcontain">
+                                <label for="grpDeActivateMoreInfo">
+                                    More Info
+                                </label>
+                                <input id="grpDeActivateMoreInfo" data-clear-btn="true" placeholder="More info..." type="text" />
+                            </div>
+
+                            <button id="btnDeActivateGroup" data-theme="b">De-Activate</button>
+                            <button id="btnDeActivateGroupCancel" data-theme="a">Cancel</button>
+
+                            <div data-rol="content" class="ui-body-e" id="grpDeActiveError" style="display:none">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="myInActiveGroups" style="display:none">
+                   
+                    <div class="ui-bar ui-bar-h">
+                        <div style="text-align:center">In-Active Groups</div>
+
+                    </div>
+                    <div data-role="content" class="ui-body-h" style="text-align: center; font-size: small">
+                        <div>These are your groups that have been de-activated. Click on the group to view the actions available.</div>
+                        <a href="#" id="btnViewActiveGroups">View Active Groups</a>
+                    </div>
+                  
+                    <ul data-role="listview" class="grpsListView" data-inset="true" data-divider-theme="d" data-theme="a" id="myInActiveGroupList" data-bind="template: { name: 'mygroupslist-template', foreach: ko.utils.arrayFilter(loadedGroups(), function(itm){ return itm.isActive==false})}"></ul>
+
+                </div>
+
+                <div class="ui-body-d" id="grpsmyaddinggroupsdisabled" style="display:none">
+
+                    <small><i>Your profile does not have the required permissions to create a new group in this database. Please contact your church office for help</i></small>
+                </div>
+
+            </div>
+
+
+            <div data-role="popup" id="grpDeletePopup" style="max-width: 400px;"
+                 class="ui-corner-all">
+                <div data-role="header" data-theme="e" class="ui-corner-top">
+                    <h1>Delete?</h1>
+                </div>
+                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                    <div class="ui-title" style="text-align: center; font-size: larger" data-bind="html:selectedGroup.groupName"></div>
+                    <div style="text-align: center; font-size:small" data-bind="html:'id: ' + selectedGroup.id()"></div>
+                    <p>
+                        Are you sure you want to delete this group? All data relating to it will be lost?
+                    </p>
+                    <a href="#" data-role="button" data-inline="true" data-theme="e" id="btnGrpDelete">Delete</a>
+                    <a href="#" data-role="button" data-rel="back" data-inline="true">Cancel</a>
+                    <div class="ui-content" id="deleteGrpErr" data-theme="e" style="display:none">
+
+                    </div>
+                </div>
+            </div>
+
+            
+    </div>
+</body>
+</html>

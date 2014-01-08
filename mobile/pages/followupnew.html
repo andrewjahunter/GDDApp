@@ -15,7 +15,7 @@
 
 
         <div data-role="header">
-            <a href="#" data-icon="delete" data-rel="back" data-role="button" data-theme="b">cancel</a>
+            <a href="followup.html" data-icon="delete"  data-role="button" data-theme="b">cancel</a>
             <h1 class="pageHeader" id="pg_followupnew_header">new follow up</h1>
             <a href="home.html" data-icon="home" data-theme="b" data-transition="slide" data-direction="reverse" data-role="button" data-iconpos="notext">home</a>
         </div>
@@ -105,11 +105,31 @@
                 </div>
 
             </form>
+            <button id="btnFUPNewAssignGroup" data-theme="a">Assign To Group</button>
+            <div id="FUBNewGroupAssigned" style="display:none">
+                <div id="FUBNewGroupInfo"></div>
+                <a href="#" id="btnFUPClearGroup">Remove Group</a>
+            </div>
             <button id="btnFUPNewAddRecord" data-theme="b">Add This Record</button>
 
 
 
+            <div data-role="popup" id="newFUBAssignGroupMessage" data-overlay-theme="a" style="max-width: 450px;"
+                 class="ui-corner-all">
+                <div data-role="header" data-theme="h" class="ui-corner-top">
+                    <h4 >Group Notice</h4>
+                </div>
+                <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
+                    <p>You have assigned this new record to a group. We will automatically do the following when you add this record:</p>
+                    <ul>
+                        <li><div id="newFUBGroupLeaderMsg"></div></li>
+                        <li><div id="newFUBGroupNameMsg"></div></li>
+                    </ul>
+                    <p>You can remove the group assignment by clicking 'Remove Group'</p>
 
+                    <a href="#" data-role="button"  data-theme="b" data-rel="back" >Ok</a>
+                </div>
+            </div>
 
 
 
