@@ -17,7 +17,7 @@
             <a href="groupsmenu.html" data-icon="bars" data-transition="slide" data-direction="reverse" data-role="button" data-theme="b" data-iconpos="notext">Groups Menu</a>
 
             <h1 class="pageHeader">Your Groups</h1>
-            <a href="#" class="btnAddNewGroup" id="mainMenuAddNewGroup" data-icon="plus" data-role="button" data-theme="b">add</a>
+            <a href="#" class="btnAddNewGroup"  data-icon="plus" data-role="button" data-theme="b">add</a>
 
 
         </div>
@@ -71,9 +71,9 @@
                     </ul>
                 </div>
 
-                <div id="myActiveGroups">
+                <div id="myActiveGroups" style="display:none">
 
-                    <div id="activeGroupsListing" >
+                    <div id="activeGroupsListing"  >
                         <div class="ui-bar ui-bar-h">
                             <div style="text-align:center">Active Groups</div>
 
@@ -83,10 +83,6 @@
                             <a href="#" id="btnViewInActiveGroups">View In-Active Groups</a>
                         </div>
 
-
-
-                        
-                        
                         <ul data-role="listview" data-inset="true" class="grpsListView" data-divider-theme="b" data-theme="a" id="myGroupsList" data-bind="template: { name: 'mygroupslist-template', foreach: ko.utils.arrayFilter(loadedGroups(), function(itm){ return itm.isActive==true})}"></ul>
                     </div>
 
@@ -125,10 +121,14 @@
                             </div>
                         </div>
                     </div>
+
+
+                    
+
                 </div>
 
                 <div id="myInActiveGroups" style="display:none">
-                   
+
                     <div class="ui-bar ui-bar-h">
                         <div style="text-align:center">In-Active Groups</div>
 
@@ -137,15 +137,38 @@
                         <div>These are your groups that have been de-activated. Click on the group to view the actions available.</div>
                         <a href="#" id="btnViewActiveGroups">View Active Groups</a>
                     </div>
-                  
+
                     <ul data-role="listview" class="grpsListView" data-inset="true" data-divider-theme="d" data-theme="a" id="myInActiveGroupList" data-bind="template: { name: 'mygroupslist-template', foreach: ko.utils.arrayFilter(loadedGroups(), function(itm){ return itm.isActive==false})}"></ul>
 
                 </div>
+                
+                <div id="grpNoGroupsFound" style="display: none">
+
+                    <div data-role="header" data-theme="h" class="ui-corner-top">
+                        <h1>No Groups</h1>
+                    </div>
+                    <div data-role="content" data-theme="h" class="ui-corner-top">
+                        <p>
+                            We do have any groups on record for your account in this database. 
+                        </p>
+                        <button class="btnAddNewGroup" data-theme="b" data-role="button">Add New Group</button>
+                    </div>
+                </div>
+
+                
 
                 <div class="ui-body-d" id="grpsmyaddinggroupsdisabled" style="display:none">
 
                     <small><i>Your profile does not have the required permissions to create a new group in this database. Please contact your church office for help</i></small>
                 </div>
+
+
+
+
+               
+
+
+
 
             </div>
 
