@@ -119,6 +119,8 @@
                     
 
                     <ul data-role="listview" data-split-icon="delete" data-split-theme="e" data-inset="true" data-theme="b" class="membersListView" id="grpActiveMembersList" data-bind="template: { name: 'groupmembers-template', foreach: ko.utils.arrayFilter(selectedGroup.members(), function(itm){ return itm.isActive==true})}"></ul>
+                
+                <button data-role="button" data-theme="a" id="btnReloadMembers">Reload</button>
                 </div>
                 
                 <div id="grpDeActivateMemberReason" style="display: none">
@@ -141,6 +143,28 @@
                     </div>
                     <button data-theme="b" data-inline="true" id="btnGrpDeActivateMemGo">Remove</button>
                     <button data-theme="a" data-inline="true" id="btnGrpDeActivateMemCancel">Cancel</button>
+                    <button data-theme="e"  id="btnDeleteMemberForever">Delete</button>
+
+                </div>
+
+                <div data-role="popup" id="memberDeletePopup" style="max-width: 400px;"
+                     class="ui-corner-all">
+                    <div data-role="header" data-theme="e" class="ui-corner-top">
+                        <h1>Delete?</h1>
+                        
+                    </div>
+                    <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                        <div class="ui-title" style="text-align: center; font-size: larger" data-bind="html:selectedGroupMember.displayName"></div>
+                       
+                        <p>
+                            Are you sure you want to delete this member from the group? All data relating to this member will be lost forever?
+                        </p>
+                        <a href="#" data-role="button" data-inline="true" data-theme="e" id="btnMemberConfirmDelete">Delete</a>
+                        <a href="#" data-role="button" data-rel="back" data-inline="true">Cancel</a>
+                        <div class="ui-content" id="deleteGrpMemErr" data-theme="e" style="display:none">
+
+                        </div>
+                    </div>
                 </div>
 
 
@@ -158,7 +182,7 @@
                             <div data-bind="html: 'Email: ' + email" style="font-size: small"></div>
                             <div data-bind="html: 'Mobile: ' + mobileNumber" style="font-size: small"></div>
                             <div data-bind="html: 'Birthday: ' + birthday" style="font-size: small"></div>
-                            <div data-bind="html: 'Inactive Reason: ' + inActiveReason" style="font-size: small"></div>
+                            <div data-bind="html: 'Inactive Reason: ' + inActiveReason" style="font-size: small; white-space: normal"></div>
                             <div data-bind="html: 'More Info: ' + moreInfo" style="font-size: small; white-space: normal"></div>
                         </a>
                         <a data-role="button" data-bind="attr: {'data-id': id}" href="#" class="activategrpmember" data-position-to="window"></a>

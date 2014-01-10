@@ -84,7 +84,9 @@
                         </div>
 
                         <ul data-role="listview" data-inset="true" class="grpsListView" data-divider-theme="b" data-theme="a" id="myGroupsList" data-bind="template: { name: 'mygroupslist-template', foreach: ko.utils.arrayFilter(loadedGroups(), function(itm){ return itm.isActive==true})}"></ul>
-                    </div>
+                   
+                    <button class="btnReloadGroups" data-theme="a">Reload Groups</button>
+                     </div>
 
                     <div id="deActiveGrpReason" style="display:none">
                         
@@ -139,7 +141,7 @@
                     </div>
 
                     <ul data-role="listview" class="grpsListView" data-inset="true" data-divider-theme="d" data-theme="a" id="myInActiveGroupList" data-bind="template: { name: 'mygroupslist-template', foreach: ko.utils.arrayFilter(loadedGroups(), function(itm){ return itm.isActive==false})}"></ul>
-
+                    <button class="btnReloadGroups" data-theme="a">Reload Groups</button>
                 </div>
                 
                 <div id="grpNoGroupsFound" style="display: none">
