@@ -181,7 +181,7 @@
                 </div>
 
               
-                
+                <button data-role="button" id="btnViewSearchGroupsMaps" data-theme="a">View Google Map View</button>
                 <ul data-role="listview" data-inset="true" data-divider-theme="b" data-theme="a" id="grpSearchResultsListView" data-bind="template: { name: 'groupsearchlist-template', foreach: loadedGroups}"></ul>
             </div>
 
@@ -209,6 +209,23 @@
                 </div>
             </div>
    
+
+            <div data-role="popup" id="groupsSearchMapView" data-overlay-theme="a"
+                 class="ui-corner-all">
+                <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <h1>Maps</h1>
+                </div>
+                <div data-role="content" data-theme="b" class="ui-corner-bottom ui-content">
+
+                    <div id='groupsSearchListMap' class="groupsMap" style="width: 100%"></div>
+
+
+                    <a href="#" data-role="button" data-theme="b" data-rel="back">Ok</a>
+                    <div class="ui-body-e" style="padding: 2px" id="groupsSearchListMapError">
+                    </div>
+
+                </div>
+            </div>
         </div>
 
         <!-- /page -->

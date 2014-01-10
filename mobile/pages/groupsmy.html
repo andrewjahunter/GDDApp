@@ -81,11 +81,15 @@
                         <div data-role="content" class="ui-body-h" style="text-align:center; font-size:small">
                             <div>These are all the active groups you lead in this church. Click on the group to view the actions available.</div>
                             <a href="#" id="btnViewInActiveGroups">View In-Active Groups</a>
+                           
                         </div>
 
                         <ul data-role="listview" data-inset="true" class="grpsListView" data-divider-theme="b" data-theme="a" id="myGroupsList" data-bind="template: { name: 'mygroupslist-template', foreach: ko.utils.arrayFilter(loadedGroups(), function(itm){ return itm.isActive==true})}"></ul>
                    
                     <button class="btnReloadGroups" data-theme="a">Reload Groups</button>
+                        
+                            <a href="#" data-role="button" data-theme="b" class="btnViewMyGroupsMaps">View Google Maps</a>
+                        
                      </div>
 
                     <div id="deActiveGrpReason" style="display:none">
@@ -137,11 +141,17 @@
                     </div>
                     <div data-role="content" class="ui-body-h" style="text-align: center; font-size: small">
                         <div>These are your groups that have been de-activated. Click on the group to view the actions available.</div>
-                        <a href="#" id="btnViewActiveGroups">View Active Groups</a>
+                        
+                        <div>
+                            <a href="#" class="btnViewMyGroupsMaps">View Google Maps</a>
+                        </div>
                     </div>
 
                     <ul data-role="listview" class="grpsListView" data-inset="true" data-divider-theme="d" data-theme="a" id="myInActiveGroupList" data-bind="template: { name: 'mygroupslist-template', foreach: ko.utils.arrayFilter(loadedGroups(), function(itm){ return itm.isActive==false})}"></ul>
                     <button class="btnReloadGroups" data-theme="a">Reload Groups</button>
+                   
+                        <a href="#" data-role="button" data-theme="b" class="btnViewMyGroupsMaps">View Google Maps</a>
+                    
                 </div>
                 
                 <div id="grpNoGroupsFound" style="display: none">
@@ -168,7 +178,7 @@
 
 
                
-
+               
 
 
 
@@ -191,6 +201,23 @@
                     <div class="ui-content" id="deleteGrpErr" data-theme="e" style="display:none">
 
                     </div>
+                </div>
+            </div>
+
+            <div data-role="popup" id="groupsMyMapView" data-overlay-theme="a"
+                 class="ui-corner-all" >
+                <div data-role="header" data-theme="b" class="ui-corner-top">
+                    <h1>Maps</h1>
+                </div>
+                <div data-role="content" data-theme="b" class="ui-corner-bottom ui-content">
+
+                    <div id='groupsMyListMap' class="groupsMap" style="width: 100%"></div>
+
+
+                    <a href="#" data-role="button" data-theme="b" data-rel="back">Ok</a>
+                    <div class="ui-body-e" style="padding: 2px" id="groupsMyListMapError">
+                    </div>
+
                 </div>
             </div>
 

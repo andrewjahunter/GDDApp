@@ -26,100 +26,108 @@
 
         <div data-role="content" style="padding: 15px">
 
-            <!--<img border="0" src="" alt="facebook profile pic" id="pg_home_fb_picurl" style="float: right; display: inline" />-->
-            <div id="appNoticeMsg" data-role="content" data-theme="d" class="ui-border-all" style="display: none; margin-bottom:10px; text-align:center">
-               
-            </div>
-            <div style="width: 72px; margin-left: auto; margin-right: auto">
-                <img src="../img/inAppIcon.png" style="width: 100%; height: auto" />
-            </div>
+            <div id="pgHomeContent" style="display:none">
+                <!--<img border="0" src="" alt="facebook profile pic" id="pg_home_fb_picurl" style="float: right; display: inline" />-->
+                <div id="appNoticeMsg" data-role="content" data-theme="d" class="ui-border-all" style="display: none; margin-bottom:10px; text-align:center">
+
+                </div>
+                <div style="width: 72px; margin-left: auto; margin-right: auto">
+                    <img src="../img/inAppIcon.png" style="width: 100%; height: auto" />
+                </div>
 
 
-            <div data-role="popup" class="ui-content" id="msgpopup" data-theme="h">
-                <div id="msgpopupcontent"></div>
-            </div>
+                <div data-role="popup" class="ui-content" id="msgpopup" data-theme="h">
+                    <div id="msgpopupcontent"></div>
+                </div>
 
 
-            <div data-role="popup" id="home_settings_menu" data-theme="i">
-                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
-                    <li><a href="#" id="btnHomeViewIntro" data-transition="flow">Quick Tour</a></li>
-                    <li><a href="#" id="btnHomeFeedback" data-transition="flip">Send Feedback</a></li>
-                    <li><a href="#" id="btnHomeSwitchDb">Switch Church</a></li>
-                    <li><a href="#" id="btnHomeSessionInfo">Session Info</a></li>
-                    <li><a href="#" id="pg_home_signout">Sign Out</a></li>
+                <div data-role="popup" id="home_settings_menu" data-theme="i">
+                    <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
+                        <li><a href="#" id="btnHomeViewIntro" data-transition="flow">Quick Tour</a></li>
+                        <li><a href="#" id="btnHomeFeedback" data-transition="flip">Send Feedback</a></li>
+                        <li><a href="#" id="btnHomeSwitchDb">Switch Church</a></li>
+                        <li><a href="#" id="btnHomeSessionInfo">Session Info</a></li>
+                        <li><a href="#" id="pg_home_signout">Sign Out</a></li>
 
-                    <li><a href="#" id="btnHomeAbout" data-transition="flip">About</a></li>
-                    <li><a href="#" id="btnHomeClearCache">Clear Cache</a></li>
-
-
+                        <li><a href="#" id="btnHomeAbout" data-transition="flip">About</a></li>
+                        <li><a href="#" id="btnHomeClearCache">Clear Cache</a></li>
 
 
-                    <li><a href="#" data-rel="back">Cancel</a></li>
+
+
+                        <li><a href="#" data-rel="back">Cancel</a></li>
+
+
+                    </ul>
+                </div>
+
+
+
+                <ul data-role="listview" data-theme="b" data-inset="true" data-divider-theme="b">
+
+                    <li><a href="#" id="btnHomeFeeds"><div data-bind="html:labels[1200]"></div></a></li>
+                    <li><a href="#" id="btHomeFollowUp"><div data-bind="html:labels[1150]"></div></a></li>
+                    <li><a href="#" id="btnHomeMessages"><div data-bind="html:labels[1400]"></div><span class="ui-li-count ui-btn-up-e ui-btn-corner-all bubbleMessagesCount"></span></a></li>
+                    <li>
+                        <a href="#" id="btnHomePinfo">
+                            <div data-bind="html:labels[1000]"></div>
+
+                        </a>
+                    </li>
+
+                    <li><a href="#" id="btnHomeSubs"><div data-bind="html:labels[1300]"></div></a></li>
+
+                    <li>
+                        <a href="#" id="btnGroupsMenu">
+                            <div data-bind="html:labels[1100]"></div>
+
+                        </a>
+                    </li>
+
+
+                    <li><a href="#" id="btnHomeEvents"><div data-bind="html:labels[1250]"></div></a></li>
+
+
+                    <li><a href="#" id="btnHomeChurchLife"><div data-bind="html:labels[1350]"></div></a></li>
+
+                    <li>
+                        <a href="#home_settings_menu" data-rel="popup" data-position-to="window" data-transition="slideup">Settings</a>
+                    </li>
+
+
+
+
+
 
 
                 </ul>
-            </div>
-
-           
-
-            <ul data-role="listview" data-theme="b" data-inset="true" data-divider-theme="b" >
-               
-                <li><a href="#" id="btnHomeFeeds"><div data-bind="html:labels[1200]"></div></a></li>
-                <li><a href="#" id="btHomeFollowUp"><div data-bind="html:labels[1150]"></div></a></li>
-                      <li><a href="#" id="btnHomeMessages"><div data-bind="html:labels[1400]"></div><span class="ui-li-count ui-btn-up-e ui-btn-corner-all bubbleMessagesCount"></span></a></li>
-                <li><a href="#" id="btnHomePinfo"><div data-bind="html:labels[1000]"></div>
-                       
-                </a></li>
-
-                <li><a href="#" id="btnHomeSubs"><div data-bind="html:labels[1300]"></div></a></li>
-                
-                <li><a href="#" id="btnGroupsMenu"  ><div  data-bind="html:labels[1100]"></div>
-                       
-                </a></li>
-
-
-                <li><a href="#" id="btnHomeEvents"><div data-bind="html:labels[1250]"></div></a></li>
-
-
-                <li><a href="#" id="btnHomeChurchLife"><div data-bind="html:labels[1350]"></div></a></li>
-          
-                <li><a href="#home_settings_menu" data-rel="popup" data-position-to="window" data-transition="slideup">Settings</a>
-                </li>
 
 
 
 
 
 
+                <div data-role="popup" id="pg_home_viewintro" data-overlay-theme="a" style="max-width: 400px;"
+                     class="ui-corner-all">
+                    <div data-role="header" data-theme="h" class="ui-corner-top">
+                        <h1>View Intro</h1>
+                    </div>
+                    <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                        <p>
+                            Is this the <strong>first time</strong> you are using the godochurch application?
+                        </p>
+                        <p>
+                            View our <strong>quick start tutorial</strong> which will highlight the key features
+                            and tools available to you.
+                        </p>
 
-            </ul>
-          
+                        <a href="#" id="btnHomePopupViewQuickStart" data-role="button" data-theme="h">View Quick Start</a>
+                        <!--<a href="#" data-rel="back"  data-role="button" data-theme="c" >Watch Later</a>-->
 
-      
-
-
-
-            <div data-role="popup" id="pg_home_viewintro" data-overlay-theme="a" style="max-width: 400px;"
-                class="ui-corner-all">
-                <div data-role="header" data-theme="h" class="ui-corner-top">
-                    <h1>View Intro</h1>
+                    </div>
                 </div>
-                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
-                    <p>
-                        Is this the <strong>first time</strong> you are using the godochurch application? 
-                    </p>
-                    <p>
-                        View our <strong>quick start tutorial</strong> which will highlight the key features
-                        and tools available to you. 
-                    </p>
 
-                    <a href="#" id="btnHomePopupViewQuickStart" data-role="button" data-theme="h">View Quick Start</a>
-                    <!--<a href="#" data-rel="back"  data-role="button" data-theme="c" >Watch Later</a>-->
-
-                </div>
             </div>
-
-           
 
         </div>
     </div>

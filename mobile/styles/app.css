@@ -21,13 +21,13 @@
 }
 
 
-#pg_smallgroupedit_location-popup {
+#groupsMyMapView-popup {
     right: 5% !important;
     left: 5% !important;
     width: 90% ;
 }
 
-#smallGroupsListMapView-popup {
+#groupsSearchMapView-popup {
     right: 5% !important;
     left: 5% !important;
   
