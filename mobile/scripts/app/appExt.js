@@ -126,7 +126,7 @@ gdd.init = {
 
     onAppResume:  function () {
         try {
-            alert("App resume")
+            //alert("App resume")
             //if ((gdd.init.isReady()) && (gdd.init.onLine())) {
            
             //    gdd.views.utils.processAppStart();
@@ -138,35 +138,35 @@ gdd.init = {
             //        window.location.href = gdd.init.indexPagePath();
             //    }
             //}
-            try {
-                alert("pathToIndexPage:" + gdd.init.pathToIndexPage)
+            //try {
+            //    alert("pathToIndexPage:" + gdd.init.pathToIndexPage)
 
-            }
-            catch (err) {
-                alert("index path error:" + err)
+            //}
+            //catch (err) {
+            //    alert("index path error:" + err)
 
-            }
-            try {
-                alert("views:" + JSON.stringify( gdd.views.pageinfo))
-            }
-            catch (err) {
-                alert("views error:" + err)
-            }
-            try {
-                alert("location:" + JSON.stringify(location))
-                alert("Final Big Boy:" + location.origin + location.pathname.replace(location.pathname.substring(location.pathname.indexOf("mobile")), 'index.html'))
+            //}
+            //try {
+            //    alert("views:" + JSON.stringify( gdd.views.pageinfo))
+            //}
+            //catch (err) {
+            //    alert("views error:" + err)
+            //}
+            //try {
+            //    alert("location:" + JSON.stringify(location))
+            //    alert("Final Big Boy:" + location.origin + location.pathname.replace(location.pathname.substring(location.pathname.indexOf("mobile")), 'index.html'))
 
-            } catch (e) {
-                alert("big boy error:" + err)
+            //} catch (e) {
+            //    alert("big boy error:" + err)
 
-            }
+            //}
 
-            try {
-                alert("href: " + location.href)
-            } catch (e) {
-                alert("href err:" + err)
+            //try {
+            //    alert("href: " + location.href)
+            //} catch (e) {
+            //    alert("href err:" + err)
 
-            }
+            //}
 
             //location.reload()
 
