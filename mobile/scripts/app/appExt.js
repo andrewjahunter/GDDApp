@@ -22,13 +22,16 @@ gdd.init = {
         }
     },
 
+    pathToIndexPage:"",
+
     indexPagePath : function () {
 
-        if (gdd.init.indexPageIsActive()) {
-            return location.href.substring(0, location.href.indexOf('index')) + "index.html";
-        } else {
-            return location.origin + location.pathname.replace(location.pathname.substring(location.pathname.indexOf("mobile")), 'index.html');
-        }
+        return gdd.init.pathToIndexPage;
+        //if (gdd.init.indexPageIsActive()) {
+        //    return location.href.substring(0, location.href.indexOf('index')) + "index.html";
+        //} else {
+        //    return location.origin + location.pathname.replace(location.pathname.substring(location.pathname.indexOf("mobile")), 'index.html');
+        //}
 
     },
 
@@ -123,7 +126,7 @@ gdd.init = {
 
     onAppResume:  function () {
         try {
-            alert("App resume")
+            //alert("App resume")
             //if ((gdd.init.isReady()) && (gdd.init.onLine())) {
            
             //    gdd.views.utils.processAppStart();
