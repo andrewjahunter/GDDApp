@@ -44,9 +44,9 @@ gdd.init = {
     onDeviceReady: function () {
         alert("Device Is Ready")
         try {
+            gdd.init.deviceIsReady = true;
 
-       // navigator.splashscreen.hide();  
-        gdd.init.deviceIsReady = true;
+        navigator.splashscreen.hide();  
 
         alert("Device Is Ready is set")
 
