@@ -33,7 +33,7 @@
     -->
   <preference name="permissions"                value="none"/>
 
-  <preference name="splash-screen-duration" value="5000" />
+  <preference name="splash-screen-duration" value="3000" />
   <!-- Customize your app and platform with the preference element. -->
   <preference name="phonegap-version"           value="3.1.0" />
   <!-- all: current version of PhoneGap -->
@@ -67,11 +67,13 @@
   <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
   <!-- Plugins can also be added here. -->
-  <plugin name="Media" value="org.apache.cordova.AudioHandler" />
+  <gap:plugin name="org.apache.cordova.splashscreen" />
+  
+  <!--<plugin name="Media" value="org.apache.cordova.AudioHandler" />
   <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
   <plugin name="File" value="org.apache.cordova.FileUtils" />
   <plugin name="FileTransfer" value="org.apache.cordova.FileTransfer" />
-  <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
+  <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>-->
   <gap:plugin name="com.phonegap.plugins.pushplugin" />
   <!--
         <gap:plugin name="Example" />
@@ -89,7 +91,7 @@
   <icon src="mobile/img/ios/icon1024x1024.png" gap:platform="ios" width="1024" height="1024" />
   <icon src="mobile/img/ios/icon57x57.png" gap:platform="ios" width="57" height="57" />
   <icon src="mobile/img/ios/icon72x72.png" gap:platform="ios" width="72" height="72" />
-  
+
   <icon src="mobile/img/android/icon-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
   <icon src="mobile/img/android/icon-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
   <icon src="mobile/img/android/icon-hdpi.png"   gap:platform="android"    gap:density="hdpi" />

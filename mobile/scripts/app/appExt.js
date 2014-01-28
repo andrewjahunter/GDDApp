@@ -45,7 +45,7 @@ gdd.init = {
         alert("Device Is Ready")
         try {
 
-        navigator.splashscreen.hide();  
+       // navigator.splashscreen.hide();  
         gdd.init.deviceIsReady = true;
 
         alert("Device Is Ready is set")
@@ -74,8 +74,9 @@ gdd.init = {
                 if ($.mobile) {
                     alert("$.mobile is ready")
                     if (gdd.init.isNativeApp()) {
-
-                        if (window.gdd.init.deviceIsReady) {
+                        alert("is native app")
+                        alert("window.gdd.init.deviceIsReady" + gdd.init.deviceIsReady)
+                        if (gdd.init.deviceIsReady) {
                             //alert("ir deviceIsReady=true")
                             return true
                         } else {
@@ -229,9 +230,11 @@ gdd.init = {
 
         var progressState = function () {
             alert("Progress State")
+            alert("ONlien State: " + gdd.init.onLine())
+            alert("ReadyState: " + gdd.init.isReady())
             if ((gdd.init.onLine()) && (gdd.init.isReady())) {
                 window.clearInterval(gdd.init.progressStateInterval);
-                gdd.app.activePage = null //sets it to index page
+                 //sets it to index page
                 gdd.app.initializeApplication()
             
 
