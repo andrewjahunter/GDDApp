@@ -4,12 +4,12 @@ gdd.init = {
 
     // Wait for Cordova to load
     indexPageLoaded: function () {
-        alert("Index Page Loaded")
+        //alert("Index Page Loaded")
         gdd.init.deviceIsReady = false;
 
         document.addEventListener("deviceready", gdd.init.onDeviceReady, false);
 
-        alert("Function: " + gdd.init.runIndexPageLoadingProcess)
+        //alert("Function: " + gdd.init.runIndexPageLoadingProcess)
         gdd.init.runIndexPageLoadingProcess();
     },
 
@@ -42,13 +42,18 @@ gdd.init = {
     },
 
     onDeviceReady: function () {
-        alert("Device Is Ready")
+        //alert("Device Is Ready")
         try {
             gdd.init.deviceIsReady = true;
 
-        navigator.splashscreen.hide();  
 
-        alert("Device Is Ready is set")
+            setTimeout(function () {
+                navigator.splashscreen.hide();
+            }, 3000)
+
+         
+
+        //alert("Device Is Ready is set")
 
             document.addEventListener("resume", gdd.init.onAppResume, false);
 
@@ -67,15 +72,15 @@ gdd.init = {
 
     isReady : function () {
         // return false;
-        alert("gdd.init.requireJsComplete=" + gdd.init.requireJsComplete)
+        //alert("gdd.init.requireJsComplete=" + gdd.init.requireJsComplete)
         if (gdd.init.requireJsComplete) {
             if (gdd.views) {
 
                 if ($.mobile) {
-                    alert("$.mobile is ready")
+                    //alert("$.mobile is ready")
                     if (gdd.init.isNativeApp()) {
-                        alert("is native app")
-                        alert("window.gdd.init.deviceIsReady" + gdd.init.deviceIsReady)
+                        //alert("is native app")
+                        //alert("window.gdd.init.deviceIsReady" + gdd.init.deviceIsReady)
                         if (gdd.init.deviceIsReady) {
                             //alert("ir deviceIsReady=true")
                             return true
@@ -89,7 +94,7 @@ gdd.init = {
                         return true;
                     }
                 } else {
-                    alert("$.mobile is NOT ready")
+                    //alert("$.mobile is NOT ready")
                     return false;
                 }
            
@@ -195,7 +200,7 @@ gdd.init = {
     },
 
     showPageIndexError: function (err) {
-        alert("page index error" + JSON.stringify(err))
+       // alert("page index error" + JSON.stringify(err))
         window.clearInterval(gdd.init.progressStateInterval);
 
         document.getElementById("indexErrMsg").innerHTML = err
@@ -212,7 +217,7 @@ gdd.init = {
 
     runIndexPageLoadingProcess : function () {
 
-        alert("Loading process")
+        //alert("Loading process")
     
 
         var attemptCount = 0;
@@ -229,9 +234,9 @@ gdd.init = {
     
 
         var progressState = function () {
-            alert("Progress State")
-            alert("ONlien State: " + gdd.init.onLine())
-            alert("ReadyState: " + gdd.init.isReady())
+           // alert("Progress State")
+            //alert("ONlien State: " + gdd.init.onLine())
+            //alert("ReadyState: " + gdd.init.isReady())
             if ((gdd.init.onLine()) && (gdd.init.isReady())) {
                 window.clearInterval(gdd.init.progressStateInterval);
                  //sets it to index page
@@ -271,7 +276,7 @@ gdd.init = {
 
 
         if (gdd.init.onLine()) {
-       alert("About to call progress state")
+      // alert("About to call progress state")
             gdd.init.progressStateInterval = self.setInterval(function () {
 
                 progressState()
