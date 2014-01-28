@@ -6,34 +6,36 @@
       <link href="../styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
     <link href="../styles/app.css" rel="stylesheet" />
     <link href="../styles/gdc.mobile.min.css" rel="stylesheet" />
-    <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />  
+    <link href="../styles/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.structure-1.4.0.min.css" rel="stylesheet" />
     <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
 </head>
 <body  style="background-color:#343131;  color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
-    <div data-role="page" id="pg_intro2" data-theme="a">
+    <div data-role="page" id="pg_intro2" class="introPage ui-page-theme-a">
 
         <div data-role="header">
-            <a href="#" data-theme="b" class="exitIntro"   data-icon="delete" data-role="button" >exit</a>
-            <h1 class="pageHeader" >follow up</h1>
+            <a href="#" data-theme="b" class="exitIntro" data-icon="delete" data-role="button">exit</a>
+            <h1 class="pageHeader">follow up</h1>
         </div>
-        <div data-role="content" style="padding: 15px">
+        <div class="ui-content" style="padding: 15px">
             <div style="width: 100%; width: 120px; height: 120px; margin-left: auto; margin-right: auto">
                 <img src="../img/followup.png" style="width: 100%; height: auto" />
             </div>
 
-            <div class="ui-body-d  ui-corner-all"  style="padding: 10px" >
+            <div class="ui-body-d  ui-corner-all" style="padding: 10px">
                 <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align:center">
                     <strong>Follow Up Workflows</strong>
                 </div>
-                 
-                <p>Using the follow up workflow integrations you can easily ensure that new visitors, new believers and prayer requests are efficiently handled
-                    and the right people are notified. 
-                
-                </p>
-                </div>
 
-             <a href="#" data-role="button" data-theme="a" data-rel="back" data-inline="true" >back</a>
-                                    <a href="intro3.html" data-role="button" data-theme="b" data-inline="true" data-transition="flow" >next</a>
+                <p>
+                    Using the follow up workflow integrations you can easily ensure that new visitors, new believers and prayer requests are efficiently handled
+                    and the right people are notified.
+
+                </p>
+            </div>
+
+            <a href="#" id="pgInt2GoBack" class="ui-btn ui-btn-a ui-btn-inline ">back</a>
+            <a href="#" id="pgInt2GoToInt3" class="ui-btn ui-btn-b ui-btn-inline " >next</a>
 
 
 
@@ -41,27 +43,39 @@
 
         </div>
 
-          <script>
-             
-              $("#pg_intro2").on('swipeleft', function () {
-                  $.mobile.changePage("intro3.html", { "transition": "flow" })
+        <script>
 
-              });
+            $("#pg_intro2").on('swipeleft', function () {
+                $.mobile.changePage("intro3.html", { "transition": "flow" })
 
-              $("#pg_intro2").on('swiperight', function () {
-                  $.mobile.changePage("intro1.html", { "transition": "flow","reverse":"true" })
+            });
 
-              });
+            $("#pg_intro2").on('swiperight', function () {
+                $.mobile.changePage("intro1.html", { "transition": "flow", "reverse": "true" })
 
-              $(".exitIntro").on(gdd.userTap, function () {
-              
-                  gdd.views.utils.processAppStart();
-              });
+            });
+
+            $(".exitIntro").on(gdd.app.userTap, function () {
+
+                gdd.app.loadPage(gdd.views.pageinfo.home, { transition: "flip" })
+
+            });
+
+            $("#pgInt2GoToInt3").on(gdd.app.userTap, function () {
+
+                gdd.app.loadPage(gdd.views.pageinfo.intro3, { transition: "flow" })
+            })
+
+            $("#pgInt2GoBack").on(gdd.app.userTap, function () {
+
+                gdd.app.loadPage(gdd.views.pageinfo.intro1, { transition: "flow",reverse:true })
+            })
 
 
 
         </script>
-        
+
     </div>
+
 </body>
 </html>

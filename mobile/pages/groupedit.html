@@ -10,17 +10,17 @@
     <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
 </head>
 <body style="background-color: #343131; color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
-    <div data-role="page" id="pg_groupedit" data-theme="a">
+    <div data-role="page" id="pg_groupedit"  class="ui-page-theme-a">
 
         <div data-role="header">
 
-            <a href="#" class="btnBackToGroupsList" data-icon="delete" data-transition="flip" data-role="button" data-theme="b" >cancel</a>
+            <a href="#" class=" ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext btnBackToGroupsList"  data-transition="flip" >cancel</a>
 
             <h1 class="pageHeader" data-bind="html:selectedGroup.groupName()">Edit</h1>
 
 
         </div>
-        <div data-role="content" style="padding: 15px">
+        <div  class="ui-content" style="padding: 15px">
 
             <div data-role="popup" class="ui-content" id="pg_groupedit_errpopup" data-theme="e">
                 <div id="pg_groupedit_errpopmsg"></div>
@@ -35,7 +35,7 @@
                     </div>
 
 
-                    <div data-role="content" class="ui-body-h" style="text-align: center">
+                    <div  class="ui-content ui-body-h" style="text-align: center">
                         Your profile is permitted to select from the following categories. Choose the one you
                         want to assign this group to.
                     </div>
@@ -59,7 +59,7 @@
 
                     <div style="text-align:center">Group Type</div>
                 </div>
-                <div data-role="content" class="ui-body-h" style="text-align: center">
+                <div  class="ui-content ui-body-h" style="text-align: center">
                     Your profile is permitted to select from the following types in this category. Choose the one you
                     want to assign this group to.
                 </div>
@@ -75,7 +75,7 @@
                 <ul data-role="listview" data-inset="true" data-theme="b" class="grpEditTypeSelector" data-bind="template: { name: 'edittype-template', foreach: permittedEditGrpTypes}"></ul>
 
 
-                <button type="button" data-inline="true" class="btnGoStep1" data-theme="a">Back</button>
+                <button type="button" data-inline="true" class="ui-btn ui-btn-a  btnGoStep1"   >Back</button>
             </div>
 
             <div class="grpEditSubView grpEditStep3View" style="display:none">
@@ -83,19 +83,19 @@
 
                     <div style="text-align:center">Group Info</div>
                 </div>
-                <div data-role="content" class="ui-body-h" style="text-align: center">
+                <div  class="ui-content ui-body-h" style="text-align: center">
                     Enter the basic group information here
                 </div>
                 <form id="formGrpEditStep3">
 
-                    <div data-role="fieldcontain">
+                    <div  class="ui-field-contain">
                         <label for="txtSmallGroupName">
                             Group Name
                         </label>
                         <input id="txtSmallGroupName" data-clear-btn="true" data-bind="value: selectedGroup.groupName" name="groupname" placeholder="enter group name" type="text" />
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="ddlAgeProfile">
                             Age Profile
                         </label>
@@ -103,7 +103,7 @@
 
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="ddlMeetingDay">
                             Day
                         </label>
@@ -120,7 +120,7 @@
 
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="ddlGender">
                             Gender
                         </label>
@@ -132,14 +132,14 @@
 
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="txtMeetingTime">
                             Time
                         </label>
                         <input id="txtMeetingTime" data-clear-btn="true" data-bind="value: selectedGroup.meetingTime" placeholder="meeting time" type="text" />
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label>
                             <input type="checkbox" data-bind="checked:selectedGroup.isPrivate" />
 
@@ -147,7 +147,7 @@
                         </label>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label>
                             <input type="checkbox" data-bind="checked:selectedGroup.openMembership" />
 
@@ -156,8 +156,8 @@
                     </div>
 
                 </form>
-                <button type="button" data-inline="true" class="btnGoStep2" data-theme="a">Back</button>
-                <button type="button" data-inline="true" class="btnGoStep4" data-theme="b">Next</button>
+                <button type="button" data-inline="true" class="ui-btn ui-btn-a  btnGoStep2" >Back</button>
+                <button type="button" data-inline="true" class="ui-btn ui-btn-b  btnGoStep4" >Next</button>
 
 
 
@@ -169,7 +169,7 @@
                     <div style="text-align:center">Group Location</div>
                 </div>
 
-                <div data-role="content" class="ui-body-h" style="text-align: center">
+                <div  class="ui-content ui-body-h" style="text-align: center">
                     <div>Use the map below to drop a pin on the suburb where this group meets.</div>
                 </div>
 
@@ -179,8 +179,8 @@
 
                 <div><small id="grpsFormattedAddress"></small></div>
 
-                <button type="button" data-inline="true" class="btnGoStep3" data-theme="a">Back</button>
-                <button type="button" data-inline="true" class="btnGoStep5" data-theme="b">Next</button>
+                <button type="button" data-inline="true" class="ui-btn ui-btn-a  btnGoStep3" >Back</button>
+                <button type="button" data-inline="true" class="ui-btn ui-btn-b  btnGoStep5" >Next</button>
 
             </div>
 
@@ -189,19 +189,19 @@
 
                     <div style="text-align:center">Location Edit</div>
                 </div>
-                <div data-role="content" class="ui-body-h" style="text-align: center">
+                <div  class="ui-content ui-body-h" style="text-align: center">
                     <div>Edit any address values below.</div>
                 </div>
 
 
 
-                <div data-role="fieldcontain">
+                <div class="ui-field-contain">
                     <label for="txtGrpsEditStreetNumber">Street Number (OPTIONAL):</label>
                     <input id="txtGrpsEditStreetNumber" data-clear-btn="true" data-bind="value: selectedGroup.streetNumber" type="text" />
 
                 </div>
 
-                <div data-role="fieldcontain">
+                <div class="ui-field-contain">
                     <label for="txtGrpsEditStreetName">Street Name (OPTIONAL):</label>
                     <input id="txtGrpsEditStreetName" data-clear-btn="true" data-bind="value: selectedGroup.streetName" type="text" />
 
@@ -215,7 +215,7 @@
 
 
 
-                <div data-role="fieldcontain">
+                <div class="ui-field-contain">
                     <label for="txtGrpsEditOtherInfo">Other Info (OPTIONAL):</label>
                     <input id="txtGrpsEditOtherInfo" data-clear-btn="true" data-bind="value: selectedGroup.otherInfo" type="text" />
 
@@ -235,8 +235,8 @@
 
                 <!-- <div><small data-bind="html:geoAddress"></small></div>-->
 
-                <button type="button" data-inline="true" class="btnGoStep4" data-theme="a">Back</button>
-                <button type="button" data-inline="true" class="btnGoStep6" data-theme="b">Next</button>
+                <button type="button" data-inline="true" class="ui-btn ui-btn-a   btnGoStep4" >Back</button>
+                <button type="button" data-inline="true" class="ui-btn ui-btn-b  btnGoStep6" >Next</button>
 
 
 
@@ -247,7 +247,7 @@
 
                     <div style="text-align:center">Confirm</div>
                 </div>
-                <div data-role="content" class="ui-body-h" style="text-align: center">
+                <div  class="ui-content ui-body-h" style="text-align: center">
                    Confirm that the details about this group are correct. Then click update.
                 </div>
              
@@ -322,8 +322,8 @@
 
                 </table>
 
-                <button type="button" data-inline="true" class="btnGoStep5" data-theme="a">Back</button>
-                <button type="button" data-inline="true" id="btnGrpEditUpdate" data-theme="b">Update</button>
+                <button type="button" data-inline="true" class="ui-btn ui-btn-a  btnGoStep5" >Back</button>
+                <button type="button" data-inline="true" id="btnGrpEditUpdate" class="ui-btn ui-btn-b" >Update</button>
             </div>
 
 
@@ -332,7 +332,7 @@
                 <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Not Permitted</h1>
                 </div>
-                <div data-role="content" data-theme="h" class="ui-corner-bottom">
+                <div  class="ui-content ui-body-h  ui-corner-bottom">
 
                     <p>
                         Currently your profile is not permitted to add/edit any groups.
@@ -347,7 +347,7 @@
                             <li>Your account needs to given higher permissions. Please request this from your church.</li>
                         </ul>
                     </p>
-                    <button class="btnBackToGroupsList" data-role="button" data-theme="h">OK</button>
+                    <button class="ui-btn ui-btn-h  btnBackToGroupsList"  >OK</button>
                 </div>
 
             </div>

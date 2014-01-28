@@ -6,11 +6,12 @@
     <link href="../styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
     <link href="../styles/app.css" rel="stylesheet" />
     <link href="../styles/gdc.mobile.min.css" rel="stylesheet" />
-    <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.structure-1.4.0.min.css" rel="stylesheet" />
     <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
 </head>
 <body style="background-color: #343131; color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
-    <div data-role="page" id="pg_groupmembers" data-theme="a">
+    <div data-role="page" id="pg_groupmembers" class="ui-page-theme-a">
 
         <div data-role="panel" id="panelAddNewMember" data-position="right" data-display="overlay" data-theme="g">
 
@@ -21,13 +22,13 @@
                         <div data-bind="html: email" style="font-size: x-small"></div>
                         <div data-bind="html: mobileNumber" style="font-size: x-small"></div>
                     </a>
-                    <a data-role="button" href="#" data-bind="attr: {'data-id': id}" class="addGrpMember" data-position-to="window"></a>
+                    <a class="ui-btn addGrpMember  " href="#" data-bind="attr: {'data-id': id}"  data-position-to="window"></a>
                 </li>
             </script>
 
 
-            <div data-theme="g" style="padding: 2px">
-                Search Person<a href="#addNewMemberPopupHelp" data-rel="popup" data-role="button" data-position-to="window" class="ui-icon-alt" data-inline="true" data-theme="h" data-transition="slideup" data-icon="info" data-iconpos="notext">Learn more</a>
+            <div class="ui-content ui-body-g"  style="padding: 2px">
+                Search Person<a href="#addNewMemberPopupHelp" data-rel="popup"   data-position-to="window" class="ui-icon-alt ui-btn ui-btn-h ui-icon-info ui-btn-icon-notext "   data-inline="true"  data-transition="slideup" >Learn more</a>
             </div>
 
             <div data-role="popup" id="addNewMemberPopupHelp" data-overlay-theme="a" style="max-width: 400px;"
@@ -35,7 +36,7 @@
                 <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Add Members</h1>
                 </div>
-                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                <div  class="ui-corner-bottom ui-content ui-body-a">
 
                     <p>
                         To look for a person in the database, simply <strong>type their name (or part of their name)</strong> into the text box provided. e.g. Type Rick Far to find
@@ -50,7 +51,7 @@
                     </p>
 
 
-                    <a href="#" data-role="button" data-theme="h" data-rel="back">Done!</a>
+                    <a href="#"  class="ui-btn ui-btn-h"   data-rel="back">Done!</a>
 
                 </div>
             </div>
@@ -60,13 +61,13 @@
 
             <div class="ui-grid-a">
                 <div class="ui-block-a">
-                    <div data-role="button" data-theme="b" id="btnSearchNewMember" data-inline="true">search</div>
+                    <div class="ui-btn ui-btn-b" id="btnSearchNewMember" data-inline="true">search</div>
                 </div>
                 <div class="ui-block-b">
-                    <div data-role="button" data-theme="a" data-rel="close" id="btnCloseSearchNewMember" data-inline="true">close</div>
+                    <div class="ui-btn ui-btn-a" data-rel="close" id="btnCloseSearchNewMember" data-inline="true">close</div>
                 </div>
             </div>
-        <a href="#sg_cantfind_members" data-rel="popup" data-transition="slideup" data-position-to="window"  data-role="button" data-theme="d">can't find person?</a>
+            <a href="#sg_cantfind_members" data-rel="popup" data-transition="slideup" data-position-to="window" class="ui-btn ui-btn-d">can't find person?</a>
 
 
             <ul data-role="listview" data-split-icon="check" data-split-theme="c" data-inset="true" data-theme="a" id="addNewMembersList" data-bind="template: { name: 'addnewmembers-template', foreach: newMembersResults}"></ul>
@@ -75,15 +76,15 @@
         </div>
         <div data-role="header">
 
-            <a href="groupsmy.html" data-icon="back" data-transition="flip" data-direction="reverse" data-role="button" data-theme="b" data-iconpos="notext">back</a>
+            <a href="#" id="grpMembersGoToGroups" class="ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext"   >back</a>
             <h1 class="pageHeader" data-bind="html:selectedGroup.groupName()">Group</h1>
-            <a href="#" class="btnOpenAddGroupMemberPanel"   data-icon="plus" data-role="button" data-theme="b" >add</a>
+            <a href="#" class="btnOpenAddGroupMemberPanel ui-btn ui-btn-b ui-icon-plus "    >add</a>
             
 
 
         </div>
-        <div data-role="content" style="padding: 15px">
-            <div data-role="popup" class="ui-content" id="pg_groupmembers_errpopup" data-theme="e">
+        <div  class="ui-content" style="padding: 15px">
+            <div data-role="popup" class="ui-content ui-body-e" id="pg_groupmembers_errpopup" >
                 <div id="pg_groupmembers_errpopmsg"></div>
             </div>
 
@@ -101,7 +102,7 @@
                             <div data-bind="html: 'Birthday: ' + birthday" style="font-size: small"></div>
 
                         </a>
-                        <a data-role="button" data-bind="attr: {'data-id': id}" href="#" class="deactivategrpmember" data-position-to="window"></a>
+                        <a   data-bind="attr: {'data-id': id}" href="#" class=" deactivategrpmember" data-position-to="window"></a>
                     </li>
                 </script>
 
@@ -112,38 +113,38 @@
                     <div class="ui-bar ui-bar-h">
                         <div style="text-align:center">Active Members</div>
                     </div>
-                    <div data-role="content" class="ui-body-h" style="text-align: center; font-size: small">
+                    <div  class="ui-content ui-body-h" style="text-align: center; font-size: small">
                        <div>These are all the Active members of this group. To De-Activate a member click on the 'X' next to their name.</div> 
                     <a id="btnGrpViewInActiveMembers" href="#">View In-Active Members</a>
                     </div>
                     
 
-                    <ul data-role="listview" data-split-icon="delete" data-split-theme="e" data-inset="true" data-theme="b" class="membersListView" id="grpActiveMembersList" data-bind="template: { name: 'groupmembers-template', foreach: ko.utils.arrayFilter(selectedGroup.members(), function(itm){ return itm.isActive==true})}"></ul>
+                    <ul data-role="listview" data-split-icon="delete" data-split-theme="d" data-inset="true" data-theme="b" class="membersListView" id="grpActiveMembersList" data-bind="template: { name: 'groupmembers-template', foreach: ko.utils.arrayFilter(selectedGroup.members(), function(itm){ return itm.isActive==true})}"></ul>
                 
-                <button data-role="button" data-theme="a" id="btnReloadMembers">Reload</button>
+                <button  class="ui-btn ui-btn-a"   id="btnReloadMembers">Reload</button>
                 </div>
                 
                 <div id="grpDeActivateMemberReason" style="display: none">
                     <div class="ui-bar ui-bar-h">
                         <div style="text-align:center">De-Activate Member</div>
                     </div>
-                    <div data-role="content" class="ui-body-h">Please provide a reason why you are removing this person from the group</div>
-                    <div data-role="fieldcontain">
+                    <div  class="ui-content ui-body-h">Please provide a reason why you are removing this person from the group</div>
+                    <div  class="ui-field-contain">
                         <label for="ddlGrpMemDeActiveReason">
                             Reason                       
                         </label>
                         <select id="ddlGrpMemDeActiveReason" data-bind="options: refData.groupMembersInActiveReasons, optionsText:'reason',optionsValue:'id'">
                         </select>
                     </div>
-                     <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="grpMemDeActivateMoreInfo">
                             More Info
                         </label>
-                        <input id="grpMemDeActivateMoreInfo" data-clear-btn="true"  placeholder="More info" type="text" />
+                        <input id="grpMemDeActivateMoreInfo" data-clear-btn="true" placeholder="More info" type="text" />
                     </div>
-                    <button data-theme="b" data-inline="true" id="btnGrpDeActivateMemGo">Remove</button>
-                    <button data-theme="a" data-inline="true" id="btnGrpDeActivateMemCancel">Cancel</button>
-                    <button data-theme="e"  id="btnDeleteMemberForever">Delete</button>
+                    <button class="ui-btn ui-btn-b ui-btn-inline"  id="btnGrpDeActivateMemGo">Remove</button>
+                    <button class="ui-btn ui-btn-a ui-btn-inline"  id="btnGrpDeActivateMemCancel">Cancel</button>
+                    <button class="ui-btn ui-btn-e" id="btnDeleteMemberForever">Delete</button>
 
                 </div>
 
@@ -153,15 +154,15 @@
                         <h1>Delete?</h1>
                         
                     </div>
-                    <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                    <div  class="ui-corner-bottom ui-content ui-body-a">
                         <div class="ui-title" style="text-align: center; font-size: larger" data-bind="html:selectedGroupMember.displayName"></div>
                        
                         <p>
                             Are you sure you want to delete this member from the group? All data relating to this member will be lost forever?
                         </p>
-                        <a href="#" data-role="button" data-inline="true" data-theme="e" id="btnMemberConfirmDelete">Delete</a>
-                        <a href="#" data-role="button" data-rel="back" data-inline="true">Cancel</a>
-                        <div class="ui-content" id="deleteGrpMemErr" data-theme="e" style="display:none">
+                        <a href="#" class="ui-btn ui-btn-e" data-inline="true"  id="btnMemberConfirmDelete">Delete</a>
+                        <a href="#" class="ui-btn ui-btn-a" data-rel="back" data-inline="true">Cancel</a>
+                        <div class="ui-content ui-body-e" id="deleteGrpMemErr"  style="display:none">
 
                         </div>
                     </div>
@@ -185,7 +186,7 @@
                             <div data-bind="html: 'Inactive Reason: ' + inActiveReason" style="font-size: small; white-space: normal"></div>
                             <div data-bind="html: 'More Info: ' + moreInfo" style="font-size: small; white-space: normal"></div>
                         </a>
-                        <a data-role="button" data-bind="attr: {'data-id': id}" href="#" class="activategrpmember" data-position-to="window"></a>
+                        <a  data-bind="attr: {'data-id': id}" href="#" class="activategrpmember" data-position-to="window"></a>
                     </li>
                 </script>
                
@@ -194,7 +195,7 @@
                     <div style="text-align:center">In-Active Members</div>
                 </div>
 
-                 <div data-role="content" class="ui-body-h" style="text-align: center; font-size: small">
+                 <div  class="ui-content ui-body-h" style="text-align: center; font-size: small">
                        <div>These are all the In-Active members of this group. To activate a member click on the 'check' next to their name.</div> 
                     <a id="btnGrpViewActiveMembers" href="#">View Active Members</a>
                     </div>
@@ -210,7 +211,7 @@
                     <h1>No Members</h1>
                 </div>
 
-                <div data-role="content" data-theme="h" class="ui-corner-top">
+                <div  class="ui-content ui-body-h  ui-corner-top">
                     <p>
                         Currently there are no members of this group. 
                     </p>
@@ -225,7 +226,7 @@
                         </li>
 
                     </ul>
-                    <button data-theme="b" class="btnOpenAddGroupMemberPanel">Add New Member</button>
+                    <button class="ui-btn ui-btn-a btnOpenAddGroupMemberPanel" >Add New Member</button>
                 </div>
 
 
@@ -243,7 +244,7 @@
                 <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Cant Find?</h1>
                 </div>
-                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                <div  class="ui-corner-bottom ui-content ui-body-a ">
 
                     <p>
                         There are <strong>two reason</strong> why you may not be able to find the person you are looking for. 
@@ -259,7 +260,7 @@
                     </ol>
                     
 
-                    <a href="#" data-role="button" data-theme="h" data-rel="back">Done!</a>
+                    <a href="#" class="ui-btn ui-btn-h "    data-rel="back">Done!</a>
 
                 </div>
             </div>

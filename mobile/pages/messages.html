@@ -6,39 +6,21 @@
     <link href="../styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
     <link href="../styles/app.css" rel="stylesheet" />
     <link href="../styles/gdc.mobile.min.css" rel="stylesheet" />
-    <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.structure-1.4.0.min.css" rel="stylesheet" />
     <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
 </head>
 <body style="background-color: #343131; color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
 
-    <div data-role="page" id="pg_messages" data-theme="a">
-        <div data-role="panel" id="pg_messages_menuPanel" data-display="push" data-theme="g">
-            <div style="width: 100%; max-width: 80px; max-height: 80px; margin-left: auto; margin-right: auto">
-                <img border="0" src="" class="menu_fbpic" alt="facebook profile pic" style="width: 100%; height: auto" />
-
-            </div>
-            <ul data-role="listview" data-theme="i" data-inset="true" data-divider-theme="g">
-
-                <li><a href="#" class="menu_home">Home</a></li>
-                <li><a href="#" class="menu_sermons"><div data-bind="html:labels[1200]"></div></a></li>
-                <li><a href="#" class="menu_followup"><div data-bind="html:labels[1150]"></div></a></li>
-                <li><a href="#" class="menu_messages"><div data-bind="html:labels[1400]"></div></a></li>
-                <li><a href="#" class="menu_pinfo"><div data-bind="html:labels[1000]"></div></a></li>
-                <li><a href="#" class="menu_subs"><div data-bind="html:labels[1300]"></div></a></li>
-                <li><a href="#" class="menu_groups"><div data-bind="html:labels[1100]"></div></a></li>
-                <li><a href="#" class="menu_eventProfiles"><div data-bind="html:labels[1250]"></div></a></li>
-                <li><a href="#" class="menu_churchlife"><div data-bind="html:labels[1350]"></div></a></li>
-
-                <li> <a href="#" class="menu_closeMenu" data-theme="d">Close Menu</a></li>
-            </ul>
-        </div>
+    <div data-role="page" id="pg_messages" class="ui-page-theme-a">
+        
         <div data-role="header">
-            <a href="#" id="pg_messages_showMenu" data-icon="bars" data-theme="b" data-role="button">menu</a>
+            <a href="#" id="pg_messages_showMenu" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-notext"    >menu</a>
             <h1 class="pageHeader" id="pg_messages_header">Messages</h1>
 
         </div>
         <!-- /header -->
-        <div data-role="content" style="padding: 15px">
+        <div  class="ui-content" style="padding: 15px">
 
             <style type="text/css">
                 /*.filter-flipswitch .ui-slider-switch {
@@ -68,15 +50,15 @@
 
             <div class="filter-flipswitch">
                 <label for="MsgViewed"><small>Only show me Un-Ready Messages:</small></label>
-                <select name="MsgViewed" id="MsgViewed" data-theme="b" data-role="slider" data-mini="true">
+                <select name="MsgViewed" id="MsgViewed" data-theme="b" data-role="flipswitch" class="ui-mini" >
                     <option value="0" selected="selected">Yes</option>
                     <option value="-1">No</option>
                 </select>
             </div>
 
 
-            <div data-bind="foreach: messages">
-                <div class="ui-body-d  ui-corner-all" style="padding: 10px">
+            <div data-bind="foreach: messages" >
+                <div class="ui-body-d  ui-corner-all" style="padding: 10px;">
                     <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align: center">
                         <strong data-bind="html:subject"></strong>
                     </div>
@@ -86,75 +68,27 @@
                     <p><i><small data-bind="html:'Sent By: ' + sentBy + '    Sent From: ' + portalName + '    Viewed On: ' +  viewedOn"></small></i></p>
                 </div>
 
-                <a data-role="button" data-mini="true" data-inline="true" class="btnReadMsg" href="#" data-bind="attr: {'data-id': id}, visible: !viewed" data-theme="b">Mark as Read</a>
+                
+                <a class="ui-btn ui-btn-b ui-mini ui-btn-inline  btnReadMsg" data-bind="attr: {'data-id': id}, visible: !viewed" href="#">Mark as Read</a>
 
-                                <a data-role="button" data-mini="true" data-inline="true" class="btnUnReadMsg" href="#" data-bind="attr: {'data-id': id}, visible: viewed " data-theme="d">Mark as Un-Read</a>
+                <a class="ui-btn ui-btn-d ui-mini ui-btn-inline  btnUnReadMsg" data-bind="attr: {'data-id': id}, visible: viewed " href="#">Mark as Un-Read</a>
 
+                   
+                <a class="ui-btn ui-btn-a ui-mini ui-btn-inline  btnReplyMsg" data-bind="attr: {'data-id': id}, visible: replyEnabled" href="#">Reply</a>
 
-                <a data-role="button" data-mini="true" data-inline="true" class="btnReplyMsg" href="#" data-bind="attr: {'data-id': id}, visible: replyEnabled" data-theme="a">Reply</a>
-
-
-
-
-                <br />
-            </div>
-
-
-
-            <!--<a href="intro2.html" data-role="button" data-theme="b" data-transition="flow">next</a>-->
-
-
-            <!--<script id="messages-template" type="text/html">
-                <li data-role="list-divider">
-                    <h6 data-bind="html:subject" style="text-align: center"></h6>
-
-                </li>
-                <li>
-                    <p class="ui-body-a  ui-corner-all" style="padding: 10px; text-align: center"><span data-bind="html:messageBody"></span></p>
-
-                    <p data-bind="html:'Sent By: ' + sentBy + '    Sent From: ' + portalName + '    Viewed On: ' +  viewedOn"></p>
-
-                    <p class="ui-li-aside"><span data-bind="html:dateChanged"></span></p>
-                    <table>
-                        <tr>
-                            <td>
-                                <div data-bind="visible: !viewed">
-                                    <a data-role="button" data-mini="true" data-inline="true" class="btnReadMsg" href="#" data-bind="attr: {'data-id': id}" data-theme="c">Mark as Read</a>
-                                </div>
-
-                                <div data-bind="visible: viewed">
-                                    <a data-role="button" data-mini="true" data-inline="true" class="btnUnReadMsg" href="#" data-bind="attr: {'data-id': id}" data-theme="d">Mark as Un-Read</a>
-                                </div>
-                            </td>
-                            <td>
-                                <div data-bind="visible: urlLinkExists">
-                                    <a data-role="button" data-mini="true" data-inline="true" class="btnExtraInfo" target="_blank" data-bind="attr: { href:urlLink }" data-theme="a">View More Info</a>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                
+                    <br />
+                </div>
 
 
 
-
-                </li>
-            </script>-->
-
-
-
-
-
-
-
-            <!--   <div id="MsgList">
-                <ul data-role="listview" data-inset="true" data-theme="b" id="myMessages" data-bind="template: { name: 'messages-template', foreach: messages}"></ul>
-            </div>-->
+            
 
             <div id="pg_messages_none" style="display: none">
                 <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>No Messages</h1>
                 </div>
-                <div data-role="content" data-theme="h" class="ui-corner-bottom">
+                <div  class="ui-content ui-body-h ui-corner-bottom">
                     <p>
                         You have no messages
                     </p>
@@ -172,15 +106,15 @@
                 <div data-role="header" data-theme="b" class="ui-corner-top">
                     <h1>Reply</h1>
                 </div>
-                <div data-role="content" data-theme="b" class="ui-corner-bottom ui-content">
+                <div  class="ui-body-b ui-corner-bottom ui-content">
                     <p>Type your repy into the box provided and click send. </p>
                     <div><i> <small id="popupReplyHeader">
                         A push notification will be sent to the person mobile phone.
                     </small></i></div>
                     <textarea style="height: 100px; width: 100%" id="txtMsgReply"></textarea>
-                    <a href="#" data-role="button" id="btnCancelReply" data-inline="true" data-theme="a">Cancel</a>
-                    <a href="#" data-role="button" id="btnSendReply" data-inline="true" data-transition="flow" data-theme="b">Send</a>
-                    <div id="replyPopupMsg" data-theme="e" data-role="content" style="display:none"></div>
+                    <a href="#" class="ui-btn ui-btn-a ui-btn-inline "   id="btnCancelReply" >Cancel</a>
+                    <a href="#" class="ui-btn ui-btn-b ui-btn-inline "  id="btnSendReply" data-transition="flow" >Send</a>
+                    <div id="replyPopupMsg" class="ui-content ui-body-e"  style="display:none"></div>
                 </div>
             </div>
 

@@ -6,39 +6,21 @@
       <link href="../styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
     <link href="../styles/app.css" rel="stylesheet" />
     <link href="../styles/gdc.mobile.min.css" rel="stylesheet" />
-    <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />  
+    <link href="../styles/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.structure-1.4.0.min.css" rel="stylesheet" />
     <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
 </head>
 <body  style="background-color:#343131;  color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
 
-    <div data-role="page" id="pg_eventsprofiles" data-theme="a">
-        <div data-role="panel" id="pg_eventsprofile_menuPanel" data-display="push" data-theme="g">
-            <div style="width: 100%; max-width: 80px; max-height: 80px; margin-left: auto; margin-right: auto">
-                <img border="0" src="" class="menu_fbpic" alt="facebook profile pic" style="width: 100%; height: auto" />
-
-            </div>
-            <ul data-role="listview" data-theme="i" class="slideMenuListView" data-inset="true" id="' + panelId + '_menu_lv" data-divider-theme="g">
-              
-                <li><a href="#" class="menu_home">Home</a></li>
-                <li><a href="#" class="menu_sermons"><div data-bind="html:labels[1200]"></div></a></li>
-                <li><a href="#" class="menu_followup"><div data-bind="html:labels[1150]"></div></a></li>
-                <li><a href="#" class="menu_messages"><div data-bind="html:labels[1400]"></div></a></li>
-                <li><a href="#" class="menu_pinfo"><div data-bind="html:labels[1000]"></div></a></li>
-                <li><a href="#" class="menu_subs"><div data-bind="html:labels[1300]"></div></a></li>
-                <li><a href="#" class="menu_groups"><div data-bind="html:labels[1100]"></div></a></li>
-                <li><a href="#" class="menu_eventProfiles"><div data-bind="html:labels[1250]"></div></a></li>
-                <li><a href="#" class="menu_churchlife"><div data-bind="html:labels[1350]"></div></a></li>
-
-                <li> <a href="#" class="menu_closeMenu" data-theme="d">Close Menu</a></li>
-            </ul>
-        </div>
+    <div data-role="page" id="pg_eventsprofiles"  class="ui-page-theme-a">
+        
         <div data-role="header">
-            <a href="#" id="pg_eventsprofile_showMenu" data-icon="bars" data-theme="b" data-role="button" >menu<span class="slideMenuButtonBubbleSpan"></span></a>
+            <a href="#" id="pg_eventsprofile_showMenu"  class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-notext" >menu<span class="slideMenuButtonBubbleSpan"></span></a>
             <h1 class="pageHeader">events</h1>
-                 <a href="home.html" data-icon="home" data-theme="b" data-transition="slide" data-direction="reverse"  data-role="button" data-iconpos="notext" >home</a>
+                 <a href="#" id="pgEventsGoHome" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-notext"     >home</a>
         </div>
         <!-- /header -->
-        <div data-role="content" style="padding: 15px">
+        <div  class="ui-content" style="padding: 15px">
             <div data-role="popup" class="ui-content" id="pg_eventsprofile_errpopup" data-theme="e">
                 <div id="pg_eventsprofile_errpopmessage"></div>
             </div>
@@ -53,9 +35,9 @@
                     <h4 data-bind="text: eventName"></h4>
 
 
-                    <div class="ui-body-c ui-corner-all" data-bind="text: eventDescription" style="padding: 2px; margin-bottom: 10px">
+                    <div class="ui-body-c ui-content ui-corner-all" data-bind="text: eventDescription" style="padding: 2px; margin-bottom: 10px">
                     </div>
-                    <div class="ui-body-b ui-corner-all">
+                    <div class="ui-body-b ui-content ui-corner-all">
                         <table>
                             <tr>
                                 <td>Starts: </td>
@@ -91,8 +73,8 @@
 
                     </div>
 
-                    <a data-role="button" data-theme="c" class="eventRegBtn eventRegComing">Yes, I am coming</a>
-                    <a data-role="button" data-theme="e" class="eventRegBtn eventRegNotComing">No, I will not be there</a>
+                    <a  class="ui-btn ui-btn-c  eventRegBtn eventRegComing">Yes, I am coming</a>
+                    <a  class="ui-btn ui-btn-e  eventRegBtn eventRegNotComing">No, I will not be there</a>
                     <!-- /grid-a -->
 
                 </div>
@@ -102,7 +84,7 @@
 
 
             <div id="eventProfilesContainer">
-                <a href="#pg_churchlife_whatisthis" data-role="button" data-rel="popup" data-theme="h" data-transition="slideup">what is this?</a>
+                <a href="#pg_churchlife_whatisthis"  class="ui-btn ui-btn-h"    data-rel="popup"  data-transition="slideup">what is this?</a>
 
                 <div data-role="collapsible-set" id="profileContainerCollapse" data-bind="template: { name: 'eventsprofile-template', foreach: eventProfiles}">
                 </div>
@@ -114,10 +96,10 @@
 
             <div id="pg_eventsprofile_noeventsmsg" style="display:none">
 
-                <div data-role="header" data-theme="h" class="ui-corner-top">
-                       <h1>No Published Events</h1>
+                <div   class="ui-bar ui-bar-h  ui-corner-top" style="text-align:center">
+                       <h3>No Published Events</h3>
                 </div>
-                <div data-role="content" data-theme="h" class="ui-corner-bottom">
+                <div  class="ui-content ui-body-h  ui-corner-bottom">
                     <p>
                         Currently there are <strong>no events published</strong>.  
                     </p>
@@ -137,10 +119,10 @@
 
             <div data-role="popup" id="pg_churchlife_whatisthis" data-overlay-theme="a" style="max-width: 400px;"
                 class="ui-corner-all">
-                <div data-role="header" data-theme="h" class="ui-corner-top">
-                    <h1>Events</h1>
+                <div class="ui-bar ui-bar-h ui-corner-top" style="text-align:center">
+                    <h3>Events</h3>
                 </div>
-                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                <div  class="ui-body-a  ui-corner-bottom ui-content">
 
                     <p>
                         Your church can <strong>publish any number of events</strong> that are happening in the life of the ministry. From a simple leaders meeting to an extensive annual conference.
@@ -154,7 +136,7 @@
                     </p>
 
 
-                    <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
+                    <a href="#"  class="ui-btn ui-btn-h"   data-rel="back">thanks!</a>
 
                 </div>
             </div>

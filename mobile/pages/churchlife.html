@@ -6,39 +6,23 @@
       <link href="../styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
     <link href="../styles/app.css" rel="stylesheet" />
     <link href="../styles/gdc.mobile.min.css" rel="stylesheet" />
-    <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />  
+    <link href="../styles/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.structure-1.4.0.min.css" rel="stylesheet" />
     <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
 </head>
 <body  style="background-color:#343131;  color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
 
-    <div data-role="page" id="pg_churchlife" data-theme="a" data-dom-cache="true">
-        <div data-role="panel" id="pg_churchlife_menuPanel" data-display="push" data-theme="g">
-            <div style="width: 100%; max-width: 80px; max-height: 80px; margin-left: auto; margin-right: auto">
-                <img border="0" src="" class="menu_fbpic" alt="facebook profile pic" style="width: 100%; height: auto" />
+    <div data-role="page" id="pg_churchlife"  class="ui-page-theme-a" data-dom-cache="true">
+        
 
-            </div>
-             <ul data-role="listview" class="slideMenuListView"  data-theme="i" data-inset="true" id="' + panelId + '_menu_lv" data-divider-theme="g" >
-                
-                 <li><a href="#" class="menu_home">Home</a></li>
-                 <li><a href="#" class="menu_sermons"><div data-bind="html:labels[1200]"></div></a></li>
-                 <li><a href="#" class="menu_followup"><div data-bind="html:labels[1150]"></div></a></li>
-                 <li><a href="#" class="menu_messages"><div data-bind="html:labels[1400]"></div></a></li>
-                 <li><a href="#" class="menu_pinfo"><div data-bind="html:labels[1000]"></div></a></li>
-                 <li><a href="#" class="menu_subs"><div data-bind="html:labels[1300]"></div></a></li>
-                 <li><a href="#" class="menu_groups"><div data-bind="html:labels[1100]"></div></a></li>
-                 <li><a href="#" class="menu_eventProfiles"><div data-bind="html:labels[1250]"></div></a></li>
-                 <li><a href="#" class="menu_churchlife"><div data-bind="html:labels[1350]"></div></a></li>
 
-                 <li> <a href="#" class="menu_closeMenu" data-theme="d">Close Menu</a></li>
-                </ul>
-        </div>
         <div data-role="header">
-            <a href="#" id="pg_churchlife_showMenu" data-icon="bars" data-role="button" data-theme="b" >menu<span class="slideMenuButtonBubbleSpan"></span></a>
+            <a href="#" id="pg_churchlife_showMenu" class="ui-btn ui-btn-b ui-icon-bars  ui-btn-icon-notext"><span class="slideMenuButtonBubbleSpan"></span></a>
             <h1 class="pageHeader" id="pg_churchlife_header">church life</h1>
-             <a href="home.html" data-icon="home" data-transition="slide" data-direction="reverse" data-theme="b"  data-role="button" data-iconpos="notext" >home</a>
+             <a href="#" id="pgChurchLifeGoHome" data-transition="slide" data-direction="reverse" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-notext "></a>
         </div>
         <!-- /header -->
-        <div data-role="content" style="padding: 15px">
+        <div  class="ui-content" style="padding: 15px">
             <div data-role="popup" class="ui-content" id="pg_churchlife_errpopup" data-theme="e">
                 <div id="pg_churchlife_errpopmessage"></div>
             </div>
@@ -67,7 +51,7 @@
                                 <div data-role="collapsible" data-bind="attr:{id:id()}" class="listItemCollapsible" data-collapsed="true" data-theme="c" data-content-theme="c">
                                     <h4 data-bind="text: name"></h4>
 
-                                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                                    <fieldset data-role="controlgroup" data-type="horizontal" class="ui-mini" >
                                         <legend></legend>
                                         <input type="radio" data-theme="b" data-bind="attr: {name: id(), id: 'li1' + id()}" value="-1">
                                         <label data-bind="attr: {for: 'li1' + id()}, text:$parent.unknownWording()">minus1 1</label>
@@ -94,7 +78,7 @@
             
 
             <div id="cflistcontainer">
-                                 <a href="#pg_churchlife_whatisthis" data-role="button" data-rel="popup" data-theme="h" data-transition="slideup">what is this?</a>
+                                 <a href="#pg_churchlife_whatisthis"  class="ui-btn ui-btn-h "   data-rel="popup"  data-transition="slideup">what is this?</a>
 
                 <div data-role="collapsible-set" id="cflistcallapse" data-bind="template: { name: 'customfields-template', foreach: cfGroups}">
                 </div>
@@ -106,7 +90,7 @@
                 <div data-role="header" data-theme="h" class="ui-corner-top">
                     <h1>Church Life</h1>
                 </div>
-                <div data-role="content" data-theme="a" class="ui-corner-bottom ">
+                <div  class="ui-content ui-body-a ui-corner-bottom ">
 
                     <p>
                        Church Life is a very powerful and flexible system of simple <strong>lists</strong> that your church/ministry
@@ -122,7 +106,7 @@
                     </p>
                    
   
-                    <a href="#" data-role="button" data-theme="h" data-rel="back">thanks!</a>
+                    <a href="#"  class="ui-btn ui-btn-h"  data-rel="back">thanks!</a>
                   
                 </div>
             </div>

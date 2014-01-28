@@ -6,21 +6,22 @@
     <link href="../styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
     <link href="../styles/app.css" rel="stylesheet" />
     <link href="../styles/gdc.mobile.min.css" rel="stylesheet" />
-    <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.structure-1.4.0.min.css" rel="stylesheet" />
     <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
 </head>
 <body style="background-color: #343131; color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
-    <div data-role="page" id="pg_groupsessions" data-theme="a">
+    <div data-role="page" id="pg_groupsessions" class="ui-page-theme-a">
 
         <div data-role="header">
 
-            <a href="groupsmy.html" data-icon="grid" data-transition="flip" data-role="button" data-theme="b" data-iconpos="notext">Groups</a>
+            <a href="#" id="pgFUPGrpSessionBack" class="ui-btn ui-btn-b ui-icon-grid ui-btn-icon-notext" data-transition="flip">Groups</a>
             <h1 class="pageHeader">Sessions</h1>
-            <a href="#" class="btnGrpAddNewSession" id="mainMenuAddSession" data-icon="plus" data-role="button" data-theme="b">New</a>
-                        
+            <a href="#" class="ui-btn ui-btn-b ui-icon-plus ui-btn-icon-notext btnGrpAddNewSession" id="mainMenuAddSession">New</a>
+
 
         </div>
-        <div data-role="content" style="padding: 15px">
+        <div  class="ui-content" style="padding: 15px">
 
             <div data-role="popup" class="ui-content" id="pg_groupsessions_errpopup" data-theme="e">
                 <div id="pg_groupsessions_errpopmsg"></div>
@@ -44,7 +45,7 @@
                                 <div style="font-size: small"><i>(click here to edit this session)</i></div>
                             </a>
 
-                            <a data-role="button" data-bind="attr: {'data-id': id}" href="#" class="sessionItemAttendance" data-position-to="window"></a>
+                            <a data-bind="attr: {'data-id': id}" href="#" class="sessionItemAttendance" data-position-to="window"></a>
 
                         </li>
                     </script>
@@ -53,9 +54,9 @@
                         <div data-bind="html:selectedGroup.groupName()" style=" text-align:center">Group Sessions</div>
 
                     </div>
-                    <div data-role="content" class="ui-body-h" style="text-align:center; font-size:small">
+                    <div  class="ui-content  ui-body-h" style="text-align:center; font-size:small">
                         These are all the sessions you have captured for this group. To view the attendance click on the
-                        <a href="#" data-role="button" data-inline="true" data-theme="d" data-iconpos="notext" data-icon="gear"></a>icon
+                        <a href="#" class="ui-btn ui-btn-d ui-icon-gear ui-btn-icon-notext ui-btn-inline"></a>icon
                     </div>
 
 
@@ -65,38 +66,38 @@
                 <div id="grpSessionEdit" style="display: none" class="grpSessionSubView">
 
                     <div class="ui-bar ui-bar-h">
-                        <div  style=" text-align:center">Session Info</div>
+                        <div style=" text-align:center">Session Info</div>
 
                     </div>
-                    <div data-role="content" class="ui-body-h" style="text-align:center; font-size:small">
+                    <div  class=" ui-content ui-body-h" style="text-align:center; font-size:small">
                         Enter the basic information for this session and click update.
-                       
+
                     </div>
 
 
 
-                   
 
-                    <div data-role="fieldcontain">
+
+                    <div  class="ui-field-contain">
                         <label for="grpSessionName">
                             Session Name
                         </label>
                         <input id="grpSessionName" data-clear-btn="true" data-bind="value:selectedGroupSession.name" placeholder="Session Name" type="text" />
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="grpSessionDate">Date:</label>
                         <input type="date" id="grpSessionDate" value="" />
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="grpSessionMoreInfo">
                             More Info
                         </label>
                         <textarea style="height: 100px; width: 100%" data-bind="value:selectedGroupSession.moreInfo" id="grpSessionMoreInfo"></textarea>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label>
                             <input type="checkbox" data-bind="checked:selectedGroupSession.flagSession" />
 
@@ -106,23 +107,23 @@
 
 
 
-                    <button data-theme="b"  id="btnGrpUpdateSession">Update</button>
-                    <button data-theme="a" data-inline="true" id="btnGrpUpdateSessionCancel">Cancel</button>
-                       <button data-theme="e" data-inline="true" id="btnGrpDeleteSession">Delete</button>
+                    <button class="ui-btn ui-btn-b " id="btnGrpUpdateSession">Update</button>
+                    <button class="ui-btn ui-btn-a ui-btn-inline" id="btnGrpUpdateSessionCancel">Cancel</button>
+                    <button class="ui-btn ui-btn-e ui-btn-inline " id="btnGrpDeleteSession">Delete</button>
                 </div>
 
                 <div id="grpNoSessions" style="display: none" class="grpSessionSubView">
 
-                    <div data-role="header" data-theme="h" class="ui-corner-top">
+                    <div class="ui-bar ui-bar-h ui-corner-top" style="text-align:center">
                         <h1>No Sessions</h1>
                     </div>
 
-                    <div data-role="content" data-theme="h" class="ui-corner-top">
+                    <div class="ui-content ui-body-h ui-corner-top">
                         <p>
-                            Currently we have no record of any sessions for this group. 
+                            Currently we have no record of any sessions for this group.
                         </p>
 
-                        <button data-theme="b" class="btnGrpAddNewSession">Add New Session</button>
+                        <button class="ui-btn ui-btn-b btnGrpAddNewSession ">Add New Session</button>
                     </div>
 
                 </div>
@@ -130,94 +131,74 @@
                 <div id="grpSessionsAttendance" class="grpSessionSubView" style="display: none">
 
 
-                    <div id="grpNoMembersToAdd" style="display: none" >
+                    <div id="grpNoMembersToAdd" style="display: none">
 
-                        <div data-role="header" data-theme="h" class="ui-corner-top">
+                        <div class="ui-bar ui-bar-h ui-corner-top" style="text-align:center">
                             <h1>No Members</h1>
                         </div>
 
-                        <div data-role="content" data-theme="h" class="ui-corner-top">
+                        <div class="ui-content ui-body-h ui-corner-top">
                             <p>
                                 At the date of this session, there were no members assigned to this group. Either add members to the group, or change the date of this
-                                session. 
+                                session.
                             </p>
 
-                            <button  id="btnGrpSessionsAddMembers" data-role="button"  data-theme="b" >Add Members</button>
-                            <button class="btnMainMenuBackToSessions" data-role="button"  data-theme="a">Edit Session</button>
+                            <button class="ui-btn ui-btn-b  " id="btnGrpSessionsAddMembers">Add Members</button>
+                            <button class="ui-btn ui-btn-a btnMainMenuBackToSessions">Edit Session</button>
 
-                           
+
                         </div>
 
                     </div>
 
 
-
-
-
-
-
-
-
-
-
-
                     <div id="sessionAttDiv">
 
-                        <div  class="ui-bar ui-bar-h" style="text-align:center"  >
+                        <div class="ui-bar ui-bar-h" style="text-align:center">
                             <div data-bind="html:selectedGroupSession.name"></div>
-                            <div data-bind="html:'Date: ' + selectedGroupSession.sessionDateDisplay()" ></div>
+                            <div data-bind="html:'Date: ' + selectedGroupSession.sessionDateDisplay()"></div>
                         </div>
 
 
 
-                        <div data-role="content" class="ui-body-h" style="text-align:center; font-size:small">
+                        <div  class="ui-content ui-body-h" style="text-align:center; font-size:small">
                             <div>Use the tool below to manage which members attended this group session.</div>
                             <a href="#" class="btnMainMenuBackToSessions">View Sessions List</a>
                         </div>
 
+                       
+                            <div class="ui-bar ui-bar-a" style="text-align:center">
+                                <h6>Attendance</h6>
+                                <div><small>Mark 'Yes' the members who were present, otherwise mark 'No'.</small></div>
+                            </div>
 
+                       
 
                       
+                            <script id="grpSessionAttendance-template" type="text/html">
+                                <li  >
+                                    <div class="ui-bar ui-bar-b" data-bind="html:name, visible:attended()">
+                                        
+
+                                    </div>
+
+                                    <div class="ui-bar ui-bar-a" data-bind="html:name, visible:!attended()">
+
+
+                                    </div>
+                                    
+                                    <div style="float:right" >
+                                        <input type="checkbox" data-role="flipswitch" data-theme="a" data-off-text="No" data-on-text="Yes" data-bind="checked:attended,attr:{'data-id':id}" class="ui-mini grpSessionAttFlipSwtch">
+
+                                    </div>
+
+                                  
+
+                                </li>
+                            </script>
+                        <ul data-role="listview"  data-theme="a" data-inset="true" class="grpAttendanceList" id="grpMembersAttendance" data-bind="template: { name: 'grpSessionAttendance-template', foreach: selectedGroupSession.attendance}"></ul>
+
                         
-                        <div id="grpSessionAttended">
-                            <div class="ui-bar ui-bar-a" style="text-align:center" >
-                                <h6>Attended</h6>
-                                <div><small>These are the members who attended this session. Click the 'x' to remove them.</small></div>
-                            </div>
-
-                            <script id="grpSessionAtt-template" type="text/html">
-                                <li>
-                                    <a data-bind="attr: {'data-id': id}">
-                                        <div data-bind="html: name"></div>
-                                    </a>
-
-                                    <a data-role="button" data-bind="attr: {'data-id': id}" href="#" class="btnAttRegRemove" data-position-to="window"></a>
-                                </li>
-                            </script>
-                            <ul data-role="listview" data-split-icon="delete" data-split-theme="d" data-inset="true" data-theme="b" class="grpAttendanceList" id="grpMembersAttended" data-bind="template: { name: 'grpSessionAtt-template', foreach: selectedGroupSession.attended}"></ul>
-
-                        </div>
-
-                        <div id="grpSessionNotAttended">
-                            <div class="ui-bar ui-bar-a" style="text-align:center">
-                                <h6>Missing Members</h6>
-                                <div><small>These are the members who missed/have not been assigned to this session. Click the 'check' to mark them as having attended.</small></div>
-                            </div>
-                         
-
-                            <script id="grpSessionNotAtt-template" type="text/html">
-                                <li>
-                                    <a data-bind="attr: {'data-id': id}">
-                                        <div data-bind="html: name"></div>
-                                    </a>
-
-                                    <a data-role="button" data-bind="attr: {'data-id': id}" href="#" class="btnAttRegAdd" data-position-to="window"></a>
-                                </li>
-                            </script>
-                            <ul data-role="listview" data-split-icon="check" data-split-theme="c" data-inset="true" data-theme="b" class="grpAttendanceList" id="grpNotAttendanceList" data-bind="template: { name: 'grpSessionNotAtt-template', foreach:  selectedGroupSession.missing}"></ul>
-
-                        </div>
-
                     </div>
 
 

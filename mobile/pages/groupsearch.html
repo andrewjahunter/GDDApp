@@ -6,65 +6,27 @@
     <link href="../styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
     <link href="../styles/app.css" rel="stylesheet" />
     <link href="../styles/gdc.mobile.min.css" rel="stylesheet" />
-    <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.structure-1.4.0.min.css" rel="stylesheet" />
     <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
 </head>
 <body style="background-color: #343131; color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
 
-    <div data-role="page" id="pg_groupsearch" data-theme="a">
+    <div data-role="page" id="pg_groupsearch" class="ui-page-theme-a">
 
 
 
         <div data-role="header">
-            <a href="groupsmenu.html" data-icon="bars" data-direction="reverse" data-role="button"  data-theme="b" data-iconpos="notext">Groups Menu</a>
+            <a href="#" id="pgGrpSearchGoopGrpMenu" class="ui-btn ui-btn-b ui-icon-grid ui-btn-icon-notext"   data-direction="reverse">Groups Menu</a>
             <h1 class="pageHeader">Search</h1>
-            <a href="#" class="btnClearSearch" data-icon="refresh" data-role="button" data-theme="b">clear</a>
+            <a href="#"  class="btnClearSearch ui-btn ui-btn-b ui-icon-refresh ui-btn-icon-notext"  >clear</a>
 
         </div>
         <!-- /header -->
-        <div data-role="content" style="padding: 15px">
+        <div  class="ui-content" style="padding: 15px">
 
 
-            <!--<div class="grpSearchSubView grpSearchStep1View" style="display:none">
-
-
-                <div data-role="content" class="ui-body-h" style="text-align: center">
-                    Your profile is permitted to search for groups in the following category. Choose the one relevent to this search
-                </div>
-                <button id="btnGrpSearchNoCategories" data-theme="a">Ignore Categories</button>
-                <script id="searchcat-template" type="text/html">
-                    <li>
-                        <a data-bind="attr: {'data-id': id}" class="grpSearchCat" style="white-space:normal">
-                            <div data-bind="html: editLabel"></div>
-                            <div><small>(<i data-bind="html: description"></i>)</small></div> <div></div>
-                        </a>
-                    </li>
-                </script>
-                <ul data-role="listview" data-inset="true" data-theme="b" id="grpSearchCatSelector" data-bind="template: { name: 'searchcat-template', foreach: permittedSearchGrpCategories}"></ul>
-
-            </div>
-
-
-            <div class="grpSearchSubView grpSearchStep2View" style="display:none">
-
-                <div data-role="content" class="ui-body-h" style="text-align: center">
-                    Your profile is permitted to search for more than one type in the category you selected
-                </div>
-                <button id="btnGrpSearchNoType" data-theme="a">Ignore Types</button>
-
-                <script id="searchtype-template" type="text/html">
-                    <li>
-                        <a data-bind="attr: {'data-id': id}" class="grpSearchType" style="white-space:normal">
-                            <div data-bind="html: editLabel"></div>
-                            <div><small>(<i data-bind="html: description"></i>)</small></div> <div></div>
-                        </a>
-                    </li>
-                </script>
-                <ul data-role="listview" data-inset="true" data-theme="b" id="grpSearchTypeSelector" data-bind="template: { name: 'searchtype-template', foreach: permittedSearchGrpTypes}"></ul>
-
-
-                <button type="button" data-inline="true" class="btnGrpSearchGoStep1" data-theme="a">Back</button>
-            </div>-->
+           
 
 
             <div class="grpSearchSubView grpSearchParam" style="display:none">
@@ -73,12 +35,12 @@
                     <div style="text-align:center">Search Filters</div>
 
                 </div>
-                <div data-role="content" class="ui-body-h" style="text-align:center; font-size:small">
+                <div  class="ui-content ui-body-h" style="text-align:center; font-size:small">
                     <div>Select your search filters below and click search</div>
                     
                 </div>
 
-                <div data-role="fieldcontain">
+                <div  class="ui-field-contain">
                     <label for="ddlGrpSearchAgeProfile">
                        Groups age profile
                     </label>
@@ -87,7 +49,7 @@
 
                 </div>
 
-                <div data-role="fieldcontain">
+                <div class="ui-field-contain">
                     <label for="ddlGrpSearchSuburb">
                         Suburb where group meets
                     </label>
@@ -95,7 +57,7 @@
 
                 </div>
 
-                <div data-role="fieldcontain">
+                <div class="ui-field-contain">
                     <label for="ddlGrpSearchMeetingDay">
                         Day group meets on
                     </label>
@@ -113,7 +75,7 @@
 
                 </div>
 
-                <div data-role="fieldcontain">
+                <div class="ui-field-contain">
                     <label for="ddlGrpSearchGender">
                         Gender of group
                     </label>
@@ -127,8 +89,8 @@
                 </div>
 
 
-                <button type="button" data-inline="false" id="btnGrpSearch" data-theme="b">Search</button>
-                            <div data-role="content" id="grpSearchErr" class="ui-body-e" style="text-align:center; display:none"></div>
+                <button type="button" class="ui-btn ui-btn-b"   id="btnGrpSearch">Search</button>
+                            <div  id="grpSearchErr" class="ui-content ui-body-e" style="text-align:center; display:none"></div>
 
 
 
@@ -173,15 +135,15 @@
                     <div style="text-align:center">Matching Results</div>
 
                 </div>
-                <div data-role="content" class="ui-body-h" style="text-align:center; font-size:small">
+                <div  class="ui-content ui-body-h" style="text-align:center; font-size:small">
                     <div>These are the groups that match you search criteria</div>
                     <!--<a href="#" class="btnClearSearch">Search Again</a><br/>-->
-                    <div><a href="#grpSearchMissingGroupsPopup" data-rel="popup" data-transition="slideup" data-theme="a">Can't find group?</a></div>
+                    <div><a href="#grpSearchMissingGroupsPopup" data-rel="popup" class="ui-btn ui-btn-h "   data-transition="slideup" >Can't find group?</a></div>
 
                 </div>
 
               
-                <button data-role="button" id="btnViewSearchGroupsMaps" data-theme="a">View Google Map View</button>
+                <button  class="ui-btn ui-btn-a "  id="btnViewSearchGroupsMaps" >View Google Map View</button>
                 <ul data-role="listview" data-inset="true" data-divider-theme="b" data-theme="a" id="grpSearchResultsListView" data-bind="template: { name: 'groupsearchlist-template', foreach: loadedGroups}"></ul>
             </div>
 
@@ -190,7 +152,7 @@
                     <h1>Can't Find</h1>
                 </div>
 
-                <div data-role="content" class="ui-corner-bottom ui-content">                 
+                <div  class="ui-corner-bottom ui-content">                 
                         <p>
                             Are there no groups matching your search, or is the group you are looking for missing?
                         </p>
@@ -203,7 +165,7 @@
                             </ul>
                         </p>
 
-                    <a href="#" data-role="button" data-inline="false" data-rel="back" data-theme="b">Close</a>
+                    <a href="#"  class="ui-btn ui-btn-b "    data-rel="back" >Close</a>
                   
 
                 </div>
@@ -215,13 +177,13 @@
                 <div data-role="header" data-theme="b" class="ui-corner-top">
                     <h1>Maps</h1>
                 </div>
-                <div data-role="content" data-theme="b" class="ui-corner-bottom ui-content">
+                <div  class="ui-corner-bottom ui-content ui-body-b ">
 
                     <div id='groupsSearchListMap' class="groupsMap" style="width: 100%"></div>
 
 
-                    <a href="#" data-role="button" data-theme="b" data-rel="back">Ok</a>
-                    <div class="ui-body-e" style="padding: 2px" id="groupsSearchListMapError">
+                    <a href="#" class="ui-btn ui-btn-b"    data-rel="back">Ok</a>
+                    <div class="ui-body-e ui-content" style="padding: 2px" id="groupsSearchListMapError">
                     </div>
 
                 </div>

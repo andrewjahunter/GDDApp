@@ -6,41 +6,23 @@
     <link href="../styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
     <link href="../styles/app.css" rel="stylesheet" />
     <link href="../styles/gdc.mobile.min.css" rel="stylesheet" />
-    <link href="../styles/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="../styles/jquery.mobile.structure-1.4.0.min.css" rel="stylesheet" />
     <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
 </head>
 <body style="background-color: #343131; color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
 
-    <div data-role="page" id="pg_followup" data-theme="a">
+    <div data-role="page" id="pg_followup" class="ui-page-theme-a" >
 
-        <div data-role="panel" id="pg_followup_menuPanel" data-display="push" data-theme="g">
-            <div style="width: 100%; max-width: 80px; max-height: 80px; margin-left: auto; margin-right: auto">
-                <img border="0" src="" class="menu_fbpic" alt="facebook profile pic" style="width: 100%; height: auto" />
-
-            </div>
-            <ul data-role="listview" data-theme="i" class="slideMenuListView" data-inset="true" id="' + panelId + '_menu_lv" data-divider-theme="g">
-               
-                <li><a href="#" class="menu_home">Home</a></li>
-                <li><a href="#" class="menu_sermons"><div data-bind="html:labels[1200]"></div></a></li>
-                <li><a href="#" class="menu_followup"><div data-bind="html:labels[1150]"></div></a></li>
-                <li><a href="#" class="menu_messages"><div data-bind="html:labels[1400]"></div></a></li>
-                <li><a href="#" class="menu_pinfo"><div data-bind="html:labels[1000]"></div></a></li>
-                <li><a href="#" class="menu_subs"><div data-bind="html:labels[1300]"></div></a></li>
-                <li><a href="#" class="menu_groups"><div data-bind="html:labels[1100]"></div></a></li>
-                <li><a href="#" class="menu_eventProfiles"><div data-bind="html:labels[1250]"></div></a></li>
-                <li><a href="#" class="menu_churchlife"><div data-bind="html:labels[1350]"></div></a></li>
-
-                <li> <a href="#" class="menu_closeMenu" data-theme="d">Close Menu</a></li>
-            </ul>
-        </div>
+        
 
         <div data-role="header">
-            <a href="#" id="pg_followup_showMenu" data-icon="bars" data-role="button"  data-theme="b">menu<span class="slideMenuButtonBubbleSpan" ></span></a>
-            <h1 class="pageHeader" id="pg_followup_header">follow up</h1>
-            <a href="home.html" data-icon="home" data-theme="b" data-transition="slide" data-direction="reverse" data-role="button" data-iconpos="notext">home</a>
+            <a href="#" id="pg_followup_showMenu" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-notext " >menu<span class="slideMenuButtonBubbleSpan" ></span></a>
+            <h1 class="pageHeader"  id="pg_followup_header">follow up</h1>
+            <a href="#" id="pgFUPGoHome" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-notext "     >home</a>
         </div>
         <!-- /header -->
-        <div data-role="content" style="padding: 15px">
+        <div  class="ui-content" style="padding: 15px">
 
             <script id="myfollowup-template" type="text/html">
                 <li>
@@ -65,7 +47,7 @@
             </div>
              
 
-             <a href="#fup_actionmenu" data-rel="popup" data-position-to="window" data-role="button" data-transition="slidedown" data-icon="gear" data-theme="i">Actions...</a>
+             <a href="#fup_actionmenu" data-rel="popup" data-position-to="window" class="ui-btn ui-btn-i ui-icon-bullets ui-btn-icon-left"   data-transition="slidedown" >Actions...</a>
             <div data-role="popup" id="fup_actionmenu" data-theme="i">
                 <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
 
@@ -81,7 +63,6 @@
 
 
 
-            <!--<button id="btnFUPNew" data-role="button" data-icon="plus" data-theme="b">New Follow Up</button>-->
             <div id="FUPList">
 
             
@@ -95,7 +76,7 @@
 
 
 
-                <div data-role="content" data-theme="h" class="ui-corner-bottom">
+                <div  class="ui-content ui-body-h  ui-corner-bottom">
 
                     <p>
                         We currently have no record of any people in the church that you are responsible for following up.
