@@ -3,7 +3,8 @@
 gdd.init = {
 
     // Wait for Cordova to load
-    indexPageLoaded:  function () {
+    indexPageLoaded: function () {
+        alert("Index Page Loaded")
         gdd.init.deviceIsReady = false;
 
         document.addEventListener("deviceready", gdd.init.onDeviceReady, false);
@@ -39,7 +40,8 @@ gdd.init = {
         }
     },
 
-    onDeviceReady:function () {
+    onDeviceReady: function () {
+        alert("Device Is Ready")
         navigator.splashscreen.hide();  
         gdd.init.deviceIsReady = true;
 
@@ -62,11 +64,12 @@ gdd.init = {
 
     isReady : function () {
         // return false;
-
+        alert("gdd.init.requireJsComplete=" + gdd.init.requireJsComplete)
         if (gdd.init.requireJsComplete) {
             if (gdd.views) {
 
                 if ($.mobile) {
+                    alert("$.mobile is ready")
                     if (gdd.init.isNativeApp()) {
 
                         if (window.gdd.init.deviceIsReady) {
@@ -82,6 +85,7 @@ gdd.init = {
                         return true;
                     }
                 } else {
+                    alert("$.mobile is NOT ready")
                     return false;
                 }
            
@@ -219,7 +223,7 @@ gdd.init = {
     
 
         var progressState = function () {
-
+            alert("Progress State")
             if ((gdd.init.onLine()) && (gdd.init.isReady())) {
                 window.clearInterval(gdd.init.progressStateInterval);
                 gdd.app.activePage = null //sets it to index page
