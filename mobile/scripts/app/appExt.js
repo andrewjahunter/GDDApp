@@ -9,6 +9,7 @@ gdd.init = {
 
         document.addEventListener("deviceready", gdd.init.onDeviceReady, false);
 
+        alert("Function: " + gdd.init.runIndexPageLoadingProcess)
         gdd.init.runIndexPageLoadingProcess();
     },
 
@@ -42,10 +43,12 @@ gdd.init = {
 
     onDeviceReady: function () {
         alert("Device Is Ready")
+        try {
+
         navigator.splashscreen.hide();  
         gdd.init.deviceIsReady = true;
 
-        try {
+        alert("Device Is Ready is set")
 
             document.addEventListener("resume", gdd.init.onAppResume, false);
 
@@ -190,7 +193,8 @@ gdd.init = {
 
     },
 
-    showPageIndexError : function (err) {
+    showPageIndexError: function (err) {
+        alert("page index error" + JSON.stringify(err))
         window.clearInterval(gdd.init.progressStateInterval);
 
         document.getElementById("indexErrMsg").innerHTML = err
