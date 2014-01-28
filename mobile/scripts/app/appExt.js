@@ -123,7 +123,7 @@ gdd.init = {
 
     onAppResume:  function () {
         try {
-            //alert("You must chage this code")
+            alert("App resume")
             //if ((gdd.init.isReady()) && (gdd.init.onLine())) {
            
             //    gdd.views.utils.processAppStart();
@@ -135,6 +135,12 @@ gdd.init = {
             //        window.location.href = gdd.init.indexPagePath();
             //    }
             //}
+
+                if (gdd.init.indexPageIsActive()) {
+                    gdd.init.runIndexPageLoadingProcess();
+                } else {
+                    window.location.href = gdd.init.indexPagePath();
+                }
         }
         catch (err) {
             gdd.init.showPageIndexError("The following error occurred when the application came online: " + err)

@@ -15,6 +15,7 @@
   <author href="http://phonegap.com" email="support@gododata.com">
     GoDo Team
   </author>
+  <preference name="permissions"                value="none"/>
 
   <preference name="splash-screen-duration" value="3000" />
   <preference name="phonegap-version"  value="3.1.0" />
@@ -27,7 +28,7 @@
   <preference name="exit-on-suspend"            value="false" />
   <preference name="android-minSdkVersion"      value="7" />
   <preference name="android-installLocation"    value="internalOnly" />
-
+  <preference name="auto-hide-splash-screen"    value="false" />
 
   <gap:plugin name="org.apache.cordova.splashscreen" />
   <gap:plugin name="com.phonegap.plugins.pushplugin" />
