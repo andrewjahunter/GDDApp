@@ -126,6 +126,27 @@ gdd.init = {
 
     onAppResume:  function () {
         try {
+            var restart = false;
+            try {
+                if (gdd.views.pageinfo) {
+                    if (!gdd.models.session.isSignedIn()) {
+                        restart = true
+                    }
+                } else {
+                    restart = true;
+                }
+            } catch (e) {
+                restart = true;
+            }
+           
+            if (restart) {
+                if (gdd.init.indexPagePath()) {
+                    window.location.href = gdd.init.indexPagePath()
+                } else {
+                    alert("While the application was dorment, the session data was lost. Please restart this appication.")
+                }
+            }
+            
             //alert("App resume")
             //if ((gdd.init.isReady()) && (gdd.init.onLine())) {
            
