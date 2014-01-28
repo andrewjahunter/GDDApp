@@ -207,6 +207,7 @@ gdd.init = {
 
     runIndexPageLoadingProcess : function () {
 
+        alert("Loading process")
     
 
         var attemptCount = 0;
@@ -263,7 +264,7 @@ gdd.init = {
 
 
         if (gdd.init.onLine()) {
-       
+       alert("About to call progress state")
             gdd.init.progressStateInterval = self.setInterval(function () {
 
                 progressState()
