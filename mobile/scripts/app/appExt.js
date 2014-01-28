@@ -139,11 +139,13 @@ gdd.init = {
             //    }
             //}
 
-                if (gdd.init.indexPageIsActive()) {
-                    gdd.init.runIndexPageLoadingProcess();
-                } else {
-                    window.location.href = gdd.init.indexPagePath();
-                }
+            location.reload()
+
+                //if (gdd.init.indexPageIsActive()) {
+                //    gdd.init.runIndexPageLoadingProcess();
+                //} else {
+                //    window.location.href = gdd.init.indexPagePath();
+                //}
         }
         catch (err) {
             gdd.init.showPageIndexError("The following error occurred when the application came online: " + err)
