@@ -128,7 +128,9 @@ gdd.init = {
         try {
             var restart = false;
             try {
+                alert(JSON.stringify(gdd.views.pageinfo))
                 if (gdd.views.pageinfo) {
+                    alert(gdd.models.session.isSignedIn())
                     if (!gdd.models.session.isSignedIn()) {
                         restart = true
                     }
@@ -136,11 +138,13 @@ gdd.init = {
                     restart = true;
                 }
             } catch (e) {
+                alert("oops:" + err)
                 restart = true;
             }
-           
+           alert("restart: " + restart)
             if (restart) {
                 if (gdd.init.indexPagePath()) {
+                    alert("href: " + gdd.init.indexPagePath())
                     window.location.href = gdd.init.indexPagePath()
                 } else {
                     alert("While the application was dorment, the session data was lost. Please restart this appication.")
