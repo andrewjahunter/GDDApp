@@ -18,6 +18,8 @@
        // alert("App Code on Index")
         
         gdd.init.appInfo = 'appcode:1000|version:1.1.3'
+        alert("Location: " + window.location.href)
+        gdd.init.pathToIndexPage = window.location.href;
        // alert(gdd.init.appInfo)
     </script>
  
@@ -52,7 +54,7 @@
            </ul>
        </div>
 
-       <div data-role="popup" id="globalErrorMessage" data-overlay-theme="b" data-theme="e" data-dismissible="false" style="max-width:400px;">
+       <div data-role="popup" id="globalErrorMessage"  data-overlay-theme="b" data-theme="e" data-dismissible="false" style="max-width: 400px; display: none">
            <div data-role="header" data-theme="e">
                <h1 id="glbErrMsgHeader"></h1>
            </div>
