@@ -3,12 +3,9 @@
 <head>
     <title>Messages</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
-    <link href="../styles/app.css" rel="stylesheet" />
-    <link href="../styles/gdc.mobile.min.css" rel="stylesheet" />
-    <link href="../styles/jquery.mobile.icons.min.css" rel="stylesheet" />
-    <link href="../styles/jquery.mobile.structure-1.4.0.min.css" rel="stylesheet" />
-    <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
+    <script type="text/javascript">
+        window.location.href = "http://m.godochurch.com";
+    </script>
 </head>
 <body style="background-color: #343131; color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
 
@@ -16,7 +13,7 @@
         
         <div data-role="header">
             <a href="#" id="pg_messages_showMenu" class="ui-btn ui-btn-b ui-icon-bars ui-btn-icon-notext"    >menu</a>
-            <h1 class="pageHeader" id="pg_messages_header">Messages</h1>
+            <h1 class="pageHeader" id="pg_messages_header" data-bind="html:labels[1400]">messages</h1>
 
         </div>
         <!-- /header -->
@@ -49,7 +46,7 @@
 
 
             <div class="filter-flipswitch">
-                <label for="MsgViewed"><small>Only show me Un-Ready Messages:</small></label>
+                <label for="MsgViewed"><small>Only show me Un-Read Messages:</small></label>
                 <select name="MsgViewed" id="MsgViewed" data-theme="b" data-role="flipswitch" class="ui-mini" >
                     <option value="0" selected="selected">Yes</option>
                     <option value="-1">No</option>

@@ -3,12 +3,9 @@
 <head>
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../styles/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" />
-    <link href="../styles/app.css" rel="stylesheet" />
-    <link href="../styles/gdc.mobile.min.css" rel="stylesheet" />
-    <link href="../styles/jquery.mobile.icons.min.css" rel="stylesheet" />
-    <link href="../styles/jquery.mobile.structure-1.4.0.min.css" rel="stylesheet" />
-    <script data-main="../scripts/app/appstart.min.js" src="../../scripts/libraries/require.js"></script>
+    <script type="text/javascript">
+        window.location.href = "http://m.godochurch.com";
+    </script>
 </head>
 <body style="background-color: #343131; color: white; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif">
     <div data-role="page" id="pg_groupsessions" class="ui-page-theme-a">
@@ -177,17 +174,13 @@
                       
                             <script id="grpSessionAttendance-template" type="text/html">
                                 <li  >
-                                    <div class="ui-bar ui-bar-b" data-bind="html:name, visible:attended()">
-                                        
-
+                                    <div class="ui-bar ui-bar-b" data-bind="html:name, visible:attended()">                                        
                                     </div>
 
                                     <div class="ui-bar ui-bar-a" data-bind="html:name, visible:!attended()">
-
-
                                     </div>
                                     
-                                    <div style="float:right" >
+                                    <div style="text-align:center" >
                                         <input type="checkbox" data-role="flipswitch" data-theme="a" data-off-text="No" data-on-text="Yes" data-bind="checked:attended,attr:{'data-id':id}" class="ui-mini grpSessionAttFlipSwtch">
 
                                     </div>
