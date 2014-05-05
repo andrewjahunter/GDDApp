@@ -57,6 +57,13 @@ gdd.init = {
         try {
             gdd.init.deviceIsReady = true;
 
+            try {
+                StatusBar.overlaysWebView(false);
+                StatusBar.hide();
+            } catch (e) {
+                alert("STATUS BAR ERROR: " + JSON.stringify(e))
+            }
+           
 
             setTimeout(function () {
                 navigator.splashscreen.hide();
