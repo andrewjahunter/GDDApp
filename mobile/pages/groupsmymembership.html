@@ -22,62 +22,64 @@
         </div>
         <!-- /header -->
         <div  class="ui-content" style="padding: 15px">
-            <div  id="grpMemErr" class="ui-content ui-body-e" style="text-align:center; display:none"></div>
 
-            <div id="grpMemResults" style="display:none">
+            <div class="pageViewContent">
+                <div id="grpMemErr" class="ui-content ui-body-e" style="text-align:center; display:none"></div>
 
-                <script id="groupsmemhist-template" type="text/html">
-                    <li data-role="list-divider">
-                        <div data-bind="text: groupName" style="text-align:center; font-size:large"></div>
+                <div id="grpMemResults" style="display:none">
 
-                    </li>
+                    <script id="groupsmemhist-template" type="text/html">
+                        <li data-role="list-divider">
+                            <div data-bind="text: groupName" style="text-align:center; font-size:large"></div>
 
-                    <li>
-                        <div data-bind="html: 'Leader: ' + leaderName" style="font-size: small"></div>
-                        <div data-bind="html: 'Email: ' + leaderEmail" style="font-size: small"></div>
-                        <div data-bind="html: 'Cell Number: ' + leaderMobile" style="font-size: small"></div>
-                        <hr/>
-                        <div  class="ui-content ui-body-h" data-bind="foreach: statusItems">
-                            <div data-bind="html: 'On ' + statusDate + ' your status was ' + statusDisplay" style="font-size: small"></div>                                                       
-                        </div>                      
-                    </li>
-                </script>
+                        </li>
 
-                <div class="ui-bar ui-bar-h">
-                    <div style="text-align:center">Your Membership</div>
+                        <li>
+                            <div data-bind="html: 'Leader: ' + leaderName" style="font-size: small"></div>
+                            <div data-bind="html: 'Email: ' + leaderEmail" style="font-size: small"></div>
+                            <div data-bind="html: 'Cell Number: ' + leaderMobile" style="font-size: small"></div>
+                            <hr />
+                            <div class="ui-content ui-body-h" data-bind="foreach: statusItems">
+                                <div data-bind="html: 'On ' + statusDate + ' your status was ' + statusDisplay" style="font-size: small"></div>
+                            </div>
+                        </li>
+                    </script>
+
+                    <div class="ui-bar ui-bar-h">
+                        <div style="text-align:center">Your Membership</div>
+
+                    </div>
+                    <div class="ui-content ui-body-h" style="text-align:center; font-size:small">
+                        <div>Below you will find your membership history status from all the groups you have been involved with.</div>
+
+                    </div>
+
+
+
+
+
+
+                    <ul data-role="listview" data-inset="true" data-divider-theme="b" data-theme="a" id="grpMemHistoryListView" data-bind="template: { name: 'groupsmemhist-template', foreach: loadedResults}"></ul>
+                </div>
+
+
+                <div id="grpMemNone" style="display:none">
+
+                    <div class="ui-bar ui-bar-h">
+                        <div style="text-align:center">No Membership</div>
+
+                    </div>
+                    <div class="ui-content ui-body-h">
+
+                        <p>
+                            We do not have any membership history data for your account?
+                        </p>
+
+                    </div>
 
                 </div>
-                <div  class="ui-content ui-body-h" style="text-align:center; font-size:small">
-                    <div>Below you will find your membership history status from all the groups you have been involved with.</div>
-                   
-                </div>
-                
-
-                
-
-
-
-                <ul data-role="listview" data-inset="true" data-divider-theme="b" data-theme="a" id="grpMemHistoryListView" data-bind="template: { name: 'groupsmemhist-template', foreach: loadedResults}"></ul>
             </div>
-
-
-            <div  id="grpMemNone" style="display:none" >
-
-                <div class="ui-bar ui-bar-h">
-                    <div style="text-align:center">No Membership</div>
-
-                </div>
-                <div  class="ui-content ui-body-h" >
-                    
-                    <p>
-                        We do not have any membership history data for your account?
-                    </p>
-                   
-                </div>
-
             </div>
-   
-        </div>
 
         <!-- /page -->
     </div>

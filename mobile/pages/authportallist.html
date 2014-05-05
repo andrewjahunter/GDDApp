@@ -90,57 +90,59 @@
                 </li>
             </script>
 
-
-            <a href="#sg_list_actionmenu" data-rel="popup" data-position-to="window"  class="ui-btn ui-btn-i ui-icon-bullets ui-btn-icon-left"  data-transition="pop"  >Actions...</a>
-            <div data-role="popup" id="sg_list_actionmenu" data-theme="i">
-                <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
-
-                    <li><a href="#" id="btnAuthPortalOpenSearch">Connect to New Church</a></li>
-
-                    <li><a href="#" id="pg_authportal_help" data-transition="slideup" data-position-to="window">What is this?</a></li>
-                    <li><a href="#" data-rel="back">Cancel</a></li>
+            <div class="pageViewContent">
 
 
-                </ul>
+                <a href="#sg_list_actionmenu" data-rel="popup" data-position-to="window" class="ui-btn ui-btn-i ui-icon-bullets ui-btn-icon-left" data-transition="pop">Actions...</a>
+                <div data-role="popup" id="sg_list_actionmenu" data-theme="i">
+                    <ul data-role="listview" data-inset="true" style="min-width: 210px;" data-theme="i">
+
+                        <li><a href="#" id="btnAuthPortalOpenSearch">Connect to New Church</a></li>
+
+                        <li><a href="#" id="pg_authportal_help" data-transition="slideup" data-position-to="window">What is this?</a></li>
+                        <li><a href="#" data-rel="back">Cancel</a></li>
+
+
+                    </ul>
+                </div>
+                <div id="pg_authportals_exists">
+
+                    <div class="ui-content  ui-body-h" style="text-align:center; font-size:small">
+                        Below are the churches that you have an account with. Cick the church name to 'Sign In' or click on the
+                        <a href="#" class="ui-btn ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-inline"></a> icon to remove this church from your account.
+                    </div>
+
+
+                    <div id="divAuthPortals">
+                        <ul data-role="listview" data-split-icon="delete" data-split-theme="a" data-inset="true" data-theme="b" id="portalList" data-bind="template: { name: 'portallist-template', foreach: authorizedPortals}"></ul>
+                    </div>
+                </div>
+
+
+
+                <div id="pg_authportal_noportal" style="display: none">
+
+                    <div data-role="header" data-theme="h" class="ui-corner-top">
+                        <h1>Activate</h1>
+                    </div>
+
+
+
+                    <div class="ui-corner-bottom ui-content ui-body-h">
+
+                        <p>
+                            There are currently <strong>no active churches</strong> registered in your profile. This is most likely because you have
+                            <strong>just signed in</strong> for the first time.
+                        </p>
+                        <p>
+                            <strong>TO START: </strong>you need to activate at least one church in your profile. To find the church you are looking for click the button below.
+                        </p>
+                        <button id="btnAddFirstPortal" class="ui-btn ui-btn-h">Connect New Church</button>
+                    </div>
+
+                </div>
+
             </div>
-            <div id="pg_authportals_exists">
-
-                <div class="ui-content  ui-body-h" style="text-align:center; font-size:small">
-                    Below are the churches that you have an account with. Cick the church name to 'Sign In' or click on the 
-                    <a href="#" class="ui-btn ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-inline"></a> icon to remove this church from your account.
-                </div>
-
-
-                <div id="divAuthPortals">
-                    <ul data-role="listview" data-split-icon="delete" data-split-theme="a" data-inset="true" data-theme="b" id="portalList" data-bind="template: { name: 'portallist-template', foreach: authorizedPortals}"></ul>
-                </div>
-            </div>
-
-
-
-            <div id="pg_authportal_noportal" style="display: none">
-
-                <div data-role="header" data-theme="h" class="ui-corner-top">
-                    <h1>Activate</h1>
-                </div>
-
-
-
-                <div  class="ui-corner-bottom ui-content ui-body-h"   >
-
-                    <p>
-                        There are currently <strong>no active churches</strong> registered in your profile. This is most likely because you have
-                        <strong>just signed in</strong> for the first time. 
-                    </p>
-                    <p>
-                        <strong>TO START: </strong>you need to activate at least one church in your profile. To find the church you are looking for click the button below. 
-                    </p>
-                    <button id="btnAddFirstPortal"  class="ui-btn ui-btn-h"  >Connect New Church</button>
-                </div>
-
-            </div>
-
-
             <div data-role="popup" id="pg_authportals_activate_help" data-overlay-theme="a" style="max-width: 400px; "
                 class="ui-corner-all">
                 <div data-role="header" data-theme="h" class="ui-corner-top">

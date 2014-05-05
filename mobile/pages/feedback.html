@@ -13,46 +13,64 @@
   
         <div data-role="header">
            
-            <h1 class="pageHeader" >feedback</h1>
+            <h1 class="pageHeader" >Feedback</h1>
         </div>
 
 
         <div  class="ui-content" style="padding: 15px">
 
-            <div data-role="popup" class="ui-content" id="errpopupFeedback" data-theme="e">
-                <div id="errpopmessageFeedback"></div>
-            </div>
-          
-            <form id="pg_feedback_form">
-              
-                <div  class="ui-field-contain">
-                        <label for="ddlFeedbackType">
-                            Type                      
-                        </label>
-                        <select id="ddlFeedbackType"   >
-                            <option value="Compliment" selected="selected">Compliment</option>
-                            <option value="Error">Error</option>
-                            <option value="Idea">Idea</option>
-                         
-                        </select>
+            <div class="pageViewContent">
 
+
+                <div class="ui-body-d  ui-corner-all" style="padding: 10px">
+                    <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align:center">
+                        <strong>Giving Feedback</strong>
                     </div>
 
-               <div  class="ui-field-contain">
-                    <label for="txtFeedback">Feedback</label>
-                      <textarea style="height: 100px; width: 100%" id="txtFeedback"></textarea>
+                    <p>
+                        Thank you for helping us improve this appication. To ensure that we get your feedback
+                        please send and email to <strong>support@gododata.com</strong>
+
+                    </p>
+                    <p>Thank you.</p>
                 </div>
 
-              
-            </form>
+                <a href="#" id="btnFeedbackOk" class="ui-btn ui-btn-a  ">Ok</a>
+                
 
+                <!--<form id="pg_feedback_form">
 
-            <button type="button" id="btnFeedbackSend" class="ui-btn ui-btn-b"   >
-                send</button>
-              
-            <a id="btnFeedbackCancel"   class="ui-btn ui-btn-a "   href="#" >cancel</a>
+        <div class="ui-field-contain">
+            <label for="ddlFeedbackType">
+                Type
+            </label>
+            <select id="ddlFeedbackType">
+                <option value="Compliment" selected="selected">Compliment</option>
+                <option value="Error">Error</option>
+                <option value="Idea">Idea</option>
+
+            </select>
 
         </div>
+
+        <div class="ui-field-contain">
+            <label for="txtFeedback">Feedback</label>
+            <textarea style="height: 100px; width: 100%" id="txtFeedback"></textarea>
+        </div>
+
+
+    </form>-->
+                <!--<button type="button" id="btnFeedbackSend" class="ui-btn ui-btn-b">
+        send
+    </button>
+
+    <a id="btnFeedbackCancel" class="ui-btn ui-btn-a " href="#">cancel</a>-->
+
+            </div>
+
+               
+
+            </div>
 
 
 

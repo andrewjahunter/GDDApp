@@ -19,132 +19,110 @@
         </div>
 
         <div data-role="content" style="padding: 15px">
-            <div style="width: 72px; margin-left: auto; margin-right: auto">
-                <img src="../img/inAppIcon.png" style="width: 100%; height: auto" />
-            </div>
-            <div data-role="popup" class="ui-content" id="pg_reg2_errpopup" data-theme="e">
-                <div id="pg_reg2_errmsg"></div>
-            </div>
-            <form id="pg_register2_form">
-                <div data-role="fieldcontain">
-                    <label for="txtReg2UserName">
-                        User Name
-                    </label>
 
-                    <input id="txtReg2UserName" name="username" data-bind="value: userName" placeholder="user name" type="text" />
 
+            <div class="pageViewContent">
+
+
+
+                <!--<div style="width: 72px; margin-left: auto; margin-right: auto">
+                    <img src="../img/inAppIcon.png" style="width: 100%; height: auto" />
+                </div>-->
+                <div data-role="popup" class="ui-content" id="pg_reg2_errpopup" data-theme="e">
+                    <div id="pg_reg2_errmsg"></div>
                 </div>
-                <div data-role="fieldcontain">
+                <form id="pg_register2_form">
+                    <div data-role="fieldcontain">
+                        <label for="txtReg2UserName">
+                            User Name
+                        </label>
 
-                    <label for="txtReg2PWD">
-                        Password
-                    </label>
-                    <input id="txtReg2PWD" name="password" data-bind="value: password" placeholder="password" type="password" />
+                        <input id="txtReg2UserName" name="username" data-bind="value: userName" placeholder="user name" type="text" />
 
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="txtReg2PWDConfirm">
-                        Confirm Password
-                    </label>
-                   
+                    </div>
+                    <div data-role="fieldcontain">
+
+                        <label for="txtReg2PWD">
+                            Password
+                        </label>
+                        <input id="txtReg2PWD" name="password" data-bind="value: password" placeholder="password" type="password" />
+
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="txtReg2PWDConfirm">
+                            Confirm Password
+                        </label>
+
                         <input id="txtReg2PWDConfirm" name="passwordconfirm" placeholder="retype password" type="password" />
-                        
-                    
-                </div>
-
-                <a href="#pg_reg2_pwdinvalid"  data-rel="popup" data-position-to="window"   data-transition="slideup">View Password Requirements</a>
-                      
-            </form>
-
-
-            <div class="ui-btn ui-btn-b"  id="btnReg2Register" >register</div>
-
-
-            <div data-role="popup" id="reg2PopupFail" style="max-width: 450px;"
-                class="ui-corner-all">
-                <div data-role="header" data-theme="e" class="ui-corner-top">
-                    <h1>Failed?</h1>
-                </div>
-                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
-                    <h3 class="ui-title">We are not able to register you at this time</h3>
-                    <p id="reg2PopupFailMsg">
-                    </p>
-                    <a href="#" class="ui-btn ui-btn-e" data-rel="back" >try again</a>
-
-                </div>
-            </div>
-
-
-
-            <div data-role="popup" id="reg2PopupSuccess" data-overlay-theme="a" style="max-width: 450px;"
-                class="ui-corner-all">
-                <div data-role="header" data-theme="c" class="ui-corner-top">
-                    <h1>Success!!</h1>
-                </div>
-                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
-                    <h3 class="ui-title">Registration Succeeded</h3>
-                    <p id="p1">
-                        A verification email  has been sent to the email address you provided. Please click the imbedded link to activate your account.
-                    </p>
-                    <!--<div class="ui-btn ui-btn-c" id="btnReg2TakeTour">take a quick tour</div>-->
-                    <div class="ui-btn ui-btn-a"  id="btnReg2SignIn">sign in</div>
-
-
-                </div>
-            </div>
-
-            <div data-role="popup" id="pg_reg2_username_exists" data-overlay-theme="a" data-theme="d" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
-                <div data-role="header" data-theme="d" class="ui-corner-top">
-                    <h1>Taken!</h1>
-                </div>
-                <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
-                    <h3 class="ui-title">This username has already been taken!</h3>
-                    <p>
-                        If you have ever registered with any of the churches on either gododata or gododchurch you can simply use those
-                    same login credentials to sign in here.
-
-                    </p>
-                    <p>If you have forgotten your information, please click forgot info button.</p>
-                    <a href="#" class="ui-btn ui-btn-d" data-rel="back" >ok</a>
-                    <a href="#" class="ui-btn ui-btn-a" id="btnReg2ForgotInfo" >forgot info?</a>
-                </div>
-            </div>
-
-            <div data-role="popup" id="pg_reg2_pwdinvalid" data-overlay-theme="a" data-theme="h" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
-                <div data-role="header" data-theme="h"  class="ui-corner-top">
-                    <h1>Password!</h1>
-                </div>
-                <div data-role="content" data-theme="h"  class="ui-corner-bottom ui-content">
-                    <h3 class="ui-title">Password Requirements!</h3>
-                    <div>
-                        A password must be at least 5 characters long and:
-                        <ul>
-                            <li>contain at least 1 number (0-9)</li>
-                            <li>contain at least 1 lower case letter (a-z)</li>
-                            <li>and contain at least 1 upper case letter (A-Z)</li>
-                        </ul>
-
 
 
                     </div>
 
-                    <a href="#" class="ui-btn ui-btn-h"  data-rel="back" >ok</a>
+                    <a href="#pg_reg2_pwdinvalid" data-rel="popup" data-position-to="window" data-transition="slideup">View Password Requirements</a>
 
+                </form>
+
+
+                <div class="ui-btn ui-btn-b" id="btnReg2Register">register</div>
+
+
+
+                <div data-role="popup" id="reg2PopupSuccess" data-overlay-theme="a" style="max-width: 450px;"
+                     class="ui-corner-all">
+                    <div data-role="header" data-theme="c" class="ui-corner-top">
+                        <h1>Success!!</h1>
+                    </div>
+                    <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                        <h3 class="ui-title">Registration Succeeded</h3>
+                        <p id="p1">
+                            A verification email  has been sent to the email address you provided. Please click the imbedded link to activate your account.
+                        </p>
+                        <!--<div class="ui-btn ui-btn-c" id="btnReg2TakeTour">take a quick tour</div>-->
+                        <div class="ui-btn ui-btn-a" id="btnReg2SignIn">Sign In</div>
+
+
+                    </div>
                 </div>
+
+
+
+                <div data-role="popup" id="pg_reg2_pwdinvalid" data-overlay-theme="a" data-theme="h" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
+                    <div data-role="header" data-theme="h" class="ui-corner-top">
+                        <h1>Password!</h1>
+                    </div>
+                    <div data-role="content" data-theme="h" class="ui-corner-bottom ui-content">
+                        <h3 class="ui-title">Password Requirements!</h3>
+                        <div>
+                            A password must be at least 5 characters long and:
+                            <ul>
+                                <li>contain at least 1 number (0-9)</li>
+                                <li>contain at least 1  letter </li>
+
+                            </ul>
+
+
+
+                        </div>
+
+                        <a href="#" class="ui-btn ui-btn-h" data-rel="back">OK</a>
+
+                    </div>
+                </div>
+
+                <div data-role="popup" id="popupReg2MissingData" data-overlay-theme="a" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
+                    <div data-role="header" data-theme="e" class="ui-corner-top">
+                        <h1>Missing?</h1>
+                    </div>
+                    <div data-role="content" class="ui-corner-bottom ui-content">
+
+                        <p>You are missing some data. All the fields above need to be completed and a valid email address provided</p>
+                        <button id="btnReg2CloseMissingDataMsg" class="ui-btn ui-btn-e">Ok</button>
+
+                    </div>
+                </div>
+
             </div>
-
-            <div data-role="popup" id="popupReg2MissingData" data-overlay-theme="a" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
-                <div data-role="header" data-theme="e" class="ui-corner-top">
-                    <h1>Missing?</h1>
-                </div>
-                <div data-role="content" class="ui-corner-bottom ui-content">
-
-                    <p>You are missing some data. All the fields above need to be completed and a valid email address provided</p>
-                    <button id="btnReg2CloseMissingDataMsg" class="ui-btn ui-btn-e" >Ok</button>
-
-                </div>
             </div>
-        </div>
 
     </div>
 

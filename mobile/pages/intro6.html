@@ -15,30 +15,31 @@
             <h1 class="pageHeader">reports</h1>
         </div>
         <div class="ui-content" style="padding: 15px">
-            <div style="width: 100%; width: 120px; height: 120px; margin-left: auto; margin-right: auto">
-                <img src="../img/reports.png" style="width: 100%; height: auto" />
-            </div>
+            <div class="pageViewContent">
 
-            <div class="ui-body-d  ui-corner-all" style="padding: 10px">
-                <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align:center">
-                    <strong>Get your reports on your phone</strong>
+                <div style="width: 100%; width: 120px; height: 120px; margin-left: auto; margin-right: auto">
+                    <img src="../img/appimg/reports2.png" style="width: 100%; height: auto" />
                 </div>
 
-                <p>
-                    Depending on your account profile you will have access to many of your reports right here on your handset. These reports include your
-                    Giving History, Donations Summary, Pastorate Profiles and Small Groups Lists.
+                <div class="ui-body-d  ui-corner-all" style="padding: 10px">
+                    <div class="ui-body-c  ui-corner-all" style="padding: 10px; text-align:center">
+                        <strong>Get your reports on your phone</strong>
+                    </div>
 
-                </p>
+                    <p>
+                        Access many of the reports that are available on your pofile from your mobile phone.
+
+                    </p>
+                </div>
+
+                <a href="#" id="pgInt6GoBack" class="ui-btn ui-btn-a ui-btn-inline ">back</a>
+                <a href="#" id="pgInt6GoToIntFinal" class="ui-btn ui-btn-b ui-btn-inline " data-transition="flow">next</a>
+
             </div>
 
-            <a href="#" id="pgInt6GoBack" class="ui-btn ui-btn-a ui-btn-inline ">back</a>
-            <a href="#" id="pgInt6GoToIntFinal" class="ui-btn ui-btn-b ui-btn-inline " data-transition="flow">next</a>
 
 
-
-
-
-        </div>
+            </div>
 
         <script>
             $("#pg_intro6").on('swipeleft', function () {
@@ -64,7 +65,7 @@
 
             $("#pgInt6GoBack").on(gdd.app.userTap, function () {
 
-                gdd.app.loadPage(gdd.views.pageinfo.intro, { transition: "flow", reverse: true })
+                gdd.app.loadPage(gdd.views.pageinfo.intro5, { transition: "flow", reverse: true })
             })
 
 

@@ -2,9 +2,17 @@
 
 gdd.init = {
 
+  
+
+
+    
+    baseApiUrl: null,
+
+    
     // Wait for Cordova to load
     indexPageLoaded: function () {
         //alert("Index Page Loaded")
+
         gdd.init.deviceIsReady = false;
 
         document.addEventListener("deviceready", gdd.init.onDeviceReady, false);
@@ -13,18 +21,18 @@ gdd.init = {
         gdd.init.runIndexPageLoadingProcess();
     },
 
-    isNativeApp : function () {
+    isNativeApp: function () {
 
-        if ((document.URL.indexOf('http://') === -1) && (document.URL.indexOf('https://') === -1)) {      
+        if ((document.URL.indexOf('http://') === -1) && (document.URL.indexOf('https://') === -1)) {
             return true
-        } else {        
+        } else {
             return false
         }
     },
 
-    pathToIndexPage:"",
+    pathToIndexPage: "",
 
-    indexPagePath : function () {
+    indexPagePath: function () {
 
         return gdd.init.pathToIndexPage;
         //if (gdd.init.indexPageIsActive()) {
@@ -35,7 +43,7 @@ gdd.init = {
 
     },
 
-    indexPageIsActive : function () {
+    indexPageIsActive: function () {
         if (location.href.indexOf('index') !== -1) {
             return true;
         } else {
@@ -54,9 +62,9 @@ gdd.init = {
                 navigator.splashscreen.hide();
             }, 3000)
 
-         
 
-        //alert("Device Is Ready is set")
+
+            //alert("Device Is Ready is set")
 
             document.addEventListener("resume", gdd.init.onAppResume, false);
 
@@ -73,8 +81,8 @@ gdd.init = {
 
     },
 
-    isReady : function () {
-        // return false;
+    isReady: function () {
+        //return false;
         //alert("gdd.init.requireJsComplete=" + gdd.init.requireJsComplete)
         if (gdd.init.requireJsComplete) {
             if (gdd.views) {
@@ -100,7 +108,7 @@ gdd.init = {
                     //alert("$.mobile is NOT ready")
                     return false;
                 }
-           
+
 
             } else {
                 //alert("ir views is false")
@@ -112,7 +120,7 @@ gdd.init = {
         }
     },
 
-    onLine : function () {
+    onLine: function () {
 
         if (window.navigator.onLine) {
             // alert("navigator ONLINE")
@@ -124,11 +132,11 @@ gdd.init = {
 
     },
 
-    onAppResume:  function () {
+    onAppResume: function () {
         try {
             var restart = false;
             try {
-               // alert(JSON.stringify(gdd.views.pageinfo))
+                // alert(JSON.stringify(gdd.views.pageinfo))
                 if (gdd.views.pageinfo) {
                     //alert(gdd.models.session.isSignedIn())
                     if (!gdd.models.session.isSignedIn()) {
@@ -138,25 +146,25 @@ gdd.init = {
                     restart = true;
                 }
             } catch (e) {
-               // alert("oops:" + err)
+                // alert("oops:" + err)
                 restart = true;
             }
-          // alert("restart: " + restart)
+            // alert("restart: " + restart)
             if (restart) {
                 if (gdd.init.indexPagePath()) {
-                   // alert("href: " + gdd.init.indexPagePath())
+                    // alert("href: " + gdd.init.indexPagePath())
                     window.location.href = gdd.init.indexPagePath()
                 } else {
                     alert("While the application was dorment, the session data was lost. Please restart this appication.")
                 }
             }
-            
+
             //alert("App resume")
             //if ((gdd.init.isReady()) && (gdd.init.onLine())) {
-           
+
             //    gdd.views.utils.processAppStart();
             //} else {
-           
+
             //    if (gdd.init.indexPageIsActive()) {
             //        runProgressState()
             //    } else {
@@ -195,18 +203,18 @@ gdd.init = {
 
             //location.reload()
 
-                //if (gdd.init.indexPageIsActive()) {
-                //    gdd.init.runIndexPageLoadingProcess();
-                //} else {
-                //    window.location.href = gdd.init.indexPagePath();
-                //}
+            //if (gdd.init.indexPageIsActive()) {
+            //    gdd.init.runIndexPageLoadingProcess();
+            //} else {
+            //    window.location.href = gdd.init.indexPagePath();
+            //}
         }
         catch (err) {
             gdd.init.showPageIndexError("The following error occurred when the application came online: " + err)
         }
     },
 
-    wentOnline:function () {
+    wentOnline: function () {
         try {
             //alert("Work on this")
 
@@ -232,7 +240,7 @@ gdd.init = {
 
     },
 
-    wentOffline:function() {
+    wentOffline: function () {
         try {
             //// alert("offline fired")
             //window.gdd.appWentOffline = true;
@@ -247,13 +255,13 @@ gdd.init = {
 
         }
         catch (err) {
-        
+
             gdd.init.showPageIndexError("The following occurred when app went offline: " + err);
         }
 
     },
 
-    onMenuKeyDown:function() {
+    onMenuKeyDown: function () {
         try {
             //alert("Go Home")
             //$.mobile.changePage(gdd.views.pageinfo.home.path)
@@ -265,96 +273,154 @@ gdd.init = {
     },
 
     showPageIndexError: function (err) {
-       // alert("page index error" + JSON.stringify(err))
-        window.clearInterval(gdd.init.progressStateInterval);
+        // alert("page index error" + JSON.stringify(err))
+        var progMsg = document.getElementById("progressState");
 
-        document.getElementById("indexErrMsg").innerHTML = err
-
-        var e = document.getElementById("errConnection");
-        e.style.display = 'block'
-
-        var z = document.getElementById("progressDiv");
-        z.style.display = 'none'
+        progMsg.innerHTML = err;
+       
 
     },
 
     progressStateInterval: {},
 
-    runIndexPageLoadingProcess : function () {
-
-        //alert("Loading process")
-    
+    runIndexPageLoadingProcess: function () {
 
         var attemptCount = 0;
-       
 
-        var errorElem = document.getElementById("errConnection");
-        errorElem.style.display = 'none';
+        var rotateSplash = function (done_clb) {
 
-        var progElem = document.getElementById("progressDiv");
-        progElem.style.display = 'block';
+            var splshDuration = 750;
 
-        var progMsg = document.getElementById("progressState");
+            var fadeMeToggle = function fade(type, el, duration, IEsupport, clb) {
 
-    
-
-        var progressState = function () {
-           // alert("Progress State")
-            //alert("ONlien State: " + gdd.init.onLine())
-            //alert("ReadyState: " + gdd.init.isReady())
-            if ((gdd.init.onLine()) && (gdd.init.isReady())) {
-                window.clearInterval(gdd.init.progressStateInterval);
-                 //sets it to index page
-                gdd.app.initializeApplication()
-            
+                try {
+                    if (el) {
 
 
-            } else {
-                attemptCount += 1;
-                if (attemptCount === 9) {
-                    window.clearInterval(gdd.init.progressStateInterval);
+                        var isIn = (type == 'in'),
+                            IE = (IEsupport) ? IEsupport : false,
+                            opacity = isIn ? 0 : 1,
+                            interval = 50,
+                            gap = interval / duration;
 
-                    gdd.init.showPageIndexError("Your device is either not connected to the internet or the connection is very slow. Please connect to the internet and try again.")
-                } else {
-                    try {
-                        progMsg.innerHTML = stateArr[attemptCount]
+                        if (isIn) {
+                            el.style.display = 'block';
+                            el.style.opacity = opacity;
+                            if (IE) {
+                                el.style.filter = 'alpha(opacity=' + opacity + ')';
+                                el.style.filter = 'progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity + ')';
+                            }
+                        }
+
+                        function func() {
+                            opacity = isIn ? opacity + gap : opacity - gap;
+                            el.style.opacity = opacity;
+                            if (IE) {
+                                el.style.filter = 'alpha(opacity=' + opacity * 100 + ')';
+                                el.style.filter = 'progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity * 100 + ')';
+                            }
+                            if (opacity <= 0 || opacity >= 1) { window.clearInterval(fading); clb() }
+
+                            if (opacity <= 0) { el.style.display = "none"; }
+                        }
+                        var fading = window.setInterval(func, interval);
+
                     }
-                    catch (err) {
-                        progMsg.innerHTML = "Error: " + err
-                    }
+                }
+                catch (err) {
+
                 }
             }
 
+
+            var splshNext = document.getElementById(splshView.getAttribute("data-nextid"));
+
+            fadeMeToggle("out", splshView, splshDuration, true, function () {
+                fadeMeToggle("in", splshNext, splshDuration, true, function () {
+                    splshView = splshNext
+                    done_clb();
+                })
+            })
+
+        }
+
+        var checkProgress = function () {
+            if ((gdd.init.onLine()) && (gdd.init.isReady())) {
+
+                         
+                gdd.app.initializeApplication()
+
+                var runSplashTransition = function () {
+
+                    setTimeout(function () {
+
+                        rotateSplash(function () {
+                            if (gdd.init.indexPageIsActive()) {
+                                runSplashTransition();
+                            } 
+
+                        })
+
+                    }, 3000);
+
+                }
+
+                runSplashTransition();
+
+               
+            } else {
+                attemptCount += 1;
+                if (attemptCount === 5) {
+                  
+                    document.getElementById("btnIdxErrConn").style.display = 'block';
+                    progMsg.innerHTML = "You are not connected to the Internet.";
+
+                } else {
+                  
+
+                    setTimeout(function () {
+
+                        rotateSplash(function () {
+                            progMsg.innerHTML = stateArr[attemptCount]
+
+                            checkProgress();
+                        })
+
+                    }, 3000);
+
+
+                   
+                   
+                }
+            }
         }
 
         var stateArr = new Array()
-        stateArr[0] = "initializing..."
-        stateArr[1] = "loading api..."
-        stateArr[2] = "loading required files..."
-        stateArr[3] = "checking required files..."
-        stateArr[4] = "loading mobile framework..."
-        stateArr[5] = "loading google maps..."
-        stateArr[6] = "loading ref data..."
-        stateArr[7] = "applying style sheets..."
-        stateArr[8] = "securing..."
-        stateArr[9] = "finalizing..."
+        stateArr[0] = "warming up..."
+        stateArr[1] = "warming up..."
+        stateArr[2] = "loading files..."
+        stateArr[3] = "still working..."
+        stateArr[4] = "please be patient..."
+        stateArr[5] = "finalizing..."
 
 
-        if (gdd.init.onLine()) {
-      // alert("About to call progress state")
-            gdd.init.progressStateInterval = self.setInterval(function () {
 
-                progressState()
+        //alert("Loading process")
+        document.getElementById("btnIdxSignIn").style.display = 'none';
+        document.getElementById("btnIdxStart").style.display = 'none';
+        document.getElementById("btnIdxErrConn").style.display = 'none';
+        document.getElementById("progressState").style.display = 'block';
+       var progMsg = document.getElementById("progressState");
 
-            }, 1000);
-        } else {
-            gdd.init.showPageIndexError("Your device is not connected to the internet, please establish a connection and try again.")
-        }
+       
+        var splshView = document.getElementById("splashOne");
+
+        checkProgress();
 
 
     },
 
-    appInfo:""
+    appInfo: ""
 }
 
 

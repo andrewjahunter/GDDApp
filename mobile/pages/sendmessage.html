@@ -22,80 +22,72 @@
 
         <div  class="ui-content" style="padding: 15px">
 
-            <div  id="msgSendErr" class="ui-content ui-body-e" style="text-align:center; display:none" ></div>
+            <div class="pageViewContent">
 
 
-            <div class="ui-bar ui-bar-h">
-                <div style="text-align:center">Send Message</div>
+
+
+                <div class="ui-bar ui-bar-h">
+                    <div style="text-align:center">Send Message</div>
+
+                </div>
+                <div id="msgSendTitle" class="ui-content ui-body-h" style="text-align:center"></div>
+
+
+
+                <div id="msgSendParam">
+
+                    <div class="ui-field-contain">
+                        <label for="ddlMsgType">
+                            Choose Message Type
+                        </label>
+                        <select id="ddlMsgType">
+                            <option value="1">Push Notification (Default)</option>
+                            <option value="2">SMS</option>
+                        </select>
+
+                    </div>
+                    <div id="sendMsgPushNotInfo" class="ui-content ui-body-d">
+                        <small>
+                            NOTE: Each recipient must have this app installed on their phone. Those who have not installed the app will receive the message via email.
+                        </small>
+                    </div>
+
+                    <div id="sendMsgSMSInfo" class="ui-content ui-body-d" style="display:none">
+                        <small>
+                            NOTE: In order to send an sms communication you are required to have the right permissions from your church.
+                        </small>
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="txtMsgSubject">
+                            Subject
+                        </label>
+                        <input id="txtMsgSubject" placeholder="message subject" type="text" />
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label for="txtMsg">
+                            Message
+                        </label>
+                        <textarea style="height: 100px; width: 100%" id="txtMsg"></textarea>
+
+                    </div>
+
+
+                    <a href="#" class="ui-btn ui-btn-b ui-btn-inline" id="btnSendMessage">Send</a>
+                    <a href="#" class="ui-btn ui-btn-a ui-btn-inline btnSendMessageDone">Cancel</a>
+
+
+                </div>
+
+                <div id="msgSendSuccess" style="display:none">
+                    <p id="sendMsgSuccess" class="ui-content ui-body-c" style="text-align:center"></p>
+                    <a href="#" class="ui-btn ui-btn-b btnSendMessageDone">Done!</a>
+                </div>
 
             </div>
-            <div  id="msgSendTitle" class="ui-content ui-body-h" style="text-align:center"></div>
-            
 
-
-
-            
-               
-                    
-
-                    <div id="msgSendParam">
-
-                        <div  class="ui-field-contain">
-                            <label for="ddlMsgType">
-                                Choose Message Type
-                            </label>
-                            <select id="ddlMsgType">
-                                <option value="1">Push Notification (Default)</option>
-                                <option value="2">SMS</option>
-                            </select>
-
-                        </div>
-                        <div id="sendMsgPushNotInfo"  class="ui-content ui-body-d">
-                            <small>
-                                NOTE: Each recipient must have this app installed on their phone. Those who have not installed the app will receive an invite via email to download the app. The email will also contain your message
-                            </small>
-                        </div>
-
-                        <div id="sendMsgSMSInfo"  class="ui-content ui-body-d" style="display:none">
-                            <small>
-                                NOTE: In order to send an sms communication you are required to have the right permissions from your church.
-                            </small>
-                        </div>
-                        <div class="ui-field-contain">
-                            <label for="txtMsgSubject">
-                                Subject
-                            </label>
-                            <input id="txtMsgSubject" placeholder="message subject" type="text" />
-                        </div>
-
-                        <div class="ui-field-contain">
-                            <label for="txtMsg">
-                                Message
-                            </label>
-                            <textarea style="height: 100px; width: 100%" id="txtMsg"></textarea>
-
-                        </div>
-
-
-                        <a href="#"  class="ui-btn ui-btn-b ui-btn-inline"    id="btnSendMessage">Send</a>
-                        <a href="#" class="ui-btn ui-btn-a ui-btn-inline btnSendMessageDone" >Cancel</a>
-
-                       
-                    </div>
-
-                    <div id="msgSendSuccess" style="display:none">
-                        <p id="sendMsgSuccess"  class="ui-content ui-body-c" style="text-align:center"></p>
-                        <a href="#"  class="ui-btn ui-btn-b btnSendMessageDone">Done!</a>
-                    </div>
-              
-
-
-
-          
-
-           
-
-        </div>
+            </div>
 
 
 

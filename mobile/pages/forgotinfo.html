@@ -17,53 +17,48 @@
             <a href="#"  class="ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext pg_forgotinfo_signin"  >cancel</a>
         </div>
         <div data-role="content" style="padding: 15px">
-            <div style="width: 72px; margin-left: auto; margin-right: auto">
-                <img src="../img/inAppIcon.png" style="width: 100%; height: auto" />
-            </div>
-            
-            <div id="btnRecovChoice">
-                 <div id="btnIKnowMyUserName"  class="ui-btn ui-btn-a"  >I Know My UserName</div>
-                <div id="btnIKnowMyEmail" class="ui-btn ui-btn-a">I Know My Email Address</div>
 
-            </div>
+            <div class="pageViewContent">
+                <!--<div style="width: 72px; margin-left: auto; margin-right: auto">
+                    <img src="../img/inAppIcon.png" style="width: 100%; height: auto" />
+                </div>-->
 
+                <div id="btnRecovChoice">
+                    <div id="btnIKnowMyUserName" class="ui-btn ui-btn-a">I Know My UserName</div>
+                    <div id="btnIKnowMyEmail" class="ui-btn ui-btn-a">I Know My Email Address</div>
 
-            <div id="recoverUsingUserName" style="display:none">
-                <div data-role="fieldcontain">
-                    <label for="txtForgotInfoUserName">
-                        Enter your username
-                    </label>
-                    <input id="txtForgotInfoUserName" placeholder="username" value="" type="text" />
                 </div>
-                <div  class="ui-btn ui-btn-b btnForGotInfoGo" data-theme="b">Recover Info</div>
-                <div  class="ui-btn ui-btn-a pg_forgotinfo_signin">Sign In</div>
-            </div>
 
-            <div id="recoverUsingEmail" style="display:none" >
-                <div data-role="fieldcontain">
-                    <label for="txtForgotInfoEmail">
-                        Enter your email address
-                    </label>
-                     <input id="txtForgotInfoEmail" placeholder="email address" value="" type="email" />
+
+                <div id="recoverUsingUserName" style="display:none">
+                    <div data-role="fieldcontain">
+                        <label for="txtForgotInfoUserName">
+                            UserName
+                        </label>
+                        <input id="txtForgotInfoUserName" placeholder="username" value="" type="text" />
+                    </div>
+                    <div class="ui-btn ui-btn-b btnForGotInfoGo" data-theme="b">Recover Info</div>
+                    <div class="ui-btn ui-btn-a pg_forgotinfo_signin">Sign In</div>
                 </div>
-                 <div class="btnForGotInfoGo ui-btn ui-btn-b"   >Recover Info</div>
-                 <div class="pg_forgotinfo_signin ui-btn ui-btn-a"   >Sign In</div>
-            </div>
 
+                <div id="recoverUsingEmail" style="display:none">
+                    <div data-role="fieldcontain">
+                        <label for="txtForgotInfoEmail">
+                            Email
+                        </label>
+                        <input id="txtForgotInfoEmail" placeholder="email address" value="" type="email" />
+                    </div>
+                    <div class="btnForGotInfoGo ui-btn ui-btn-b">Recover Info</div>
+                    <div class="pg_forgotinfo_signin ui-btn ui-btn-a">Sign In</div>
+                </div>
+
+             
+
+            </div>
         </div>
 
 
-        <div data-role="popup" id="pg_forgotinfo_popup" data-overlay-theme="a" data-theme="h" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
-            <div data-role="header" data-theme="h" class="ui-corner-top">
-                <h1 id="pg_forgotinfo_popup_header">Forgot Info</h1>
-            </div>
-            <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
-
-                <p id="pg_forgotinfo_popup_content"></p>
-                <a href="#"  class="ui-btn ui-btn-h"    id="btnForgotInfoPopupClose" >OK</a>
-
-            </div>
-        </div>
+       
 
     </div>
 
