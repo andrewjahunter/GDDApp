@@ -20,7 +20,7 @@
   <preference name="splash-screen-duration" value="3000" />
   <preference name="phonegap-version"  value="3.3.0" />
   <preference name="orientation"                value="default" />
-  <preference name="fullscreen"                 value="false" />
+  <preference name="fullscreen"                 value="true" />
   <preference name="target-device"              value="universal" />
   <preference name="prerendered-icon"           value="true" />
   <preference name="ios-statusbarstyle"         value="black-opaque" />
