@@ -58,10 +58,11 @@ gdd.init = {
             gdd.init.deviceIsReady = true;
 
             try {
+               
                 StatusBar.overlaysWebView(false);
                 StatusBar.hide();
             } catch (e) {
-                alert("STATUS BAR ERROR: " + JSON.stringify(e))
+               // alert("STATUS BAR ERROR: " + JSON.stringify(e))
             }
            
 

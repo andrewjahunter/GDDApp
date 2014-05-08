@@ -29,7 +29,7 @@
 
         <div data-role="header">
 
-            <h1 class="pageHeader" id="pg_home_header">home</h1>
+            <h1 class="pageHeader" id="pg_home_header">Home</h1>
 
 
         </div>
@@ -51,29 +51,59 @@
                 </div>
 
 
-                <!--<div data-role="popup" id="home_settings_menu" data-theme="i">
-                    <ul data-role="listview" data-inset="true" style="min-width: 210px;">
-                        <li><a href="#" id="btnHomeViewIntro" data-transition="flow">Quick Tour</a></li>
-                        <li><a href="#" id="btnHomeFeedback" data-transition="flip">Send Feedback</a></li>
-                        <li><a href="#" id="btnHomeSwitchDb">Switch Church</a></li>
-                        <li><a href="#" id="btnHomeSessionInfo">Session Info</a></li>
-
-
-                        <li><a href="#" id="btnHomeAbout" data-transition="flip">About</a></li>
-                        <li><a href="#" id="btnHomeClearCache">Clear Cache</a></li>
-
-
-
-                        <li><a href="#" id="pg_home_signout">Sign Out</a></li>
-                        <li><a href="#" data-rel="back">Cancel</a></li>
-
-
-                    </ul>
-                </div>-->
+          
 
                 <div class="pageViewContent">
+
+
                     <fieldset class="ui-grid-a">
                         <div class="ui-block-a">
+
+                            <div class="mainMenuBtn ui-btn ui-btn-b" id="btnHomePinfo">
+
+                                <div>
+                                    <img src="../img/appimg/user.png" class="menuBtnImg" />
+                                </div>
+                                <div class=" menuBtnTxt" data-bind="html:labels[1000]">
+
+                                </div>
+
+                            </div>
+
+                           
+                        </div>
+                        <div class="ui-block-b">
+
+                            <div class="mainMenuBtn ui-btn ui-btn-b" id="btnHomeMessages">
+
+                                <div>
+                                    <img src="../img/appimg/messages.png" class="menuBtnImg" />
+                                </div>
+                                <div class="menuBtnTxt" data-bind="html:labels[1400]">
+
+                                </div><span class="ui-li-count  bubbleMessagesCount"></span>
+
+                            </div>
+
+
+                           
+                        </div>
+                    </fieldset>
+
+
+                    <fieldset class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div class="mainMenuBtn ui-btn ui-btn-b" id="btnGroupsMenu">
+
+                                <div>
+                                    <img src="../img/appimg/groups.png" class="menuBtnImg" />
+                                </div>
+                                <div class="menuBtnTxt" data-bind="html:labels[1100]">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui-block-b">
                             <div class="mainMenuBtn ui-btn ui-btn-b" id="btnHomeFeeds">
                                 <div>
                                     <img src="../img/appimg/microphone.png" class="menuBtnImg" />
@@ -85,7 +115,49 @@
 
                             </div>
                         </div>
+                    </fieldset>
+
+                    <fieldset class="ui-grid-a">
+                        <div class="ui-block-a">
+
+                            <div class="mainMenuBtn ui-btn ui-btn-b" id="btnHomeEvents">
+
+                                <div>
+                                    <img src="../img/appimg/calendar.png" class="menuBtnImg" />
+                                </div>
+                                <div class="menuBtnTxt" data-bind="html:labels[1250]">
+
+                                </div>
+                            </div>
+
+
+                           
+                        </div>
                         <div class="ui-block-b">
+                            <div class="mainMenuBtn ui-btn ui-btn-b" id="btnHomeSubs">
+
+                                <div>
+                                    <img src="../img/appimg/rss.png" class="menuBtnImg" />
+                                </div>
+                                <div class="menuBtnTxt" data-bind="html:labels[1300]">
+
+                                </div>
+                            </div>
+
+                            <!--<div class="mainMenuBtn ui-btn ui-btn-b" id="btnHomeChurchLife">
+
+                                <div>
+                                    <img src="../img/appimg/list.png" class="menuBtnImg" />
+                                </div>
+                                <div class="menuBtnTxt" data-bind="html:labels[1350]">
+
+                                </div>
+                            </div>-->
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="ui-grid-a">
+                        <div class="ui-block-a">
                             <div class="mainMenuBtn ui-btn ui-btn-b" id="btHomeFollowUp">
 
                                 <div>
@@ -97,88 +169,7 @@
 
                             </div>
                         </div>
-                    </fieldset>
-
-
-                    <fieldset class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <div class="mainMenuBtn ui-btn ui-btn-b" id="btnHomeMessages">
-
-                                <div>
-                                    <img src="../img/appimg/messages.png" class="menuBtnImg" />
-                                </div>
-                                <div class="menuBtnTxt" data-bind="html:labels[1400]">
-
-                                </div><span class="ui-li-count  bubbleMessagesCount"></span>
-
-                            </div>
-                        </div>
                         <div class="ui-block-b">
-                            <div class="mainMenuBtn ui-btn ui-btn-b" id="btnHomePinfo">
-
-                                <div>
-                                    <img src="../img/appimg/user.png" class="menuBtnImg" />
-                                </div>
-                                <div class=" menuBtnTxt" data-bind="html:labels[1000]">
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <div class="mainMenuBtn ui-btn ui-btn-b" id="btnHomeSubs">
-
-                                <div>
-                                    <img src="../img/appimg/rss.png" class="menuBtnImg" />
-                                </div>
-                                <div class="menuBtnTxt" data-bind="html:labels[1300]">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ui-block-b">
-                            <div class="mainMenuBtn ui-btn ui-btn-b" id="btnGroupsMenu">
-
-                                <div>
-                                    <img src="../img/appimg/groups.png" class="menuBtnImg" />
-                                </div>
-                                <div class="menuBtnTxt" data-bind="html:labels[1100]">
-
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <div class="mainMenuBtn ui-btn ui-btn-b" id="btnHomeEvents">
-
-                                <div>
-                                    <img src="../img/appimg/calendar.png" class="menuBtnImg" />
-                                </div>
-                                <div class="menuBtnTxt" data-bind="html:labels[1250]">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ui-block-b">
-                            <div class="mainMenuBtn ui-btn ui-btn-b" id="btnHomeChurchLife">
-
-                                <div>
-                                    <img src="../img/appimg/list.png" class="menuBtnImg" />
-                                </div>
-                                <div class="menuBtnTxt" data-bind="html:labels[1350]">
-
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="ui-grid-a">
-                        <div class="ui-block-a">
                             <a class="mainMenuBtn ui-btn ui-btn-b" href="#" id="home_settings_menu">
 
                                 <div>
@@ -189,6 +180,12 @@
                                 </div>
 
                             </a>
+                        </div>
+                    </fieldset>
+
+                    <!--<fieldset class="ui-grid-a">
+                        <div class="ui-block-a">
+                          
                         </div>
                         <div class="ui-block-b">
                             <div class="mainMenuBtn ui-btn ui-btn-b" id="btnHomeReports">
@@ -202,7 +199,7 @@
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
+                    </fieldset>-->
 
 
                     <div>
@@ -211,49 +208,7 @@
                 </div>
 
 
-                <!--<ul data-role="listview" data-theme="b" data-inset="true" data-divider-theme="b" data-count-theme="c">
-
-                <li><a href="#" id="btnHomeFeeds_z"><div data-bind="html:labels[1200]"></div></a></li>
-                <li><a href="#" id="btHomeFollowUp_z"><div data-bind="html:labels[1150]"></div></a></li>
-                <li><a href="#" id="btnHomeMessages_z"><div data-bind="html:labels[1400]"></div><span class="ui-li-count  bubbleMessagesCount"></span></a></li>
-                <li>
-                    <a href="#" id="btnHomePinfo_z">
-                        <div data-bind="html:labels[1000]"></div>
-
-                    </a>
-                </li>
-
-                <li><a href="#" id="btnHomeSubs_z"><div data-bind="html:labels[1300]"></div></a></li>
-
-                <li>
-                    <a href="#" id="btnGroupsMenu_z">
-                        <div data-bind="html:labels[1100]"></div>
-
-                    </a>
-                </li>
-
-
-                <li><a href="#" id="btnHomeEvents_z"><div data-bind="html:labels[1250]"></div></a></li>
-
-
-                <li><a href="#" id="btnHomeChurchLife_z"><div data-bind="html:labels[1350]"></div></a></li>
-
-                <li>
-                    <a href="#home_settings_menu_z" data-rel="popup" data-position-to="window" data-transition="slideup">Settings</a>
-                </li>
-
-
-
-
-
-
-
-            </ul>-->
-                <!--<button class="ui-btn " id="qwert" >Exit</button>
-            <button class="ui-btn " id="qwert1">Message</button>
-            <button class="ui-btn " id="qwert2">Href to Index</button>
-
-            <button class="ui-btn " id="qwert3">Remoce session info</button>-->
+               
 
 
                 <div data-role="popup" id="pg_home_viewintro" data-overlay-theme="a" style="max-width: 400px;"
