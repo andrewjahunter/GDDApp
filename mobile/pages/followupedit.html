@@ -43,9 +43,12 @@
                     <textarea id="fRecNewNote"></textarea>
                     <small><i>notes added here are viewable by Trusted Users and higher</i></small>
                 </form>
-                <button id="btnFUPEditRequestTransfer" class="ui-btn ui-btn-a">Request Transfer</button>
-                <button id="btnFUPEditAddNote" class="ui-btn ui-btn-b">Add Note</button>
-                <a href="#" id="btnFUPViewNotes">View Notes</a>
+                <button id="btnFUPEditRequestTransfer" class="ui-btn ui-btn-b ui-btn-inline" >Request Transfer</button>
+                <button id="btnFUPEditAddNote" class="ui-btn ui-btn-b ui-btn-inline">Add Note</button>
+                <div>
+                    <a href="#" id="btnFUPViewNotes">View Notes</a>
+                </div>
+                
 
                 <div data-role="popup" id="popupTransferRquestDone" data-overlay-theme="a" data-dismissible="false" style="max-width: 400px;" class="ui-corner-all">
                     <div data-role="header" data-theme="b" class="ui-corner-top">
@@ -62,13 +65,19 @@
                     </div>
                 </div>
 
-                <button id="btnFUPUpdateContactDate" class="ui-btn ui-btn-a">Update Contact Date</button>
-                <small>
-                    <i>
-                        this simply lets us now that you are still in contact with the person. If a person has not had any contact
-                        in a 14 day period it will be flagged by the pastoral team.
-                    </i>
-                </small>
+                <div class="ui-bar ui-bar-h">
+
+                    <div style="text-align:center">Been in Contact?</div>
+                </div>
+
+
+                <div class="ui-content ui-body-h" style="text-align: center; font-size:small">
+                    Clicking the button below simply lets us know that you have been in contact with this person recently. People who
+                    have not been contacted in a 14 day period will be flagged by the pastoral team.
+                </div>
+
+                <button id="btnFUPUpdateContactDate" class="ui-btn ui-btn-b">Update Contact Date</button>
+               
 
 
             </div>
