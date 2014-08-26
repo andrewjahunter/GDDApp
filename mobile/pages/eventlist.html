@@ -122,12 +122,12 @@
                                     <tr>
                                         <td>
                                             <div class="ui-btn ui-btn-c ui-mini ui-btn-inline evNotComing" data-bind="attr: {'data-id': eventId}, visible:(coming() === 0) ? false:true  ">Not coming</div>
-                                            <div class="ui-btn ui-btn-e ui-mini ui-btn-inline evComing" data-bind="attr: {'data-id': eventId}, visible:(coming() === 1) ? false:true  ">Register</div>
+                                            <div class="ui-btn ui-btn-e ui-mini ui-btn-inline evComing" data-bind="attr: {'data-id': eventId}, visible:(coming() === 1) ? false:true  ">Coming</div>
 
 
 
 
-                                            <div class="ui-btn ui-btn-a ui-mini ui-btn-inline evMore" data-bind="attr: {'data-id': eventId}">More...</div>
+                                            <div class="ui-btn ui-btn-a ui-mini ui-btn-inline evMore" data-bind="attr: {'data-id': eventId}">More</div>
                                         </td>
                                         <td align="right">
                                             <div data-bind="visible:(coming() === 0) ? true:false  ">
@@ -163,9 +163,9 @@
                     </div>
 
                     <div>
-                        <a href="#" id="btnViewAttList" class="ui-btn ui-btn-inline ui-mini ui-icon-bullets ui-btn-icon-left">List View</a>
+                        <a href="#" id="btnViewAttList" class="ui-btn ui-btn-inline ui-mini ui-icon-bullets ui-btn-icon-left">List</a>
                         <a href="#" id="btnViewAttScan" class="ui-btn ui-btn-inline ui-mini ui-icon-camera ui-btn-icon-left">Scan</a>
-                        <a href="#" id="btnViewAttDone" class="ui-btn ui-btn-inline ui-mini ui-icon-check ui-btn-icon-left">Finished</a>
+                        <a href="#" id="btnViewAttDone" class="ui-btn ui-btn-inline ui-mini ui-icon-check ui-btn-icon-left">Done</a>
 
                     </div><!-- /grid-b -->
                     <label for="evAttEnableLocalCache">Enable local cache scanning?</label>
